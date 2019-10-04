@@ -8,8 +8,12 @@ protocol CreateGropuProtocol {
 
 class CreateGroupVC: UIViewController, CreateGropuProtocol {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var qrView: UIImageView!
 
+    // MARK: - Properties
+    
     var firebaseManager = FirebaseManager()
 
     var haveMusics: [Music] = []

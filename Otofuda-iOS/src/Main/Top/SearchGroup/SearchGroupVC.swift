@@ -9,8 +9,12 @@ protocol SearchGroupProtocol {
 
 class SearchGroupVC: UIViewController {
 
+    // MARK: - IBOutlets
+    
     @IBOutlet weak var cameraV: UIView!
 
+    // MARK: - Properties
+    
     var qrV: UIView!
     
     var haveMusics: [Music] = []

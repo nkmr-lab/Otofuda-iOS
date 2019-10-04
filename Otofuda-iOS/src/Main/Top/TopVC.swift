@@ -8,6 +8,7 @@ protocol TopProtocol {
 
 final class TopVC: UIViewController, TopProtocol {
 
+    // MARK: - Properties
     var haveMusics: [Music] = []
 
     override func viewDidLoad() {

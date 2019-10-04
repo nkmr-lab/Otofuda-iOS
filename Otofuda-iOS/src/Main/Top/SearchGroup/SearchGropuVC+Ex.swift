@@ -104,14 +104,10 @@ extension SearchGroupVC: SearchGroupProtocol {
                 
                 for dbRoom in dbRooms.keys {
                     
-                    guard let roomDict = dbRooms[dbRoom] as? Dictionary<String, Any> else {
-                        continue
-                    }
-                    guard let roomName = roomDict["name"] as? String else {
-                        continue
-                    }
-                    guard let member = roomDict["member"] as? [String] else {
-                        continue
+                    guard let roomDict = dbRooms[dbRoom] as? Dictionary<String, Any>,
+                          let roomName = roomDict["name"] as? String,
+                          let member = roomDict["member"] as? [String] else {
+                            continue
                     }
                     
                     var users: [User] = []

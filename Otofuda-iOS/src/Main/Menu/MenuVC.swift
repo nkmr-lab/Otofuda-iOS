@@ -93,15 +93,15 @@ final class MenuVC: UIViewController, Menurotocol {
 
             // そもそも持ち曲が16曲以上なければ何もしない
             // TODO: セグエなのでリターンしただけでは強制的に遷移してしまうので今後改善
-            if haveMusics.count < 16 {
+            if haveMusics.count < Config.fudaMaxCount {
                 print("16曲以下しかありません")
                return
             }
             
             // 選択曲が16曲以下だったら水増しする
-            if selectedMusics.count < 16 {
+            if selectedMusics.count < Config.fudaMaxCount {
                 let shuffledMusics = haveMusics.shuffled()
-                let diffCount = 16 - selectedMusics.count
+                let diffCount = Config.fudaMaxCount - selectedMusics.count
                 for i in 0..<diffCount {
                     selectedMusics.append( shuffledMusics[i] )
                 }

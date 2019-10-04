@@ -69,7 +69,7 @@ extension PlayVC: UICollectionViewDelegate {
         })
 
         // 終了判定
-        if currentIndex == fudaMaxCount - 1 {
+        if currentIndex == Config.fudaMaxCount - 1 {
             finishGame()
         }
 

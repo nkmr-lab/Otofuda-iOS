@@ -31,8 +31,6 @@ final class PlayVC: UIViewController, PlayProtocol {
 
     var currentIndex: Int = 0
 
-    let fudaMaxCount = 16
-
     var player: MPMusicPlayerController!
 
     var firebaseManager = FirebaseManager()

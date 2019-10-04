@@ -60,6 +60,7 @@
 		F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */; };
 		F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91FB23329A5C0031B062 /* IBDesignableView.swift */; };
 		F37990F42338DA3400AE0975 /* Bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F37990F32338DA3400AE0975 /* Bell.mp3 */; };
+		F3A29D9923475D7C006E83B1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A29D9823475D7C006E83B1 /* Config.swift */; };
 		F3C21BB4232F6D8D00546D5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
 		F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB8232F711300546D5B /* UIImage+Ex.swift */; };
@@ -185,6 +186,7 @@
 		F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableTableView.swift; sourceTree = "<group>"; };
 		F32B91FB23329A5C0031B062 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
 		F37990F32338DA3400AE0975 /* Bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bell.mp3; sourceTree = "<group>"; };
+		F3A29D9823475D7C006E83B1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB8232F711300546D5B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
@@ -340,6 +342,7 @@
 			children = (
 				589460D422852E9500319032 /* AppDelegate.swift */,
 				589460F622867A4800319032 /* FirebaseManager.swift */,
+				F3A29D9823475D7C006E83B1 /* Config.swift */,
 				F3C21BBE232F808300546D5B /* Models */,
 				F3C21BB5232F702800546D5B /* Extensions */,
 				F308115223333081009E7726 /* Bridging-Header.h */,
@@ -827,6 +830,7 @@
 				F3E25FF0233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift in Sources */,
 				F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */,
 				F3E25FE8233085DF00134769 /* FudaCollectionCell.swift in Sources */,
+				F3A29D9923475D7C006E83B1 /* Config.swift in Sources */,
 				F32B91BA2332434B0031B062 /* ResultVC+Ex.swift in Sources */,
 				F3E25FE42330856300134769 /* UITable+Ex.swift in Sources */,
 				F3C21BC0232F809100546D5B /* Room.swift in Sources */,

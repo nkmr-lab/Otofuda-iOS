@@ -107,7 +107,7 @@ extension MenuVC {
             let shuffledMusics = selectedMusics.shuffled()
             var rangeMusics: [Music] = []
             
-            for i in 0..<16 {
+            for i in 0..<Config.fudaMaxCount {
                 rangeMusics.append(shuffledMusics[i])
             }
             

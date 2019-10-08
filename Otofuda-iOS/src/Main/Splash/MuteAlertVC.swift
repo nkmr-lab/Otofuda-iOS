@@ -6,7 +6,9 @@ class MuteAlertVC: UIViewController {
 
     var timer: Timer!
     
-    var displayTime = 5.0 // FIXME: 普段は3秒ぐらい    
+    let displayTime = 5.0 // FIXME: 普段は3秒ぐらい
+    
+    let animationSize = CGSize(width: 200, height: 200)
 
     @IBOutlet weak var muteAnimationV: UIView!
     
@@ -29,7 +31,6 @@ class MuteAlertVC: UIViewController {
         } catch {
             print(error)
         }
-        
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -53,7 +54,7 @@ class MuteAlertVC: UIViewController {
     func displayAnimation(){
         let animationV = AnimationView(name: "mute_animation")
         animationV.contentMode = .scaleAspectFit
-        animationV.frame = CGRect(x: 0, y: 0, width: 200, height: 200)
+        animationV.frame = CGRect(x: 0, y: 0, width: animationSize.width, height: animationSize.height)
         animationV.center = CGPoint(x: self.view.center.x, y: self.view.center.y - 50)
         self.view.addSubview(animationV)
         animationV.animationSpeed = 1

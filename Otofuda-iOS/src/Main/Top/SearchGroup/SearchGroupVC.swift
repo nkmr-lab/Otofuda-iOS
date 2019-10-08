@@ -41,7 +41,6 @@ class SearchGroupVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
-        print("サーチビューが起動されました")
         readQRCode()
     }
     

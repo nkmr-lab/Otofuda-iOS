@@ -44,7 +44,8 @@ class SearchGroupVC: UIViewController {
         readQRCode()
     }
     
-    deinit {
-        firebaseManager.deleteAllValue(path: RoomURL.base.rawValue)
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        firebaseManager.deleteObserve(path: RoomURL.base.rawValue)
     }
 }

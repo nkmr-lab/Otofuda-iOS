@@ -29,10 +29,11 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
         observeMember()
     }
     
-    deinit {
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
         firebaseManager.deleteAllValue(path: room.url())
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)

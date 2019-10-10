@@ -51,7 +51,7 @@ final class PlayVC: UIViewController, PlayProtocol {
     
     @IBOutlet weak var startBtn: UIButton! {
         didSet {
-            setupStartBtn(isEnabled: true)
+//            setupStartBtn(isEnabled: true)
         }
     }
 
@@ -69,6 +69,7 @@ final class PlayVC: UIViewController, PlayProtocol {
         initializeUI()
         initializeVoice()
         initializePlayer()
+        setupStartBtn(isEnabled: true)
         navigationItem.title = "1曲目"
         self.fudaCollectionV.reloadData()
         

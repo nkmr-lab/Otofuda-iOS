@@ -18,7 +18,7 @@ extension PlayVC {
     }
     
     func initializeUI(){
-        startBtn.isHidden = isHost
+        startBtn.isHidden = !isHost
     }
 
     func initializeVoice() {

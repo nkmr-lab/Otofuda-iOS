@@ -41,7 +41,7 @@ class SearchGroupVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
-        readQRCode()
+        readQRCode() // FIXME: なぜかiPodTouchだとフロントカメラが起動する
     }
     
     override func viewWillDisappear(_ animated: Bool) {

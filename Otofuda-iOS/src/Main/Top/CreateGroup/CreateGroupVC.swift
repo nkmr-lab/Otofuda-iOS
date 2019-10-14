@@ -21,6 +21,8 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
     var room: Room!
     
     var member: [User] = []
+    
+    private var myClosure: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,8 +31,9 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
         observeMember()
     }
     
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
+    deinit {
+        print("であああああああああ")
+        // FIXIME: ここが呼ばれないの！！！！！
         firebaseManager.deleteAllValue(path: room.url())
     }
     
@@ -48,5 +51,5 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
         removeObserveMember()
     }
     
-
+    
 }

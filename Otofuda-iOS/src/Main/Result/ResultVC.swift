@@ -17,6 +17,8 @@ final class ResultVC: UIViewController, ResultProtocol {
 
     var firebaseManager = FirebaseManager()
 
+    let tableCellHeight: CGFloat = 60.0
+
     @IBOutlet weak var playedMusicTableV: UITableView! {
         didSet {
             playedMusicTableV.delegate = self

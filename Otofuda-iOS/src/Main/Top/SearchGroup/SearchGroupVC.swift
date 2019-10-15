@@ -33,6 +33,8 @@ class SearchGroupVC: UIViewController {
     
     var rooms: [Room] = []
 
+    var me: User!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         observeRooms()

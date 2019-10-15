@@ -21,11 +21,18 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
     var room: Room!
     
     var member: [User] = []
+
+    var me: User!
     
     private var myClosure: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let myColor: MyColor = Config.colors[0]
+        me = User(name: appDelegate.uuid, musics: [], color: myColor)
+
         let roomId = createGroup()
         generateQRCode(name: roomId)
         observeMember()
@@ -48,6 +55,7 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
         nextVC.room = room
         nextVC.isHost = true
         nextVC.haveMusics = self.haveMusics
+        nextVC.me = me
         removeObserveMember()
     }
     

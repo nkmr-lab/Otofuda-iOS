@@ -87,6 +87,7 @@ extension MenuVC {
         nextVC.isHost = self.isHost
         nextVC.playingMusics = self.playingMusics
         nextVC.arrangeMusics = self.arrangeMusics
+        nextVC.me = me
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     

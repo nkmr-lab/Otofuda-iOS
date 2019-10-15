@@ -18,6 +18,15 @@ extension PlayVC {
     }
     
     func initializeUI(){
+        let myColor = me.color
+        switch myColor {
+        case .red:
+            myColorV.backgroundColor = .red
+        case .blue:
+            myColorV.backgroundColor = .blue
+        default:
+            break
+        }
         startBtn.isHidden = !isHost
     }
 
@@ -33,7 +42,11 @@ extension PlayVC {
     }
 
     func playMusic() {
-        player.setMusic(item: playingMusics[currentIndex].item)
+//        player.stop()
+//        player = nil
+        initializePlayer()
+//        print( playingMusics[currentIndex].item.title )
+        player.setMusic(item: playingMusics[currentIndex].item!)
         player.play()
     }
 

@@ -68,6 +68,7 @@ extension SearchGroupVC: SearchGroupProtocol {
                     self.isMatching = true
                 } else {
                     if var member = snapshot.value as? [String] {
+                        self.me = User(name: self.appDelegate.uuid, musics: [], color: Config.colors[ member.count-1])
                         member.append( self.appDelegate.uuid )
                         self.firebaseManager.post(path: room.url() + "member", value: member)
                         self.goNextVC(room: room) // FIXME: 🐛たまに重複してnavigationに追加されることがある(9/26時点）
@@ -94,6 +95,7 @@ extension SearchGroupVC: SearchGroupProtocol {
         nextVC.room = room // TODO: メンバーを更新したRoomにする
         nextVC.haveMusics = self.haveMusics
         nextVC.isHost = false
+        nextVC.me = me
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -113,7 +115,7 @@ extension SearchGroupVC: SearchGroupProtocol {
                     var users: [User] = []
                     var index = 0
                     for user in member {
-                        users.append( User(name: user, musics: [], color: self.appDelegate.colors[index]) )
+                        users.append( User(name: user, musics: [], color: Config.colors[index]) )
                         index += 1
                     }
                     

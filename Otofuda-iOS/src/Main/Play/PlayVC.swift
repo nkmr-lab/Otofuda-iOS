@@ -21,6 +21,8 @@ final class PlayVC: UIViewController, PlayProtocol {
     
     var isHost: Bool = false
 
+    var me: User!
+
     // 再生順
     var playingMusics: [Music] = []
     // 並び順
@@ -61,6 +63,11 @@ final class PlayVC: UIViewController, PlayProtocol {
             fudaCollectionV.dataSource = self
             fudaCollectionV.register(cellType: FudaCollectionCell.self)
             fudaCollectionV.backgroundColor = .white
+        }
+    }
+    @IBOutlet weak var myColorV: UIView! {
+        didSet {
+
         }
     }
 

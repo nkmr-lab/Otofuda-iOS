@@ -26,6 +26,8 @@ final class MenuVC: UIViewController, Menurotocol {
 
     var isHost: Bool = false
 
+    var me: User!
+
     @IBOutlet weak var blockV: UIView!
     // ルール
     var rulePoint: RulePoint = .normal
@@ -128,6 +130,7 @@ final class MenuVC: UIViewController, Menurotocol {
             nextVC.playingMusics = playingMusics
             nextVC.arrangeMusics = arrangeMusics
             nextVC.isHost = self.isHost
+            nextVC.me = me
             
             room.status = .start
 

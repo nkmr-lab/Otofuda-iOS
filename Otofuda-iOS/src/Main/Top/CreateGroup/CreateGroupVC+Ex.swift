@@ -4,9 +4,6 @@ import UIKit
 extension CreateGroupVC {
     
     func createGroup() -> String {
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let me = User(name: appDelegate.uuid, musics: [], color: .red)
-        
         let roomID = String.getRandomStringWithLength(length: 6)
         let current_date = Date.getCurrentDate()
         room = Room(name: roomID)
@@ -31,7 +28,7 @@ extension CreateGroupVC {
             for i in 0..<member.count {
                 let user = member[i]
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                let myColor = appDelegate.colors[i]
+                let myColor = Config.colors[i]
                 self.member.append(User(name: user, musics: [], color: myColor))
             }
         })

@@ -23,7 +23,6 @@
 		F308114F23332CAA009E7726 /* MuteAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308114E23332CAA009E7726 /* MuteAlertVC.swift */; };
 		F30811542333320B009E7726 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811532333320B009E7726 /* MyColor.swift */; };
 		F308115623335E48009E7726 /* MenuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308115523335E48009E7726 /* MenuVC+Ex.swift */; };
-		F308115923339323009E7726 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = F308115823339323009E7726 /* .swiftlint.yml */; };
 		F308115F233516A2009E7726 /* mute_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = F308115E233516A2009E7726 /* mute_animation.json */; };
 		F30811692335C937009E7726 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811682335C937009E7726 /* Date+Ex.swift */; };
 		F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308116A2335C9F6009E7726 /* CreateGroupVC+Ex.swift */; };
@@ -147,7 +146,6 @@
 		F308115223333081009E7726 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F30811532333320B009E7726 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		F308115523335E48009E7726 /* MenuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+Ex.swift"; sourceTree = "<group>"; };
-		F308115823339323009E7726 /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F308115E233516A2009E7726 /* mute_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mute_animation.json; sourceTree = "<group>"; };
 		F30811682335C937009E7726 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		F308116A2335C9F6009E7726 /* CreateGroupVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateGroupVC+Ex.swift"; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 		589460C822852E9500319032 = {
 			isa = PBXGroup;
 			children = (
-				F308115823339323009E7726 /* .swiftlint.yml */,
 				589460D322852E9500319032 /* Otofuda-iOS */,
 				F30811712336535D009E7726 /* Otofuda-iOSTests */,
 				F308117F2336536F009E7726 /* Otofuda-iOSUITests */,
@@ -666,7 +663,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F308115F233516A2009E7726 /* mute_animation.json in Resources */,
-				F308115923339323009E7726 /* .swiftlint.yml in Resources */,
 				F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */,
 				F3E25FE6233085B600134769 /* FudaCollectionCell.xib in Resources */,
 				F3E25FDB232F9FF800134769 /* Menu.storyboard in Resources */,
@@ -815,7 +811,6 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputFileListPaths = (
 			);

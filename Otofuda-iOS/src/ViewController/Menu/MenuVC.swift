@@ -51,7 +51,7 @@ final class MenuVC: UIViewController, Menurotocol {
     var playingMusics: [Music] = []
     var arrangeMusics: [Music] = []
 
-    var presets = ["いい曲", "うざい曲"]
+    var presets: [String] = []
 
     @IBOutlet weak var selectMusicTableV: UITableView! {
         didSet {
@@ -66,6 +66,8 @@ final class MenuVC: UIViewController, Menurotocol {
         didSet {
             presetPickerV.delegate = self
             presetPickerV.dataSource = self
+            presetPickerV.backgroundColor = .white
+            presetPickerV.tintColor = .black
         }
     }
     
@@ -78,10 +80,14 @@ final class MenuVC: UIViewController, Menurotocol {
         }.then { data -> Promise<PresetResponse> in
             PresetAPIModel.shared.mapping(jsonStr: data)
        }.done { results in
-           print("done")
-           print(results)
+            print("done")
+        for result in results.list {
+            self.presets.append(result.title)
+            self.presetPickerV.reloadAllComponents()
+        }
+
        }.catch { error in
-           print(error)
+            print(error)
         }
     }
 
@@ -172,7 +178,18 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
         presets.count
     }
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return presets[row]
+//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+//        return presets[row]
+//    }
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+
+        // 表示するラベルを生成する
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 50))
+        label.textAlignment = .center
+        label.textColor = .black
+        label.font = UIFont(name: "", size: 40)
+        label.text = presets[row]
+        return label
     }
 }

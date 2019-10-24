@@ -349,7 +349,6 @@
 		589460EC2285449100319032 /* Top */ = {
 			isa = PBXGroup;
 			children = (
-				589460EA2285367300319032 /* Top.storyboard */,
 				589460D622852E9500319032 /* TopVC.swift */,
 				5884700422868D6200649B37 /* CreateGroup */,
 				5884700522868D7400649B37 /* SearchGroup */,
@@ -375,7 +374,6 @@
 		F3081149233325AD009E7726 /* Splash */ = {
 			isa = PBXGroup;
 			children = (
-				F308114C233325C6009E7726 /* Splash.storyboard */,
 				F308114A233325BB009E7726 /* SplashVC.swift */,
 				F308114E23332CAA009E7726 /* MuteAlertVC.swift */,
 			);
@@ -407,9 +405,7 @@
 				F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */,
 				F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */,
 				F3225F032330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift */,
-				F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */,
 				F3225F0A2330B01D00D9BD79 /* SearchResultCell.swift */,
-				F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */,
 			);
 			path = iTunesPicker;
 			sourceTree = "<group>";
@@ -421,9 +417,7 @@
 				F32B91B92332434B0031B062 /* ResultVC+Ex.swift */,
 				F32B91AD233232660031B062 /* ResultVC+UICollectionDelegate.swift */,
 				F32B91AF233232730031B062 /* ResultVC+UICollectionDataSource.swift */,
-				F32B91B1233233C00031B062 /* Result.storyboard */,
 				F32B91B5233235900031B062 /* ResultTableCell.swift */,
-				F32B91B3233235190031B062 /* ResultTableCell.xib */,
 			);
 			path = Result;
 			sourceTree = "<group>";
@@ -472,6 +466,7 @@
 		F3C8E69123615BC700864279 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3C8E69623615CFC00864279 /* Storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -512,16 +507,31 @@
 			path = Utility;
 			sourceTree = "<group>";
 		};
+		F3C8E69623615CFC00864279 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F308114C233325C6009E7726 /* Splash.storyboard */,
+				589460EA2285367300319032 /* Top.storyboard */,
+				F3E25FDA232F9FF800134769 /* Menu.storyboard */,
+				F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */,
+				F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */,
+				F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */,
+				F3E25FD5232F9FD400134769 /* Play.storyboard */,
+				F3E25FE5233085B600134769 /* FudaCollectionCell.xib */,
+				F32B91B1233233C00031B062 /* Result.storyboard */,
+				F32B91B3233235190031B062 /* ResultTableCell.xib */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
 		F3E25FCE232F9E3B00134769 /* Play */ = {
 			isa = PBXGroup;
 			children = (
-				F3E25FD5232F9FD400134769 /* Play.storyboard */,
 				F3E25FCF232F9E5200134769 /* PlayVC.swift */,
 				F3E25FEB2330891600134769 /* PlayVC+Ex.swift */,
 				F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */,
 				F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */,
 				F3E25FE92330874300134769 /* PlayVC+UICollectionLayout.swift */,
-				F3E25FE5233085B600134769 /* FudaCollectionCell.xib */,
 				F3E25FE7233085DF00134769 /* FudaCollectionCell.swift */,
 			);
 			path = Play;
@@ -531,13 +541,11 @@
 			isa = PBXGroup;
 			children = (
 				F3225EFF2330AFD900D9BD79 /* iTunesPicker */,
-				F3E25FDA232F9FF800134769 /* Menu.storyboard */,
 				F3E25FDC232FA00D00134769 /* MenuVC.swift */,
 				F308115523335E48009E7726 /* MenuVC+Ex.swift */,
 				F3E25FEF233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift */,
 				F3225EF32330AAFF00D9BD79 /* MenuVC+UITableDelegate.swift */,
 				F3225EF52330AB2800D9BD79 /* MenuVC+UITableDataSource.swift */,
-				F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */,
 				F3225EF92330ACFD00D9BD79 /* SelectMusicTableCell.swift */,
 			);
 			path = Menu;

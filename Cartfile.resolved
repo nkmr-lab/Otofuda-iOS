@@ -1,6 +1,7 @@
 github "Alamofire/Alamofire" "4.9.0"
 github "Alamofire/AlamofireImage" "3.5.2"
 github "Hearst-DD/ObjectMapper" "3.5.1"
+github "ReactiveX/RxSwift" "5.0.1"
 github "SwiftyJSON/SwiftyJSON" "5.0.0"
-github "airbnb/lottie-ios" "860124f1e8fe2163a87c225a931132fc57324b26"
+github "airbnb/lottie-ios" "41ddfb81cc4c96b9379b0da96a3e1ecb110a4ff8"
 github "mxcl/PromiseKit" "6.11.0"

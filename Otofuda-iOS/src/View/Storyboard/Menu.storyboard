@@ -238,7 +238,7 @@
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="Wwh-Xk-1cp"/>
                                                 </constraints>
-                                                <state key="normal" title="iTunes Storeから選曲する">
+                                                <state key="normal" title="お題を選択">
                                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
                                                 <userDefinedRuntimeAttributes>

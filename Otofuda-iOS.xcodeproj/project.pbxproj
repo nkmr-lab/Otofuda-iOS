@@ -60,6 +60,7 @@
 		F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */; };
 		F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91FB23329A5C0031B062 /* IBDesignableView.swift */; };
 		F37990F42338DA3400AE0975 /* Bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F37990F32338DA3400AE0975 /* Bell.mp3 */; };
+		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
 		F3A29D9923475D7C006E83B1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A29D9823475D7C006E83B1 /* Config.swift */; };
 		F3C21BB4232F6D8D00546D5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
@@ -186,6 +187,7 @@
 		F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableTableView.swift; sourceTree = "<group>"; };
 		F32B91FB23329A5C0031B062 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
 		F37990F32338DA3400AE0975 /* Bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bell.mp3; sourceTree = "<group>"; };
+		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F3A29D9823475D7C006E83B1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
@@ -318,6 +320,7 @@
 		589460E622852F6400319032 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F308115223333081009E7726 /* Bridging-Header.h */,
 				589460DB22852E9500319032 /* Assets.xcassets */,
 				F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */,
 				589460E022852E9500319032 /* Info.plist */,
@@ -331,35 +334,16 @@
 		589460E722852FEE00319032 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				589460E82285328300319032 /* Common */,
-				589460E92285362E00319032 /* Main */,
+				589460D422852E9500319032 /* AppDelegate.swift */,
+				F3A29D9823475D7C006E83B1 /* Config.swift */,
+				F3C8E69223615BCE00864279 /* ViewController */,
+				F3C8E69023615BAB00864279 /* ViewModel */,
+				F3C8E69323615C2300864279 /* UseCase */,
+				F3C8E69123615BC700864279 /* View */,
+				F3C8E69423615C3800864279 /* Entity */,
+				F3C8E69523615C4300864279 /* Utility */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		589460E82285328300319032 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				589460D422852E9500319032 /* AppDelegate.swift */,
-				589460F622867A4800319032 /* FirebaseManager.swift */,
-				F3A29D9823475D7C006E83B1 /* Config.swift */,
-				F3C21BBE232F808300546D5B /* Models */,
-				F3C21BB5232F702800546D5B /* Extensions */,
-				F308115223333081009E7726 /* Bridging-Header.h */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		589460E92285362E00319032 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				F3081149233325AD009E7726 /* Splash */,
-				589460EC2285449100319032 /* Top */,
-				F3E25FD9232F9FED00134769 /* Menu */,
-				F3E25FCE232F9E3B00134769 /* Play */,
-				F32B91AA233231E70031B062 /* Result */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		589460EC2285449100319032 /* Top */ = {
@@ -454,6 +438,7 @@
 				F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */,
 				F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */,
 				F3E25FDF2330853900134769 /* UICollection+Ex.swift */,
+				F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */,
 				F3E25FE12330854D00134769 /* NSObject+Ex.swift */,
 				F3E25FE32330856300134769 /* UITable+Ex.swift */,
 				F3E25FED233090EC00134769 /* MPMediaPlayer+Ex.swift */,
@@ -475,6 +460,56 @@
 				F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F3C8E69023615BAB00864279 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3C8E69123615BC700864279 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3C8E69223615BCE00864279 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3081149233325AD009E7726 /* Splash */,
+				589460EC2285449100319032 /* Top */,
+				F3E25FD9232F9FED00134769 /* Menu */,
+				F3E25FCE232F9E3B00134769 /* Play */,
+				F32B91AA233231E70031B062 /* Result */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F3C8E69323615C2300864279 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		F3C8E69423615C3800864279 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		F3C8E69523615C4300864279 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F3C21BB5232F702800546D5B /* Extensions */,
+				F3C21BBE232F808300546D5B /* Models */,
+				589460F622867A4800319032 /* FirebaseManager.swift */,
+			);
+			path = Utility;
 			sourceTree = "<group>";
 		};
 		F3E25FCE232F9E3B00134769 /* Play */ = {
@@ -837,6 +872,7 @@
 				F3E25FE22330854D00134769 /* NSObject+Ex.swift in Sources */,
 				F3225EF62330AB2800D9BD79 /* MenuVC+UITableDataSource.swift in Sources */,
 				F32B91BC23328B150031B062 /* IBDesignableButton.swift in Sources */,
+				F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

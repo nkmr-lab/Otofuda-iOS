@@ -10,7 +10,8 @@ extension UIColor {
             return "black"
         case .darkGray:
             return "darkGray"
-        case .blue
+        case .blue:
+            return "blue"
         default:
             break
         }

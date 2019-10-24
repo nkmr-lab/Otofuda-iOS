@@ -70,10 +70,10 @@
 		F3C21BC0232F809100546D5B /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BBF232F809100546D5B /* Room.swift */; };
 		F3C21BC2232F80EF00546D5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BC1232F80EF00546D5B /* User.swift */; };
 		F3C21BC4232F9C4F00546D5B /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BC3232F9C4F00546D5B /* Music.swift */; };
+		F3C8E69823615F0100864279 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C8E69723615F0100864279 /* Play.storyboard */; };
 		F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FCF232F9E5200134769 /* PlayVC.swift */; };
 		F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */; };
 		F3E25FD4232F9F6600134769 /* PlayVC+UICollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */; };
-		F3E25FD6232F9FD400134769 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E25FD5232F9FD400134769 /* Play.storyboard */; };
 		F3E25FDB232F9FF800134769 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E25FDA232F9FF800134769 /* Menu.storyboard */; };
 		F3E25FDD232FA00D00134769 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FDC232FA00D00134769 /* MenuVC.swift */; };
 		F3E25FE02330853900134769 /* UICollection+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FDF2330853900134769 /* UICollection+Ex.swift */; };
@@ -197,10 +197,10 @@
 		F3C21BBF232F809100546D5B /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		F3C21BC1232F80EF00546D5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F3C21BC3232F9C4F00546D5B /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		F3C8E69723615F0100864279 /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
 		F3E25FCF232F9E5200134769 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDelegate.swift"; sourceTree = "<group>"; };
 		F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDataSource.swift"; sourceTree = "<group>"; };
-		F3E25FD5232F9FD400134769 /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Play.storyboard; path = "Otofuda-iOS/src/Main/Play/Play.storyboard"; sourceTree = SOURCE_ROOT; };
 		F3E25FDA232F9FF800134769 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		F3E25FDC232FA00D00134769 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		F3E25FDF2330853900134769 /* UICollection+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollection+Ex.swift"; sourceTree = "<group>"; };
@@ -516,10 +516,10 @@
 				F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */,
 				F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */,
 				F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */,
-				F3E25FD5232F9FD400134769 /* Play.storyboard */,
 				F3E25FE5233085B600134769 /* FudaCollectionCell.xib */,
 				F32B91B1233233C00031B062 /* Result.storyboard */,
 				F32B91B3233235190031B062 /* ResultTableCell.xib */,
+				F3C8E69723615F0100864279 /* Play.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -670,11 +670,11 @@
 				F37990F42338DA3400AE0975 /* Bell.mp3 in Resources */,
 				F32B91B2233233C00031B062 /* Result.storyboard in Resources */,
 				F3225F092330AFF300D9BD79 /* iTunesPicker.storyboard in Resources */,
-				F3E25FD6232F9FD400134769 /* Play.storyboard in Resources */,
 				F3225F0D2330B01D00D9BD79 /* SearchResultCell.xib in Resources */,
 				F32B91B4233235190031B062 /* ResultTableCell.xib in Resources */,
 				589460DC22852E9500319032 /* Assets.xcassets in Resources */,
 				589460EB2285367300319032 /* Top.storyboard in Resources */,
+				F3C8E69823615F0100864279 /* Play.storyboard in Resources */,
 				F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */,
 				F3C21BB4232F6D8D00546D5B /* GoogleService-Info.plist in Resources */,
 				F308114D233325C6009E7726 /* Splash.storyboard in Resources */,

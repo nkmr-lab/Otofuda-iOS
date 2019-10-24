@@ -1,4 +1,5 @@
 import UIKit
+import PromiseKit
 
 protocol Menurotocol {
     func tappedPickBtn(_ sender: Any)
@@ -50,6 +51,8 @@ final class MenuVC: UIViewController, Menurotocol {
     var playingMusics: [Music] = []
     var arrangeMusics: [Music] = []
 
+    var presets = ["いい曲", "うざい曲"]
+
     @IBOutlet weak var selectMusicTableV: UITableView! {
         didSet {
             selectMusicTableV.delegate = self
@@ -59,9 +62,27 @@ final class MenuVC: UIViewController, Menurotocol {
         }
     }
 
+    @IBOutlet weak var presetPickerV: UIPickerView! {
+        didSet {
+            presetPickerV.delegate = self
+            presetPickerV.dataSource = self
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         prepareUI()
+
+        firstly {
+            PresetAPIModel.shared.request()
+        }.then { data -> Promise<PresetResponse> in
+            PresetAPIModel.shared.mapping(jsonStr: data)
+       }.done { results in
+           print("done")
+           print(results)
+       }.catch { error in
+           print(error)
+        }
     }
 
     @IBAction func changedPointSeg(_ sender: Any) {
@@ -137,9 +158,21 @@ final class MenuVC: UIViewController, Menurotocol {
             firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
         }
     }
+    
+}
 
-    @IBAction func tapClearSelectBtn(_ sender: Any) {
-        selectedMusics = []
-        selectMusicTableV.reloadData()
+
+extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+
+    }
+
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        presets.count
+    }
+
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return presets[row]
     }
 }

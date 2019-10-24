@@ -73,6 +73,7 @@
 		F3C8E69A2361636800864279 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6992361636800864279 /* ApiClient.swift */; };
 		F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69B23617A3F00864279 /* PresetUseCase.swift */; };
 		F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69D23617B5C00864279 /* PresetViewModel.swift */; };
+		F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69F2361901F00864279 /* PresetAPIModel.swift */; };
 		F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FCF232F9E5200134769 /* PlayVC.swift */; };
 		F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */; };
 		F3E25FD4232F9F6600134769 /* PlayVC+UICollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */; };
@@ -202,6 +203,7 @@
 		F3C8E6992361636800864279 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		F3C8E69B23617A3F00864279 /* PresetUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetUseCase.swift; sourceTree = "<group>"; };
 		F3C8E69D23617B5C00864279 /* PresetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetViewModel.swift; sourceTree = "<group>"; };
+		F3C8E69F2361901F00864279 /* PresetAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetAPIModel.swift; sourceTree = "<group>"; };
 		F3E25FCF232F9E5200134769 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDelegate.swift"; sourceTree = "<group>"; };
 		F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDataSource.swift"; sourceTree = "<group>"; };
@@ -455,6 +457,7 @@
 				F30811532333320B009E7726 /* MyColor.swift */,
 				F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */,
 				F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */,
+				F3C8E69F2361901F00864279 /* PresetAPIModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -865,6 +868,7 @@
 				F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */,
 				F3C21BBD232F73E400546D5B /* SearchGroupVC+AVCaptureDelegate.swift in Sources */,
 				F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */,
+				F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */,
 				F3225EFE2330AFCA00D9BD79 /* iTunesRSSModel.swift in Sources */,
 				F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */,
 				F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */,

@@ -19,17 +19,24 @@ extension CreateGroupVC {
     }
     
     func observeMember(){
-        firebaseManager.observe(path: room.url() + "member", completion: { snapshot in
+        firebaseManager.observe(path: room.url() + "member", completion: { [weak self] snapshot in
+
+            // deinitを呼びたいので強参照させないようにしている
+            guard let wself = self else {
+                return
+            }
+
             guard let member = snapshot.value as? [String] else {
                 return
             }
             
-            self.member = []
+            wself.member = []
             for i in 0..<member.count {
                 let user = member[i]
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 let myColor = Config.colors[i]
-                self.member.append(User(name: user, musics: [], color: myColor))
+                
+                wself.member.append(User(name: user, musics: [], color: myColor))
             }
         })
     }

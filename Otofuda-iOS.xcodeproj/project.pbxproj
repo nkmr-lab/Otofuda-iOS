@@ -74,6 +74,13 @@
 		F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69B23617A3F00864279 /* PresetUseCase.swift */; };
 		F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69D23617B5C00864279 /* PresetViewModel.swift */; };
 		F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69F2361901F00864279 /* PresetAPIModel.swift */; };
+		F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A12361E70800864279 /* ResponseEntity.swift */; };
+		F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A32361E73700864279 /* RequestEntity.swift */; };
+		F3C8E6A72361E8F500864279 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C8E6A62361E8F500864279 /* RxSwift.framework */; };
+		F3C8E6A82361E8F500864279 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3C8E6A62361E8F500864279 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F3C8E6AB2361F0A400864279 /* PresetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AA2361F0A400864279 /* PresetResponse.swift */; };
+		F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AC2362B41D00864279 /* Preset.swift */; };
+		F3C8E6AF2362B6CD00864279 /* PresetDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */; };
 		F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FCF232F9E5200134769 /* PlayVC.swift */; };
 		F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */; };
 		F3E25FD4232F9F6600134769 /* PlayVC+UICollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */; };
@@ -117,6 +124,17 @@
 			dstSubfolderSpec = 7;
 			files = (
 			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3C8E6A92361E8F500864279 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F3C8E6A82361E8F500864279 /* RxSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -204,6 +222,13 @@
 		F3C8E69B23617A3F00864279 /* PresetUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetUseCase.swift; sourceTree = "<group>"; };
 		F3C8E69D23617B5C00864279 /* PresetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetViewModel.swift; sourceTree = "<group>"; };
 		F3C8E69F2361901F00864279 /* PresetAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetAPIModel.swift; sourceTree = "<group>"; };
+		F3C8E6A12361E70800864279 /* ResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		F3C8E6A32361E73700864279 /* RequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEntity.swift; sourceTree = "<group>"; };
+		F3C8E6A52361E8CA00864279 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		F3C8E6A62361E8F500864279 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		F3C8E6AA2361F0A400864279 /* PresetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetResponse.swift; sourceTree = "<group>"; };
+		F3C8E6AC2362B41D00864279 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
+		F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetDAO.swift; sourceTree = "<group>"; };
 		F3E25FCF232F9E5200134769 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDelegate.swift"; sourceTree = "<group>"; };
 		F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDataSource.swift"; sourceTree = "<group>"; };
@@ -231,6 +256,7 @@
 				F3225F142330B25400D9BD79 /* SwiftyJSON.framework in Frameworks */,
 				F3225F152330B25400D9BD79 /* PromiseKit.framework in Frameworks */,
 				F3225F162330B25400D9BD79 /* ObjectMapper.framework in Frameworks */,
+				F3C8E6A72361E8F500864279 /* RxSwift.framework in Frameworks */,
 				F3225F172330B25400D9BD79 /* AlamofireImage.framework in Frameworks */,
 				5880D37C22B4928700F40959 /* FirebaseCore.framework in Frameworks */,
 				ABB34FFD4B8DD80A5EAA9C01 /* Pods_Otofuda_iOS.framework in Frameworks */,
@@ -259,6 +285,8 @@
 		54E6151815F6B8962458DCA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3C8E6A62361E8F500864279 /* RxSwift.framework */,
+				F3C8E6A52361E8CA00864279 /* RxSwift.framework.dSYM */,
 				F3225F0E2330B25400D9BD79 /* Alamofire.framework */,
 				F3225F122330B25400D9BD79 /* AlamofireImage.framework */,
 				F3225F112330B25400D9BD79 /* ObjectMapper.framework */,
@@ -494,6 +522,7 @@
 			isa = PBXGroup;
 			children = (
 				F3C8E69B23617A3F00864279 /* PresetUseCase.swift */,
+				F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -501,6 +530,10 @@
 		F3C8E69423615C3800864279 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
+				F3C8E6A12361E70800864279 /* ResponseEntity.swift */,
+				F3C8E6A32361E73700864279 /* RequestEntity.swift */,
+				F3C8E6AA2361F0A400864279 /* PresetResponse.swift */,
+				F3C8E6AC2362B41D00864279 /* Preset.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -575,6 +608,7 @@
 				F3225F182330B26200D9BD79 /* CopyFiles */,
 				F3225F192330B26400D9BD79 /* ShellScript */,
 				F3081157233392D9009E7726 /* ShellScript */,
+				F3C8E6A92361E8F500864279 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -820,6 +854,7 @@
 				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
 			);
 			outputFileListPaths = (
 			);
@@ -846,9 +881,12 @@
 				F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */,
 				F3E25FEE233090EC00134769 /* MPMediaPlayer+Ex.swift in Sources */,
 				F3225F0C2330B01D00D9BD79 /* SearchResultCell.swift in Sources */,
+				F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */,
 				F3E25FF22330986000134769 /* MPMediaItem+Ex.swift in Sources */,
+				F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */,
 				F3225F052330AFE300D9BD79 /* iTunesPickerVC.swift in Sources */,
 				F3C8E69A2361636800864279 /* ApiClient.swift in Sources */,
+				F3C8E6AF2362B6CD00864279 /* PresetDAO.swift in Sources */,
 				589460D722852E9500319032 /* TopVC.swift in Sources */,
 				F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */,
 				F3E25FE02330853900134769 /* UICollection+Ex.swift in Sources */,
@@ -873,6 +911,7 @@
 				F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */,
 				F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */,
 				F30811542333320B009E7726 /* MyColor.swift in Sources */,
+				F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */,
 				589460F722867A4800319032 /* FirebaseManager.swift in Sources */,
 				F3225EFD2330AFCA00D9BD79 /* iTunesAPIModel.swift in Sources */,
 				F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */,
@@ -883,6 +922,7 @@
 				F32B91B6233235900031B062 /* ResultTableCell.swift in Sources */,
 				589460F122855AAE00319032 /* CreateGroupVC.swift in Sources */,
 				F3E25FF0233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift in Sources */,
+				F3C8E6AB2361F0A400864279 /* PresetResponse.swift in Sources */,
 				F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */,
 				F3E25FE8233085DF00134769 /* FudaCollectionCell.swift in Sources */,
 				F3A29D9923475D7C006E83B1 /* Config.swift in Sources */,

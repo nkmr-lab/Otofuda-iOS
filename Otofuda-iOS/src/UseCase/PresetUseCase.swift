@@ -1,15 +1,24 @@
 
-import Foundation
+import RxSwift
 
 protocol PresetUseCaseProtocol {
-    func fetch()
+//    func fetch() -> Single<PresetResponse>
     func add()
+//    func load()
     func remove()
 }
 
 final class PresetUseCase: PresetUseCaseProtocol {
-    func fetch() {
-    }
+
+    private let api = ApiClient()
+
+//    func fetch() -> Single<PresetResponse> {
+//        return api.get(path: Config.PRESET_LIST_API_URL, request: nil)
+//    }
+
+//    func load() -> Single<Preset> {
+//        return
+//    }
 
     func add() {
     }

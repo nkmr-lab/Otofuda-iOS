@@ -19,6 +19,8 @@ enum RulePlaying: String {
 
 final class MenuVC: UIViewController, Menurotocol {
 
+    let viewModel = PresetViewModel()
+
     var firebaseManager = FirebaseManager()
 
     var room: Room!
@@ -75,20 +77,22 @@ final class MenuVC: UIViewController, Menurotocol {
         super.viewDidLoad()
         prepareUI()
 
-        firstly {
-            PresetAPIModel.shared.request()
-        }.then { data -> Promise<PresetResponse> in
-            PresetAPIModel.shared.mapping(jsonStr: data)
-       }.done { results in
-            print("done")
-        for result in results.list {
-            self.presets.append(result.title)
-            self.presetPickerV.reloadAllComponents()
-        }
+//        viewModel.
 
-       }.catch { error in
-            print(error)
-        }
+//        firstly {
+//            PresetAPIModel.shared.request()
+//        }.then { data -> Promise<PresetResponse> in
+//            PresetAPIModel.shared.mapping(jsonStr: data)
+//       }.done { results in
+//            print("done")
+//        for result in results.list {
+//            self.presets.append(result.title)
+//            self.presetPickerV.reloadAllComponents()
+//        }
+//
+//       }.catch { error in
+//            print(error)
+//        }
     }
 
     @IBAction func changedPointSeg(_ sender: Any) {

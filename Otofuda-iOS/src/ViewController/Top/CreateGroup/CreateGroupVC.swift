@@ -39,8 +39,6 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
     }
     
     deinit {
-        print("であああああああああ")
-        // FIXIME: ここが呼ばれないの！！！！！
         firebaseManager.deleteAllValue(path: room.url())
     }
     

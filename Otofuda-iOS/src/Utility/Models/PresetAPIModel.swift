@@ -8,7 +8,7 @@ final class PresetAPIModel {
 
     func request() -> Promise<String> {
 
-        let url = Config.list_api_url
+        let url = Config.PRESET_LIST_API_URL
 
         return Promise { seal in
             Alamofire.request(url).responseString { response in
@@ -20,6 +20,24 @@ final class PresetAPIModel {
                 }
             }
         }
+    }
+
+    // FIXME: これだとAPIごとに1Model作るごとになってしまい...面倒  
+    func get16() -> Promise<String> {
+        let url = Config.SELECT_MUSIC_API_URL
+
+        return Promise { seal in
+            Alamofire.request(url).responseString { response in
+                switch response.result {
+                case .success(let data):
+                    seal.fulfill(data)
+                case .failure:
+                    seal.reject(InternalError.loadFileFailed)
+                }
+            }
+        }
+
+
     }
 
     func mapping(jsonStr: String) -> Promise<PresetResponse> {
@@ -36,10 +54,4 @@ final class PresetAPIModel {
 struct PresetResponse: Codable {
     var result: String
     var list: [Preset]
-}
-
-struct Preset: Codable {
-    var id: String
-    var title: String
-    var music_list: String
 }

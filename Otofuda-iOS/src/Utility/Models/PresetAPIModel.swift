@@ -43,7 +43,6 @@ final class PresetAPIModel {
     func mapping(jsonStr: String) -> Promise<PresetResponse> {
         return Promise { seal in
             let data = jsonStr.data(using: .utf8)!
-            print(jsonStr)
             guard let results = try? JSONDecoder().decode(PresetResponse.self, from: data) else {
                 return seal.reject(InternalError.mapFailed)
             }

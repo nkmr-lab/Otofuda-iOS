@@ -79,20 +79,20 @@ final class MenuVC: UIViewController, Menurotocol {
 
 //        viewModel.
 
-//        firstly {
-//            PresetAPIModel.shared.request()
-//        }.then { data -> Promise<PresetResponse> in
-//            PresetAPIModel.shared.mapping(jsonStr: data)
-//       }.done { results in
-//            print("done")
-//        for result in results.list {
-//            self.presets.append(result.title)
-//            self.presetPickerV.reloadAllComponents()
-//        }
-//
-//       }.catch { error in
-//            print(error)
-//        }
+        firstly {
+            PresetAPIModel.shared.request()
+        }.then { data -> Promise<PresetResponse> in
+            PresetAPIModel.shared.mapping(jsonStr: data)
+       }.done { results in
+            print("done")
+        for result in results.list {
+            self.presets.append(result.title)
+            self.presetPickerV.reloadAllComponents()
+        }
+
+       }.catch { error in
+            print(error)
+        }
     }
 
     @IBAction func changedPointSeg(_ sender: Any) {

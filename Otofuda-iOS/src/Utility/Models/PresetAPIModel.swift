@@ -23,26 +23,27 @@ final class PresetAPIModel {
     }
 
     // FIXME: これだとAPIごとに1Model作るごとになってしまい...面倒  
-    func get16() -> Promise<String> {
-        let url = Config.SELECT_MUSIC_API_URL
-
-        return Promise { seal in
-            Alamofire.request(url).responseString { response in
-                switch response.result {
-                case .success(let data):
-                    seal.fulfill(data)
-                case .failure:
-                    seal.reject(InternalError.loadFileFailed)
-                }
-            }
-        }
-
-
-    }
+//    func get16() -> Promise<String> {
+//        let url = Config.SELECT_MUSIC_API_URL
+//
+//        return Promise { seal in
+//            Alamofire.request(url).responseString { response in
+//                switch response.result {
+//                case .success(let data):
+//                    seal.fulfill(data)
+//                case .failure:
+//                    seal.reject(InternalError.loadFileFailed)
+//                }
+//            }
+//        }
+//
+//
+//    }
 
     func mapping(jsonStr: String) -> Promise<PresetResponse> {
         return Promise { seal in
             let data = jsonStr.data(using: .utf8)!
+            print(jsonStr)
             guard let results = try? JSONDecoder().decode(PresetResponse.self, from: data) else {
                 return seal.reject(InternalError.mapFailed)
             }

@@ -1,5 +1,7 @@
 # Otofuda-iOS
 
+<img src="https://i.gyazo.com/780ef47d72899d0609cc755c21435b2b.png" width="200px" height="auto">
+
 ## Getting Started
 
 1. CocoaPodをインストールしてください。

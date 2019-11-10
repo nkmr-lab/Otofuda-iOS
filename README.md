@@ -29,6 +29,11 @@ carthage update --platform iOS
 - Firebase
 - Firebase/Database
 
+## Rest API
+- GET https://uniotto.org/api/get_otofuda_list.php?id={id}
+- GET https://uniotto.org/api/get_rand16_itunes.php?id={id}
+- GET https://uniotto.org/api/get_all_otofuda_list.php
+
 ## Architecture
 - MVVM
 

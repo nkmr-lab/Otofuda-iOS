@@ -1,6 +1,8 @@
 # Otofuda-iOS
 
-<img src="https://i.gyazo.com/780ef47d72899d0609cc755c21435b2b.png" width="30%" height="auto">
+<div style="text-align:center">
+  <img src="https://i.gyazo.com/780ef47d72899d0609cc755c21435b2b.png" width="30%" height="auto">
+</div>
 
 ## Getting Started
 

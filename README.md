@@ -29,6 +29,9 @@ carthage update --platform iOS
 - Firebase
 - Firebase/Database
 
+## Architecture
+- MVVM
+
 ## Milestone
 - v1.0.0 https://github.com/nkmr-lab/Otofuda-iOS/projects/1
 - v1.0.1 https://github.com/nkmr-lab/Otofuda-iOS/projects/2

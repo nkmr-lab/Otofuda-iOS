@@ -58,6 +58,7 @@
 		F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */; };
 		F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */; };
 		F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91FB23329A5C0031B062 /* IBDesignableView.swift */; };
+		F35F9B53237154E000BBB727 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F9B52237154E000BBB727 /* MusicList.swift */; };
 		F37990F42338DA3400AE0975 /* Bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F37990F32338DA3400AE0975 /* Bell.mp3 */; };
 		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
 		F3A29D9923475D7C006E83B1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A29D9823475D7C006E83B1 /* Config.swift */; };
@@ -78,7 +79,7 @@
 		F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A32361E73700864279 /* RequestEntity.swift */; };
 		F3C8E6A72361E8F500864279 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C8E6A62361E8F500864279 /* RxSwift.framework */; };
 		F3C8E6A82361E8F500864279 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3C8E6A62361E8F500864279 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F3C8E6AB2361F0A400864279 /* PresetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AA2361F0A400864279 /* PresetResponse.swift */; };
+		F3C8E6AB2361F0A400864279 /* PresetResponse2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */; };
 		F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AC2362B41D00864279 /* Preset.swift */; };
 		F3C8E6AF2362B6CD00864279 /* PresetDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */; };
 		F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FCF232F9E5200134769 /* PlayVC.swift */; };
@@ -206,6 +207,7 @@
 		F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableSegumentControl.swift; sourceTree = "<group>"; };
 		F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableTableView.swift; sourceTree = "<group>"; };
 		F32B91FB23329A5C0031B062 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		F35F9B52237154E000BBB727 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F37990F32338DA3400AE0975 /* Bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bell.mp3; sourceTree = "<group>"; };
 		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F3A29D9823475D7C006E83B1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
@@ -226,7 +228,7 @@
 		F3C8E6A32361E73700864279 /* RequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEntity.swift; sourceTree = "<group>"; };
 		F3C8E6A52361E8CA00864279 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
 		F3C8E6A62361E8F500864279 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		F3C8E6AA2361F0A400864279 /* PresetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetResponse.swift; sourceTree = "<group>"; };
+		F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetResponse2.swift; sourceTree = "<group>"; };
 		F3C8E6AC2362B41D00864279 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
 		F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetDAO.swift; sourceTree = "<group>"; };
 		F3E25FCF232F9E5200134769 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
@@ -530,10 +532,11 @@
 		F3C8E69423615C3800864279 /* Entity */ = {
 			isa = PBXGroup;
 			children = (
-				F3C8E6A12361E70800864279 /* ResponseEntity.swift */,
 				F3C8E6A32361E73700864279 /* RequestEntity.swift */,
-				F3C8E6AA2361F0A400864279 /* PresetResponse.swift */,
+				F3C8E6A12361E70800864279 /* ResponseEntity.swift */,
+				F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */,
 				F3C8E6AC2362B41D00864279 /* Preset.swift */,
+				F35F9B52237154E000BBB727 /* MusicList.swift */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -907,6 +910,7 @@
 				F3C21BBD232F73E400546D5B /* SearchGroupVC+AVCaptureDelegate.swift in Sources */,
 				F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */,
 				F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */,
+				F35F9B53237154E000BBB727 /* MusicList.swift in Sources */,
 				F3225EFE2330AFCA00D9BD79 /* iTunesRSSModel.swift in Sources */,
 				F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */,
 				F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */,
@@ -922,7 +926,7 @@
 				F32B91B6233235900031B062 /* ResultTableCell.swift in Sources */,
 				589460F122855AAE00319032 /* CreateGroupVC.swift in Sources */,
 				F3E25FF0233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift in Sources */,
-				F3C8E6AB2361F0A400864279 /* PresetResponse.swift in Sources */,
+				F3C8E6AB2361F0A400864279 /* PresetResponse2.swift in Sources */,
 				F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */,
 				F3E25FE8233085DF00134769 /* FudaCollectionCell.swift in Sources */,
 				F3A29D9923475D7C006E83B1 /* Config.swift in Sources */,

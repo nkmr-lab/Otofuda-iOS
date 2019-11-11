@@ -33,12 +33,7 @@ final class PresetAPIModel {
 //                    seal.fulfill(data)
 //                case .failure:
 //                    seal.reject(InternalError.loadFileFailed)
-//                }
-//            }
-//        }
-//
-//
-//    }
+//       ////////////////////////////////////////////////
 
     func mapping(jsonStr: String) -> Promise<PresetResponse> {
         return Promise { seal in

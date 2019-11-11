@@ -1,10 +1,26 @@
 import UIKit
 import MediaPlayer
+import Alamofire
+import SwiftyJSON
 
 protocol TopProtocol {
     func requestAuth()
     func loadMusics()
 }
+
+struct iTunesTopRSSResponse: Codable {
+    var feed: iTunesTopRSSFeed
+}
+
+struct iTunesTopRSSFeed: Codable {
+    var results: [iTunesTopMusic]
+}
+
+struct iTunesTopMusic: Codable {
+    var artistName: String
+    var name: String
+}
+
 
 final class TopVC: UIViewController, TopProtocol {
 
@@ -14,6 +30,28 @@ final class TopVC: UIViewController, TopProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
         requestAuth()
+        Alamofire.request(Config.ITUNES_TOP_RSS_URL).responseJSON(completionHandler: { response in
+            guard let object = response.result.value else {
+                return
+            }
+
+            let jsonStr = JSON(object).rawString()!
+
+            print(jsonStr)
+            do {
+                let iTunesTopMusicList = try? JSONDecoder().decode(
+                    iTunesTopRSSResponse.self, from: jsonStr.data(using: .utf8)!
+                )
+                print(iTunesTopMusicList)
+            }
+            catch {
+
+            }
+
+
+
+
+        })
     }
 
     override func viewWillAppear(_ animated: Bool) {

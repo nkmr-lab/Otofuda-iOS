@@ -11,7 +11,7 @@ final class ResultVC: UIViewController, ResultProtocol {
     var room: Room!
 
     // 再生順
-    var playingMusics: [Music] = []
+    var playMusics: [Music] = []
 
     var player: MPMusicPlayerController!
 

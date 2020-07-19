@@ -2,12 +2,12 @@ import UIKit
 
 extension ResultVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return playingMusics.count
+        return playMusics.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 
-        let music = playingMusics[indexPath.row]
+        let music = playMusics[indexPath.row]
         let cell = playedMusicTableV.dequeueReusableCell(
             with: ResultTableCell.self,
             for: indexPath

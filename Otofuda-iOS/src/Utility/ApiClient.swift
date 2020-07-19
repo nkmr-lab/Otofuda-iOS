@@ -23,7 +23,7 @@ class ApiClient: ApiClientProtocol {
 
     var baseUrl: String
 
-    required init(_ baseUrl: String = Config.BASE_API_URL) {
+    required init(_ baseUrl: String = BASE_API_URL) {
         self.baseUrl = baseUrl
     }
 
@@ -41,8 +41,8 @@ class ApiClient: ApiClientProtocol {
         }
 
         return Single<T>.create { single in
-            let manager = SessionManager.default
-            let request = manager.request(requestUrl,
+//            let manager = SessionManager.default
+            let request = AF.request(requestUrl,
                                           method: .get,
                                           parameters: params,
                                           encoding: URLEncoding.default,

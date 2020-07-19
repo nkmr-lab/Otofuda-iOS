@@ -8,12 +8,11 @@ protocol Menurotocol {
 
 enum RulePoint: String {
     case normal  = "normal"
-    case othello = "othello"
+    case bingo = "bingo"
 }
 
 enum RulePlaying: String {
     case intro = "intro"
-    case sabi  = "sabi"
     case random = "random"
 }
 
@@ -50,8 +49,9 @@ final class MenuVC: UIViewController, Menurotocol {
 
     var selectedMusics: [Music] = []
     
-    var playingMusics: [Music] = []
-    var arrangeMusics: [Music] = []
+    var playMusics: [Music] = []
+
+    var cardLocations: [Int] = []
 
     var presets: [String] = []
 
@@ -75,9 +75,11 @@ final class MenuVC: UIViewController, Menurotocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        prepareUI()
 
-//        viewModel.
+        // 後のどのユーザの楽曲を使うか判断する時に使う
+        firebaseManager.post(path: room.url() + "musicCount/\(me.index)", value: haveMusics.count)
+
+        prepareUI()
 
         firstly {
             PresetAPIModel.shared.request()
@@ -85,11 +87,11 @@ final class MenuVC: UIViewController, Menurotocol {
             PresetAPIModel.shared.mapping(jsonStr: data)
        }.done { results in
             print("done")
-        for result in results.list {
-            self.presets.append(result.title)
-            self.presetPickerV.reloadAllComponents()
-        }
 
+            for result in results.list {
+                self.presets.append(result.title)
+                self.presetPickerV.reloadAllComponents()
+            }
        }.catch { error in
             print(error)
         }
@@ -100,7 +102,7 @@ final class MenuVC: UIViewController, Menurotocol {
         case 0:
             rulePoint = .normal
         case 1:
-            rulePoint = .othello
+            rulePoint = .bingo
         default:
             break
         }
@@ -112,8 +114,6 @@ final class MenuVC: UIViewController, Menurotocol {
         case 0:
             rulePlaying = .intro
         case 1:
-            rulePlaying = .sabi
-        case 2:
             rulePlaying = .random
         default:
             break
@@ -126,43 +126,46 @@ final class MenuVC: UIViewController, Menurotocol {
 
             // そもそも持ち曲が16曲以上なければ何もしない
             // TODO: セグエなのでリターンしただけでは強制的に遷移してしまうので今後改善
-            if haveMusics.count < Config.fudaMaxCount {
+            if haveMusics.count < CARD_MAX_COUNT {
                 print("16曲以下しかありません")
-               return
+                return
             }
+
+            // カードを並べる値をシャッフルする(左上から0,1,2...）
+            self.cardLocations = [Int](0..<CARD_MAX_COUNT)
+            cardLocations.shuffle()
+
+            firebaseManager.post(path: room.url() + "cardLocations", value: cardLocations)
             
             // 選択曲が16曲以下だったら水増しする
-            if selectedMusics.count < Config.fudaMaxCount {
+            if selectedMusics.count < CARD_MAX_COUNT {
                 let shuffledMusics = haveMusics.shuffled()
-                let diffCount = Config.fudaMaxCount - selectedMusics.count
+                let diffCount = CARD_MAX_COUNT - selectedMusics.count
                 for i in 0..<diffCount {
                     selectedMusics.append( shuffledMusics[i] )
                 }
             }
-                        
-            let shuffledTapleMusics = getShuffledMusic(selectedMusics: selectedMusics)
-            let playingMusics = shuffledTapleMusics.playingMusics
-            let arrangeMusics = shuffledTapleMusics.arrangeMusics
-            
+
+            // シャッフルして16曲に絞る
+            // TODO: みんなの楽曲にする
+            let shuffledMusic = selectedMusics.shuffled()[0..<CARD_MAX_COUNT]
+
             // FirebaseにPOST処理
-            var dictPlayingMusics: [Dictionary<String, Any>] = []
-            for music in playingMusics {
-                dictPlayingMusics.append(music.dict())
+            var sendPlayMusics: [Dictionary<String, Any>] = []
+
+            for music in shuffledMusic {
+                sendPlayMusics.append(music.dict())
+                playMusics.append(music)
             }
-            var dictArrangeMusics: [Dictionary<String, Any>] = []
-            for music in arrangeMusics {
-                dictArrangeMusics.append(music.dict())
-            }
-            firebaseManager.post(path: room.url() + "playingMusics", value: dictPlayingMusics)
-            firebaseManager.post(path: room.url() + "arrangeMusics", value: dictArrangeMusics)
+
+            firebaseManager.post(path: room.url() + "playMusics", value: sendPlayMusics)
             
             let nextVC = segue.destination as! PlayVC
             nextVC.room = room
-            nextVC.playingMusics = playingMusics
-            nextVC.arrangeMusics = arrangeMusics
             nextVC.isHost = self.isHost
+            nextVC.playMusics = playMusics
+            nextVC.cardLocations = cardLocations
             nextVC.me = me
-            
             room.status = .start
 
             firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
@@ -182,9 +185,9 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
         presets.count
     }
 
-//    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-//        return presets[row]
-//    }
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return presets[row]
+    }
 
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
 

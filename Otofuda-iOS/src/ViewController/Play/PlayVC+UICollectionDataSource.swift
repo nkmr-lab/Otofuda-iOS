@@ -2,24 +2,24 @@ import UIKit
 
 extension PlayVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return Config.fudaMaxCount
+        return CARD_MAX_COUNT
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(with: FudaCollectionCell.self,
                                                       for: indexPath)
-        cell.titleLabel.text = arrangeMusics[indexPath.row].name
-        let tappedMusic = arrangeMusics[indexPath.row]
+        cell.titleLabel.text = playMusics[cardLocations[indexPath.row]].name
+        let cellMusic = playMusics[cardLocations[indexPath.row]]
+        let owner = cellMusic.cardOwner ?? 0
 
-        if tappedMusic.isAnimating {
+        if cellMusic.isAnimating {
             cell.animate()
-            tappedMusic.isAnimating = false
+            cellMusic.isAnimating = false
         }
 
-        if tappedMusic.isTapped {
-            cell.backgroundV.backgroundColor = .red
+        if cellMusic.isTapped {
+            cell.backgroundV.backgroundColor = COLORS[owner]
             cell.titleLabel.textColor = .white
-            cell.soundTap()
         } else {
             cell.backgroundV.backgroundColor = .white
             cell.titleLabel.textColor = .black

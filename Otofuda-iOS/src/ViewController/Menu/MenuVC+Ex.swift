@@ -21,7 +21,7 @@ extension MenuVC {
                 switch pointRule {
                 case "normal":
                     self.pointSegument.selectedSegmentIndex = 0
-                case "othello":
+                case "bingo":
                     self.pointSegument.selectedSegmentIndex = 1
                 default:
                     break
@@ -30,10 +30,8 @@ extension MenuVC {
                 switch playingRule {
                 case "intro":
                     self.playingSegument.selectedSegmentIndex = 0
-                case "sabi":
-                    self.playingSegument.selectedSegmentIndex = 1
                 case "random":
-                    self.playingSegument.selectedSegmentIndex = 2
+                    self.playingSegument.selectedSegmentIndex = 1
                 default:
                     break
                 }
@@ -50,26 +48,23 @@ extension MenuVC {
                             print("fbRoomがありません")
                             return
                         }
-                        guard let fbPlayingMusics = fbRoom["playingMusics"] as? [Dictionary<String, Any>] else {
-                            print("fbPlayingMusicsがありません")
+                        guard let fbPlayMusics = fbRoom["playMusics"] as? [Dictionary<String, Any>] else {
+                            print(" fbPlayMusicsがありません")
                             return
                         }
-                        guard let fbArrangeMusics = fbRoom["arrangeMusics"] as? [Dictionary<String, Any>] else {
-                            print("fbArrangeMusicsがありません")
+                        guard let fbCardLocations = fbRoom["cardLocations"] as? [Int] else {
+                            print("fbCardLocationsがありません")
                             return
                         }
                         
-                        for fbPlayingMusic in fbPlayingMusics {
-                            let name = fbPlayingMusic["name"] as! String // TODO: タイトルがないときに落ちる
+                        for fbPlayMusic in fbPlayMusics {
+                            let name = fbPlayMusic["name"] as! String // TODO: タイトルがないときに落ちる
                             let music = Music(name: name, item: nil)
-                            self.playingMusics.append(music)
+                            self.playMusics.append(music)
                         }
-                        
-                        for fbArrangeMusic in fbArrangeMusics {
-                            let name = fbArrangeMusic["name"] as! String // TODO: タイトルがないときに落ちる
-                            let music = Music(name: name, item: nil)
-                            self.arrangeMusics.append(music)
-                        }
+
+                        self.cardLocations = fbCardLocations
+                
                         
                         self.goNextVC()
                     })
@@ -84,9 +79,9 @@ extension MenuVC {
         let nextVC = storyboard.instantiateInitialViewController() as! PlayVC
         nextVC.modalTransitionStyle = .crossDissolve
         nextVC.room = room
-        nextVC.isHost = self.isHost
-        nextVC.playingMusics = self.playingMusics
-        nextVC.arrangeMusics = self.arrangeMusics
+        nextVC.isHost = isHost
+        nextVC.playMusics = playMusics
+        nextVC.cardLocations = cardLocations
         nextVC.me = me
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
@@ -100,22 +95,6 @@ extension MenuVC {
         blockV.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         blockV.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
         blockV.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1.0).isActive = true
-    }
-    
-    func getShuffledMusic(selectedMusics: [Music]) -> (
-        playingMusics: [Music], arrangeMusics:[Music]) {
-            
-            let shuffledMusics = selectedMusics.shuffled()
-            var rangeMusics: [Music] = []
-            
-            for i in 0..<Config.fudaMaxCount {
-                rangeMusics.append(shuffledMusics[i])
-            }
-            
-            let playingMusics: [Music] = rangeMusics.shuffled()
-            let arrangeMusics: [Music] = rangeMusics.shuffled()
-        
-            return (playingMusics, arrangeMusics)
     }
     
 }

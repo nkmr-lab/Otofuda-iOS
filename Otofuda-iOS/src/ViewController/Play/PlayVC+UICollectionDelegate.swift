@@ -23,19 +23,18 @@ extension PlayVC: UICollectionViewDelegate {
         
         let cell = collectionView.dequeueReusableCell(with: FudaCollectionCell.self,
                                                       for: indexPath)
-        
-        let tappedMusic = arrangeMusics[indexPath.row]
 
-        let me = User(name: appDelegate.uuid, musics: [], color: .red)
+        let tappedMusic = playMusics[cardLocations[indexPath.row]]
+
         
         firebaseManager.observeSingle(path: room.url() + "tapped", completion: { snapshot in
             if var tappedDict = snapshot.value as? [Dictionary<String, Any>] {
-                let dict: Dictionary<String, Any> = ["user": me.dict(), "music": tappedMusic.name]
+                let dict: Dictionary<String, Any> = ["user": self.me.dict(), "music": tappedMusic.name]
                 tappedDict.append(dict)
                 self.firebaseManager.post(path: self.room.url() + "tapped", value: tappedDict)
             } else {
                 var tappedDict: [Dictionary<String, Any>] = []
-                let dict: Dictionary<String, Any> = ["user": me.dict(), "music": tappedMusic.name]
+                let dict: Dictionary<String, Any> = ["user": self.me.dict(), "music": tappedMusic.name]
                 tappedDict.append(dict)
                 self.firebaseManager.post(path: self.room.url() + "tapped", value: tappedDict)
             }
@@ -43,19 +42,23 @@ extension PlayVC: UICollectionViewDelegate {
             // 正解
             if tappedMusic.name == playingMusic.name {
                 self.firebaseManager.observeSingle(path: self.room.url() + "answearUser", completion: { snapshot2 in
-                    if let answearUser = snapshot2.value as? Dictionary<String, Any> {
-                        // なにもしない
+                    if let answearUser = snapshot2.value as? Dictionary<Int, Double> {
+                        // もう正解者がいた場合はなにもしない
                         return
                     }
                     else {
                         self.room.status = .next
                         self.firebaseManager.post(path: self.room.url() + "status", value: self.room.status.rawValue)
-                        tappedMusic.isAnimating = true
-                        tappedMusic.isTapped = true
-                        cell.soundTap()
-                        cell.animate()
-                        collectionView.reloadItems(at: [indexPath])
-                        self.firebaseManager.post(path: self.room.url() + "answearUser", value: me.dict())
+//                        tappedMusic.cardOwner = self.me.index
+//                        tappedMusic.isAnimating = true
+//                        tappedMusic.isTapped = true
+                        self.tapSoundPlayer?.play()
+//                        cell.animate()
+//                        collectionView.reloadItems(at: [indexPath])
+
+                        let nowTime = NSDate().timeIntervalSince1970
+                        // TODO: 時間情報を書き込み
+                        self.firebaseManager.post(path: self.room.url() + "answearUser/\(self.me.index)", value: ["time": nowTime, "userIndex": self.me.index])
                     }
                 })
             }
@@ -69,7 +72,7 @@ extension PlayVC: UICollectionViewDelegate {
         })
 
         // 終了判定
-        if currentIndex == Config.fudaMaxCount - 1 {
+        if currentIndex == CARD_MAX_COUNT - 1 {
             finishGame()
         }
 

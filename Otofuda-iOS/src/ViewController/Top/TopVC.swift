@@ -2,6 +2,7 @@ import UIKit
 import MediaPlayer
 import Alamofire
 import SwiftyJSON
+import FirebaseAuth
 
 protocol TopProtocol {
     func requestAuth()
@@ -29,29 +30,34 @@ final class TopVC: UIViewController, TopProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         requestAuth()
-        Alamofire.request(Config.ITUNES_TOP_RSS_URL).responseJSON(completionHandler: { response in
-            guard let object = response.result.value else {
-                return
-            }
 
-            let jsonStr = JSON(object).rawString()!
+// 認証は結局使わなそうなので
+//        Auth.auth().signInAnonymously(completion: { (authResult, error) in
+//            if let e = error {
+//                print(e)
+//                print("login error")
+//                return
+//            }
+//            print(authResult?.)
+//        })
 
-            print(jsonStr)
-            do {
-                let iTunesTopMusicList = try? JSONDecoder().decode(
-                    iTunesTopRSSResponse.self, from: jsonStr.data(using: .utf8)!
-                )
-                print(iTunesTopMusicList)
-            }
-            catch {
-
-            }
-
-
-
-
-        })
+//        AF.request(Config.ITUNES_TOP_RSS_URL).responseJSON(completionHandler: { response in
+//
+//            let jsonStr = JSON(response.data).rawString()!
+//
+//            print(jsonStr)
+//            do {
+//                let iTunesTopMusicList = try? JSONDecoder().decode(
+//                    iTunesTopRSSResponse.self, from: jsonStr.data(using: .utf8)!
+//                )
+//                print(iTunesTopMusicList)
+//            }
+//            catch {
+//
+//            }
+//        })
     }
 
     override func viewWillAppear(_ animated: Bool) {

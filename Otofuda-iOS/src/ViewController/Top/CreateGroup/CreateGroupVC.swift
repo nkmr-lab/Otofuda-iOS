@@ -28,10 +28,12 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        // TODO: ネットワークに繋がっているかの確認をラベルで表示
+
         let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let myColor: MyColor = Config.colors[0]
-        me = User(name: appDelegate.uuid, musics: [], color: myColor)
+        let myColor: UIColor = COLORS[0]
+        me = User(index: 0, name: appDelegate.uuid, color: myColor)
 
         let roomId = createGroup()
         generateQRCode(name: roomId)
@@ -55,6 +57,7 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
         nextVC.haveMusics = self.haveMusics
         nextVC.me = me
         removeObserveMember()
+
     }
     
     

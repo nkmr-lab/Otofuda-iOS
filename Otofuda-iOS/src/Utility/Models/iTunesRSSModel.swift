@@ -11,7 +11,7 @@ final class iTunesRSSModel {
         let url = "https://rss.itunes.apple.com/api/v1/jp/itunes-music/top-songs/all/100/explicit.json"
 
         return Promise { seal in
-            Alamofire.request(url).responseString { response in
+            AF.request(url).responseString { response in
                 switch response.result {
                 case .success(let data):
                     seal.fulfill(data)

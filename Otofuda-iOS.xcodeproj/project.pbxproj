@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		01B1B9FF299F1F7AFCE10DB1 /* Pods_Otofuda_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CDC4134202E14425297323 /* Pods_Otofuda_iOSUITests.framework */; };
-		5880D37C22B4928700F40959 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5880D37B22B4928700F40959 /* FirebaseCore.framework */; };
 		589460D522852E9500319032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460D422852E9500319032 /* AppDelegate.swift */; };
 		589460D722852E9500319032 /* TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460D622852E9500319032 /* TopVC.swift */; };
 		589460DC22852E9500319032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589460DB22852E9500319032 /* Assets.xcassets */; };
@@ -21,7 +20,6 @@
 		F308114B233325BB009E7726 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308114A233325BB009E7726 /* SplashVC.swift */; };
 		F308114D233325C6009E7726 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F308114C233325C6009E7726 /* Splash.storyboard */; };
 		F308114F23332CAA009E7726 /* MuteAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308114E23332CAA009E7726 /* MuteAlertVC.swift */; };
-		F30811542333320B009E7726 /* MyColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811532333320B009E7726 /* MyColor.swift */; };
 		F308115623335E48009E7726 /* MenuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308115523335E48009E7726 /* MenuVC+Ex.swift */; };
 		F308115F233516A2009E7726 /* mute_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = F308115E233516A2009E7726 /* mute_animation.json */; };
 		F30811692335C937009E7726 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811682335C937009E7726 /* Date+Ex.swift */; };
@@ -41,11 +39,6 @@
 		F3225F092330AFF300D9BD79 /* iTunesPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */; };
 		F3225F0C2330B01D00D9BD79 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F0A2330B01D00D9BD79 /* SearchResultCell.swift */; };
 		F3225F0D2330B01D00D9BD79 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */; };
-		F3225F132330B25400D9BD79 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F0E2330B25400D9BD79 /* Alamofire.framework */; };
-		F3225F142330B25400D9BD79 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F0F2330B25400D9BD79 /* SwiftyJSON.framework */; };
-		F3225F152330B25400D9BD79 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F102330B25400D9BD79 /* PromiseKit.framework */; };
-		F3225F162330B25400D9BD79 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F112330B25400D9BD79 /* ObjectMapper.framework */; };
-		F3225F172330B25400D9BD79 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F122330B25400D9BD79 /* AlamofireImage.framework */; };
 		F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */ = {isa = PBXBuildFile; fileRef = F32B91A823320BF80031B062 /* tap_fuda.caf */; };
 		F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91AB233231FD0031B062 /* ResultVC.swift */; };
 		F32B91AE233232660031B062 /* ResultVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91AD233232660031B062 /* ResultVC+UICollectionDelegate.swift */; };
@@ -58,11 +51,12 @@
 		F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */; };
 		F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */; };
 		F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91FB23329A5C0031B062 /* IBDesignableView.swift */; };
+		F35ED14424B45EAD00727207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED14324B45EAD00727207 /* Constants.swift */; };
+		F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17024B6C68200727207 /* GoogleService-Info.plist */; };
+		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
+		F35ED17524B74CD200727207 /* Bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17424B74CD200727207 /* Bell.mp3 */; };
 		F35F9B53237154E000BBB727 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F9B52237154E000BBB727 /* MusicList.swift */; };
-		F37990F42338DA3400AE0975 /* Bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F37990F32338DA3400AE0975 /* Bell.mp3 */; };
 		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
-		F3A29D9923475D7C006E83B1 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3A29D9823475D7C006E83B1 /* Config.swift */; };
-		F3C21BB4232F6D8D00546D5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
 		F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB8232F711300546D5B /* UIImage+Ex.swift */; };
 		F3C21BBB232F738F00546D5B /* SearchGropuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BBA232F738F00546D5B /* SearchGropuVC+Ex.swift */; };
@@ -77,8 +71,6 @@
 		F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69F2361901F00864279 /* PresetAPIModel.swift */; };
 		F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A12361E70800864279 /* ResponseEntity.swift */; };
 		F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A32361E73700864279 /* RequestEntity.swift */; };
-		F3C8E6A72361E8F500864279 /* RxSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3C8E6A62361E8F500864279 /* RxSwift.framework */; };
-		F3C8E6A82361E8F500864279 /* RxSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F3C8E6A62361E8F500864279 /* RxSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F3C8E6AB2361F0A400864279 /* PresetResponse2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */; };
 		F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AC2362B41D00864279 /* Preset.swift */; };
 		F3C8E6AF2362B6CD00864279 /* PresetDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */; };
@@ -127,17 +119,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F3C8E6A92361E8F500864279 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F3C8E6A82361E8F500864279 /* RxSwift.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -166,7 +147,6 @@
 		F308114C233325C6009E7726 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		F308114E23332CAA009E7726 /* MuteAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteAlertVC.swift; sourceTree = "<group>"; };
 		F308115223333081009E7726 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		F30811532333320B009E7726 /* MyColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyColor.swift; sourceTree = "<group>"; };
 		F308115523335E48009E7726 /* MenuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+Ex.swift"; sourceTree = "<group>"; };
 		F308115E233516A2009E7726 /* mute_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mute_animation.json; sourceTree = "<group>"; };
 		F30811682335C937009E7726 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
@@ -207,11 +187,12 @@
 		F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableSegumentControl.swift; sourceTree = "<group>"; };
 		F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableTableView.swift; sourceTree = "<group>"; };
 		F32B91FB23329A5C0031B062 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		F35ED14324B45EAD00727207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F35ED17024B6C68200727207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F35ED17424B74CD200727207 /* Bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bell.mp3; sourceTree = "<group>"; };
 		F35F9B52237154E000BBB727 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
-		F37990F32338DA3400AE0975 /* Bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bell.mp3; sourceTree = "<group>"; };
 		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
-		F3A29D9823475D7C006E83B1 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
-		F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB8232F711300546D5B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BBA232F738F00546D5B /* SearchGropuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchGropuVC+Ex.swift"; sourceTree = "<group>"; };
@@ -254,13 +235,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3225F132330B25400D9BD79 /* Alamofire.framework in Frameworks */,
-				F3225F142330B25400D9BD79 /* SwiftyJSON.framework in Frameworks */,
-				F3225F152330B25400D9BD79 /* PromiseKit.framework in Frameworks */,
-				F3225F162330B25400D9BD79 /* ObjectMapper.framework in Frameworks */,
-				F3C8E6A72361E8F500864279 /* RxSwift.framework in Frameworks */,
-				F3225F172330B25400D9BD79 /* AlamofireImage.framework in Frameworks */,
-				5880D37C22B4928700F40959 /* FirebaseCore.framework in Frameworks */,
 				ABB34FFD4B8DD80A5EAA9C01 /* Pods_Otofuda_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,11 +331,11 @@
 			children = (
 				F308115223333081009E7726 /* Bridging-Header.h */,
 				589460DB22852E9500319032 /* Assets.xcassets */,
-				F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */,
 				589460E022852E9500319032 /* Info.plist */,
 				F32B91A823320BF80031B062 /* tap_fuda.caf */,
 				F308115E233516A2009E7726 /* mute_animation.json */,
-				F37990F32338DA3400AE0975 /* Bell.mp3 */,
+				F35ED17024B6C68200727207 /* GoogleService-Info.plist */,
+				F35ED17424B74CD200727207 /* Bell.mp3 */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -370,7 +344,8 @@
 			isa = PBXGroup;
 			children = (
 				589460D422852E9500319032 /* AppDelegate.swift */,
-				F3A29D9823475D7C006E83B1 /* Config.swift */,
+				F35ED17224B744E400727207 /* SceneDelegate.swift */,
+				F35ED14324B45EAD00727207 /* Constants.swift */,
 				F3C8E69223615BCE00864279 /* ViewController */,
 				F3C8E69023615BAB00864279 /* ViewModel */,
 				F3C8E69323615C2300864279 /* UseCase */,
@@ -484,7 +459,6 @@
 				F3C21BBF232F809100546D5B /* Room.swift */,
 				F3C21BC1232F80EF00546D5B /* User.swift */,
 				F3C21BC3232F9C4F00546D5B /* Music.swift */,
-				F30811532333320B009E7726 /* MyColor.swift */,
 				F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */,
 				F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */,
 				F3C8E69F2361901F00864279 /* PresetAPIModel.swift */,
@@ -609,9 +583,6 @@
 				589460CF22852E9500319032 /* Resources */,
 				787488BFDB152AFD921AF178 /* [CP] Embed Pods Frameworks */,
 				F3225F182330B26200D9BD79 /* CopyFiles */,
-				F3225F192330B26400D9BD79 /* ShellScript */,
-				F3081157233392D9009E7726 /* ShellScript */,
-				F3C8E6A92361E8F500864279 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -710,9 +681,9 @@
 			files = (
 				F308115F233516A2009E7726 /* mute_animation.json in Resources */,
 				F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */,
+				F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */,
 				F3E25FE6233085B600134769 /* FudaCollectionCell.xib in Resources */,
 				F3E25FDB232F9FF800134769 /* Menu.storyboard in Resources */,
-				F37990F42338DA3400AE0975 /* Bell.mp3 in Resources */,
 				F32B91B2233233C00031B062 /* Result.storyboard in Resources */,
 				F3225F092330AFF300D9BD79 /* iTunesPicker.storyboard in Resources */,
 				F3225F0D2330B01D00D9BD79 /* SearchResultCell.xib in Resources */,
@@ -720,8 +691,8 @@
 				589460DC22852E9500319032 /* Assets.xcassets in Resources */,
 				589460EB2285367300319032 /* Top.storyboard in Resources */,
 				F3C8E69823615F0100864279 /* Play.storyboard in Resources */,
+				F35ED17524B74CD200727207 /* Bell.mp3 in Resources */,
 				F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */,
-				F3C21BB4232F6D8D00546D5B /* GoogleService-Info.plist in Resources */,
 				F308114D233325C6009E7726 /* Splash.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -826,47 +797,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F3081157233392D9009E7726 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# if which swiftlint >/dev/null; then\n#swiftlint autocorrect --format\n#swiftlint\n#else\n#echo \"warning: SwiftLint not installed, download from #https://github.com/realm/SwiftLint\"\n#fi\n";
-		};
-		F3225F192330B26400D9BD79 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/RxSwift.framework",
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -913,8 +843,8 @@
 				F35F9B53237154E000BBB727 /* MusicList.swift in Sources */,
 				F3225EFE2330AFCA00D9BD79 /* iTunesRSSModel.swift in Sources */,
 				F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */,
+				F35ED14424B45EAD00727207 /* Constants.swift in Sources */,
 				F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */,
-				F30811542333320B009E7726 /* MyColor.swift in Sources */,
 				F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */,
 				589460F722867A4800319032 /* FirebaseManager.swift in Sources */,
 				F3225EFD2330AFCA00D9BD79 /* iTunesAPIModel.swift in Sources */,
@@ -928,8 +858,8 @@
 				F3E25FF0233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift in Sources */,
 				F3C8E6AB2361F0A400864279 /* PresetResponse2.swift in Sources */,
 				F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */,
+				F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */,
 				F3E25FE8233085DF00134769 /* FudaCollectionCell.swift in Sources */,
-				F3A29D9923475D7C006E83B1 /* Config.swift in Sources */,
 				F32B91BA2332434B0031B062 /* ResultVC+Ex.swift in Sources */,
 				F3E25FE42330856300134769 /* UITable+Ex.swift in Sources */,
 				F3C21BC0232F809100546D5B /* Room.swift in Sources */,
@@ -1024,7 +954,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -1080,7 +1010,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -1097,7 +1027,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S26A4W8VSZ;
+				DEVELOPMENT_TEAM = T8YPT438X6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
@@ -1130,7 +1060,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S26A4W8VSZ;
+				DEVELOPMENT_TEAM = T8YPT438X6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

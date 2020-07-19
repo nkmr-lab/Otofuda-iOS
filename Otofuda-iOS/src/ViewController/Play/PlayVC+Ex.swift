@@ -1,5 +1,6 @@
 import UIKit
 import MediaPlayer
+import Firebase
 
 extension PlayVC {
 
@@ -18,15 +19,6 @@ extension PlayVC {
     }
     
     func initializeUI(){
-        let myColor = me.color
-        switch myColor {
-        case .red:
-            myColorV.backgroundColor = .red
-        case .blue:
-            myColorV.backgroundColor = .blue
-        default:
-            break
-        }
         startBtn.isHidden = !isHost
     }
 
@@ -37,8 +29,19 @@ extension PlayVC {
     }
 
     func initializePlayer() {
-        self.player = .applicationMusicPlayer
-        self.player.repeatMode = .none
+        self.player = .applicationQueuePlayer
+        self.player.repeatMode = .one
+    }
+
+    func initializeTapSoundPlayer() {
+        do {
+            tapSoundPlayer = try AVAudioPlayer(
+                contentsOf: Bundle.main.url(forResource: "tap_fuda",
+                                            withExtension: "caf")!)
+            tapSoundPlayer!.prepareToPlay()
+        } catch {
+            print(error)
+        }
     }
 
     func playMusic() {
@@ -46,7 +49,7 @@ extension PlayVC {
 //        player = nil
         initializePlayer()
 //        print( playingMusics[currentIndex].item.title )
-        player.setMusic(item: playingMusics[currentIndex].item!)
+        player.setMusic(item: playMusics[currentIndex].item!)
         player.play()
     }
 
@@ -60,7 +63,7 @@ extension PlayVC {
         let storyboard = UIStoryboard(name: "Result", bundle: nil)
         let nextVC = storyboard.instantiateInitialViewController() as! ResultVC
         nextVC.room = room
-        nextVC.playingMusics = self.playingMusics
+        nextVC.playMusics = self.playMusics
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -98,9 +101,9 @@ extension PlayVC {
                 setupStartBtn(isEnabled: false)
                 firebaseManager.post(path: room.url() + "currentIndex", value: currentIndex)
                 observeTapped()
-                observeAnswearUser()
             }
-            playingMusic = playingMusics[currentIndex]
+            observeAnswearUser()
+            playingMusic = playMusics[currentIndex]
             
             navigationItem.title = String(currentIndex + 1) + "曲目"
             currentIndex += 1
@@ -136,7 +139,6 @@ extension PlayVC {
             if tappedDict.count == self.room.member.count {
                 self.room.status = .next
                 self.firebaseManager.post(path: self.room.url() + "status", value: self.room.status.rawValue)
-                self.room.status = .next
                 self.setupStartBtn(isEnabled: true)
                 self.isPlaying = false
                 self.isTapped = false
@@ -146,15 +148,43 @@ extension PlayVC {
     
     func observeAnswearUser(){
         firebaseManager.observe(path: room.url() + "answearUser", completion: { snapshot in
-            guard let answearUser = snapshot.value as? Dictionary<String, Any> else {
+
+            if snapshot.children.allObjects.count == 0 {
+                print("ああああああああああ")
                 return
             }
+            
+            var fastestUser: Int = -1
+            var fastestTime: Double = 100000000000
+
+            for item in snapshot.children {
+                let snapshot = item as! DataSnapshot
+                let dict = snapshot.value as! [String: Any]
+
+                let userIndex = dict["userIndex"] as! Int
+                let time = dict["time"] as! Double
+
+                if time < fastestTime {
+                    fastestUser = userIndex
+                    fastestTime = time
+                }
+            }
+
+
+            print("fastestUser!!!!!=", fastestUser)
+
+            // タップされた札の色をanswearUserにする
+            let currentMusic = self.playMusics[self.currentIndex - 1]
+            currentMusic.cardOwner = fastestUser
+            currentMusic.isTapped = true
+            currentMusic.isAnimating = true
+            self.fudaCollectionV.reloadData()
+
             self.room.status = .next
             self.firebaseManager.deleteObserve(path: self.room.url() + "answearUser")
             self.setupStartBtn(isEnabled: true)
             self.isPlaying = false
             self.isTapped = false
-
         })
     }
     

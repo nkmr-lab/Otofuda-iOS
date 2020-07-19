@@ -1,7 +1,0 @@
-github "Alamofire/Alamofire"
-github "Alamofire/AlamofireImage"
-github "SwiftyJSON/SwiftyJSON"
-github "mxcl/PromiseKit"
-github "Hearst-DD/ObjectMapper"
-github "airbnb/lottie-ios" "master"
-github "ReactiveX/RxSwift"

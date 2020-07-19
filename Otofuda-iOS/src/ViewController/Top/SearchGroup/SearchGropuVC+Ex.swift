@@ -68,7 +68,7 @@ extension SearchGroupVC: SearchGroupProtocol {
                     self.isMatching = true
                 } else {
                     if var member = snapshot.value as? [String] {
-                        self.me = User(name: self.appDelegate.uuid, musics: [], color: Config.colors[ member.count-1])
+                        self.me = User(index: member.count, name: self.appDelegate.uuid, color: COLORS[ member.count])
                         member.append( self.appDelegate.uuid )
                         self.firebaseManager.post(path: room.url() + "member", value: member)
                         self.goNextVC(room: room) // FIXME: 🐛たまに重複してnavigationに追加されることがある(9/26時点）
@@ -111,16 +111,14 @@ extension SearchGroupVC: SearchGroupProtocol {
                           let member = roomDict["member"] as? [String] else {
                             continue
                     }
-                    
+
+                    // FIXME: これ使わないのにやる意味あるのかわからんくなった
                     var users: [User] = []
-                    var index = 0
-                    for user in member {
-                        users.append( User(name: user, musics: [], color: Config.colors[index]) )
-                        index += 1
+                    for (index, user) in member.enumerated() {
+                        users.append( User(index: index, name: user, color: COLORS[index]) )
                     }
                     
                     self.rooms.append(Room(name: roomName, member: users))
-                    print("はいったあああああ")
                 }
             }
         })

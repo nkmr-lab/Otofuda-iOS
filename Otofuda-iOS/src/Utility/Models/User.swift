@@ -1,13 +1,17 @@
 import Foundation
+import UIKit
 
 struct User {
+
+    var index: Int
+
     var name: String!
-    var musics: [Music]
-    var color: MyColor!
+
+    var color: UIColor
 
     func dict() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
-        dict = ["name": name, "musics": "musics", "color": color.rawValue]
+        dict = ["name": name]
         return dict
     }
 }

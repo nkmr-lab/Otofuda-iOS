@@ -13,7 +13,7 @@ final class iTunesAPIModel {
         let url = "http://itunes.apple.com/search?term=\(encKeyword)&country=JP&lang=ja_jp&media=music&entity=song&attribute=\(attribute)&limit=30"
 
         return Promise { seal in
-            Alamofire.request(url).responseString { response in
+            AF.request(url).responseString { response in
                 switch response.result {
                 case .success(let data):
                     seal.fulfill(data)

@@ -9,25 +9,6 @@ final class FudaCollectionCell: UICollectionViewCell {
 
     var isAnimating = false
 
-    var tapSoundPlayer: AVAudioPlayer?
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        do {
-            tapSoundPlayer = try AVAudioPlayer(
-                contentsOf: Bundle.main.url(forResource: "tap_fuda",
-                                            withExtension: "caf")!)
-            tapSoundPlayer!.prepareToPlay()
-        } catch {
-            print(error)
-        }
-    }
-
-    func soundTap() {
-        tapSoundPlayer!.volume = 1.0
-        tapSoundPlayer!.play()
-    }
-
     func animate() {
         let rotationAnimation = CABasicAnimation(keyPath: "transform.rotation.z")
         rotationAnimation.toValue = CGFloat(Double.pi / 180) * 360

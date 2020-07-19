@@ -23,17 +23,13 @@ final class PlayVC: UIViewController, PlayProtocol {
 
     var me: User!
 
-    // 再生順
-    var playingMusics: [Music] = []
-    // 並び順
-    var arrangeMusics: [Music] = []
-
     // 再生されている曲
     var playingMusic: Music!
 
     var currentIndex: Int = 0
 
     var player: MPMusicPlayerController!
+    var tapSoundPlayer: AVAudioPlayer?
 
     var firebaseManager = FirebaseManager()
     
@@ -46,6 +42,9 @@ final class PlayVC: UIViewController, PlayProtocol {
     
     var countdownTimer: Timer!
     var count = 0
+
+    var playMusics: [Music] = []
+    var cardLocations: [Int] = []
     
     @IBOutlet var countdownV: UIView!
     
@@ -63,19 +62,40 @@ final class PlayVC: UIViewController, PlayProtocol {
             fudaCollectionV.dataSource = self
             fudaCollectionV.register(cellType: FudaCollectionCell.self)
             fudaCollectionV.backgroundColor = .white
+            let layout = UICollectionViewFlowLayout()
+            let m = CARD_LAYOUT_MARGIN
+            layout.sectionInset = UIEdgeInsets(top: m, left: m, bottom: m, right: m)
+            layout.minimumInteritemSpacing = m
+            layout.minimumLineSpacing = m
+            fudaCollectionV.collectionViewLayout = layout
         }
     }
     @IBOutlet weak var myColorV: UIView! {
         didSet {
-
+            myColorV.backgroundColor = me.color
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        fudaCollectionV.reloadData()
+
+        // 楽曲を止めずに効果音を鳴らすようにするために必要
+        let audioSession = AVAudioSession.sharedInstance()
+
+        do {
+            try audioSession.setCategory(.ambient)
+        } catch {
+            print("error:", error)
+        }
+        
+        print(audioSession.category.rawValue)
+
         initializeUI()
         initializeVoice()
         initializePlayer()
+        initializeTapSoundPlayer()
         setupStartBtn(isEnabled: true)
         navigationItem.title = "1曲目"
         self.fudaCollectionV.reloadData()
@@ -95,7 +115,7 @@ final class PlayVC: UIViewController, PlayProtocol {
             player.stop()
         }
         
-        if  currentIndex > playingMusics.count - 1 {
+        if  currentIndex > CARD_MAX_COUNT {
             return
         }
         

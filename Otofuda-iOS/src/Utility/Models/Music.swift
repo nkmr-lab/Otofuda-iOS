@@ -12,6 +12,8 @@ class Music: NSObject {
     var avPlayer: AVPlayer!
     var mpmediaPlayer: AVPlayer!
     var type: MusicType = .mpmedia
+    var musicOwner: Int!
+    var cardOwner: Int!
 
     init(name: String, item: MPMediaItem!) {
         self.name = name
@@ -20,7 +22,7 @@ class Music: NSObject {
 
     func dict() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
-        dict = ["name": name ?? "なし", "artist": item.artist ?? "なし", "genere": item.genre ?? "なし", "previewURL": previewURL]
+        dict = ["name": name ?? "なし", "artist": item.artist ?? "なし", "previewURL": previewURL]
         return dict
     }
 

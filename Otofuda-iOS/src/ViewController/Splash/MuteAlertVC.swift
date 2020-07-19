@@ -6,13 +6,15 @@ class MuteAlertVC: UIViewController {
 
     var timer: Timer!
     
-    let displayTime = 5.0 // FIXME: 普段は3秒ぐらい
+    let displayTime = 3.0 // FIXME: 普段は3秒ぐらい
     
     let animationSize = CGSize(width: 200, height: 200)
 
     @IBOutlet weak var muteAnimationV: UIView!
     
     var bellPlayer: AVAudioPlayer?
+
+    let audioSession = AVAudioSession.sharedInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,10 @@ class MuteAlertVC: UIViewController {
             bellPlayer!.volume = 1.0
             bellPlayer!.play()
             bellPlayer!.numberOfLoops = 3
+
+            // マナーモードでも音を鳴らすようにする
+            try audioSession.setCategory(.playAndRecord)
+            
         } catch {
             print(error)
         }

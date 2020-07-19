@@ -6,7 +6,7 @@ extension ResultVC: UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let selectedMusic = playingMusics[indexPath.row]
+        let selectedMusic = playMusics[indexPath.row]
         playMusic(music: selectedMusic)
     }
 

@@ -34,9 +34,9 @@ extension CreateGroupVC {
             for i in 0..<member.count {
                 let user = member[i]
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-                let myColor = Config.colors[i]
+                let myColor = COLORS[i]
                 
-                wself.member.append(User(name: user, musics: [], color: myColor))
+                wself.member.append(User(index: i, name: user, color: myColor))
             }
         })
     }

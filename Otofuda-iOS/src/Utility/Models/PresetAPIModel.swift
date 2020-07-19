@@ -8,12 +8,13 @@ final class PresetAPIModel {
 
     func request() -> Promise<String> {
 
-        let url = Config.PRESET_LIST_API_URL
+        let url = PRESET_LIST_API_URL
 
         return Promise { seal in
-            Alamofire.request(url).responseString { response in
+            AF.request(url).responseString { response in
                 switch response.result {
                 case .success(let data):
+                    print(data)
                     seal.fulfill(data)
                 case .failure:
                     seal.reject(InternalError.loadFileFailed)

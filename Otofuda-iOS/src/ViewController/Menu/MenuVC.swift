@@ -77,7 +77,7 @@ final class MenuVC: UIViewController, Menurotocol {
         super.viewDidLoad()
 
         // 後のどのユーザの楽曲を使うか判断する時に使う
-        firebaseManager.post(path: room.url() + "musicCount/\(me.index)", value: haveMusics.count)
+        firebaseManager.post(path: room.url() + "musicCounts/\(me.index)", value: haveMusics.count)
 
         prepareUI()
 
@@ -130,6 +130,27 @@ final class MenuVC: UIViewController, Menurotocol {
                 print("16曲以下しかありません")
                 return
             }
+
+            // 誰の曲を使うかを楽曲所持数に応じて決める
+            var selectedPlayers: [Int] = []
+            firebaseManager.observeSingle(path: room.url() + "musicCounts", completion: { snapshot in
+                if var musicCounts = snapshot.value as? [Int] {
+                    while self.selectedMusics.count < CARD_MAX_COUNT {
+                        // TODO: 所持数が0の人ばっかだと処理時間が長くなってしまうので要改善
+                        let selectedPlayer = Int.random(in: 0..<musicCounts.count)
+                        // 残りの楽曲所持数が1曲以上あったら
+                        if musicCounts[selectedPlayer] > 0 {
+                            // 一曲減らす
+                            musicCounts[selectedPlayer] = musicCounts[selectedPlayer] - 1
+                            // その人を追加してあげる
+                            selectedPlayers.append(selectedPlayer)
+                        }
+                    }
+
+                    self.firebaseManager.post(path: self.room.url() + "selectedPlayers", value: selectedPlayers)
+
+                }
+            })
 
             // カードを並べる値をシャッフルする(左上から0,1,2...）
             self.cardLocations = [Int](0..<CARD_MAX_COUNT)

@@ -48,6 +48,8 @@ final class PlayVC: UIViewController, PlayProtocol {
     
     @IBOutlet var countdownV: UIView!
     
+    @IBOutlet var tapErrorV: UIView!
+    
     @IBOutlet weak var countdownLabel: UILabel!
     
     @IBOutlet weak var startBtn: UIButton! {
@@ -103,6 +105,9 @@ final class PlayVC: UIViewController, PlayProtocol {
         if !isHost {
             observeRoomStatus()
         }
+
+        observeAnswearUser()
+        
     }
 
     deinit {
@@ -122,7 +127,8 @@ final class PlayVC: UIViewController, PlayProtocol {
         room.status = .play
         firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
         firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
-        firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+//        firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+        firebaseManager.deleteAllValue(path: room.url() + "answearUser")
         
         displayCountdownV()
         fireTimer()

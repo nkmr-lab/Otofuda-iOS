@@ -87,6 +87,16 @@ extension PlayVC {
         countdownV.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.5).isActive = true
         countdownV.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.1).isActive = true
     }
+
+    func displayErrorV(){
+        tapErrorV.frame = tapErrorV.frame
+        tapErrorV.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(tapErrorV)
+        tapErrorV.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        tapErrorV.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        tapErrorV.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.4).isActive = true
+        tapErrorV.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.05).isActive = true
+    }
     
     @objc func countdown(){
         countdownLabel.text = String(3 - count)
@@ -102,7 +112,8 @@ extension PlayVC {
                 firebaseManager.post(path: room.url() + "currentIndex", value: currentIndex)
                 observeTapped()
             }
-            observeAnswearUser()
+            tapErrorV.removeFromSuperview()
+//            observeAnswearUser()
             playingMusic = playMusics[currentIndex]
             
             navigationItem.title = String(currentIndex + 1) + "曲目"
@@ -142,6 +153,12 @@ extension PlayVC {
                 self.setupStartBtn(isEnabled: true)
                 self.isPlaying = false
                 self.isTapped = false
+
+                // TODO: observeしてるのがホストだけなので，終了処理がホストだけしか呼ばれてない
+                // 終了判定
+                if self.currentIndex == CARD_MAX_COUNT  {
+                    self.finishGame()
+                }
             }
         })
     }
@@ -181,10 +198,15 @@ extension PlayVC {
             self.fudaCollectionV.reloadData()
 
             self.room.status = .next
-            self.firebaseManager.deleteObserve(path: self.room.url() + "answearUser")
+//            self.firebaseManager.deleteObserve(path: self.room.url() + "answearUser")
             self.setupStartBtn(isEnabled: true)
             self.isPlaying = false
             self.isTapped = false
+
+            // 終了判定
+            if self.currentIndex == CARD_MAX_COUNT  {
+                self.finishGame()
+            }
         })
     }
     

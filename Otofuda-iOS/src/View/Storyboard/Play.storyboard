@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gcc-YW-FNL">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gcc-YW-FNL">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -154,6 +154,7 @@
                         <outlet property="fudaCollectionV" destination="jnl-b9-xB2" id="qjU-Up-aX7"/>
                         <outlet property="myColorV" destination="lUq-yl-PKp" id="XHG-Ew-7Db"/>
                         <outlet property="startBtn" destination="CLv-Zx-blv" id="C2B-3J-6SI"/>
+                        <outlet property="tapErrorV" destination="I8b-nt-6ec" id="I1E-Sy-5hF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCF-X2-AyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -162,8 +163,8 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bTd-Et-S9W">
-                            <rect key="frame" x="80" y="43.5" width="80.5" height="41"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="34"/>
+                            <rect key="frame" x="75" y="43.5" width="90" height="41"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="34"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
@@ -183,6 +184,24 @@
                         </userDefinedRuntimeAttribute>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
                     </userDefinedRuntimeAttributes>
+                </view>
+                <view contentMode="scaleToFill" id="I8b-nt-6ec">
+                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="お手つき!!!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1X-GV-ro1">
+                            <rect key="frame" x="45.5" y="46.5" width="149" height="35"/>
+                            <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="29"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.59999999999999998" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="N1X-GV-ro1" firstAttribute="centerX" secondItem="I8b-nt-6ec" secondAttribute="centerX" id="n4e-9G-dnw"/>
+                        <constraint firstItem="N1X-GV-ro1" firstAttribute="centerY" secondItem="I8b-nt-6ec" secondAttribute="centerY" id="rfz-XI-KYv"/>
+                    </constraints>
+                    <viewLayoutGuide key="safeArea" id="28y-mV-Skx"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="-394.20289855072468" y="-403.125"/>

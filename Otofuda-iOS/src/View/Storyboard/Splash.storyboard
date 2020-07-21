@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9l5-BP-ojP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SplashVC-->
+        <scene sceneID="fQB-cv-afU">
+            <objects>
+                <viewController id="9l5-BP-ojP" customClass="SplashVC" customModule="Otofuda_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eoQ-id-zid">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Otofuda-iOS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yAU-BY-fzC">
+                                <rect key="frame" x="20" y="415.5" width="374" height="65"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="54"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="mi8-en-Vx5" firstAttribute="trailing" secondItem="yAU-BY-fzC" secondAttribute="trailing" constant="20" id="3gE-j9-K7C"/>
+                            <constraint firstItem="yAU-BY-fzC" firstAttribute="centerY" secondItem="eoQ-id-zid" secondAttribute="centerY" id="6EM-aI-rgv"/>
+                            <constraint firstItem="yAU-BY-fzC" firstAttribute="centerX" secondItem="eoQ-id-zid" secondAttribute="centerX" id="hyi-k7-wV3"/>
+                            <constraint firstItem="yAU-BY-fzC" firstAttribute="leading" secondItem="mi8-en-Vx5" secondAttribute="leading" constant="20" id="yCw-1F-Nv3"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="mi8-en-Vx5"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRl-LJ-dZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="106"/>
+        </scene>
+        <!--Mute AlertVC-->
+        <scene sceneID="jvJ-ss-IMi">
+            <objects>
+                <viewController storyboardIdentifier="MuteAlertVC" id="lEg-AA-6LF" customClass="MuteAlertVC" customModule="Otofuda_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IMO-ec-Kyj">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vJI-qO-zXK">
+                                <rect key="frame" x="73.5" y="539.5" width="267.5" height="57.5"/>
+                                <string key="text">本アプリは音量を上げて
+お楽しみください</string>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="vJI-qO-zXK" firstAttribute="centerY" secondItem="IMO-ec-Kyj" secondAttribute="centerY" constant="120" id="pbX-ws-tfk"/>
+                            <constraint firstItem="vJI-qO-zXK" firstAttribute="centerX" secondItem="IMO-ec-Kyj" secondAttribute="centerX" id="ty3-xK-jLV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5DE-gq-JHr"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1ig-EB-8bo" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="702.89855072463774" y="108.48214285714285"/>
+        </scene>
+    </scenes>
+</document>

@@ -8,5 +8,32 @@ target 'Otofuda-iOS' do
   # Pods for Otofuda-iOS
   pod 'Firebase'
   pod 'Firebase/Database'
-  
+  pod 'Firebase/Auth'
+  pod 'Mute'
+  pod 'lottie-ios'
+  pod 'Alamofire'
+  pod 'AlamofireImage'
+  pod "SwiftyJSON"
+  pod "PromiseKit"
+  pod "ObjectMapper"
+  pod "RxSwift"
+
+  target 'Otofuda-iOSTests' do
+    inherit! :search_paths
+    # Pods for testing
+    # pod 'Firebase'
+    # pod 'Firebase/Database'
+    # pod 'Mute'
+    # pod 'lottie-ios'
+  end
+
+  target 'Otofuda-iOSUITests' do
+    inherit! :search_paths
+    # Pods for testing
+    # pod 'Firebase'
+    # pod 'Firebase/Database'
+    # pod 'Mute'
+    # pod 'lottie-ios'
+  end
+
 end

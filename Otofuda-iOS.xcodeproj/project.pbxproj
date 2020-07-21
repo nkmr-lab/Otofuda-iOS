@@ -7,8 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5880D37C22B4928700F40959 /* FirebaseCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5880D37B22B4928700F40959 /* FirebaseCore.framework */; };
-		588470092286904300649B37 /* CreateGroupVIewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588470082286904300649B37 /* CreateGroupVIewPresenter.swift */; };
+		01B1B9FF299F1F7AFCE10DB1 /* Pods_Otofuda_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CDC4134202E14425297323 /* Pods_Otofuda_iOSUITests.framework */; };
 		589460D522852E9500319032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460D422852E9500319032 /* AppDelegate.swift */; };
 		589460D722852E9500319032 /* TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460D622852E9500319032 /* TopVC.swift */; };
 		589460DC22852E9500319032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589460DB22852E9500319032 /* Assets.xcassets */; };
@@ -16,7 +15,17 @@
 		589460F122855AAE00319032 /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460F022855AAE00319032 /* CreateGroupVC.swift */; };
 		589460F522855D9F00319032 /* SearchGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460F422855D9F00319032 /* SearchGroupVC.swift */; };
 		589460F722867A4800319032 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460F622867A4800319032 /* FirebaseManager.swift */; };
+		87B6FE4F76959AE731B4A6B8 /* Pods_Otofuda_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA582A8B6C1AC60CA05C8891 /* Pods_Otofuda_iOSTests.framework */; };
 		ABB34FFD4B8DD80A5EAA9C01 /* Pods_Otofuda_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */; };
+		F308114B233325BB009E7726 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308114A233325BB009E7726 /* SplashVC.swift */; };
+		F308114D233325C6009E7726 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F308114C233325C6009E7726 /* Splash.storyboard */; };
+		F308114F23332CAA009E7726 /* MuteAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308114E23332CAA009E7726 /* MuteAlertVC.swift */; };
+		F308115623335E48009E7726 /* MenuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308115523335E48009E7726 /* MenuVC+Ex.swift */; };
+		F308115F233516A2009E7726 /* mute_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = F308115E233516A2009E7726 /* mute_animation.json */; };
+		F30811692335C937009E7726 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811682335C937009E7726 /* Date+Ex.swift */; };
+		F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308116A2335C9F6009E7726 /* CreateGroupVC+Ex.swift */; };
+		F30811732336535D009E7726 /* Otofuda_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811722336535D009E7726 /* Otofuda_iOSTests.swift */; };
+		F30811812336536F009E7726 /* Otofuda_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811802336536F009E7726 /* Otofuda_iOSUITests.swift */; };
 		F3225EF42330AAFF00D9BD79 /* MenuVC+UITableDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EF32330AAFF00D9BD79 /* MenuVC+UITableDelegate.swift */; };
 		F3225EF62330AB2800D9BD79 /* MenuVC+UITableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EF52330AB2800D9BD79 /* MenuVC+UITableDataSource.swift */; };
 		F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */; };
@@ -30,13 +39,24 @@
 		F3225F092330AFF300D9BD79 /* iTunesPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */; };
 		F3225F0C2330B01D00D9BD79 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F0A2330B01D00D9BD79 /* SearchResultCell.swift */; };
 		F3225F0D2330B01D00D9BD79 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */; };
-		F3225F132330B25400D9BD79 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F0E2330B25400D9BD79 /* Alamofire.framework */; };
-		F3225F142330B25400D9BD79 /* SwiftyJSON.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F0F2330B25400D9BD79 /* SwiftyJSON.framework */; };
-		F3225F152330B25400D9BD79 /* PromiseKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F102330B25400D9BD79 /* PromiseKit.framework */; };
-		F3225F162330B25400D9BD79 /* ObjectMapper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F112330B25400D9BD79 /* ObjectMapper.framework */; };
-		F3225F172330B25400D9BD79 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F3225F122330B25400D9BD79 /* AlamofireImage.framework */; };
 		F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */ = {isa = PBXBuildFile; fileRef = F32B91A823320BF80031B062 /* tap_fuda.caf */; };
-		F3C21BB4232F6D8D00546D5B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */; };
+		F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91AB233231FD0031B062 /* ResultVC.swift */; };
+		F32B91AE233232660031B062 /* ResultVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91AD233232660031B062 /* ResultVC+UICollectionDelegate.swift */; };
+		F32B91B0233232730031B062 /* ResultVC+UICollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91AF233232730031B062 /* ResultVC+UICollectionDataSource.swift */; };
+		F32B91B2233233C00031B062 /* Result.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32B91B1233233C00031B062 /* Result.storyboard */; };
+		F32B91B4233235190031B062 /* ResultTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F32B91B3233235190031B062 /* ResultTableCell.xib */; };
+		F32B91B6233235900031B062 /* ResultTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91B5233235900031B062 /* ResultTableCell.swift */; };
+		F32B91BA2332434B0031B062 /* ResultVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91B92332434B0031B062 /* ResultVC+Ex.swift */; };
+		F32B91BC23328B150031B062 /* IBDesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91BB23328B150031B062 /* IBDesignableButton.swift */; };
+		F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */; };
+		F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */; };
+		F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91FB23329A5C0031B062 /* IBDesignableView.swift */; };
+		F35ED14424B45EAD00727207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED14324B45EAD00727207 /* Constants.swift */; };
+		F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17024B6C68200727207 /* GoogleService-Info.plist */; };
+		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
+		F35ED17524B74CD200727207 /* Bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17424B74CD200727207 /* Bell.mp3 */; };
+		F35F9B53237154E000BBB727 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F9B52237154E000BBB727 /* MusicList.swift */; };
+		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
 		F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB8232F711300546D5B /* UIImage+Ex.swift */; };
 		F3C21BBB232F738F00546D5B /* SearchGropuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BBA232F738F00546D5B /* SearchGropuVC+Ex.swift */; };
@@ -44,10 +64,19 @@
 		F3C21BC0232F809100546D5B /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BBF232F809100546D5B /* Room.swift */; };
 		F3C21BC2232F80EF00546D5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BC1232F80EF00546D5B /* User.swift */; };
 		F3C21BC4232F9C4F00546D5B /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BC3232F9C4F00546D5B /* Music.swift */; };
+		F3C8E69823615F0100864279 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C8E69723615F0100864279 /* Play.storyboard */; };
+		F3C8E69A2361636800864279 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6992361636800864279 /* ApiClient.swift */; };
+		F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69B23617A3F00864279 /* PresetUseCase.swift */; };
+		F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69D23617B5C00864279 /* PresetViewModel.swift */; };
+		F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69F2361901F00864279 /* PresetAPIModel.swift */; };
+		F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A12361E70800864279 /* ResponseEntity.swift */; };
+		F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A32361E73700864279 /* RequestEntity.swift */; };
+		F3C8E6AB2361F0A400864279 /* PresetResponse2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */; };
+		F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AC2362B41D00864279 /* Preset.swift */; };
+		F3C8E6AF2362B6CD00864279 /* PresetDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */; };
 		F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FCF232F9E5200134769 /* PlayVC.swift */; };
 		F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */; };
 		F3E25FD4232F9F6600134769 /* PlayVC+UICollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */; };
-		F3E25FD6232F9FD400134769 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E25FD5232F9FD400134769 /* Play.storyboard */; };
 		F3E25FDB232F9FF800134769 /* Menu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3E25FDA232F9FF800134769 /* Menu.storyboard */; };
 		F3E25FDD232FA00D00134769 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FDC232FA00D00134769 /* MenuVC.swift */; };
 		F3E25FE02330853900134769 /* UICollection+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FDF2330853900134769 /* UICollection+Ex.swift */; };
@@ -62,6 +91,23 @@
 		F3E25FF22330986000134769 /* MPMediaItem+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FF12330986000134769 /* MPMediaItem+Ex.swift */; };
 		F3E25FF42330997F00134769 /* MPMediaItemCollection+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FF32330997F00134769 /* MPMediaItemCollection+Ex.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F30811752336535D009E7726 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 589460C922852E9500319032 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 589460D022852E9500319032;
+			remoteInfo = "Otofuda-iOS";
+		};
+		F30811832336536F009E7726 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 589460C922852E9500319032 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 589460D022852E9500319032;
+			remoteInfo = "Otofuda-iOS";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		F3225F182330B26200D9BD79 /* CopyFiles */ = {
@@ -78,11 +124,12 @@
 /* Begin PBXFileReference section */
 		03555C36D7B3F6240EE0182C /* Pods-Otofuda-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOS.release.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		1950F3B136AEAAC0B3CE5024 /* Pods-Otofuda-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS.debug.xcconfig"; sourceTree = "<group>"; };
+		1B7465F4A0D598A5FEFCDE39 /* Pods-Otofuda-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSTests/Pods-Otofuda-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		39D95D0D2EA417A05FCACEDE /* Pods-Otofuda-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		404A2813DE2749B4D0EED308 /* Pods-Otofuda-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		4F4DB329C6599576A6CF9A87 /* Pods-Otofuda-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSUITests/Pods-Otofuda-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5880D37B22B4928700F40959 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		588470082286904300649B37 /* CreateGroupVIewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVIewPresenter.swift; sourceTree = "<group>"; };
 		589460D122852E9500319032 /* Otofuda-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Otofuda-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		589460D422852E9500319032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		589460D622852E9500319032 /* TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopVC.swift; sourceTree = "<group>"; };
@@ -92,6 +139,24 @@
 		589460F022855AAE00319032 /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
 		589460F422855D9F00319032 /* SearchGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroupVC.swift; sourceTree = "<group>"; };
 		589460F622867A4800319032 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
+		8FA81005ED0399BA25805BAD /* Pods-Otofuda-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSUITests/Pods-Otofuda-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		A8CDC4134202E14425297323 /* Pods_Otofuda_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7EFAE83DD86409EF8712C2C /* Pods-Otofuda-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSTests/Pods-Otofuda-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DA582A8B6C1AC60CA05C8891 /* Pods_Otofuda_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F308114A233325BB009E7726 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
+		F308114C233325C6009E7726 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		F308114E23332CAA009E7726 /* MuteAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteAlertVC.swift; sourceTree = "<group>"; };
+		F308115223333081009E7726 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		F308115523335E48009E7726 /* MenuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+Ex.swift"; sourceTree = "<group>"; };
+		F308115E233516A2009E7726 /* mute_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mute_animation.json; sourceTree = "<group>"; };
+		F30811682335C937009E7726 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
+		F308116A2335C9F6009E7726 /* CreateGroupVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateGroupVC+Ex.swift"; sourceTree = "<group>"; };
+		F30811702336535C009E7726 /* Otofuda-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Otofuda-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30811722336535D009E7726 /* Otofuda_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Otofuda_iOSTests.swift; sourceTree = "<group>"; };
+		F30811742336535D009E7726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F308117E2336536F009E7726 /* Otofuda-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Otofuda-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30811802336536F009E7726 /* Otofuda_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Otofuda_iOSUITests.swift; sourceTree = "<group>"; };
+		F30811822336536F009E7726 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F3225EF32330AAFF00D9BD79 /* MenuVC+UITableDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+UITableDelegate.swift"; sourceTree = "<group>"; };
 		F3225EF52330AB2800D9BD79 /* MenuVC+UITableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+UITableDataSource.swift"; sourceTree = "<group>"; };
 		F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectMusicTableCell.xib; sourceTree = "<group>"; };
@@ -111,7 +176,23 @@
 		F3225F112330B25400D9BD79 /* ObjectMapper.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ObjectMapper.framework; path = Carthage/Build/iOS/ObjectMapper.framework; sourceTree = "<group>"; };
 		F3225F122330B25400D9BD79 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		F32B91A823320BF80031B062 /* tap_fuda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = tap_fuda.caf; sourceTree = "<group>"; };
-		F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F32B91AB233231FD0031B062 /* ResultVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultVC.swift; sourceTree = "<group>"; };
+		F32B91AD233232660031B062 /* ResultVC+UICollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultVC+UICollectionDelegate.swift"; sourceTree = "<group>"; };
+		F32B91AF233232730031B062 /* ResultVC+UICollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultVC+UICollectionDataSource.swift"; sourceTree = "<group>"; };
+		F32B91B1233233C00031B062 /* Result.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Result.storyboard; sourceTree = "<group>"; };
+		F32B91B3233235190031B062 /* ResultTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableCell.xib; sourceTree = "<group>"; };
+		F32B91B5233235900031B062 /* ResultTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableCell.swift; sourceTree = "<group>"; };
+		F32B91B92332434B0031B062 /* ResultVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ResultVC+Ex.swift"; sourceTree = "<group>"; };
+		F32B91BB23328B150031B062 /* IBDesignableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableButton.swift; sourceTree = "<group>"; };
+		F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableSegumentControl.swift; sourceTree = "<group>"; };
+		F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableTableView.swift; sourceTree = "<group>"; };
+		F32B91FB23329A5C0031B062 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		F35ED14324B45EAD00727207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F35ED17024B6C68200727207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		F35ED17424B74CD200727207 /* Bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bell.mp3; sourceTree = "<group>"; };
+		F35F9B52237154E000BBB727 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
+		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB8232F711300546D5B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BBA232F738F00546D5B /* SearchGropuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchGropuVC+Ex.swift"; sourceTree = "<group>"; };
@@ -119,10 +200,21 @@
 		F3C21BBF232F809100546D5B /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		F3C21BC1232F80EF00546D5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F3C21BC3232F9C4F00546D5B /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
+		F3C8E69723615F0100864279 /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
+		F3C8E6992361636800864279 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		F3C8E69B23617A3F00864279 /* PresetUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetUseCase.swift; sourceTree = "<group>"; };
+		F3C8E69D23617B5C00864279 /* PresetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetViewModel.swift; sourceTree = "<group>"; };
+		F3C8E69F2361901F00864279 /* PresetAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetAPIModel.swift; sourceTree = "<group>"; };
+		F3C8E6A12361E70800864279 /* ResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
+		F3C8E6A32361E73700864279 /* RequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEntity.swift; sourceTree = "<group>"; };
+		F3C8E6A52361E8CA00864279 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
+		F3C8E6A62361E8F500864279 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
+		F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetResponse2.swift; sourceTree = "<group>"; };
+		F3C8E6AC2362B41D00864279 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
+		F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetDAO.swift; sourceTree = "<group>"; };
 		F3E25FCF232F9E5200134769 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDelegate.swift"; sourceTree = "<group>"; };
 		F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDataSource.swift"; sourceTree = "<group>"; };
-		F3E25FD5232F9FD400134769 /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Play.storyboard; path = "Otofuda-iOS/src/Main/Play/Play.storyboard"; sourceTree = SOURCE_ROOT; };
 		F3E25FDA232F9FF800134769 /* Menu.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Menu.storyboard; sourceTree = "<group>"; };
 		F3E25FDC232FA00D00134769 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		F3E25FDF2330853900134769 /* UICollection+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollection+Ex.swift"; sourceTree = "<group>"; };
@@ -143,13 +235,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3225F132330B25400D9BD79 /* Alamofire.framework in Frameworks */,
-				F3225F142330B25400D9BD79 /* SwiftyJSON.framework in Frameworks */,
-				F3225F152330B25400D9BD79 /* PromiseKit.framework in Frameworks */,
-				F3225F162330B25400D9BD79 /* ObjectMapper.framework in Frameworks */,
-				F3225F172330B25400D9BD79 /* AlamofireImage.framework in Frameworks */,
-				5880D37C22B4928700F40959 /* FirebaseCore.framework in Frameworks */,
 				ABB34FFD4B8DD80A5EAA9C01 /* Pods_Otofuda_iOS.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F308116D2336535C009E7726 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				87B6FE4F76959AE731B4A6B8 /* Pods_Otofuda_iOSTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F308117B2336536F009E7726 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01B1B9FF299F1F7AFCE10DB1 /* Pods_Otofuda_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,6 +261,8 @@
 		54E6151815F6B8962458DCA0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F3C8E6A62361E8F500864279 /* RxSwift.framework */,
+				F3C8E6A52361E8CA00864279 /* RxSwift.framework.dSYM */,
 				F3225F0E2330B25400D9BD79 /* Alamofire.framework */,
 				F3225F122330B25400D9BD79 /* AlamofireImage.framework */,
 				F3225F112330B25400D9BD79 /* ObjectMapper.framework */,
@@ -166,6 +270,8 @@
 				F3225F0F2330B25400D9BD79 /* SwiftyJSON.framework */,
 				5880D37B22B4928700F40959 /* FirebaseCore.framework */,
 				4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */,
+				DA582A8B6C1AC60CA05C8891 /* Pods_Otofuda_iOSTests.framework */,
+				A8CDC4134202E14425297323 /* Pods_Otofuda_iOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -174,7 +280,7 @@
 			isa = PBXGroup;
 			children = (
 				589460F022855AAE00319032 /* CreateGroupVC.swift */,
-				588470082286904300649B37 /* CreateGroupVIewPresenter.swift */,
+				F308116A2335C9F6009E7726 /* CreateGroupVC+Ex.swift */,
 			);
 			path = CreateGroup;
 			sourceTree = "<group>";
@@ -193,6 +299,8 @@
 			isa = PBXGroup;
 			children = (
 				589460D322852E9500319032 /* Otofuda-iOS */,
+				F30811712336535D009E7726 /* Otofuda-iOSTests */,
+				F308117F2336536F009E7726 /* Otofuda-iOSUITests */,
 				589460D222852E9500319032 /* Products */,
 				DF4B4C7A60863B6BDBCE3175 /* Pods */,
 				54E6151815F6B8962458DCA0 /* Frameworks */,
@@ -203,6 +311,8 @@
 			isa = PBXGroup;
 			children = (
 				589460D122852E9500319032 /* Otofuda-iOS.app */,
+				F30811702336535C009E7726 /* Otofuda-iOSTests.xctest */,
+				F308117E2336536F009E7726 /* Otofuda-iOSUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -219,10 +329,13 @@
 		589460E622852F6400319032 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				F308115223333081009E7726 /* Bridging-Header.h */,
 				589460DB22852E9500319032 /* Assets.xcassets */,
-				F3C21BB3232F6D8D00546D5B /* GoogleService-Info.plist */,
 				589460E022852E9500319032 /* Info.plist */,
 				F32B91A823320BF80031B062 /* tap_fuda.caf */,
+				F308115E233516A2009E7726 /* mute_animation.json */,
+				F35ED17024B6C68200727207 /* GoogleService-Info.plist */,
+				F35ED17424B74CD200727207 /* Bell.mp3 */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -230,38 +343,22 @@
 		589460E722852FEE00319032 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				589460E82285328300319032 /* Common */,
-				589460E92285362E00319032 /* Main */,
+				589460D422852E9500319032 /* AppDelegate.swift */,
+				F35ED17224B744E400727207 /* SceneDelegate.swift */,
+				F35ED14324B45EAD00727207 /* Constants.swift */,
+				F3C8E69223615BCE00864279 /* ViewController */,
+				F3C8E69023615BAB00864279 /* ViewModel */,
+				F3C8E69323615C2300864279 /* UseCase */,
+				F3C8E69123615BC700864279 /* View */,
+				F3C8E69423615C3800864279 /* Entity */,
+				F3C8E69523615C4300864279 /* Utility */,
 			);
 			path = src;
-			sourceTree = "<group>";
-		};
-		589460E82285328300319032 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				589460D422852E9500319032 /* AppDelegate.swift */,
-				589460F622867A4800319032 /* FirebaseManager.swift */,
-				F3C21BBE232F808300546D5B /* Models */,
-				F3C21BB5232F702800546D5B /* Extensions */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		589460E92285362E00319032 /* Main */ = {
-			isa = PBXGroup;
-			children = (
-				589460EC2285449100319032 /* Top */,
-				F3E25FD9232F9FED00134769 /* Menu */,
-				F3E25FCE232F9E3B00134769 /* Play */,
-				F3E25FDE233084EE00134769 /* Result */,
-			);
-			path = Main;
 			sourceTree = "<group>";
 		};
 		589460EC2285449100319032 /* Top */ = {
 			isa = PBXGroup;
 			children = (
-				589460EA2285367300319032 /* Top.storyboard */,
 				589460D622852E9500319032 /* TopVC.swift */,
 				5884700422868D6200649B37 /* CreateGroup */,
 				5884700522868D7400649B37 /* SearchGroup */,
@@ -276,8 +373,39 @@
 				03555C36D7B3F6240EE0182C /* Pods-Otofuda-iOS.release.xcconfig */,
 				39D95D0D2EA417A05FCACEDE /* Pods-Otofuda-iOS.debug.xcconfig */,
 				404A2813DE2749B4D0EED308 /* Pods-Otofuda-iOS.release.xcconfig */,
+				D7EFAE83DD86409EF8712C2C /* Pods-Otofuda-iOSTests.debug.xcconfig */,
+				1B7465F4A0D598A5FEFCDE39 /* Pods-Otofuda-iOSTests.release.xcconfig */,
+				8FA81005ED0399BA25805BAD /* Pods-Otofuda-iOSUITests.debug.xcconfig */,
+				4F4DB329C6599576A6CF9A87 /* Pods-Otofuda-iOSUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		F3081149233325AD009E7726 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				F308114A233325BB009E7726 /* SplashVC.swift */,
+				F308114E23332CAA009E7726 /* MuteAlertVC.swift */,
+			);
+			path = Splash;
+			sourceTree = "<group>";
+		};
+		F30811712336535D009E7726 /* Otofuda-iOSTests */ = {
+			isa = PBXGroup;
+			children = (
+				F30811722336535D009E7726 /* Otofuda_iOSTests.swift */,
+				F30811742336535D009E7726 /* Info.plist */,
+			);
+			path = "Otofuda-iOSTests";
+			sourceTree = "<group>";
+		};
+		F308117F2336536F009E7726 /* Otofuda-iOSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F30811802336536F009E7726 /* Otofuda_iOSUITests.swift */,
+				F30811822336536F009E7726 /* Info.plist */,
+			);
+			path = "Otofuda-iOSUITests";
 			sourceTree = "<group>";
 		};
 		F3225EFF2330AFD900D9BD79 /* iTunesPicker */ = {
@@ -287,11 +415,21 @@
 				F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */,
 				F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */,
 				F3225F032330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift */,
-				F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */,
 				F3225F0A2330B01D00D9BD79 /* SearchResultCell.swift */,
-				F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */,
 			);
 			path = iTunesPicker;
+			sourceTree = "<group>";
+		};
+		F32B91AA233231E70031B062 /* Result */ = {
+			isa = PBXGroup;
+			children = (
+				F32B91AB233231FD0031B062 /* ResultVC.swift */,
+				F32B91B92332434B0031B062 /* ResultVC+Ex.swift */,
+				F32B91AD233232660031B062 /* ResultVC+UICollectionDelegate.swift */,
+				F32B91AF233232730031B062 /* ResultVC+UICollectionDataSource.swift */,
+				F32B91B5233235900031B062 /* ResultTableCell.swift */,
+			);
+			path = Result;
 			sourceTree = "<group>";
 		};
 		F3C21BB5232F702800546D5B /* Extensions */ = {
@@ -299,12 +437,18 @@
 			children = (
 				F3C21BB6232F703C00546D5B /* String+Ex.swift */,
 				F3C21BB8232F711300546D5B /* UIImage+Ex.swift */,
+				F32B91FB23329A5C0031B062 /* IBDesignableView.swift */,
+				F32B91BB23328B150031B062 /* IBDesignableButton.swift */,
+				F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */,
+				F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */,
 				F3E25FDF2330853900134769 /* UICollection+Ex.swift */,
+				F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */,
 				F3E25FE12330854D00134769 /* NSObject+Ex.swift */,
 				F3E25FE32330856300134769 /* UITable+Ex.swift */,
 				F3E25FED233090EC00134769 /* MPMediaPlayer+Ex.swift */,
 				F3E25FF12330986000134769 /* MPMediaItem+Ex.swift */,
 				F3E25FF32330997F00134769 /* MPMediaItemCollection+Ex.swift */,
+				F30811682335C937009E7726 /* Date+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -317,20 +461,96 @@
 				F3C21BC3232F9C4F00546D5B /* Music.swift */,
 				F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */,
 				F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */,
+				F3C8E69F2361901F00864279 /* PresetAPIModel.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		F3C8E69023615BAB00864279 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F3C8E69D23617B5C00864279 /* PresetViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F3C8E69123615BC700864279 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F3C8E69623615CFC00864279 /* Storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F3C8E69223615BCE00864279 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				F3081149233325AD009E7726 /* Splash */,
+				589460EC2285449100319032 /* Top */,
+				F3E25FD9232F9FED00134769 /* Menu */,
+				F3E25FCE232F9E3B00134769 /* Play */,
+				F32B91AA233231E70031B062 /* Result */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		F3C8E69323615C2300864279 /* UseCase */ = {
+			isa = PBXGroup;
+			children = (
+				F3C8E69B23617A3F00864279 /* PresetUseCase.swift */,
+				F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */,
+			);
+			path = UseCase;
+			sourceTree = "<group>";
+		};
+		F3C8E69423615C3800864279 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				F3C8E6A32361E73700864279 /* RequestEntity.swift */,
+				F3C8E6A12361E70800864279 /* ResponseEntity.swift */,
+				F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */,
+				F3C8E6AC2362B41D00864279 /* Preset.swift */,
+				F35F9B52237154E000BBB727 /* MusicList.swift */,
+			);
+			path = Entity;
+			sourceTree = "<group>";
+		};
+		F3C8E69523615C4300864279 /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				F3C21BB5232F702800546D5B /* Extensions */,
+				F3C21BBE232F808300546D5B /* Models */,
+				589460F622867A4800319032 /* FirebaseManager.swift */,
+				F3C8E6992361636800864279 /* ApiClient.swift */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		F3C8E69623615CFC00864279 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				F308114C233325C6009E7726 /* Splash.storyboard */,
+				589460EA2285367300319032 /* Top.storyboard */,
+				F3E25FDA232F9FF800134769 /* Menu.storyboard */,
+				F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */,
+				F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */,
+				F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */,
+				F3E25FE5233085B600134769 /* FudaCollectionCell.xib */,
+				F32B91B1233233C00031B062 /* Result.storyboard */,
+				F32B91B3233235190031B062 /* ResultTableCell.xib */,
+				F3C8E69723615F0100864279 /* Play.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		F3E25FCE232F9E3B00134769 /* Play */ = {
 			isa = PBXGroup;
 			children = (
-				F3E25FD5232F9FD400134769 /* Play.storyboard */,
 				F3E25FCF232F9E5200134769 /* PlayVC.swift */,
 				F3E25FEB2330891600134769 /* PlayVC+Ex.swift */,
 				F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */,
 				F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */,
 				F3E25FE92330874300134769 /* PlayVC+UICollectionLayout.swift */,
-				F3E25FE5233085B600134769 /* FudaCollectionCell.xib */,
 				F3E25FE7233085DF00134769 /* FudaCollectionCell.swift */,
 			);
 			path = Play;
@@ -340,22 +560,14 @@
 			isa = PBXGroup;
 			children = (
 				F3225EFF2330AFD900D9BD79 /* iTunesPicker */,
-				F3E25FDA232F9FF800134769 /* Menu.storyboard */,
 				F3E25FDC232FA00D00134769 /* MenuVC.swift */,
+				F308115523335E48009E7726 /* MenuVC+Ex.swift */,
 				F3E25FEF233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift */,
 				F3225EF32330AAFF00D9BD79 /* MenuVC+UITableDelegate.swift */,
 				F3225EF52330AB2800D9BD79 /* MenuVC+UITableDataSource.swift */,
-				F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */,
 				F3225EF92330ACFD00D9BD79 /* SelectMusicTableCell.swift */,
 			);
 			path = Menu;
-			sourceTree = "<group>";
-		};
-		F3E25FDE233084EE00134769 /* Result */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Result;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -371,7 +583,6 @@
 				589460CF22852E9500319032 /* Resources */,
 				787488BFDB152AFD921AF178 /* [CP] Embed Pods Frameworks */,
 				F3225F182330B26200D9BD79 /* CopyFiles */,
-				F3225F192330B26400D9BD79 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -381,6 +592,44 @@
 			productName = "Otofuda-iOS";
 			productReference = 589460D122852E9500319032 /* Otofuda-iOS.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F308116F2336535C009E7726 /* Otofuda-iOSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F30811772336535D009E7726 /* Build configuration list for PBXNativeTarget "Otofuda-iOSTests" */;
+			buildPhases = (
+				2B6766A51D96AA3CB5FECEFA /* [CP] Check Pods Manifest.lock */,
+				F308116C2336535C009E7726 /* Sources */,
+				F308116D2336535C009E7726 /* Frameworks */,
+				F308116E2336535C009E7726 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F30811762336535D009E7726 /* PBXTargetDependency */,
+			);
+			name = "Otofuda-iOSTests";
+			productName = "Otofuda-iOSTests";
+			productReference = F30811702336535C009E7726 /* Otofuda-iOSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F308117D2336536F009E7726 /* Otofuda-iOSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F30811852336536F009E7726 /* Build configuration list for PBXNativeTarget "Otofuda-iOSUITests" */;
+			buildPhases = (
+				CA4278867C022823BB07E8D3 /* [CP] Check Pods Manifest.lock */,
+				F308117A2336536F009E7726 /* Sources */,
+				F308117B2336536F009E7726 /* Frameworks */,
+				F308117C2336536F009E7726 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F30811842336536F009E7726 /* PBXTargetDependency */,
+			);
+			name = "Otofuda-iOSUITests";
+			productName = "Otofuda-iOSUITests";
+			productReference = F308117E2336536F009E7726 /* Otofuda-iOSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -394,6 +643,14 @@
 				TargetAttributes = {
 					589460D022852E9500319032 = {
 						CreatedOnToolsVersion = 10.2.1;
+					};
+					F308116F2336535C009E7726 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 589460D022852E9500319032;
+					};
+					F308117D2336536F009E7726 = {
+						CreatedOnToolsVersion = 10.2.1;
+						TestTargetID = 589460D022852E9500319032;
 					};
 				};
 			};
@@ -411,6 +668,8 @@
 			projectRoot = "";
 			targets = (
 				589460D022852E9500319032 /* Otofuda-iOS */,
+				F308116F2336535C009E7726 /* Otofuda-iOSTests */,
+				F308117D2336536F009E7726 /* Otofuda-iOSUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -420,22 +679,63 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F308115F233516A2009E7726 /* mute_animation.json in Resources */,
 				F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */,
+				F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */,
 				F3E25FE6233085B600134769 /* FudaCollectionCell.xib in Resources */,
 				F3E25FDB232F9FF800134769 /* Menu.storyboard in Resources */,
+				F32B91B2233233C00031B062 /* Result.storyboard in Resources */,
 				F3225F092330AFF300D9BD79 /* iTunesPicker.storyboard in Resources */,
-				F3E25FD6232F9FD400134769 /* Play.storyboard in Resources */,
 				F3225F0D2330B01D00D9BD79 /* SearchResultCell.xib in Resources */,
+				F32B91B4233235190031B062 /* ResultTableCell.xib in Resources */,
 				589460DC22852E9500319032 /* Assets.xcassets in Resources */,
 				589460EB2285367300319032 /* Top.storyboard in Resources */,
+				F3C8E69823615F0100864279 /* Play.storyboard in Resources */,
+				F35ED17524B74CD200727207 /* Bell.mp3 in Resources */,
 				F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */,
-				F3C21BB4232F6D8D00546D5B /* GoogleService-Info.plist in Resources */,
+				F308114D233325C6009E7726 /* Splash.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F308116E2336535C009E7726 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F308117C2336536F009E7726 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		2B6766A51D96AA3CB5FECEFA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Otofuda-iOSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		72E1837E0B9A4EA64C3F807C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -475,7 +775,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F3225F192330B26400D9BD79 /* ShellScript */ = {
+		CA4278867C022823BB07E8D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -483,20 +783,19 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/PromiseKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/ObjectMapper.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/SwiftyJSON.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/AlamofireImage.framework",
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
 			);
+			name = "[CP] Check Pods Manifest.lock";
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Otofuda-iOSUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -509,43 +808,98 @@
 				F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */,
 				589460F522855D9F00319032 /* SearchGroupVC.swift in Sources */,
 				F3C21BC4232F9C4F00546D5B /* Music.swift in Sources */,
+				F308114B233325BB009E7726 /* SplashVC.swift in Sources */,
+				F308114F23332CAA009E7726 /* MuteAlertVC.swift in Sources */,
 				F3225F072330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift in Sources */,
+				F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */,
 				F3E25FEE233090EC00134769 /* MPMediaPlayer+Ex.swift in Sources */,
 				F3225F0C2330B01D00D9BD79 /* SearchResultCell.swift in Sources */,
+				F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */,
 				F3E25FF22330986000134769 /* MPMediaItem+Ex.swift in Sources */,
+				F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */,
 				F3225F052330AFE300D9BD79 /* iTunesPickerVC.swift in Sources */,
+				F3C8E69A2361636800864279 /* ApiClient.swift in Sources */,
+				F3C8E6AF2362B6CD00864279 /* PresetDAO.swift in Sources */,
 				589460D722852E9500319032 /* TopVC.swift in Sources */,
+				F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */,
 				F3E25FE02330853900134769 /* UICollection+Ex.swift in Sources */,
+				F30811692335C937009E7726 /* Date+Ex.swift in Sources */,
 				F3225EFA2330ACFD00D9BD79 /* SelectMusicTableCell.swift in Sources */,
+				F32B91B0233232730031B062 /* ResultVC+UICollectionDataSource.swift in Sources */,
 				F3E25FDD232FA00D00134769 /* MenuVC.swift in Sources */,
 				F3225F062330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift in Sources */,
 				F3225EF42330AAFF00D9BD79 /* MenuVC+UITableDelegate.swift in Sources */,
 				F3E25FEC2330891600134769 /* PlayVC+Ex.swift in Sources */,
 				F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */,
+				F308115623335E48009E7726 /* MenuVC+Ex.swift in Sources */,
 				F3E25FD4232F9F6600134769 /* PlayVC+UICollectionDataSource.swift in Sources */,
+				F32B91AE233232660031B062 /* ResultVC+UICollectionDelegate.swift in Sources */,
 				F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */,
 				F3225F042330AFE300D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift in Sources */,
+				F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */,
 				F3C21BBD232F73E400546D5B /* SearchGroupVC+AVCaptureDelegate.swift in Sources */,
+				F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */,
+				F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */,
+				F35F9B53237154E000BBB727 /* MusicList.swift in Sources */,
 				F3225EFE2330AFCA00D9BD79 /* iTunesRSSModel.swift in Sources */,
+				F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */,
+				F35ED14424B45EAD00727207 /* Constants.swift in Sources */,
+				F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */,
+				F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */,
 				589460F722867A4800319032 /* FirebaseManager.swift in Sources */,
 				F3225EFD2330AFCA00D9BD79 /* iTunesAPIModel.swift in Sources */,
 				F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */,
 				F3C21BBB232F738F00546D5B /* SearchGropuVC+Ex.swift in Sources */,
-				588470092286904300649B37 /* CreateGroupVIewPresenter.swift in Sources */,
 				F3C21BC2232F80EF00546D5B /* User.swift in Sources */,
 				589460D522852E9500319032 /* AppDelegate.swift in Sources */,
 				F3E25FEA2330874300134769 /* PlayVC+UICollectionLayout.swift in Sources */,
+				F32B91B6233235900031B062 /* ResultTableCell.swift in Sources */,
 				589460F122855AAE00319032 /* CreateGroupVC.swift in Sources */,
 				F3E25FF0233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift in Sources */,
+				F3C8E6AB2361F0A400864279 /* PresetResponse2.swift in Sources */,
+				F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */,
+				F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */,
 				F3E25FE8233085DF00134769 /* FudaCollectionCell.swift in Sources */,
+				F32B91BA2332434B0031B062 /* ResultVC+Ex.swift in Sources */,
 				F3E25FE42330856300134769 /* UITable+Ex.swift in Sources */,
 				F3C21BC0232F809100546D5B /* Room.swift in Sources */,
 				F3E25FE22330854D00134769 /* NSObject+Ex.swift in Sources */,
 				F3225EF62330AB2800D9BD79 /* MenuVC+UITableDataSource.swift in Sources */,
+				F32B91BC23328B150031B062 /* IBDesignableButton.swift in Sources */,
+				F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F308116C2336535C009E7726 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30811732336535D009E7726 /* Otofuda_iOSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F308117A2336536F009E7726 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F30811812336536F009E7726 /* Otofuda_iOSUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F30811762336535D009E7726 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 589460D022852E9500319032 /* Otofuda-iOS */;
+			targetProxy = F30811752336535D009E7726 /* PBXContainerItemProxy */;
+		};
+		F30811842336536F009E7726 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 589460D022852E9500319032 /* Otofuda-iOS */;
+			targetProxy = F30811832336536F009E7726 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		589460E122852E9500319032 /* Debug */ = {
@@ -583,6 +937,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -599,7 +954,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -644,6 +999,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
@@ -654,7 +1010,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -671,7 +1027,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S26A4W8VSZ;
+				DEVELOPMENT_TEAM = T8YPT438X6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
@@ -704,7 +1060,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = S26A4W8VSZ;
+				DEVELOPMENT_TEAM = T8YPT438X6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -718,6 +1074,90 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F30811782336535D009E7726 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7EFAE83DD86409EF8712C2C /* Pods-Otofuda-iOSTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8YPT438X6;
+				INFOPLIST_FILE = "Otofuda-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Nakamura-labProject.Otofuda-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Otofuda-iOS.app/Otofuda-iOS";
+			};
+			name = Debug;
+		};
+		F30811792336535D009E7726 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B7465F4A0D598A5FEFCDE39 /* Pods-Otofuda-iOSTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8YPT438X6;
+				INFOPLIST_FILE = "Otofuda-iOSTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Nakamura-labProject.Otofuda-iOSTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Otofuda-iOS.app/Otofuda-iOS";
+			};
+			name = Release;
+		};
+		F30811862336536F009E7726 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8FA81005ED0399BA25805BAD /* Pods-Otofuda-iOSUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8YPT438X6;
+				INFOPLIST_FILE = "Otofuda-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "Nakamura-labProject.Otofuda-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Otofuda-iOS";
+			};
+			name = Debug;
+		};
+		F30811872336536F009E7726 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F4DB329C6599576A6CF9A87 /* Pods-Otofuda-iOSUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = T8YPT438X6;
+				INFOPLIST_FILE = "Otofuda-iOSUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Nakamura-labProject.Otofuda-iOSUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Otofuda-iOS";
 			};
 			name = Release;
 		};
@@ -738,6 +1178,24 @@
 			buildConfigurations = (
 				589460E422852E9500319032 /* Debug */,
 				589460E522852E9500319032 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F30811772336535D009E7726 /* Build configuration list for PBXNativeTarget "Otofuda-iOSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F30811782336535D009E7726 /* Debug */,
+				F30811792336535D009E7726 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F30811852336536F009E7726 /* Build configuration list for PBXNativeTarget "Otofuda-iOSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F30811862336536F009E7726 /* Debug */,
+				F30811872336536F009E7726 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

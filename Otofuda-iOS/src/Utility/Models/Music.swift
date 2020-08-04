@@ -5,6 +5,7 @@ import AVFoundation
 class Music: NSObject {
 
     var name: String!
+    var artist: String!
     var item: MPMediaItem!
     var previewURL: String!
     var isAnimating: Bool = false
@@ -15,14 +16,15 @@ class Music: NSObject {
     var musicOwner: Int!
     var cardOwner: Int!
 
-    init(name: String, item: MPMediaItem!) {
+    init(name: String, artist: String, item: MPMediaItem!) {
         self.name = name
+        self.artist = artist
         self.item = item
     }
 
     func dict() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
-        dict = ["name": name ?? "なし", "artist": item.artist ?? "なし", "previewURL": previewURL]
+        dict = ["name": name ?? "なし", "artist": artist ?? "なし", "musicOwner": musicOwner ?? 0, "previewURL": previewURL]
         return dict
     }
 

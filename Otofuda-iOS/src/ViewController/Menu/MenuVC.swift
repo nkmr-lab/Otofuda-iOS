@@ -3,17 +3,6 @@ import PromiseKit
 
 protocol Menurotocol {
     func tappedPickBtn(_ sender: Any)
-    func prepareUI()
-}
-
-enum RulePoint: String {
-    case normal  = "normal"
-    case bingo = "bingo"
-}
-
-enum RulePlaying: String {
-    case intro = "intro"
-    case random = "random"
 }
 
 final class MenuVC: UIViewController, Menurotocol {
@@ -31,20 +20,31 @@ final class MenuVC: UIViewController, Menurotocol {
     var me: User!
 
     @IBOutlet weak var blockV: UIView!
-    // ルール
-    var rulePoint: RulePoint = .normal
-    var rulePlaying: RulePlaying = .intro
+
+    var musicCounts: [Int] = []
+    
+    // モード
+    var scoreMode: ScoreMode = .normal
+    var playbackMode: PlaybackMode = .intro
 
     // Segument
-    @IBOutlet weak var pointSegument: UISegmentedControl! {
+    @IBOutlet weak var scoreSegument: UISegmentedControl! {
         didSet {
-            pointSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .selected)
+            scoreSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         }
     }
-    @IBOutlet weak var playingSegument: UISegmentedControl! {
+
+    @IBOutlet weak var playbackSegument: UISegmentedControl! {
         didSet {
-            playingSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .selected)
+            playbackSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         }
+    }
+
+    @IBOutlet weak var cardCountSegument: UISegmentedControl! {
+        didSet {
+            cardCountSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
+        }
+
     }
 
     var selectedMusics: [Music] = []
@@ -72,126 +72,133 @@ final class MenuVC: UIViewController, Menurotocol {
             presetPickerV.tintColor = .black
         }
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        // 戻るを不可能にする
+        self.navigationItem.hidesBackButton = true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
 
         // 後のどのユーザの楽曲を使うか判断する時に使う
+        // TODO: この曲数をベースに次に進めるかどうかを判定する
+        // TODO: 縛り曲の時そのアーティストの曲数もここにいれて, あるかどうかを判定する
         firebaseManager.post(path: room.url() + "musicCounts/\(me.index)", value: haveMusics.count)
 
-        prepareUI()
-
-        firstly {
-            PresetAPIModel.shared.request()
-        }.then { data -> Promise<PresetResponse> in
-            PresetAPIModel.shared.mapping(jsonStr: data)
-       }.done { results in
-            print("done")
-
-            for result in results.list {
-                self.presets.append(result.title)
-                self.presetPickerV.reloadAllComponents()
-            }
-       }.catch { error in
-            print(error)
+        if isHost {
+            observeMusicCounts()
         }
+        else {
+            displayBlockV()
+            observeUI()
+        }
+
+        // スタートボタンが押されるのを監視
+        observeStart()
+
+        // 楽曲が準備できるのを監視
+        preparedPlayMusics()
+
+//        firstly {
+//            PresetAPIModel.shared.request()
+//        }.then { data -> Promise<PresetResponse> in
+//            PresetAPIModel.shared.mapping(jsonStr: data)
+//       }.done { results in
+//            print("done")
+//
+//            for result in results.list {
+//                self.presets.append(result.title)
+//                self.presetPickerV.reloadAllComponents()
+//            }
+//       }.catch { error in
+//            print(error)
+//        }
     }
 
-    @IBAction func changedPointSeg(_ sender: Any) {
+    deinit {
+        firebaseManager.deleteObserve(path: room.url() + "playMusics")
+        firebaseManager.deleteObserve(path: room.url() + "status")
+    }
+
+    @IBAction func changedScoreSeg(_ sender: Any) {
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
-            rulePoint = .normal
+            scoreMode = .normal
         case 1:
-            rulePoint = .bingo
+            scoreMode = .bingo
         default:
             break
         }
-        firebaseManager.post(path: room.url() + "rule/point/", value: rulePoint.rawValue)
+        firebaseManager.post(path: room.url() + "mode/score/", value: scoreMode.rawValue)
     }
 
-    @IBAction func changePlayingSeg(_ sender: Any) {
+    @IBAction func changePlaybackSeg(_ sender: Any) {
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
-            rulePlaying = .intro
+            playbackMode = .intro
         case 1:
-            rulePlaying = .random
+            playbackMode = .random
         default:
             break
         }
-        firebaseManager.post(path: room.url() + "rule/playing/", value: rulePlaying.rawValue)
+        firebaseManager.post(path: room.url() + "mode/playback/", value: playbackMode.rawValue)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "next" {
-
-            // そもそも持ち曲が16曲以上なければ何もしない
-            // TODO: セグエなのでリターンしただけでは強制的に遷移してしまうので今後改善
-            if haveMusics.count < CARD_MAX_COUNT {
-                print("16曲以下しかありません")
-                return
-            }
-
-            // 誰の曲を使うかを楽曲所持数に応じて決める
-            var selectedPlayers: [Int] = []
-            firebaseManager.observeSingle(path: room.url() + "musicCounts", completion: { snapshot in
-                if var musicCounts = snapshot.value as? [Int] {
-                    while self.selectedMusics.count < CARD_MAX_COUNT {
-                        // TODO: 所持数が0の人ばっかだと処理時間が長くなってしまうので要改善
-                        let selectedPlayer = Int.random(in: 0..<musicCounts.count)
-                        // 残りの楽曲所持数が1曲以上あったら
-                        if musicCounts[selectedPlayer] > 0 {
-                            // 一曲減らす
-                            musicCounts[selectedPlayer] = musicCounts[selectedPlayer] - 1
-                            // その人を追加してあげる
-                            selectedPlayers.append(selectedPlayer)
-                        }
-                    }
-
-                    self.firebaseManager.post(path: self.room.url() + "selectedPlayers", value: selectedPlayers)
-
-                }
-            })
-
-            // カードを並べる値をシャッフルする(左上から0,1,2...）
-            self.cardLocations = [Int](0..<CARD_MAX_COUNT)
-            cardLocations.shuffle()
-
-            firebaseManager.post(path: room.url() + "cardLocations", value: cardLocations)
-            
-            // 選択曲が16曲以下だったら水増しする
-            if selectedMusics.count < CARD_MAX_COUNT {
-                let shuffledMusics = haveMusics.shuffled()
-                let diffCount = CARD_MAX_COUNT - selectedMusics.count
-                for i in 0..<diffCount {
-                    selectedMusics.append( shuffledMusics[i] )
-                }
-            }
-
-            // シャッフルして16曲に絞る
-            // TODO: みんなの楽曲にする
-            let shuffledMusic = selectedMusics.shuffled()[0..<CARD_MAX_COUNT]
-
-            // FirebaseにPOST処理
-            var sendPlayMusics: [Dictionary<String, Any>] = []
-
-            for music in shuffledMusic {
-                sendPlayMusics.append(music.dict())
-                playMusics.append(music)
-            }
-
-            firebaseManager.post(path: room.url() + "playMusics", value: sendPlayMusics)
-            
-            let nextVC = segue.destination as! PlayVC
-            nextVC.room = room
-            nextVC.isHost = self.isHost
-            nextVC.playMusics = playMusics
-            nextVC.cardLocations = cardLocations
-            nextVC.me = me
-            room.status = .start
-
-            firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
+    @IBAction func changeCardCountSeg(_ sender: Any) {
+        switch (sender as AnyObject).selectedSegmentIndex {
+        case 0:
+            CARD_ROW_COUNT = 2
+            CARD_CLM_COUNT = 2
+            CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+        case 1:
+            CARD_ROW_COUNT = 3
+            CARD_CLM_COUNT = 3
+            CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+        case 2:
+            CARD_ROW_COUNT = 4
+            CARD_CLM_COUNT = 4
+            CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+        default:
+            break
         }
     }
+    @IBAction func tappedStartBtn(_ sender: Any) {
+        // そもそも持ち曲が16曲以上なければ何もしない
+        if haveMusics.count < CARD_MAX_COUNT {
+            print("16曲以下しかありません")
+            return
+        }
+
+        // カードを並べる値をシャッフルする(左上から0,1,2...）
+        self.cardLocations = [Int](0..<CARD_MAX_COUNT)
+        cardLocations.shuffle()
+
+        // 誰の曲を使うかを楽曲所持数に応じて決める
+        var selectedPlayers: [Int] = []
+
+        while selectedPlayers.count < CARD_MAX_COUNT {
+            // TODO: 所持数が0の人ばっかだと処理時間が長くなってしまうので要改善
+            let selectedPlayer = Int.random(in: 0..<musicCounts.count)
+            // 残りの楽曲所持数が1曲以上あったら
+            if musicCounts[selectedPlayer] > 0 {
+                // 一曲減らす
+                musicCounts[selectedPlayer] = musicCounts[selectedPlayer] - 1
+                // その人を追加してあげる
+                selectedPlayers.append(selectedPlayer)
+            }
+        }
+
+        firebaseManager.post(path: room.url() + "cardLocations", value: cardLocations)
+        firebaseManager.post(path: room.url() + "selectedPlayers", value: selectedPlayers)
+
+        room.status = .start
+        firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
+
+        firebaseManager.deleteObserve(path: room.url() + "musicCounts")
+    }
+
     
 }
 

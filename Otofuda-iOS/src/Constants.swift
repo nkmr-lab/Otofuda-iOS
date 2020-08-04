@@ -9,9 +9,9 @@
 import Foundation
 import UIKit
 
-let CARD_CLM_COUNT = 4
-let CARD_ROW_COUNT = 4
-let CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+var CARD_CLM_COUNT = 4
+var CARD_ROW_COUNT = 4
+var CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
 let CARD_LAYOUT_MARGIN: CGFloat = 5.0
 
 let COLORS: [UIColor] = [.red, .blue, .green, .purple, .brown, .yellow, .orange]

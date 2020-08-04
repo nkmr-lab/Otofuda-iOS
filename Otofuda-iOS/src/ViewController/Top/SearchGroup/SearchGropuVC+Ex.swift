@@ -40,7 +40,8 @@ extension SearchGroupVC: SearchGroupProtocol {
         cameraV.layer.addSublayer(videoLayer!)
 
         // セッションの開始
-        DispatchQueue.global(qos: .userInitiated).async {
+        DispatchQueue.global(qos: .userInitiated).async { [weak self] in
+            guard let self = self else { return }
             self.captureSession.startRunning()
         }
     }
@@ -53,7 +54,9 @@ extension SearchGroupVC: SearchGroupProtocol {
             
             let uuid = UIDevice.current.identifierForVendor!.uuidString
             
-            firebaseManager.observeSingle(path: room.url() + "member", completion: {(snapshot) in
+            firebaseManager.observeSingle(path: room.url() + "member", completion: { [weak self] (snapshot) in
+                guard let self = self else { return }
+
                 var isExist: Bool = false
                 if let member = snapshot.value as? [String] {
                     for user in member {
@@ -70,8 +73,15 @@ extension SearchGroupVC: SearchGroupProtocol {
                     if var member = snapshot.value as? [String] {
                         self.me = User(index: member.count, name: self.appDelegate.uuid, color: COLORS[ member.count])
                         member.append( self.appDelegate.uuid )
+
+                        var users: [User] = []
+                        for (index, user) in member.enumerated() {
+                            users.append( User(index: index, name: user, color: COLORS[index]) )
+                        }
+                        let updatedRoom = Room(name: room.name, member: users)
+
                         self.firebaseManager.post(path: room.url() + "member", value: member)
-                        self.goNextVC(room: room) // FIXME: 🐛たまに重複してnavigationに追加されることがある(9/26時点）
+                        self.goNextVC(room: updatedRoom) // FIXME: 🐛たまに重複してnavigationに追加されることがある(8/3時点）
                         self.isMatching = true
                         return
                     }
@@ -96,11 +106,15 @@ extension SearchGroupVC: SearchGroupProtocol {
         nextVC.haveMusics = self.haveMusics
         nextVC.isHost = false
         nextVC.me = me
-        self.navigationController?.pushViewController(nextVC, animated: true)
+        navigationController?.pushViewController(nextVC, animated: true)
+
+        firebaseManager.deleteObserve(path: RoomURL.base.rawValue)
     }
     
     func observeRooms(){
-        firebaseManager.observe(path: RoomURL.base.rawValue, completion: { snapshot in
+        firebaseManager.observe(path: RoomURL.base.rawValue, completion: { [weak self] snapshot in
+            guard let self = self else { return }
+
             if let dbRooms = snapshot.value as? Dictionary<String, Any> {
                 self.rooms = []
                 
@@ -112,7 +126,6 @@ extension SearchGroupVC: SearchGroupProtocol {
                             continue
                     }
 
-                    // FIXME: これ使わないのにやる意味あるのかわからんくなった
                     var users: [User] = []
                     for (index, user) in member.enumerated() {
                         users.append( User(index: index, name: user, color: COLORS[index]) )

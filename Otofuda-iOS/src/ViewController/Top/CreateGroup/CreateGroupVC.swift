@@ -23,8 +23,6 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
     var member: [User] = []
 
     var me: User!
-    
-    private var myClosure: (() -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +40,7 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
     
     deinit {
         firebaseManager.deleteAllValue(path: room.url())
+        removeObserveMember()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -57,7 +56,6 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
         nextVC.haveMusics = self.haveMusics
         nextVC.me = me
         removeObserveMember()
-
     }
     
     

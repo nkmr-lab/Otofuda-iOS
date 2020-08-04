@@ -45,6 +45,9 @@ final class PlayVC: UIViewController, PlayProtocol {
 
     var playMusics: [Music] = []
     var cardLocations: [Int] = []
+
+    var scoreMode: ScoreMode = .normal
+    var playbackMode: PlaybackMode = .intro
     
     @IBOutlet var countdownV: UIView!
     
@@ -81,13 +84,17 @@ final class PlayVC: UIViewController, PlayProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // 戻るを不可能にする
+        self.navigationItem.hidesBackButton = true
+
+
         fudaCollectionV.reloadData()
 
         // 楽曲を止めずに効果音を鳴らすようにするために必要
         let audioSession = AVAudioSession.sharedInstance()
 
         do {
-            try audioSession.setCategory(.ambient)
+            try audioSession.setCategory(.playback, options: .mixWithOthers)
         } catch {
             print("error:", error)
         }
@@ -98,7 +105,7 @@ final class PlayVC: UIViewController, PlayProtocol {
         initializeVoice()
         initializePlayer()
         initializeTapSoundPlayer()
-        setupStartBtn(isEnabled: true)
+        if isHost { startBtn.isHidden = false }
         navigationItem.title = "1曲目"
         self.fudaCollectionV.reloadData()
         
@@ -107,11 +114,10 @@ final class PlayVC: UIViewController, PlayProtocol {
         }
 
         observeAnswearUser()
-        
     }
 
     deinit {
-        player.stop() // FIXME: 🐛プレイヤー止まってない？
+        player?.stop() // FIXME: 🐛プレイヤー止まってない？
         player = nil
     }
 
@@ -123,6 +129,8 @@ final class PlayVC: UIViewController, PlayProtocol {
         if  currentIndex > CARD_MAX_COUNT {
             return
         }
+
+        if isHost { self.startBtn.isHidden = true }
         
         room.status = .play
         firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)

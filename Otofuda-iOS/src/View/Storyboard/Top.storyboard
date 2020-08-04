@@ -172,15 +172,45 @@
                                     <segue destination="0zx-20-CYg" kind="show" id="AFq-yl-6oO"/>
                                 </connections>
                             </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rzs-01-j9Q">
+                                <rect key="frame" x="50" y="682" width="314" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在の人数" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyh-kV-sdU">
+                                        <rect key="frame" x="0.0" y="0.0" width="147" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mi8-5I-7We">
+                                        <rect key="frame" x="147" y="0.0" width="20" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="20" id="DiH-zW-yve"/>
+                                        </constraints>
+                                    </view>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0人" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WdI-BC-kXM">
+                                        <rect key="frame" x="167" y="0.0" width="147" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Mi8-5I-7We" firstAttribute="centerX" secondItem="Rzs-01-j9Q" secondAttribute="centerX" id="GpV-YS-NVR"/>
+                                    <constraint firstAttribute="height" constant="30" id="bxo-tc-zDm"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="lBY-ag-FyV" firstAttribute="centerY" secondItem="9x0-Un-B1c" secondAttribute="centerY" id="3Ei-Ir-Xs9"/>
                             <constraint firstItem="dVy-hS-JW8" firstAttribute="trailing" secondItem="8H8-LN-dK9" secondAttribute="trailing" constant="50" id="9qR-Fx-5Sg"/>
                             <constraint firstItem="8H8-LN-dK9" firstAttribute="leading" secondItem="dVy-hS-JW8" secondAttribute="leading" constant="50" id="T0l-kl-k1Q"/>
+                            <constraint firstItem="Rzs-01-j9Q" firstAttribute="leading" secondItem="dVy-hS-JW8" secondAttribute="leading" constant="50" id="bek-5F-wCb"/>
                             <constraint firstItem="dVy-hS-JW8" firstAttribute="trailing" secondItem="lBY-ag-FyV" secondAttribute="trailing" constant="30" id="dGB-60-4Y5"/>
                             <constraint firstItem="lBY-ag-FyV" firstAttribute="centerX" secondItem="9x0-Un-B1c" secondAttribute="centerX" id="fqO-q9-1FK"/>
+                            <constraint firstItem="8H8-LN-dK9" firstAttribute="top" secondItem="Rzs-01-j9Q" secondAttribute="bottom" constant="20" id="hr6-sp-TVl"/>
                             <constraint firstItem="lBY-ag-FyV" firstAttribute="leading" secondItem="dVy-hS-JW8" secondAttribute="leading" constant="30" id="mI0-3u-eoN"/>
+                            <constraint firstItem="dVy-hS-JW8" firstAttribute="trailing" secondItem="Rzs-01-j9Q" secondAttribute="trailing" constant="50" id="oIr-in-ki0"/>
                             <constraint firstItem="dVy-hS-JW8" firstAttribute="bottom" secondItem="8H8-LN-dK9" secondAttribute="bottom" constant="50" id="xU0-Ok-1kU"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dVy-hS-JW8"/>

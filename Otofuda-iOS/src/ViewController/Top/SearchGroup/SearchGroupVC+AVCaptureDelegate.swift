@@ -10,7 +10,7 @@ extension SearchGroupVC: AVCaptureMetadataOutputObjectsDelegate {
             return
         }
         
-        for metadataObj in metadataObjects {
+        for_meta: for metadataObj in metadataObjects {
             if metadataObj.type != AVMetadataObject.ObjectType.qr {
                 continue
             }
@@ -29,8 +29,8 @@ extension SearchGroupVC: AVCaptureMetadataOutputObjectsDelegate {
             }
             
             let box = CGRect(
-                x: barCode.bounds.minX,
-                y: barCode.bounds.minY + 150,
+                x: barCode.bounds.minX + cameraV.frame.minX,
+                y: barCode.bounds.minY + cameraV.frame.minY,
                 width: barCode.bounds.width,
                 height: barCode.bounds.height
             )
@@ -39,9 +39,9 @@ extension SearchGroupVC: AVCaptureMetadataOutputObjectsDelegate {
             
             for room in rooms {
                 if room.name == qrRoom.name {
-                    // マッチング!!!
+                    print("マッチング!!!") // FIXME: ここがどうやっても何度も出力されてしまう
                     enterRoom(room: qrRoom)
-                    continue
+                    break for_meta
                 }
             }
             

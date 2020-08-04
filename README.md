@@ -1,5 +1,9 @@
 # Otofuda-iOS
 
+<div align="center">
+  <img src="https://i.gyazo.com/780ef47d72899d0609cc755c21435b2b.png" width="30%" height="auto">
+</div>
+
 ## Getting Started
 
 1. CocoaPodをインストールしてください。
@@ -52,3 +56,15 @@ carthage update --platform iOS
 |非推奨追加（Deprecation）|	💩|
 |削除（Removal）|	🗑️|
 |WIP(Work In Progress)|	🚧|
+
+## Rest API
+- GET https://uniotto.org/api/get_otofuda_list.php?id={id}
+- GET https://uniotto.org/api/get_rand16_itunes.php?id={id}
+- GET https://uniotto.org/api/get_all_otofuda_list.php
+
+## Architecture
+- MVVM
+
+## Version
+- v1.0.0 https://github.com/nkmr-lab/Otofuda-iOS/projects/1
+- v1.0.1 https://github.com/nkmr-lab/Otofuda-iOS/projects/2

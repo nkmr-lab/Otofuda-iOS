@@ -51,6 +51,8 @@
 		F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */; };
 		F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */; };
 		F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91FB23329A5C0031B062 /* IBDesignableView.swift */; };
+		F33D40F624D6F53F00AD9C41 /* ScoreMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */; };
+		F33D40F824D6F57600AD9C41 /* PlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */; };
 		F35ED14424B45EAD00727207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED14324B45EAD00727207 /* Constants.swift */; };
 		F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17024B6C68200727207 /* GoogleService-Info.plist */; };
 		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
@@ -130,7 +132,7 @@
 		4F4DB329C6599576A6CF9A87 /* Pods-Otofuda-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSUITests/Pods-Otofuda-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5880D37B22B4928700F40959 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		589460D122852E9500319032 /* Otofuda-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Otofuda-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		589460D122852E9500319032 /* 音札.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "音札.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		589460D422852E9500319032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		589460D622852E9500319032 /* TopVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopVC.swift; sourceTree = "<group>"; };
 		589460DB22852E9500319032 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -187,6 +189,8 @@
 		F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableSegumentControl.swift; sourceTree = "<group>"; };
 		F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableTableView.swift; sourceTree = "<group>"; };
 		F32B91FB23329A5C0031B062 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMode.swift; sourceTree = "<group>"; };
+		F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackMode.swift; sourceTree = "<group>"; };
 		F35ED14324B45EAD00727207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F35ED17024B6C68200727207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -310,7 +314,7 @@
 		589460D222852E9500319032 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				589460D122852E9500319032 /* Otofuda-iOS.app */,
+				589460D122852E9500319032 /* 音札.app */,
 				F30811702336535C009E7726 /* Otofuda-iOSTests.xctest */,
 				F308117E2336536F009E7726 /* Otofuda-iOSUITests.xctest */,
 			);
@@ -462,6 +466,8 @@
 				F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */,
 				F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */,
 				F3C8E69F2361901F00864279 /* PresetAPIModel.swift */,
+				F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */,
+				F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -535,10 +541,10 @@
 				F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */,
 				F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */,
 				F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */,
+				F3C8E69723615F0100864279 /* Play.storyboard */,
 				F3E25FE5233085B600134769 /* FudaCollectionCell.xib */,
 				F32B91B1233233C00031B062 /* Result.storyboard */,
 				F32B91B3233235190031B062 /* ResultTableCell.xib */,
-				F3C8E69723615F0100864279 /* Play.storyboard */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -590,7 +596,7 @@
 			);
 			name = "Otofuda-iOS";
 			productName = "Otofuda-iOS";
-			productReference = 589460D122852E9500319032 /* Otofuda-iOS.app */;
+			productReference = 589460D122852E9500319032 /* 音札.app */;
 			productType = "com.apple.product-type.application";
 		};
 		F308116F2336535C009E7726 /* Otofuda-iOSTests */ = {
@@ -847,6 +853,8 @@
 				F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */,
 				F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */,
 				589460F722867A4800319032 /* FirebaseManager.swift in Sources */,
+				F33D40F624D6F53F00AD9C41 /* ScoreMode.swift in Sources */,
+				F33D40F824D6F57600AD9C41 /* PlaybackMode.swift in Sources */,
 				F3225EFD2330AFCA00D9BD79 /* iTunesAPIModel.swift in Sources */,
 				F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */,
 				F3C21BBB232F738F00546D5B /* SearchGropuVC+Ex.swift in Sources */,
@@ -1048,7 +1056,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nkmr-lab.Otofuda-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1071,7 +1079,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "nkmr-lab.Otofuda-iOS";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

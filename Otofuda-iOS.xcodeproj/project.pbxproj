@@ -17,9 +17,7 @@
 		589460F722867A4800319032 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460F622867A4800319032 /* FirebaseManager.swift */; };
 		87B6FE4F76959AE731B4A6B8 /* Pods_Otofuda_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA582A8B6C1AC60CA05C8891 /* Pods_Otofuda_iOSTests.framework */; };
 		ABB34FFD4B8DD80A5EAA9C01 /* Pods_Otofuda_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */; };
-		F308114B233325BB009E7726 /* SplashVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308114A233325BB009E7726 /* SplashVC.swift */; };
 		F308114D233325C6009E7726 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F308114C233325C6009E7726 /* Splash.storyboard */; };
-		F308114F23332CAA009E7726 /* MuteAlertVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308114E23332CAA009E7726 /* MuteAlertVC.swift */; };
 		F308115623335E48009E7726 /* MenuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308115523335E48009E7726 /* MenuVC+Ex.swift */; };
 		F308115F233516A2009E7726 /* mute_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = F308115E233516A2009E7726 /* mute_animation.json */; };
 		F30811692335C937009E7726 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811682335C937009E7726 /* Date+Ex.swift */; };
@@ -145,9 +143,7 @@
 		A8CDC4134202E14425297323 /* Pods_Otofuda_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7EFAE83DD86409EF8712C2C /* Pods-Otofuda-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSTests/Pods-Otofuda-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DA582A8B6C1AC60CA05C8891 /* Pods_Otofuda_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F308114A233325BB009E7726 /* SplashVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashVC.swift; sourceTree = "<group>"; };
 		F308114C233325C6009E7726 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
-		F308114E23332CAA009E7726 /* MuteAlertVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MuteAlertVC.swift; sourceTree = "<group>"; };
 		F308115223333081009E7726 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F308115523335E48009E7726 /* MenuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+Ex.swift"; sourceTree = "<group>"; };
 		F308115E233516A2009E7726 /* mute_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mute_animation.json; sourceTree = "<group>"; };
@@ -385,15 +381,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		F3081149233325AD009E7726 /* Splash */ = {
-			isa = PBXGroup;
-			children = (
-				F308114A233325BB009E7726 /* SplashVC.swift */,
-				F308114E23332CAA009E7726 /* MuteAlertVC.swift */,
-			);
-			path = Splash;
-			sourceTree = "<group>";
-		};
 		F30811712336535D009E7726 /* Otofuda-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -491,7 +478,6 @@
 		F3C8E69223615BCE00864279 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				F3081149233325AD009E7726 /* Splash */,
 				589460EC2285449100319032 /* Top */,
 				F3E25FD9232F9FED00134769 /* Menu */,
 				F3E25FCE232F9E3B00134769 /* Play */,
@@ -814,8 +800,6 @@
 				F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */,
 				589460F522855D9F00319032 /* SearchGroupVC.swift in Sources */,
 				F3C21BC4232F9C4F00546D5B /* Music.swift in Sources */,
-				F308114B233325BB009E7726 /* SplashVC.swift in Sources */,
-				F308114F23332CAA009E7726 /* MuteAlertVC.swift in Sources */,
 				F3225F072330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift in Sources */,
 				F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */,
 				F3E25FEE233090EC00134769 /* MPMediaPlayer+Ex.swift in Sources */,

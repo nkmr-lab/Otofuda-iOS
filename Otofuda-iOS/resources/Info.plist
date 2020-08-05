@@ -22,6 +22,10 @@
 	<string></string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>ゲームをするにあたって音楽を使います</string>
+	<key>NSCameraUsageDescription</key>
+	<string>グループの検索にカメラを使います</string>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>
@@ -41,10 +45,6 @@
 			</array>
 		</dict>
 	</dict>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>ゲームをするにあたって音楽を使います</string>
-	<key>NSCameraUsageDescription</key>
-	<string>グループの検索にカメラを使います</string>
 	<key>UILaunchStoryboardName</key>
 	<string>Splash</string>
 	<key>UIMainStoryboardFile</key>
@@ -56,8 +56,6 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>

@@ -1040,7 +1040,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nkmr-lab.Otofuda-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1064,7 +1064,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "nkmr-lab.Otofuda-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

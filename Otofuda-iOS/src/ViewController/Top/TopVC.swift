@@ -2,7 +2,6 @@ import UIKit
 import MediaPlayer
 import Alamofire
 import SwiftyJSON
-import FirebaseAuth
 
 protocol TopProtocol {
     func requestAuth()

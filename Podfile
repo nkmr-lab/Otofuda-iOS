@@ -8,9 +8,6 @@ target 'Otofuda-iOS' do
   # Pods for Otofuda-iOS
   pod 'Firebase'
   pod 'Firebase/Database'
-  pod 'Firebase/Auth'
-  pod 'Mute'
-  pod 'lottie-ios'
   pod 'Alamofire'
   pod 'AlamofireImage'
   pod "SwiftyJSON"
@@ -23,8 +20,6 @@ target 'Otofuda-iOS' do
     # Pods for testing
     # pod 'Firebase'
     # pod 'Firebase/Database'
-    # pod 'Mute'
-    # pod 'lottie-ios'
   end
 
   target 'Otofuda-iOSUITests' do

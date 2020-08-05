@@ -19,7 +19,6 @@
 		ABB34FFD4B8DD80A5EAA9C01 /* Pods_Otofuda_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */; };
 		F308114D233325C6009E7726 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F308114C233325C6009E7726 /* Splash.storyboard */; };
 		F308115623335E48009E7726 /* MenuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308115523335E48009E7726 /* MenuVC+Ex.swift */; };
-		F308115F233516A2009E7726 /* mute_animation.json in Resources */ = {isa = PBXBuildFile; fileRef = F308115E233516A2009E7726 /* mute_animation.json */; };
 		F30811692335C937009E7726 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811682335C937009E7726 /* Date+Ex.swift */; };
 		F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308116A2335C9F6009E7726 /* CreateGroupVC+Ex.swift */; };
 		F30811732336535D009E7726 /* Otofuda_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811722336535D009E7726 /* Otofuda_iOSTests.swift */; };
@@ -54,7 +53,6 @@
 		F35ED14424B45EAD00727207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED14324B45EAD00727207 /* Constants.swift */; };
 		F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17024B6C68200727207 /* GoogleService-Info.plist */; };
 		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
-		F35ED17524B74CD200727207 /* Bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17424B74CD200727207 /* Bell.mp3 */; };
 		F35F9B53237154E000BBB727 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F9B52237154E000BBB727 /* MusicList.swift */; };
 		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
@@ -146,7 +144,6 @@
 		F308114C233325C6009E7726 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		F308115223333081009E7726 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F308115523335E48009E7726 /* MenuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+Ex.swift"; sourceTree = "<group>"; };
-		F308115E233516A2009E7726 /* mute_animation.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mute_animation.json; sourceTree = "<group>"; };
 		F30811682335C937009E7726 /* Date+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Ex.swift"; sourceTree = "<group>"; };
 		F308116A2335C9F6009E7726 /* CreateGroupVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateGroupVC+Ex.swift"; sourceTree = "<group>"; };
 		F30811702336535C009E7726 /* Otofuda-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Otofuda-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -190,7 +187,6 @@
 		F35ED14324B45EAD00727207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F35ED17024B6C68200727207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F35ED17424B74CD200727207 /* Bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bell.mp3; sourceTree = "<group>"; };
 		F35F9B52237154E000BBB727 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
@@ -333,9 +329,7 @@
 				589460DB22852E9500319032 /* Assets.xcassets */,
 				589460E022852E9500319032 /* Info.plist */,
 				F32B91A823320BF80031B062 /* tap_fuda.caf */,
-				F308115E233516A2009E7726 /* mute_animation.json */,
 				F35ED17024B6C68200727207 /* GoogleService-Info.plist */,
-				F35ED17424B74CD200727207 /* Bell.mp3 */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -671,7 +665,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F308115F233516A2009E7726 /* mute_animation.json in Resources */,
 				F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */,
 				F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */,
 				F3E25FE6233085B600134769 /* FudaCollectionCell.xib in Resources */,
@@ -683,7 +676,6 @@
 				589460DC22852E9500319032 /* Assets.xcassets in Resources */,
 				589460EB2285367300319032 /* Top.storyboard in Resources */,
 				F3C8E69823615F0100864279 /* Play.storyboard in Resources */,
-				F35ED17524B74CD200727207 /* Bell.mp3 in Resources */,
 				F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */,
 				F308114D233325C6009E7726 /* Splash.storyboard in Resources */,
 			);

@@ -4,9 +4,6 @@ PODS:
     - Alamofire (~> 5.1)
   - Firebase (6.27.1):
     - Firebase/Core (= 6.27.1)
-  - Firebase/Auth (6.27.1):
-    - Firebase/CoreOnly
-    - FirebaseAuth (~> 6.6.0)
   - Firebase/Core (6.27.1):
     - Firebase/CoreOnly
     - FirebaseAnalytics (= 6.6.2)
@@ -24,11 +21,6 @@ PODS:
     - GoogleUtilities/Network (~> 6.0)
     - "GoogleUtilities/NSData+zlib (~> 6.0)"
     - nanopb (~> 1.30905.0)
-  - FirebaseAuth (6.6.0):
-    - FirebaseCore (~> 6.8)
-    - GoogleUtilities/AppDelegateSwizzler (~> 6.5)
-    - GoogleUtilities/Environment (~> 6.5)
-    - GTMSessionFetcher/Core (~> 1.1)
   - FirebaseCore (6.8.1):
     - FirebaseCoreDiagnostics (~> 1.3)
     - GoogleUtilities/Environment (~> 6.5)
@@ -75,10 +67,7 @@ PODS:
     - GoogleUtilities/Logger
   - GoogleUtilities/UserDefaults (6.6.0):
     - GoogleUtilities/Logger
-  - GTMSessionFetcher/Core (1.4.0)
   - leveldb-library (1.22)
-  - lottie-ios (3.1.8)
-  - Mute (0.5.1)
   - nanopb (1.30905.0):
     - nanopb/decode (= 1.30905.0)
     - nanopb/encode (= 1.30905.0)
@@ -102,10 +91,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - Firebase
-  - Firebase/Auth
   - Firebase/Database
-  - lottie-ios
-  - Mute
   - ObjectMapper
   - PromiseKit
   - RxSwift
@@ -117,7 +103,6 @@ SPEC REPOS:
     - AlamofireImage
     - Firebase
     - FirebaseAnalytics
-    - FirebaseAuth
     - FirebaseCore
     - FirebaseCoreDiagnostics
     - FirebaseDatabase
@@ -126,10 +111,7 @@ SPEC REPOS:
     - GoogleDataTransport
     - GoogleDataTransportCCTSupport
     - GoogleUtilities
-    - GTMSessionFetcher
     - leveldb-library
-    - lottie-ios
-    - Mute
     - nanopb
     - ObjectMapper
     - PromiseKit
@@ -142,7 +124,6 @@ SPEC CHECKSUMS:
   AlamofireImage: c4a2ba349885fb3064feb74d2e547bd42ce9be10
   Firebase: 919186c8e119dd9372a45fd1dd17a8a942bc1892
   FirebaseAnalytics: 5fa308e1b13f838d0f6dc74719ac2a72e8c5afc4
-  FirebaseAuth: b85c064e0ac60f82486728d50a4803f235687302
   FirebaseCore: 8cd4f8ea22075e0ee582849b1cf79d8816506085
   FirebaseCoreDiagnostics: 4505e4d4009b1d93f605088ee7d7764d5f0d1c84
   FirebaseDatabase: 3d02ffa794ec174853c086cf87cf2dc79bd6da49
@@ -151,10 +132,7 @@ SPEC CHECKSUMS:
   GoogleDataTransport: 9a8a16f79feffc7f42096743de2a7c4815e84020
   GoogleDataTransportCCTSupport: 489c1265d2c85b68187a83a911913d190012158d
   GoogleUtilities: 39530bc0ad980530298e9c4af8549e991fd033b1
-  GTMSessionFetcher: 6f5c8abbab8a9bce4bb3f057e317728ec6182b10
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
-  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
-  Mute: 5aeee165783cfde9afc51902fb8ae7f475c26a00
   nanopb: c43f40fadfe79e8b8db116583945847910cbabc9
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   PromiseKit: 28fda91c973cc377875d8c0ea4f973013c05b6db
@@ -162,6 +140,6 @@ SPEC CHECKSUMS:
   RxSwift: 81470a2074fa8780320ea5fe4102807cb7118178
   SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
 
-PODFILE CHECKSUM: 2f1d5c123af314c8a3aa48b30141b3c5dbd71a5f
+PODFILE CHECKSUM: bf14921349260d4da16e881c711983f1b2fa1dd0
 
 COCOAPODS: 1.8.3

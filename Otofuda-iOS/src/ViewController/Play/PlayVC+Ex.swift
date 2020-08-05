@@ -3,20 +3,6 @@ import MediaPlayer
 import Firebase
 
 extension PlayVC {
-
-    func setupStartBtn(isEnabled: Bool) {
-        if isEnabled {
-            startBtn.isEnabled = true
-            startBtn.backgroundColor = UIColor(
-                red: 51 / 255,
-                green: 102 / 255,
-                blue: 204 / 255, alpha: 1
-            )
-        } else {
-            startBtn.isEnabled = false
-            startBtn.backgroundColor = .darkGray
-        }
-    }
     
     func initializeUI(){
         startBtn.isHidden = !isHost
@@ -45,11 +31,19 @@ extension PlayVC {
     }
 
     func playMusic() {
-//        player.stop()
-//        player = nil
-        initializePlayer()
-//        print( playingMusics[currentIndex].item.title )
-        player.setMusic(item: playMusics[currentIndex].item!)
+        guard let music = playMusics[currentIndex].item else { return }
+        player.setMusic(item: music)
+        player.play()
+
+        switch playbackMode {
+        case .intro:
+            player.currentPlaybackTime = 0
+        case .random:
+            let randomDuration = Int.random(in: 0..<Int(music.playbackDuration) - 10)
+            player.currentPlaybackTime = TimeInterval(randomDuration)
+        }
+
+        player.pause() // iOS13のバグ？でplay1回だけじゃ再生できない時があるがためのコード
         player.play()
     }
 
@@ -63,7 +57,10 @@ extension PlayVC {
         let storyboard = UIStoryboard(name: "Result", bundle: nil)
         let nextVC = storyboard.instantiateInitialViewController() as! ResultVC
         nextVC.room = room
-        nextVC.playMusics = self.playMusics
+        nextVC.playMusics = playMusics
+        nextVC.me = me
+        nextVC.isHost = isHost
+        nextVC.scoreMode = scoreMode
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -92,6 +89,7 @@ extension PlayVC {
         tapErrorV.frame = tapErrorV.frame
         tapErrorV.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(tapErrorV)
+        self.view.insertSubview(tapErrorV, belowSubview: startBtn)
         tapErrorV.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         tapErrorV.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
         tapErrorV.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.4).isActive = true
@@ -101,17 +99,26 @@ extension PlayVC {
     @objc func countdown(){
         countdownLabel.text = String(3 - count)
         if count == 3 {
+
+            player.stop()
+            
             self.isPlaying = true
             self.removeCountdonwV()
             countdownTimer.invalidate()
             count = 0
+
+            let playMusic = playMusics[currentIndex]
+            guard let musicOwner = playMusic.musicOwner else { return }
             
+            if musicOwner == me.index {
+                self.playMusic()
+            }
+
             if isHost {
-                playMusic()
-                setupStartBtn(isEnabled: false)
                 firebaseManager.post(path: room.url() + "currentIndex", value: currentIndex)
                 observeTapped()
             }
+
             tapErrorV.removeFromSuperview()
 //            observeAnswearUser()
             playingMusic = playMusics[currentIndex]
@@ -150,7 +157,7 @@ extension PlayVC {
             if tappedDict.count == self.room.member.count {
                 self.room.status = .next
                 self.firebaseManager.post(path: self.room.url() + "status", value: self.room.status.rawValue)
-                self.setupStartBtn(isEnabled: true)
+                self.startBtn.isHidden = false
                 self.isPlaying = false
                 self.isTapped = false
 
@@ -167,12 +174,11 @@ extension PlayVC {
         firebaseManager.observe(path: room.url() + "answearUser", completion: { snapshot in
 
             if snapshot.children.allObjects.count == 0 {
-                print("ああああああああああ")
                 return
             }
             
             var fastestUser: Int = -1
-            var fastestTime: Double = 100000000000
+            var fastestTime: Double = Double.greatestFiniteMagnitude
 
             for item in snapshot.children {
                 let snapshot = item as! DataSnapshot
@@ -187,9 +193,6 @@ extension PlayVC {
                 }
             }
 
-
-            print("fastestUser!!!!!=", fastestUser)
-
             // タップされた札の色をanswearUserにする
             let currentMusic = self.playMusics[self.currentIndex - 1]
             currentMusic.cardOwner = fastestUser
@@ -198,10 +201,9 @@ extension PlayVC {
             self.fudaCollectionV.reloadData()
 
             self.room.status = .next
-//            self.firebaseManager.deleteObserve(path: self.room.url() + "answearUser")
-            self.setupStartBtn(isEnabled: true)
             self.isPlaying = false
             self.isTapped = false
+            if self.isHost { self.startBtn.isHidden = false }
 
             // 終了判定
             if self.currentIndex == CARD_MAX_COUNT  {

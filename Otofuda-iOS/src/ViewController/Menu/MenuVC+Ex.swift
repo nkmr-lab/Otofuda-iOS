@@ -2,39 +2,43 @@ import UIKit
 import MediaPlayer
 
 extension MenuVC {
-    func prepareUI() {
-        if isHost {
-        }
-        else {
-            displayBlockV()
-            observeUI()
-            observeStart()
-        }
+ 
+    func observeUI() {
+        firebaseManager.observe(path: room.url() + "mode", completion: { snapshot in
+            if let modeDict = snapshot.value as? Dictionary<String, String> {
+                guard let scoreMode = modeDict["score"] else { return }
+                guard let playbackMode = modeDict["playback"] else { return }
+                
+                
+                switch scoreMode {
+                case "normal":
+                    self.scoreSegument.selectedSegmentIndex = 0
+                    self.scoreMode = .normal
+                case "bingo":
+                    self.scoreSegument.selectedSegmentIndex = 1
+                    self.scoreMode = .bingo
+                default:
+                    break
+                }
+
+                switch playbackMode {
+                case "intro":
+                    self.playbackSegument.selectedSegmentIndex = 0
+                    self.playbackMode = .intro
+                case "random":
+                    self.playbackSegument.selectedSegmentIndex = 1
+                    self.playbackMode = .random
+                default:
+                    break
+                }
+            }
+        })
     }
 
-    func observeUI() {
-        firebaseManager.observe(path: room.url() + "rule", completion: { snapshot in 
-            if let ruleDict = snapshot.value as? Dictionary<String, String> {
-                guard let pointRule = ruleDict["point"] else { return }
-                guard let playingRule = ruleDict["playing"] else { return }
-                
-                switch pointRule {
-                case "normal":
-                    self.pointSegument.selectedSegmentIndex = 0
-                case "bingo":
-                    self.pointSegument.selectedSegmentIndex = 1
-                default:
-                    break
-                }
-
-                switch playingRule {
-                case "intro":
-                    self.playingSegument.selectedSegmentIndex = 0
-                case "random":
-                    self.playingSegument.selectedSegmentIndex = 1
-                default:
-                    break
-                }
+    func observeMusicCounts() {
+        firebaseManager.observeSingle(path: room.url() + "musicCounts", completion: { snapshot in
+            if let musicCounts = snapshot.value as? [Int] {
+                self.musicCounts = musicCounts
             }
         })
     }
@@ -44,34 +48,60 @@ extension MenuVC {
             if let status = snapshot.value as? String {
                 if status == RoomStatus.start.rawValue {
                     self.firebaseManager.observeSingle(path: self.room.url(), completion: { snapshot in
-                        guard let fbRoom = snapshot.value as? Dictionary<String,Any> else {
-                            print("fbRoomがありません")
-                            return
-                        }
-                        guard let fbPlayMusics = fbRoom["playMusics"] as? [Dictionary<String, Any>] else {
-                            print(" fbPlayMusicsがありません")
-                            return
-                        }
-                        guard let fbCardLocations = fbRoom["cardLocations"] as? [Int] else {
-                            print("fbCardLocationsがありません")
-                            return
-                        }
-                        
-                        for fbPlayMusic in fbPlayMusics {
-                            let name = fbPlayMusic["name"] as! String // TODO: タイトルがないときに落ちる
-                            let music = Music(name: name, item: nil)
-                            self.playMusics.append(music)
+                        guard let fbRoom = snapshot.value as? Dictionary<String,Any>,
+                              let fbCardLocations = fbRoom["cardLocations"] as? [Int],
+                              let fbSelectedPlayers = fbRoom["selectedPlayers"] as? [Int]
+                            else { return }
+
+                        var playCount = 0
+                        self.haveMusics.shuffle()
+                        for (index, selectedPlayer) in fbSelectedPlayers.enumerated() {
+                            if selectedPlayer == self.me.index {
+                                let music = self.haveMusics[playCount]
+                                music.musicOwner = self.me.index
+                                self.firebaseManager.post(path: self.room.url() + "playMusics/\(index)", value: music.dict())
+                                playCount = playCount + 1
+                            }
                         }
 
+                        self.firebaseManager.deleteObserve(path: self.room.url() + "status")
+
                         self.cardLocations = fbCardLocations
-                
-                        
-                        self.goNextVC()
+
                     })
                 }
             }
         })
         
+    }
+
+    func preparedPlayMusics() {
+        firebaseManager.observe(path: room.url() + "playMusics", completion: { [weak self] snapshot in
+            guard let self = self else { return }
+            self.playMusics = []
+
+            if snapshot.children.allObjects.count == CARD_MAX_COUNT {
+                guard let fbPlayMusics = snapshot.value as? [Dictionary<String, Any>] else { return }
+
+                for (index, fbPlayMusic) in fbPlayMusics.enumerated() {
+                    let name = fbPlayMusic["name"] as! String
+                    let artist = fbPlayMusic["artist"] as! String
+                    let musicOwner = fbPlayMusic["musicOwner"] as! Int
+                    var mediaItem: MPMediaItem?
+                    if musicOwner == self.me.index {
+                        mediaItem = MPMediaItem.getMediaItem(title: name, artist: artist)
+                    }
+
+                    let music = Music(name: name, artist: artist, item: mediaItem)
+                    music.musicOwner = musicOwner
+                    self.playMusics.append(music)
+                }
+
+                self.firebaseManager.deleteObserve(path: self.room.url() + "playMusics")
+
+                self.goNextVC() // FIXME: 2度目の時ここが5回呼ばれてる
+            }
+        })
     }
 
     func goNextVC() {
@@ -82,7 +112,13 @@ extension MenuVC {
         nextVC.isHost = isHost
         nextVC.playMusics = playMusics
         nextVC.cardLocations = cardLocations
+        nextVC.scoreMode = scoreMode
         nextVC.me = me
+
+        if !isHost {
+            firebaseManager.deleteObserve(path: room.url() + "rule")
+        }
+        
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -93,8 +129,8 @@ extension MenuVC {
         
         blockV.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
         blockV.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        blockV.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 1.0).isActive = true
-        blockV.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 1.0).isActive = true
+        blockV.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
+        blockV.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
     }
     
 }

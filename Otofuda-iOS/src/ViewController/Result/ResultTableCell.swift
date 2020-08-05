@@ -12,7 +12,7 @@ class ResultTableCell: UITableViewCell {
 
     func prepareLabel(index: Int, music: Music) {
         indexLabel.text = String(index) + "."
-        artistLabel.text = music.item.artist!
-        titleLabel.text = music.item.title!
+        titleLabel.text = music.name
+        artistLabel.text = music.artist
     }
 }

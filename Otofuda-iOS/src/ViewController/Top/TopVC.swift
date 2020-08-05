@@ -91,7 +91,7 @@ final class TopVC: UIViewController, TopProtocol {
             for album in albums {
                 for song in album.items {
                     musics.append(song)
-                    haveMusics.append(Music(name: song.title ?? "不明", item: song))
+                    haveMusics.append(Music(name: song.title ?? "不明", artist: song.artist ?? "不明",  item: song))
                 }
             }
         }

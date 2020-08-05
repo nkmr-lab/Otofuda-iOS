@@ -13,9 +13,9 @@ struct Room {
     var name: String!
     var member: [User] = []
     var status: RoomStatus = .menu
-    var rule: Dictionary<String, String> = [
-        "playing": RulePlaying.intro.rawValue,
-        "point": RulePoint.normal.rawValue
+    var mode: Dictionary<String, String> = [
+        "playback": PlaybackMode.intro.rawValue,
+        "score": ScoreMode.normal.rawValue
     ]
 
     init(name: String) {
@@ -44,7 +44,7 @@ struct Room {
             userArray.append(user.name)
         }
 
-        dict = [ "name": name, "member": userArray, "rule": rule, "status": status.rawValue ]
+        dict = [ "name": name, "member": userArray, "mode": mode, "status": status.rawValue ]
         return dict
     }
 

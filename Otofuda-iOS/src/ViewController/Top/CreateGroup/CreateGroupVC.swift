@@ -12,6 +12,12 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
     
     @IBOutlet weak var qrView: UIImageView!
 
+    @IBOutlet weak var memberCountLabel: UILabel! {
+        didSet {
+            memberCountLabel.text = "現在の人数　　1　　人"
+        }
+    }
+
     // MARK: - Properties
     
     var firebaseManager = FirebaseManager()

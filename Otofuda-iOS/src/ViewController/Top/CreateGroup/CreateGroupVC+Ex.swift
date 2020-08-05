@@ -22,22 +22,22 @@ extension CreateGroupVC {
         firebaseManager.observe(path: room.url() + "member", completion: { [weak self] snapshot in
 
             // deinitを呼びたいので強参照させないようにしている
-            guard let wself = self else {
-                return
-            }
+            guard let self = self else { return }
 
             guard let member = snapshot.value as? [String] else {
                 return
             }
             
-            wself.member = []
+            self.member = []
             for i in 0..<member.count {
                 let user = member[i]
                 let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
                 let myColor = COLORS[i]
                 
-                wself.member.append(User(index: i, name: user, color: myColor))
+                self.member.append(User(index: i, name: user, color: myColor))
             }
+
+            self.memberCountLabel.text = "現在の人数　　\(member.count)　　人"
         })
     }
     

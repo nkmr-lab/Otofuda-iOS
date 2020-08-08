@@ -11,13 +11,13 @@
         <!--ルールを選択-->
         <scene sceneID="zdZ-iK-bci">
             <objects>
-                <viewController id="IMK-H5-JX7" customClass="MenuVC" customModule="Otofuda_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="IMK-H5-JX7" customClass="MenuVC" customModule="音札" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2kV-qp-bam">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jPr-fu-pbw">
-                                <rect key="frame" x="10" y="64" width="355" height="290"/>
+                                <rect key="frame" x="10" y="64" width="355" height="130"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1l-bl-RLP">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="80"/>
@@ -48,7 +48,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lVH-qt-T0a">
                                                 <rect key="frame" x="150" y="0.0" width="205" height="80"/>
                                                 <subviews>
-                                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jCn-fR-CHt" customClass="IBDesignableSegmentControl" customModule="Otofuda_iOS" customModuleProvider="target">
+                                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="jCn-fR-CHt" customClass="IBDesignableSegmentControl" customModule="音札" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="195" height="71"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <segments>
@@ -91,7 +91,7 @@
                                             <constraint firstAttribute="height" constant="20" id="3IV-7Y-LeE"/>
                                         </constraints>
                                     </view>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihr-ZL-7ud">
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihr-ZL-7ud">
                                         <rect key="frame" x="0.0" y="100" width="355" height="80"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojc-hV-MxW">
@@ -120,7 +120,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0bj-S9-tzg">
                                                 <rect key="frame" x="150" y="0.0" width="205" height="80"/>
                                                 <subviews>
-                                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bd2-cK-uWk" customClass="IBDesignableSegmentControl" customModule="Otofuda_iOS" customModuleProvider="target">
+                                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="bd2-cK-uWk" customClass="IBDesignableSegmentControl" customModule="音札" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="195" height="71"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <segments>
@@ -155,7 +155,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aSV-OK-mIL">
-                                        <rect key="frame" x="0.0" y="180" width="355" height="20"/>
+                                        <rect key="frame" x="0.0" y="100" width="355" height="20"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qeg-AE-CfF">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="20"/>
@@ -166,8 +166,8 @@
                                             </view>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-QE-q8k">
-                                        <rect key="frame" x="0.0" y="200" width="355" height="80"/>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-QE-q8k">
+                                        <rect key="frame" x="0.0" y="120" width="355" height="80"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgK-B4-SzT">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="80"/>
@@ -195,7 +195,7 @@
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="164-KR-3Ud">
                                                 <rect key="frame" x="150" y="0.0" width="205" height="80"/>
                                                 <subviews>
-                                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lpe-zz-9Ew" customClass="IBDesignableSegmentControl" customModule="Otofuda_iOS" customModuleProvider="target">
+                                                    <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lpe-zz-9Ew" customClass="IBDesignableSegmentControl" customModule="音札" customModuleProvider="target">
                                                         <rect key="frame" x="5" y="5" width="195" height="71"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <segments>
@@ -233,7 +233,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcE-Yf-qBr">
-                                        <rect key="frame" x="0.0" y="280" width="355" height="0.0"/>
+                                        <rect key="frame" x="0.0" y="120" width="355" height="0.0"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zEx-2x-X2s">
                                                 <rect key="frame" x="0.0" y="0.0" width="10" height="0.0"/>
@@ -251,14 +251,14 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="M9T-SU-e3c">
-                                        <rect key="frame" x="0.0" y="280" width="355" height="10"/>
+                                        <rect key="frame" x="0.0" y="120" width="355" height="10"/>
                                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="10" id="r4o-Hz-kVd"/>
                                         </constraints>
                                     </view>
                                     <pickerView hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEZ-YT-Su6">
-                                        <rect key="frame" x="0.0" y="290" width="355" height="300"/>
+                                        <rect key="frame" x="0.0" y="130" width="355" height="300"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
@@ -271,7 +271,7 @@
                                     <constraint firstAttribute="trailing" secondItem="PEZ-YT-Su6" secondAttribute="trailing" id="wQB-Hz-bxu"/>
                                 </constraints>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kct-YX-hcw" customClass="IBDesignableButton" customModule="Otofuda_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kct-YX-hcw" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
                                 <rect key="frame" x="20" y="688" width="335" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>

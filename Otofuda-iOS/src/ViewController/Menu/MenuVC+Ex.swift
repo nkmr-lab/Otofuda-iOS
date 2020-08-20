@@ -87,13 +87,19 @@ extension MenuVC {
                     let name = fbPlayMusic["name"] as! String
                     let artist = fbPlayMusic["artist"] as! String
                     let musicOwner = fbPlayMusic["musicOwner"] as! Int
+                    let previewURL = fbPlayMusic["previewURL"] as? String
+                    let storeURL = fbPlayMusic["storeURL"] as? String
+
                     var mediaItem: MPMediaItem?
                     if musicOwner == self.me.index {
                         mediaItem = MPMediaItem.getMediaItem(title: name, artist: artist)
                     }
 
                     let music = Music(name: name, artist: artist, item: mediaItem)
+                    music.previewURL = previewURL
+                    music.storeURL = storeURL
                     music.musicOwner = musicOwner
+
                     self.playMusics.append(music)
                 }
 

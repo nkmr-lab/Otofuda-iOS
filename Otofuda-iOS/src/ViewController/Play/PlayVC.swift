@@ -29,6 +29,7 @@ final class PlayVC: UIViewController, PlayProtocol {
     var currentIndex: Int = 0
 
     var player: MPMusicPlayerController!
+    var avPlayer: AVPlayer!
     var tapSoundPlayer: AVAudioPlayer?
 
     var firebaseManager = FirebaseManager()
@@ -98,6 +99,9 @@ final class PlayVC: UIViewController, PlayProtocol {
         } catch {
             print("error:", error)
         }
+
+
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd(_:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         
         print(audioSession.category.rawValue)
 
@@ -148,5 +152,19 @@ final class PlayVC: UIViewController, PlayProtocol {
 //        navigationItem.title = String(currentIndex) + "曲目"
 //        currentIndex += 1
     }
-    
+
+    @objc private func playerItemDidReachEnd(_ notification: Notification) {
+        // 動画を最初に巻き戻す
+        avPlayer.currentItem!.seek(to: CMTime.zero, completionHandler: nil)
+        avPlayer.play()
+        print("おわったよ！！！！")
+    }
+
+    @IBAction func tappedBadge(_ sender: Any) {
+        if currentIndex == 0 { return }
+        let url = URL(string: playMusics[currentIndex-1].storeURL)
+        if UIApplication.shared.canOpenURL(url! as URL){
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        }
+    }
 }

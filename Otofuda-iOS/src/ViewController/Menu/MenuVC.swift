@@ -1,5 +1,7 @@
 import UIKit
 import PromiseKit
+import Alamofire
+import AVFoundation
 
 protocol Menurotocol {
     func tappedPickBtn(_ sender: Any)
@@ -24,10 +26,17 @@ final class MenuVC: UIViewController, Menurotocol {
     var musicCounts: [Int] = []
     
     // モード
+    var usingMusicMode: UsingMusicMode = .preset
     var scoreMode: ScoreMode = .normal
     var playbackMode: PlaybackMode = .intro
 
     // Segument
+    @IBOutlet weak var usingMusicSegment: UISegmentedControl! {
+        didSet {
+            usingMusicSegment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
+        }
+    }
+
     @IBOutlet weak var scoreSegument: UISegmentedControl! {
         didSet {
             scoreSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
@@ -101,25 +110,67 @@ final class MenuVC: UIViewController, Menurotocol {
         // 楽曲が準備できるのを監視
         preparedPlayMusics()
 
-//        firstly {
-//            PresetAPIModel.shared.request()
-//        }.then { data -> Promise<PresetResponse> in
-//            PresetAPIModel.shared.mapping(jsonStr: data)
-//       }.done { results in
-//            print("done")
-//
-//            for result in results.list {
-//                self.presets.append(result.title)
-//                self.presetPickerV.reloadAllComponents()
-//            }
-//       }.catch { error in
-//            print(error)
-//        }
+        firstly {
+            PresetAPIModel.shared.request()
+        }.then { data -> Promise<PresetResponse> in
+            PresetAPIModel.shared.mapping(jsonStr: data)
+        }.done { results in
+            print("done")
+            self.presets = []
+            for result in results.list {
+                self.presets.append(result.title)
+                self.presetPickerV.reloadAllComponents()
+            }
+        }.catch { error in
+            print(error)
+        }
+
+            // プリセットモードだったら
+            if usingMusicSegment.selectedSegmentIndex == 0 {
+                haveMusics = [] // FIXME: ここでデバイス内の楽曲がリセットされちゃうのでもう一度遊ぶ時ばぐる
+
+                AF.request(SELECT_MUSIC_API_URL, method: .get, parameters: ["id": 2]).response { response in
+                    guard let data = response.data else { return }
+                    do {
+                        let musicList: MusicList = try JSONDecoder().decode(MusicList.self, from: data)
+                        let songs: [MusicList.Song] = musicList.songs
+        //                let song = songs[0]
+        //                guard let url = URL(string: song.previewURL) else { return }
+        //                self.player = AVPlayer(url: url)
+        //                self.player?.volume = 1.0
+        //                self.player?.play()
+        //                print(song.title, song.previewURL)
+                        for song in songs {
+                            let item = AVPlayerItem(url: URL(string: song.previewURL)!)
+                            let music = Music(name: song.title, artist: song.artist, item: item)
+                            music.previewURL = song.previewURL
+                            self.haveMusics.append(music)
+                        }
+                    } catch {
+                        print(error)
+                    }
+                }
+            }
+
     }
 
     deinit {
         firebaseManager.deleteObserve(path: room.url() + "playMusics")
         firebaseManager.deleteObserve(path: room.url() + "status")
+    }
+
+    @IBAction func changedUsingMusicSeg(_ sender: Any) {
+        switch (sender as AnyObject).selectedSegmentIndex {
+        case 0:
+            presetPickerV.isHidden = false
+            usingMusicMode = .preset
+        case 1:
+            presetPickerV.isHidden = true
+            usingMusicMode = .device
+        default:
+            break
+        }
+        firebaseManager.post(path: room.url() + "mode/usingMusic/", value: usingMusicMode.rawValue)
     }
 
     @IBAction func changedScoreSeg(_ sender: Any) {
@@ -165,6 +216,18 @@ final class MenuVC: UIViewController, Menurotocol {
         }
     }
     @IBAction func tappedStartBtn(_ sender: Any) {
+
+        print(usingMusicSegment.selectedSegmentIndex)
+
+        switch usingMusicMode {
+        case .preset:
+            break
+        case .device:
+            break
+        default:
+            break
+        }
+
         // そもそも持ち曲が16曲以上なければ何もしない
         if haveMusics.count < CARD_MAX_COUNT {
             print("16曲以下しかありません")
@@ -177,6 +240,11 @@ final class MenuVC: UIViewController, Menurotocol {
 
         // 誰の曲を使うかを楽曲所持数に応じて決める
         var selectedPlayers: [Int] = []
+
+        // itunesモードの時は再生者はずっと自分にする
+        if usingMusicSegment.selectedSegmentIndex == 0 {
+            selectedPlayers = Array(repeating: 0, count: CARD_MAX_COUNT)
+        }
 
         while selectedPlayers.count < CARD_MAX_COUNT {
             // TODO: 所持数が0の人ばっかだと処理時間が長くなってしまうので要改善

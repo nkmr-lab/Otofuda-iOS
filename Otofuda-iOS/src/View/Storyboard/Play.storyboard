@@ -10,7 +10,7 @@
         <!--Title-->
         <scene sceneID="BgV-uI-PzX">
             <objects>
-                <viewController id="gcc-YW-FNL" customClass="PlayVC" customModule="Otofuda_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gcc-YW-FNL" customClass="PlayVC" customModule="音札" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="abl-bQ-W5x">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -35,7 +35,7 @@
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLv-Zx-blv" customClass="IBDesignableButton" customModule="Otofuda_iOS" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLv-Zx-blv" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
                                 <rect key="frame" x="50" y="395.5" width="314" height="105"/>
                                 <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -61,6 +61,29 @@
                                     <action selector="tapStartBtn:" destination="gcc-YW-FNL" eventType="touchUpInside" id="Alb-Bv-C8p"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3W-lf-owZ">
+                                <rect key="frame" x="258.5" y="731" width="155.5" height="42"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gs1-mO-HCq">
+                                        <rect key="frame" x="13" y="3.5" width="129.5" height="35"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="35" id="Adg-pY-gjZ"/>
+                                            <constraint firstAttribute="width" secondItem="Gs1-mO-HCq" secondAttribute="height" multiplier="1026:277" id="QZv-5e-P0v"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="AppleMusicBadge"/>
+                                        <connections>
+                                            <action selector="tappedBadge:" destination="gcc-YW-FNL" eventType="touchUpInside" id="JPs-Zx-sh3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Gs1-mO-HCq" firstAttribute="centerY" secondItem="D3W-lf-owZ" secondAttribute="centerY" id="O0v-q2-ilW"/>
+                                    <constraint firstAttribute="width" secondItem="D3W-lf-owZ" secondAttribute="height" multiplier="1026:277" id="P36-Ud-4eQ"/>
+                                    <constraint firstItem="Gs1-mO-HCq" firstAttribute="centerX" secondItem="D3W-lf-owZ" secondAttribute="centerX" id="pir-Uq-a3r"/>
+                                    <constraint firstAttribute="height" constant="42" id="zes-Fa-6aL"/>
+                                </constraints>
+                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="odr-WM-jio">
                                 <rect key="frame" x="0.0" y="773" width="414" height="40"/>
                                 <subviews>
@@ -145,7 +168,9 @@
                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="CLv-Zx-blv" firstAttribute="centerY" secondItem="abl-bQ-W5x" secondAttribute="centerY" id="7eu-02-CY2"/>
+                            <constraint firstItem="odr-WM-jio" firstAttribute="top" secondItem="D3W-lf-owZ" secondAttribute="bottom" id="9SY-vx-dKP"/>
                             <constraint firstItem="jnl-b9-xB2" firstAttribute="top" secondItem="tzn-99-n8J" secondAttribute="top" id="E7E-RJ-z23"/>
+                            <constraint firstItem="tzn-99-n8J" firstAttribute="trailing" secondItem="D3W-lf-owZ" secondAttribute="trailing" id="EwV-5c-f7Z"/>
                             <constraint firstItem="tzn-99-n8J" firstAttribute="trailing" secondItem="CLv-Zx-blv" secondAttribute="trailing" constant="50" id="G4U-Xr-bDg"/>
                             <constraint firstItem="CLv-Zx-blv" firstAttribute="centerX" secondItem="abl-bQ-W5x" secondAttribute="centerX" id="G64-A7-a6D"/>
                             <constraint firstItem="jnl-b9-xB2" firstAttribute="trailing" secondItem="tzn-99-n8J" secondAttribute="trailing" id="LdN-bb-hKI"/>
@@ -171,7 +196,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HCF-X2-AyL" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <view contentMode="scaleToFill" id="nNV-6x-Iip" customClass="IBDesignableView" customModule="Otofuda_iOS" customModuleProvider="target">
+                <view contentMode="scaleToFill" id="nNV-6x-Iip" customClass="IBDesignableView" customModule="音札" customModuleProvider="target">
                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
@@ -220,4 +245,7 @@
             <point key="canvasLocation" x="-394.20289855072468" y="-403.125"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="AppleMusicBadge" width="972" height="277"/>
+    </resources>
 </document>

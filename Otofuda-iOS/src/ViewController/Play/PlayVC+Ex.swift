@@ -31,20 +31,32 @@ extension PlayVC {
     }
 
     func playMusic() {
-        guard let music = playMusics[currentIndex].item else { return }
-        player.setMusic(item: music)
-        player.play()
 
-        switch playbackMode {
-        case .intro:
-            player.currentPlaybackTime = 0
-        case .random:
-            let randomDuration = Int.random(in: 0..<Int(music.playbackDuration) - 10)
-            player.currentPlaybackTime = TimeInterval(randomDuration)
+        if true {
+            let music = playMusics[currentIndex]
+            avPlayer = AVPlayer(url: URL(string: music.previewURL!)!)
+            print("=============")
+            avPlayer.volume = 1.0
+            avPlayer.play()
+            print("=============")
         }
+        else {
+            guard let music = playMusics[currentIndex].item else { return }
 
-        player.pause() // iOS13のバグ？でplay1回だけじゃ再生できない時があるがためのコード
-        player.play()
+            player.setMusic(item: music)
+            player.play()
+
+            switch playbackMode {
+            case .intro:
+                player.currentPlaybackTime = 0
+            case .random:
+                let randomDuration = Int.random(in: 0..<Int(music.playbackDuration) - 10)
+                player.currentPlaybackTime = TimeInterval(randomDuration)
+            }
+
+            player.pause() // iOS13のバグ？でplay1回だけじゃ再生できない時があるがためのコード
+            player.play()
+        }
     }
 
     func finishGame() {

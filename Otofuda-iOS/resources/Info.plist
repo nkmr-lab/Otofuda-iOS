@@ -26,6 +26,11 @@
 	<string>ゲームをするにあたって音楽を使います</string>
 	<key>NSCameraUsageDescription</key>
 	<string>グループの検索にカメラを使います</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
 		<key>UIApplicationSupportsMultipleScenes</key>

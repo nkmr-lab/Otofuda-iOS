@@ -2,6 +2,40 @@ import UIKit
 import MediaPlayer
 
 extension MenuVC {
+
+    func setting(){
+        // カードを並べる値をシャッフルする(左上から0,1,2...）
+        self.cardLocations = [Int](0..<CARD_MAX_COUNT)
+        cardLocations.shuffle()
+
+        // 誰の曲を使うかを楽曲所持数に応じて決める
+        var selectedPlayers: [Int] = []
+
+        // itunesモードの時は再生者はずっと自分にする
+        if usingMusicSegment.selectedSegmentIndex == 0 {
+            selectedPlayers = Array(repeating: 0, count: CARD_MAX_COUNT)
+        }
+
+        while selectedPlayers.count < CARD_MAX_COUNT {
+            // TODO: 所持数が0の人ばっかだと処理時間が長くなってしまうので要改善
+            let selectedPlayer = Int.random(in: 0..<musicCounts.count)
+            // 残りの楽曲所持数が1曲以上あったら
+            if musicCounts[selectedPlayer] > 0 {
+                // 一曲減らす
+                musicCounts[selectedPlayer] = musicCounts[selectedPlayer] - 1
+                // その人を追加してあげる
+                selectedPlayers.append(selectedPlayer)
+            }
+        }
+
+        firebaseManager.post(path: room.url() + "cardLocations", value: cardLocations)
+        firebaseManager.post(path: room.url() + "selectedPlayers", value: selectedPlayers)
+
+        room.status = .start
+        firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
+
+        firebaseManager.deleteObserve(path: room.url() + "musicCounts")
+    }
  
     func observeUI() {
         firebaseManager.observe(path: room.url() + "mode", completion: { snapshot in
@@ -54,10 +88,10 @@ extension MenuVC {
                             else { return }
 
                         var playCount = 0
-                        self.haveMusics.shuffle()
+                        self.selectedMusics.shuffle()
                         for (index, selectedPlayer) in fbSelectedPlayers.enumerated() {
                             if selectedPlayer == self.me.index {
-                                let music = self.haveMusics[playCount]
+                                let music = self.selectedMusics[playCount]
                                 music.musicOwner = self.me.index
                                 self.firebaseManager.post(path: self.room.url() + "playMusics/\(index)", value: music.dict())
                                 playCount = playCount + 1
@@ -118,7 +152,10 @@ extension MenuVC {
         nextVC.isHost = isHost
         nextVC.playMusics = playMusics
         nextVC.cardLocations = cardLocations
+        nextVC.usingMusicMode = usingMusicMode
         nextVC.scoreMode = scoreMode
+        nextVC.playbackMode = playbackMode
+
         nextVC.me = me
 
         if !isHost {

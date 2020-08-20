@@ -47,8 +47,10 @@ final class PlayVC: UIViewController, PlayProtocol {
     var playMusics: [Music] = []
     var cardLocations: [Int] = []
 
+    var usingMusicMode: UsingMusicMode = .preset
     var scoreMode: ScoreMode = .normal
     var playbackMode: PlaybackMode = .intro
+
     
     @IBOutlet var countdownV: UIView!
     
@@ -56,11 +58,9 @@ final class PlayVC: UIViewController, PlayProtocol {
     
     @IBOutlet weak var countdownLabel: UILabel!
     
-    @IBOutlet weak var startBtn: UIButton! {
-        didSet {
-//            setupStartBtn(isEnabled: true)
-        }
-    }
+    @IBOutlet weak var startBtn: UIButton!
+
+    
 
     @IBOutlet weak var fudaCollectionV: UICollectionView! {
         didSet {
@@ -76,11 +76,25 @@ final class PlayVC: UIViewController, PlayProtocol {
             fudaCollectionV.collectionViewLayout = layout
         }
     }
+
     @IBOutlet weak var myColorV: UIView! {
         didSet {
             myColorV.backgroundColor = me.color
         }
     }
+
+    @IBOutlet weak var badgeV: UIView! {
+        didSet {
+            switch usingMusicMode {
+            case .preset:
+                badgeV.isHidden = false
+            case .device:
+                badgeV.isHidden = true
+            }
+        }
+    }
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -32,15 +32,15 @@ extension PlayVC {
 
     func playMusic() {
 
-        if true {
+        switch usingMusicMode {
+        case .preset:
             let music = playMusics[currentIndex]
             avPlayer = AVPlayer(url: URL(string: music.previewURL!)!)
             print("=============")
             avPlayer.volume = 1.0
             avPlayer.play()
             print("=============")
-        }
-        else {
+        case .device:
             guard let music = playMusics[currentIndex].item else { return }
 
             player.setMusic(item: music)

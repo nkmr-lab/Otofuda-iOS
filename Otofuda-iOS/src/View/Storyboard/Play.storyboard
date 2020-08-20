@@ -187,6 +187,7 @@
                     <navigationItem key="navigationItem" title="Title" id="mb8-M3-KrY"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="badgeV" destination="D3W-lf-owZ" id="Kh7-2M-Qcy"/>
                         <outlet property="countdownLabel" destination="bTd-Et-S9W" id="z5a-DO-1aj"/>
                         <outlet property="countdownV" destination="nNV-6x-Iip" id="Eey-Ns-qAz"/>
                         <outlet property="fudaCollectionV" destination="jnl-b9-xB2" id="qjU-Up-aX7"/>

@@ -125,33 +125,6 @@ final class MenuVC: UIViewController, Menurotocol {
             print(error)
         }
 
-            // プリセットモードだったら
-            if usingMusicSegment.selectedSegmentIndex == 0 {
-                haveMusics = [] // FIXME: ここでデバイス内の楽曲がリセットされちゃうのでもう一度遊ぶ時ばぐる
-
-                AF.request(SELECT_MUSIC_API_URL, method: .get, parameters: ["id": 2]).response { response in
-                    guard let data = response.data else { return }
-                    do {
-                        let musicList: MusicList = try JSONDecoder().decode(MusicList.self, from: data)
-                        let songs: [MusicList.Song] = musicList.songs
-        //                let song = songs[0]
-        //                guard let url = URL(string: song.previewURL) else { return }
-        //                self.player = AVPlayer(url: url)
-        //                self.player?.volume = 1.0
-        //                self.player?.play()
-        //                print(song.title, song.previewURL)
-                        for song in songs {
-                            let item = AVPlayerItem(url: URL(string: song.previewURL)!)
-                            let music = Music(name: song.title, artist: song.artist, item: item)
-                            music.previewURL = song.previewURL
-                            self.haveMusics.append(music)
-                        }
-                    } catch {
-                        print(error)
-                    }
-                }
-            }
-
     }
 
     deinit {
@@ -221,52 +194,38 @@ final class MenuVC: UIViewController, Menurotocol {
 
         switch usingMusicMode {
         case .preset:
-            break
-        case .device:
-            break
-        default:
-            break
-        }
+            selectedMusics = []
 
-        // そもそも持ち曲が16曲以上なければ何もしない
-        if haveMusics.count < CARD_MAX_COUNT {
-            print("16曲以下しかありません")
-            return
-        }
+            AF.request(SELECT_MUSIC_API_URL, method: .get, parameters: ["id": presetPickerV.selectedRow(inComponent: 0)]).response { response in
+                guard let data = response.data else { return }
+                do {
+                    let musicList: MusicList = try JSONDecoder().decode(MusicList.self, from: data)
+                    let songs: [MusicList.Song] = musicList.songs
+                    for song in songs {
+                        let item = AVPlayerItem(url: URL(string: song.previewURL)!)
+                        let music = Music(name: song.title, artist: song.artist, item: item)
+                        music.previewURL = song.previewURL
+                        music.storeURL = song.storeURL
+                        self.selectedMusics.append(music)
+                    }
+                    self.setting()
+                } catch {
+                   print(error)
+                }
 
-        // カードを並べる値をシャッフルする(左上から0,1,2...）
-        self.cardLocations = [Int](0..<CARD_MAX_COUNT)
-        cardLocations.shuffle()
-
-        // 誰の曲を使うかを楽曲所持数に応じて決める
-        var selectedPlayers: [Int] = []
-
-        // itunesモードの時は再生者はずっと自分にする
-        if usingMusicSegment.selectedSegmentIndex == 0 {
-            selectedPlayers = Array(repeating: 0, count: CARD_MAX_COUNT)
-        }
-
-        while selectedPlayers.count < CARD_MAX_COUNT {
-            // TODO: 所持数が0の人ばっかだと処理時間が長くなってしまうので要改善
-            let selectedPlayer = Int.random(in: 0..<musicCounts.count)
-            // 残りの楽曲所持数が1曲以上あったら
-            if musicCounts[selectedPlayer] > 0 {
-                // 一曲減らす
-                musicCounts[selectedPlayer] = musicCounts[selectedPlayer] - 1
-                // その人を追加してあげる
-                selectedPlayers.append(selectedPlayer)
             }
+        case .device:
+            selectedMusics = haveMusics
+            // そもそも持ち曲が16曲以上なければ何もしない
+            if selectedMusics.count < CARD_MAX_COUNT {
+                print("16曲以下しかありません")
+                return
+            }
+
+            setting()
         }
 
-        firebaseManager.post(path: room.url() + "cardLocations", value: cardLocations)
-        firebaseManager.post(path: room.url() + "selectedPlayers", value: selectedPlayers)
-
-        room.status = .start
-        firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
-
-        firebaseManager.deleteObserve(path: room.url() + "musicCounts")
     }
-
     
 }
 

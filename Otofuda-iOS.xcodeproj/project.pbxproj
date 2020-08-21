@@ -50,6 +50,7 @@
 		F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91FB23329A5C0031B062 /* IBDesignableView.swift */; };
 		F33D40F624D6F53F00AD9C41 /* ScoreMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */; };
 		F33D40F824D6F57600AD9C41 /* PlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */; };
+		F33D416524ED05E100AD9C41 /* UsingMusicMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */; };
 		F35ED14424B45EAD00727207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED14324B45EAD00727207 /* Constants.swift */; };
 		F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17024B6C68200727207 /* GoogleService-Info.plist */; };
 		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
@@ -184,6 +185,7 @@
 		F32B91FB23329A5C0031B062 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
 		F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMode.swift; sourceTree = "<group>"; };
 		F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackMode.swift; sourceTree = "<group>"; };
+		F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingMusicMode.swift; sourceTree = "<group>"; };
 		F35ED14324B45EAD00727207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F35ED17024B6C68200727207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -447,6 +449,7 @@
 				F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */,
 				F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */,
 				F3C8E69F2361901F00864279 /* PresetAPIModel.swift */,
+				F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */,
 				F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */,
 				F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */,
 			);
@@ -847,6 +850,7 @@
 				F32B91BA2332434B0031B062 /* ResultVC+Ex.swift in Sources */,
 				F3E25FE42330856300134769 /* UITable+Ex.swift in Sources */,
 				F3C21BC0232F809100546D5B /* Room.swift in Sources */,
+				F33D416524ED05E100AD9C41 /* UsingMusicMode.swift in Sources */,
 				F3E25FE22330854D00134769 /* NSObject+Ex.swift in Sources */,
 				F3225EF62330AB2800D9BD79 /* MenuVC+UITableDataSource.swift in Sources */,
 				F32B91BC23328B150031B062 /* IBDesignableButton.swift in Sources */,

@@ -31,28 +31,42 @@ extension PlayVC {
     }
 
     func playMusic() {
-        guard let music = playMusics[currentIndex].item else { return }
-        player.setMusic(item: music)
-        player.play()
 
-        switch playbackMode {
-        case .intro:
-            player.currentPlaybackTime = 0
-        case .random:
-            let randomDuration = Int.random(in: 0..<Int(music.playbackDuration) - 10)
-            player.currentPlaybackTime = TimeInterval(randomDuration)
+        switch usingMusicMode {
+        case .preset:
+            let music = playMusics[currentIndex]
+            avPlayer = AVPlayer(url: URL(string: music.previewURL!)!)
+            avPlayer.volume = 1.0
+            avPlayer.play()
+        case .device:
+            guard let music = playMusics[currentIndex].item else { return }
+
+            player.setMusic(item: music)
+            player.play()
+
+            switch playbackMode {
+            case .intro:
+                player.currentPlaybackTime = 0
+            case .random:
+                let randomDuration = Int.random(in: 0..<Int(music.playbackDuration) - 10)
+                player.currentPlaybackTime = TimeInterval(randomDuration)
+            }
+
+            player.pause() // iOS13のバグ？でplay1回だけじゃ再生できない時があるがためのコード
+            player.play()
         }
-
-        player.pause() // iOS13のバグ？でplay1回だけじゃ再生できない時があるがためのコード
-        player.play()
     }
 
     func finishGame() {
         player.stop()
         player = nil
+
+        avPlayer.pause()
+        avPlayer = nil
         
         firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
         firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: nil)
 
         let storyboard = UIStoryboard(name: "Result", bundle: nil)
         let nextVC = storyboard.instantiateInitialViewController() as! ResultVC
@@ -60,6 +74,7 @@ extension PlayVC {
         nextVC.playMusics = playMusics
         nextVC.me = me
         nextVC.isHost = isHost
+        nextVC.usingMusicMode = usingMusicMode
         nextVC.scoreMode = scoreMode
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

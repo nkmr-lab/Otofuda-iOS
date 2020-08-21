@@ -5,15 +5,27 @@ import AVFoundation
 class Music: NSObject {
 
     var name: String!
+
     var artist: String!
+
     var item: MPMediaItem!
+
     var previewURL: String!
+
+    var storeURL: String!
+
     var isAnimating: Bool = false
+
     var isTapped: Bool = false
+
     var avPlayer: AVPlayer!
-    var mpmediaPlayer: AVPlayer!
-    var type: MusicType = .mpmedia
+
+    var mpmusicPlayer: MPMusicPlayerController!
+
+    var type: MusicType = .mpmusic
+
     var musicOwner: Int!
+
     var cardOwner: Int!
 
     init(name: String, artist: String, item: MPMediaItem!) {
@@ -22,9 +34,15 @@ class Music: NSObject {
         self.item = item
     }
 
+    init(name: String, artist: String, item: AVPlayerItem!) {
+        self.name = name
+        self.artist = artist
+        self.avPlayer = AVPlayer(playerItem: item)
+    }
+
     func dict() -> Dictionary<String, Any> {
         var dict = Dictionary<String, Any>()
-        dict = ["name": name ?? "なし", "artist": artist ?? "なし", "musicOwner": musicOwner ?? 0, "previewURL": previewURL]
+        dict = ["name": name ?? "なし", "artist": artist ?? "なし", "musicOwner": musicOwner ?? 0, "previewURL": previewURL, "storeURL": storeURL]
         return dict
     }
 
@@ -41,8 +59,8 @@ class Music: NSObject {
 
     func play(){
         switch type {
-        case .mpmedia:
-            mpmediaPlayer.play()
+        case .mpmusic:
+            mpmusicPlayer.play()
         case .avaudio:
             avPlayer.play()
         }
@@ -52,6 +70,6 @@ class Music: NSObject {
 }
 
 enum MusicType {
-    case mpmedia
+    case mpmusic
     case avaudio
 }

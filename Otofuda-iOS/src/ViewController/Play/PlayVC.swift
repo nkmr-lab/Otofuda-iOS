@@ -29,6 +29,7 @@ final class PlayVC: UIViewController, PlayProtocol {
     var currentIndex: Int = 0
 
     var player: MPMusicPlayerController!
+    var avPlayer: AVPlayer!
     var tapSoundPlayer: AVAudioPlayer?
 
     var firebaseManager = FirebaseManager()
@@ -46,8 +47,10 @@ final class PlayVC: UIViewController, PlayProtocol {
     var playMusics: [Music] = []
     var cardLocations: [Int] = []
 
+    var usingMusicMode: UsingMusicMode = .preset
     var scoreMode: ScoreMode = .normal
     var playbackMode: PlaybackMode = .intro
+
     
     @IBOutlet var countdownV: UIView!
     
@@ -55,11 +58,9 @@ final class PlayVC: UIViewController, PlayProtocol {
     
     @IBOutlet weak var countdownLabel: UILabel!
     
-    @IBOutlet weak var startBtn: UIButton! {
-        didSet {
-//            setupStartBtn(isEnabled: true)
-        }
-    }
+    @IBOutlet weak var startBtn: UIButton!
+
+    
 
     @IBOutlet weak var fudaCollectionV: UICollectionView! {
         didSet {
@@ -75,11 +76,25 @@ final class PlayVC: UIViewController, PlayProtocol {
             fudaCollectionV.collectionViewLayout = layout
         }
     }
+
     @IBOutlet weak var myColorV: UIView! {
         didSet {
             myColorV.backgroundColor = me.color
         }
     }
+
+    @IBOutlet weak var badgeV: UIView! {
+        didSet {
+            switch usingMusicMode {
+            case .preset:
+                badgeV.isHidden = false
+            case .device:
+                badgeV.isHidden = true
+            }
+        }
+    }
+
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,6 +113,9 @@ final class PlayVC: UIViewController, PlayProtocol {
         } catch {
             print("error:", error)
         }
+
+
+        NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd(_:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
         
         print(audioSession.category.rawValue)
 
@@ -148,5 +166,20 @@ final class PlayVC: UIViewController, PlayProtocol {
 //        navigationItem.title = String(currentIndex) + "曲目"
 //        currentIndex += 1
     }
-    
+
+    @objc private func playerItemDidReachEnd(_ notification: Notification) {
+        // 動画を最初に巻き戻す
+        guard let currentItem = avPlayer.currentItem else { return }
+        currentItem.seek(to: CMTime.zero, completionHandler: nil)
+        avPlayer.play()
+        print("おわったよ！！！！")
+    }
+
+    @IBAction func tappedBadge(_ sender: Any) {
+        if currentIndex == 0 { return }
+        let url = URL(string: playMusics[currentIndex-1].storeURL)
+        if UIApplication.shared.canOpenURL(url! as URL){
+            UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        }
+    }
 }

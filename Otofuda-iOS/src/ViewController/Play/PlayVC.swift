@@ -169,7 +169,8 @@ final class PlayVC: UIViewController, PlayProtocol {
 
     @objc private func playerItemDidReachEnd(_ notification: Notification) {
         // 動画を最初に巻き戻す
-        avPlayer.currentItem!.seek(to: CMTime.zero, completionHandler: nil)
+        guard let currentItem = avPlayer.currentItem else { return }
+        currentItem.seek(to: CMTime.zero, completionHandler: nil)
         avPlayer.play()
         print("おわったよ！！！！")
     }

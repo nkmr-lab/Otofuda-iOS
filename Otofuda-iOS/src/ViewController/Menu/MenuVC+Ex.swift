@@ -40,10 +40,22 @@ extension MenuVC {
     func observeUI() {
         firebaseManager.observe(path: room.url() + "mode", completion: { snapshot in
             if let modeDict = snapshot.value as? Dictionary<String, String> {
+                guard let usingMusicMode = modeDict["usingMusic"] else { return }
                 guard let scoreMode = modeDict["score"] else { return }
                 guard let playbackMode = modeDict["playback"] else { return }
-                
-                
+
+
+                switch usingMusicMode {
+                case "preset":
+                    self.usingMusicSegment.selectedSegmentIndex = 0
+                    self.presetPickerV.isHidden = false
+                case "device":
+                    self.usingMusicSegment.selectedSegmentIndex = 1
+                    self.presetPickerV.isHidden = true
+                default:
+                    break
+                }
+
                 switch scoreMode {
                 case "normal":
                     self.scoreSegument.selectedSegmentIndex = 0

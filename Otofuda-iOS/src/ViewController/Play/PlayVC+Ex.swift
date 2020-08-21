@@ -36,10 +36,8 @@ extension PlayVC {
         case .preset:
             let music = playMusics[currentIndex]
             avPlayer = AVPlayer(url: URL(string: music.previewURL!)!)
-            print("=============")
             avPlayer.volume = 1.0
             avPlayer.play()
-            print("=============")
         case .device:
             guard let music = playMusics[currentIndex].item else { return }
 
@@ -62,9 +60,13 @@ extension PlayVC {
     func finishGame() {
         player.stop()
         player = nil
+
+        avPlayer.pause()
+        avPlayer = nil
         
         firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
         firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+        NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: nil)
 
         let storyboard = UIStoryboard(name: "Result", bundle: nil)
         let nextVC = storyboard.instantiateInitialViewController() as! ResultVC
@@ -72,6 +74,7 @@ extension PlayVC {
         nextVC.playMusics = playMusics
         nextVC.me = me
         nextVC.isHost = isHost
+        nextVC.usingMusicMode = usingMusicMode
         nextVC.scoreMode = scoreMode
         self.navigationController?.pushViewController(nextVC, animated: true)
     }

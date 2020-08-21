@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--ResultVC-->
+        <!--結果-->
         <scene sceneID="wix-Sr-c3Q">
             <objects>
-                <viewController id="urg-34-GpM" customClass="ResultVC" customModule="Otofuda_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="結果" id="urg-34-GpM" customClass="ResultVC" customModule="音札" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WmD-vQ-eGN">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

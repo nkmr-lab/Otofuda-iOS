@@ -1,5 +1,6 @@
 import UIKit
 import MediaPlayer
+import AVFoundation
 
 protocol ResultProtocol {
     func playMusic(music: Music)
@@ -15,15 +16,19 @@ final class ResultVC: UIViewController, ResultProtocol {
 
     var player: MPMusicPlayerController!
 
+    var avPlayer: AVPlayer!
+
     var me: User!
 
     var isHost: Bool = false
 
     var firebaseManager = FirebaseManager()
 
+    var usingMusicMode: UsingMusicMode = .preset
+
     var scoreMode: ScoreMode = .normal
 
-    let tableCellHeight: CGFloat = 60.0
+    let tableCellHeight: CGFloat = 120.0
 
     @IBOutlet weak var winnerLabel: UILabel!
     

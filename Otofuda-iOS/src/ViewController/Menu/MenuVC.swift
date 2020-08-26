@@ -62,7 +62,7 @@ final class MenuVC: UIViewController, Menurotocol {
 
     var cardLocations: [Int] = []
 
-    var presets: [String] = []
+    var presets: [Preset] = []
 
     @IBOutlet weak var selectMusicTableV: UITableView! {
         didSet {
@@ -110,19 +110,20 @@ final class MenuVC: UIViewController, Menurotocol {
         // 楽曲が準備できるのを監視
         preparedPlayMusics()
 
-        firstly {
-            PresetAPIModel.shared.request()
-        }.then { data -> Promise<PresetResponse> in
-            PresetAPIModel.shared.mapping(jsonStr: data)
-        }.done { results in
-            print("done")
-            self.presets = []
-            for result in results.list {
-                self.presets.append(result.title)
-                self.presetPickerV.reloadAllComponents()
+
+        AF.request(PRESET_LIST_API_URL, method: .get, parameters: ["count": CARD_MAX_COUNT]).response { response in
+            guard let data = response.data else { return }
+            do {
+                let presets: PresetList = try JSONDecoder().decode(PresetList.self, from: data)
+                self.presets = []
+                for preset in presets.list {
+                    self.presets.append(preset)
+                    self.presetPickerV.reloadAllComponents()
+                }
             }
-        }.catch { error in
-            print(error)
+            catch {
+                print(error)
+            }
         }
 
     }
@@ -196,7 +197,9 @@ final class MenuVC: UIViewController, Menurotocol {
         case .preset:
             selectedMusics = []
 
-            AF.request(SELECT_MUSIC_API_URL, method: .get, parameters: ["id": presetPickerV.selectedRow(inComponent: 0)]).response { response in
+            let preset = presets[presetPickerV.selectedRow(inComponent: 0)]
+
+            AF.request(SELECT_MUSIC_API_URL, method: .get, parameters: ["id": preset.id]).response { response in
                 guard let data = response.data else { return }
                 do {
                     let musicList: MusicList = try JSONDecoder().decode(MusicList.self, from: data)
@@ -241,17 +244,7 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return presets[row]
+        return presets[row].title
     }
-
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
-        // 表示するラベルを生成する
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 50))
-        label.textAlignment = .center
-        label.textColor = .black
-        label.font = UIFont(name: "", size: 40)
-        label.text = presets[row]
-        return label
-    }
+    
 }

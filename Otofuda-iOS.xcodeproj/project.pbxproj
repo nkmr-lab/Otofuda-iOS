@@ -28,7 +28,6 @@
 		F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */; };
 		F3225EFA2330ACFD00D9BD79 /* SelectMusicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EF92330ACFD00D9BD79 /* SelectMusicTableCell.swift */; };
 		F3225EFD2330AFCA00D9BD79 /* iTunesAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */; };
-		F3225EFE2330AFCA00D9BD79 /* iTunesRSSModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */; };
 		F3225F042330AFE300D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */; };
 		F3225F052330AFE300D9BD79 /* iTunesPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F012330AFE300D9BD79 /* iTunesPickerVC.swift */; };
 		F3225F062330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */; };
@@ -68,12 +67,10 @@
 		F3C8E69A2361636800864279 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6992361636800864279 /* ApiClient.swift */; };
 		F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69B23617A3F00864279 /* PresetUseCase.swift */; };
 		F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69D23617B5C00864279 /* PresetViewModel.swift */; };
-		F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69F2361901F00864279 /* PresetAPIModel.swift */; };
 		F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A12361E70800864279 /* ResponseEntity.swift */; };
 		F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A32361E73700864279 /* RequestEntity.swift */; };
-		F3C8E6AB2361F0A400864279 /* PresetResponse2.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */; };
+		F3C8E6AB2361F0A400864279 /* PresetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AA2361F0A400864279 /* PresetResponse.swift */; };
 		F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AC2362B41D00864279 /* Preset.swift */; };
-		F3C8E6AF2362B6CD00864279 /* PresetDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */; };
 		F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FCF232F9E5200134769 /* PlayVC.swift */; };
 		F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */; };
 		F3E25FD4232F9F6600134769 /* PlayVC+UICollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */; };
@@ -159,7 +156,6 @@
 		F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectMusicTableCell.xib; sourceTree = "<group>"; };
 		F3225EF92330ACFD00D9BD79 /* SelectMusicTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMusicTableCell.swift; sourceTree = "<group>"; };
 		F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesAPIModel.swift; sourceTree = "<group>"; };
-		F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesRSSModel.swift; sourceTree = "<group>"; };
 		F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		F3225F012330AFE300D9BD79 /* iTunesPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesPickerVC.swift; sourceTree = "<group>"; };
 		F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iTunesPickerVC+Datasource.swift"; sourceTree = "<group>"; };
@@ -204,14 +200,12 @@
 		F3C8E6992361636800864279 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		F3C8E69B23617A3F00864279 /* PresetUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetUseCase.swift; sourceTree = "<group>"; };
 		F3C8E69D23617B5C00864279 /* PresetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetViewModel.swift; sourceTree = "<group>"; };
-		F3C8E69F2361901F00864279 /* PresetAPIModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetAPIModel.swift; sourceTree = "<group>"; };
 		F3C8E6A12361E70800864279 /* ResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
 		F3C8E6A32361E73700864279 /* RequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEntity.swift; sourceTree = "<group>"; };
 		F3C8E6A52361E8CA00864279 /* RxSwift.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; name = RxSwift.framework.dSYM; path = Carthage/Build/iOS/RxSwift.framework.dSYM; sourceTree = "<group>"; };
 		F3C8E6A62361E8F500864279 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
-		F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetResponse2.swift; sourceTree = "<group>"; };
+		F3C8E6AA2361F0A400864279 /* PresetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetResponse.swift; sourceTree = "<group>"; };
 		F3C8E6AC2362B41D00864279 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
-		F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetDAO.swift; sourceTree = "<group>"; };
 		F3E25FCF232F9E5200134769 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDelegate.swift"; sourceTree = "<group>"; };
 		F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDataSource.swift"; sourceTree = "<group>"; };
@@ -449,8 +443,6 @@
 				F3C21BC1232F80EF00546D5B /* User.swift */,
 				F3C21BC3232F9C4F00546D5B /* Music.swift */,
 				F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */,
-				F3225EFC2330AFCA00D9BD79 /* iTunesRSSModel.swift */,
-				F3C8E69F2361901F00864279 /* PresetAPIModel.swift */,
 				F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */,
 				F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */,
 				F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */,
@@ -489,7 +481,6 @@
 			isa = PBXGroup;
 			children = (
 				F3C8E69B23617A3F00864279 /* PresetUseCase.swift */,
-				F3C8E6AE2362B6CD00864279 /* PresetDAO.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -499,7 +490,7 @@
 			children = (
 				F3C8E6A32361E73700864279 /* RequestEntity.swift */,
 				F3C8E6A12361E70800864279 /* ResponseEntity.swift */,
-				F3C8E6AA2361F0A400864279 /* PresetResponse2.swift */,
+				F3C8E6AA2361F0A400864279 /* PresetResponse.swift */,
 				F358F77924F619E200E72263 /* PresetList.swift */,
 				F3C8E6AC2362B41D00864279 /* Preset.swift */,
 				F35F9B52237154E000BBB727 /* MusicList.swift */,
@@ -807,7 +798,6 @@
 				F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */,
 				F3225F052330AFE300D9BD79 /* iTunesPickerVC.swift in Sources */,
 				F3C8E69A2361636800864279 /* ApiClient.swift in Sources */,
-				F3C8E6AF2362B6CD00864279 /* PresetDAO.swift in Sources */,
 				589460D722852E9500319032 /* TopVC.swift in Sources */,
 				F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */,
 				F3E25FE02330853900134769 /* UICollection+Ex.swift in Sources */,
@@ -827,9 +817,7 @@
 				F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */,
 				F3C21BBD232F73E400546D5B /* SearchGroupVC+AVCaptureDelegate.swift in Sources */,
 				F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */,
-				F3C8E6A02361901F00864279 /* PresetAPIModel.swift in Sources */,
 				F35F9B53237154E000BBB727 /* MusicList.swift in Sources */,
-				F3225EFE2330AFCA00D9BD79 /* iTunesRSSModel.swift in Sources */,
 				F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */,
 				F358F77A24F619E200E72263 /* PresetList.swift in Sources */,
 				F35ED14424B45EAD00727207 /* Constants.swift in Sources */,
@@ -847,7 +835,7 @@
 				F32B91B6233235900031B062 /* ResultTableCell.swift in Sources */,
 				589460F122855AAE00319032 /* CreateGroupVC.swift in Sources */,
 				F3E25FF0233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift in Sources */,
-				F3C8E6AB2361F0A400864279 /* PresetResponse2.swift in Sources */,
+				F3C8E6AB2361F0A400864279 /* PresetResponse.swift in Sources */,
 				F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */,
 				F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */,
 				F3E25FE8233085DF00134769 /* FudaCollectionCell.swift in Sources */,
@@ -1019,7 +1007,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 1.1.2;
 				DEVELOPMENT_TEAM = T8YPT438X6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1040,7 +1028,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
@@ -1054,7 +1042,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.1;
+				CURRENT_PROJECT_VERSION = 1.1.2;
 				DEVELOPMENT_TEAM = T8YPT438X6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1065,7 +1053,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.1;
+				MARKETING_VERSION = 1.1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;

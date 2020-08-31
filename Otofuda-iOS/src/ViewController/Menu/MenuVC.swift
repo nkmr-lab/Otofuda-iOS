@@ -116,6 +116,9 @@ final class MenuVC: UIViewController, Menurotocol {
             do {
                 let presets: PresetList = try JSONDecoder().decode(PresetList.self, from: data)
                 self.presets = []
+
+
+                
                 for preset in presets.list {
                     self.presets.append(preset)
                     self.presetPickerV.reloadAllComponents()
@@ -245,6 +248,17 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return presets[row].title
+    }
+
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+
+        // 表示するラベルを生成する
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 50))
+        label.textAlignment = .center
+        label.textColor = .black
+        label.font = UIFont(name: "", size: 50)
+        label.text = presets[row].title
+        return label
     }
     
 }

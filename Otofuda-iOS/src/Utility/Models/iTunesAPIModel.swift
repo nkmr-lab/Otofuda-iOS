@@ -10,7 +10,7 @@ final class iTunesAPIModel {
     func request( keyword: String, attribute: String ) -> Promise<String> {
         let encKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
 
-        let url = "http://itunes.apple.com/search?term=\(encKeyword)&country=JP&lang=ja_jp&media=music&entity=song&attribute=\(attribute)&limit=30"
+        let url = "http://itunes.apple.com/search?term=\(encKeyword)&country=jp&lang=ja_jp&media=music&entity=song&attribute=\(attribute)&limit=30"
 
         return Promise { seal in
             AF.request(url).responseString { response in

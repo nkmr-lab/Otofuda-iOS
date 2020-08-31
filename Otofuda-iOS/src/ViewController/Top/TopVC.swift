@@ -42,7 +42,7 @@ final class TopVC: UIViewController, TopProtocol {
 //            print(authResult?.)
 //        })
 
-//        AF.request(Config.ITUNES_TOP_RSS_URL).responseJSON(completionHandler: { response in
+//        AF.request(ITUNES_TOP_RSS_URL).responseJSON(completionHandler: { response in
 //
 //            let jsonStr = JSON(response.data).rawString()!
 //

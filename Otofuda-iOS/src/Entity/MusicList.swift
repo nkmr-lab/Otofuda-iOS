@@ -3,7 +3,7 @@ import Foundation
 
 struct MusicList: Codable {
     var result: String
-    var songs: [Song]
+    var musics: [Song]
 
     struct Song: Codable {
         var id: Int
@@ -13,7 +13,22 @@ struct MusicList: Codable {
         var storeURL: String
         var artworkURL: String
         var genere: String
-        var release_date: String
+        var releaseDate: String
+
+        private enum CodingKeys: String, CodingKey {
+            case id
+            case title
+            case artist
+            case previewURL = "preview_url"
+            case storeURL = "store_url"
+            case artworkURL = "artwork_url"
+            case genere = "genere"
+            case releaseDate = "release_date"
+        }
     }
+
+    
+
+
 }
 

@@ -36,13 +36,13 @@
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CLv-Zx-blv" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
-                                <rect key="frame" x="50" y="395.5" width="314" height="105"/>
+                                <rect key="frame" x="50" y="435.5" width="314" height="105"/>
                                 <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="CLv-Zx-blv" secondAttribute="height" multiplier="3:1" id="wIM-q2-hps"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="31"/>
-                                <state key="normal" title="詠みあげる">
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="26"/>
+                                <state key="normal" title="次の曲を詠みあげる">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="titleShadowColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
@@ -167,7 +167,7 @@
                         </subviews>
                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="CLv-Zx-blv" firstAttribute="centerY" secondItem="abl-bQ-W5x" secondAttribute="centerY" id="7eu-02-CY2"/>
+                            <constraint firstItem="CLv-Zx-blv" firstAttribute="centerY" secondItem="abl-bQ-W5x" secondAttribute="centerY" constant="40" id="7eu-02-CY2"/>
                             <constraint firstItem="odr-WM-jio" firstAttribute="top" secondItem="D3W-lf-owZ" secondAttribute="bottom" id="9SY-vx-dKP"/>
                             <constraint firstItem="jnl-b9-xB2" firstAttribute="top" secondItem="tzn-99-n8J" secondAttribute="top" id="E7E-RJ-z23"/>
                             <constraint firstItem="tzn-99-n8J" firstAttribute="trailing" secondItem="D3W-lf-owZ" secondAttribute="trailing" id="EwV-5c-f7Z"/>

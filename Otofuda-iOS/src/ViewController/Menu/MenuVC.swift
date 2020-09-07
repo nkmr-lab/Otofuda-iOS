@@ -62,7 +62,11 @@ final class MenuVC: UIViewController, Menurotocol {
 
     var cardLocations: [Int] = []
 
+    var presetLists: [PresetList] = []
+
     var presets: [Preset] = []
+
+    var presetIndex = 0
 
     @IBOutlet weak var selectMusicTableV: UITableView! {
         didSet {
@@ -75,10 +79,10 @@ final class MenuVC: UIViewController, Menurotocol {
 
     @IBOutlet weak var presetPickerV: UIPickerView! {
         didSet {
-            presetPickerV.delegate = self
-            presetPickerV.dataSource = self
-            presetPickerV.backgroundColor = .white
-            presetPickerV.tintColor = .black
+//            presetPickerV.delegate = self
+//            presetPickerV.dataSource = self
+//            presetPickerV.backgroundColor = .white
+//            presetPickerV.tintColor = .black
         }
     }
 
@@ -110,19 +114,29 @@ final class MenuVC: UIViewController, Menurotocol {
         // 楽曲が準備できるのを監視
         preparedPlayMusics()
 
+        presetLists = []
 
         AF.request(PRESET_LIST_API_URL, method: .get, parameters: ["count": CARD_MAX_COUNT]).response { response in
             guard let data = response.data else { return }
             do {
-                let presets: PresetList = try JSONDecoder().decode(PresetList.self, from: data)
-                self.presets = []
-
-
-                
-                for preset in presets.list {
-                    self.presets.append(preset)
-                    self.presetPickerV.reloadAllComponents()
+                let presetsResponse: PresetsResponse = try JSONDecoder().decode(PresetsResponse.self, from: data)
+                print(presetsResponse)
+                for presetList in presetsResponse.list {
+                    self.presetLists.append(presetList)
                 }
+
+                // データが読み込まれる前にpickerを生成しようとしちゃうので
+                // 変だけどここでdelegateとdatasorceを指定してあげてる
+                self.presetPickerV.delegate = self
+                self.presetPickerV.dataSource = self
+                self.presetPickerV.backgroundColor = .white
+                self.presetPickerV.tintColor = .black
+
+                self.presetPickerV.reloadAllComponents()
+                
+
+
+                print(self.presets)
             }
             catch {
                 print(error)
@@ -200,13 +214,17 @@ final class MenuVC: UIViewController, Menurotocol {
         case .preset:
             selectedMusics = []
 
-            let preset = presets[presetPickerV.selectedRow(inComponent: 0)]
+            let row1 = presetPickerV.selectedRow(inComponent: 0)
+            let row2 = presetPickerV.selectedRow(inComponent: 1)
+            let preset = presetLists[row1].presets[row2]
 
-            AF.request(SELECT_MUSIC_API_URL, method: .get, parameters: ["id": preset.id]).response { response in
+            print(SELECT_MUSIC_API_URL + "?id=\(preset.id)&count=\(CARD_MAX_COUNT)")
+
+            AF.request(SELECT_MUSIC_API_URL, method: .get, parameters: ["id": preset.id, "count": CARD_MAX_COUNT]).response { response in
                 guard let data = response.data else { return }
                 do {
                     let musicList: MusicList = try JSONDecoder().decode(MusicList.self, from: data)
-                    let songs: [MusicList.Song] = musicList.songs
+                    let songs: [MusicList.Song] = musicList.musics
                     for song in songs {
                         let item = AVPlayerItem(url: URL(string: song.previewURL)!)
                         let music = Music(name: song.title, artist: song.artist, item: item)
@@ -238,16 +256,31 @@ final class MenuVC: UIViewController, Menurotocol {
 
 extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
+        return 2
 
     }
 
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        presets.count
+        switch component {
+        case 0:
+            return presetLists.count
+        case 1:
+            return presetLists[presetIndex].presets.count
+        default:
+            return 0
+        }
+
     }
 
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return presets[row].title
+        switch component {
+        case 0:
+            return presetLists[row].typeName
+        case 1:
+            return presetLists[presetIndex].presets[row].name
+        default:
+            return nil
+        }
     }
 
     func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
@@ -257,8 +290,26 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
         label.textAlignment = .center
         label.textColor = .black
         label.font = UIFont(name: "", size: 50)
-        label.text = presets[row].title
+
+
+        switch component {
+        case 0:
+            label.text = presetLists[row].typeName
+        case 1:
+            label.text = presetLists[presetIndex].presets[row].name
+        default:
+            break
+        }
+
+
         return label
+    }
+
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        if component == 0 {
+            presetIndex = row
+            pickerView.reloadComponent(1)
+        }
     }
     
 }

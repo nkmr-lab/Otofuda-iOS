@@ -13,11 +13,10 @@ struct PresetResponse: ResponseEntity {
 
         self.presets = jsonData.compactMap({ data in
             let id    = data["id"].intValue
-            let title = data["title"].stringValue
-            let music_list = data["music_list"].stringValue
-            let thumb_url = data["thumb_url"].stringValue
+            let name = data["name"].stringValue
+            let count = data["count"].intValue
 
-            return Preset(id: id, title: title, music_list: music_list, thumb_url: thumb_url)
+            return Preset(id: id, name: name, count: count)
         })
     }
 }

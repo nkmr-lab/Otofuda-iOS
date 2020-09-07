@@ -106,7 +106,7 @@ extension PlayVC {
         self.view.addSubview(tapErrorV)
         self.view.insertSubview(tapErrorV, belowSubview: startBtn)
         tapErrorV.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        tapErrorV.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        tapErrorV.centerYAnchor.constraint(equalTo: self.view.centerYAnchor, constant: -40).isActive = true
         tapErrorV.widthAnchor.constraint(equalTo: self.view.widthAnchor, multiplier: 0.4).isActive = true
         tapErrorV.heightAnchor.constraint(equalTo: self.view.heightAnchor, multiplier: 0.05).isActive = true
     }
@@ -158,6 +158,21 @@ extension PlayVC {
                 self.isTapped = false
                 self.displayCountdownV()
                 self.fireTimer()
+            } else if status == RoomStatus.menu.rawValue {
+                if let player = self.player {
+                    self.player.stop()
+                    self.player = nil
+                }
+
+                if let avPlayer = self.avPlayer {
+                    self.avPlayer.pause()
+                    self.avPlayer = nil
+                }
+
+                self.firebaseManager.deleteAllValuesAndObserve(path: self.room.url() + "tapped")
+                self.firebaseManager.deleteAllValuesAndObserve(path: self.room.url() + "answearUser")
+
+                self.navigationController?.popViewController(animated: true)
             }
         })
     }

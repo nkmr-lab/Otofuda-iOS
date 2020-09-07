@@ -50,7 +50,8 @@
 		F33D40F624D6F53F00AD9C41 /* ScoreMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */; };
 		F33D40F824D6F57600AD9C41 /* PlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */; };
 		F33D416524ED05E100AD9C41 /* UsingMusicMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */; };
-		F358F77A24F619E200E72263 /* PresetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358F77924F619E200E72263 /* PresetList.swift */; };
+		F358F77A24F619E200E72263 /* PresetsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358F77924F619E200E72263 /* PresetsResponse.swift */; };
+		F358F77C250545FF00E72263 /* PresetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358F77B250545FF00E72263 /* PresetList.swift */; };
 		F35ED14424B45EAD00727207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED14324B45EAD00727207 /* Constants.swift */; };
 		F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17024B6C68200727207 /* GoogleService-Info.plist */; };
 		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
@@ -183,7 +184,8 @@
 		F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMode.swift; sourceTree = "<group>"; };
 		F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackMode.swift; sourceTree = "<group>"; };
 		F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingMusicMode.swift; sourceTree = "<group>"; };
-		F358F77924F619E200E72263 /* PresetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetList.swift; sourceTree = "<group>"; };
+		F358F77924F619E200E72263 /* PresetsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsResponse.swift; sourceTree = "<group>"; };
+		F358F77B250545FF00E72263 /* PresetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetList.swift; sourceTree = "<group>"; };
 		F35ED14324B45EAD00727207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		F35ED17024B6C68200727207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -491,7 +493,8 @@
 				F3C8E6A32361E73700864279 /* RequestEntity.swift */,
 				F3C8E6A12361E70800864279 /* ResponseEntity.swift */,
 				F3C8E6AA2361F0A400864279 /* PresetResponse.swift */,
-				F358F77924F619E200E72263 /* PresetList.swift */,
+				F358F77924F619E200E72263 /* PresetsResponse.swift */,
+				F358F77B250545FF00E72263 /* PresetList.swift */,
 				F3C8E6AC2362B41D00864279 /* Preset.swift */,
 				F35F9B52237154E000BBB727 /* MusicList.swift */,
 			);
@@ -819,7 +822,7 @@
 				F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */,
 				F35F9B53237154E000BBB727 /* MusicList.swift in Sources */,
 				F308116B2335C9F6009E7726 /* CreateGroupVC+Ex.swift in Sources */,
-				F358F77A24F619E200E72263 /* PresetList.swift in Sources */,
+				F358F77A24F619E200E72263 /* PresetsResponse.swift in Sources */,
 				F35ED14424B45EAD00727207 /* Constants.swift in Sources */,
 				F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */,
 				F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */,
@@ -847,6 +850,7 @@
 				F3225EF62330AB2800D9BD79 /* MenuVC+UITableDataSource.swift in Sources */,
 				F32B91BC23328B150031B062 /* IBDesignableButton.swift in Sources */,
 				F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */,
+				F358F77C250545FF00E72263 /* PresetList.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

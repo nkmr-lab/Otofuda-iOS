@@ -18,6 +18,6 @@ let COLORS: [UIColor] = [.red, .blue, .green, .purple, .brown, .yellow, .orange]
 
 // API関係
 let BASE_API_URL = "https://uniotto.org/api/"
-let PRESET_LIST_API_URL = "https://uniotto.org/api/get_all_otofuda_list.php"
-let SELECT_MUSIC_API_URL = "https://uniotto.org/api/get_rand16_itunes.php"
+let PRESET_LIST_API_URL = "https://uniotto.org/api/fetch_presets.php"
+let SELECT_MUSIC_API_URL = "https://uniotto.org/api/get_preset.php"
 let ITUNES_TOP_RSS_URL = "https://rss.itunes.apple.com/api/v1/jp/apple-music/top-songs/all/100/explicit.json"

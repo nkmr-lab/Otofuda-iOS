@@ -13,7 +13,7 @@ protocol PlayProtocol {
     func finishGame()
 }
 
-final class PlayVC: UIViewController, PlayProtocol {
+final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtocol {
     
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     
@@ -99,8 +99,14 @@ final class PlayVC: UIViewController, PlayProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // 戻るを不可能にする
-        self.navigationItem.hidesBackButton = true
+        // ホスト以外は戻るを不可能にする
+        if !isHost {
+            self.navigationItem.hidesBackButton = true
+        } else {
+            self.navigationItem.hidesBackButton = false
+        }
+
+        navigationController?.delegate = self
 
 
         fudaCollectionV.reloadData()
@@ -180,6 +186,31 @@ final class PlayVC: UIViewController, PlayProtocol {
         let url = URL(string: playMusics[currentIndex-1].storeURL)
         if UIApplication.shared.canOpenURL(url! as URL){
             UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
+        }
+    }
+
+    // 戻るが押された時の処理
+    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+        if viewController is MenuVC {
+
+            if let player = player {
+                self.player.stop()
+                self.player = nil
+            }
+
+            if let avPlayer = avPlayer {
+                self.avPlayer.pause()
+                self.avPlayer = nil
+            }
+
+            firebaseManager.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
+            firebaseManager.deleteAllValue(path: room.url() + "cardLocations")
+            firebaseManager.deleteAllValue(path: room.url() + "selectedPlayers")
+            firebaseManager.deleteAllValue(path: room.url() + "playMusics")
+            firebaseManager.deleteAllValue(path: room.url() + "currentIndex")
+
+            firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
+            firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
         }
     }
 }

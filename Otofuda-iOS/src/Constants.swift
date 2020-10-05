@@ -9,8 +9,8 @@
 import Foundation
 import UIKit
 
-var CARD_CLM_COUNT = 4
-var CARD_ROW_COUNT = 4
+var CARD_CLM_COUNT = 2
+var CARD_ROW_COUNT = 2
 var CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
 let CARD_LAYOUT_MARGIN: CGFloat = 5.0
 

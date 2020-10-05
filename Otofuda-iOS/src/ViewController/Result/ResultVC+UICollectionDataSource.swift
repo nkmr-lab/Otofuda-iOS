@@ -13,6 +13,12 @@ extension ResultVC: UITableViewDataSource {
             for: indexPath
         )
         cell.prepareLabel(index: indexPath.row + 1, music: music)
+        switch usingMusicMode {
+        case .preset:
+            cell.badgeBtn.isHidden = false
+        case .device:
+            cell.badgeBtn.isHidden = true
+        }
 
         return cell
     }

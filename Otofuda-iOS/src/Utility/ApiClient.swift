@@ -61,7 +61,7 @@ class ApiClient: ApiClientProtocol {
                     }
                 })
             return Disposables.create {
-                return request.cancel()
+                request.cancel()
             }
         }
     }

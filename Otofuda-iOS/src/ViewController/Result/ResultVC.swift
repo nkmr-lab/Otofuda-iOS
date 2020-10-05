@@ -57,7 +57,7 @@ final class ResultVC: UIViewController, ResultProtocol {
             restartBtn.isHidden = true
             observeRoomStatus()
         }
-
+        
         // TODO: scoreModeがビンゴモードだった時の採点処理
         var eachScores = [Int](repeating: 0, count: room.member.count)
         for music in playMusics {

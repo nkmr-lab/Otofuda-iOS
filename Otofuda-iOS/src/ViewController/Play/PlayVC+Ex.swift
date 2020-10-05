@@ -58,11 +58,15 @@ extension PlayVC {
     }
 
     func finishGame() {
-        player.stop()
-        player = nil
 
-        avPlayer.pause()
-        avPlayer = nil
+        switch usingMusicMode {
+        case .preset:
+            avPlayer.pause()
+            avPlayer = nil
+        case .device:
+            player.stop()
+            player = nil
+        }
         
         firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
         firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")

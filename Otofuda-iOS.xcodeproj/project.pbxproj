@@ -1013,7 +1013,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.3;
+				CURRENT_PROJECT_VERSION = 1.1.4;
 				DEVELOPMENT_TEAM = T8YPT438X6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1034,7 +1034,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
@@ -1048,7 +1048,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.3;
+				CURRENT_PROJECT_VERSION = 1.1.4;
 				DEVELOPMENT_TEAM = T8YPT438X6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1059,7 +1059,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.3;
+				MARKETING_VERSION = 1.1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;

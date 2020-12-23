@@ -112,7 +112,7 @@ final class MenuVC: UIViewController, Menurotocol {
         observeStart()
 
         // 楽曲が準備できるのを監視
-        preparedPlayMusics()
+//        preparedPlayMusics()
 
         presetLists = []
 

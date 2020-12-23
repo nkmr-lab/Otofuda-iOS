@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IMK-H5-JX7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IMK-H5-JX7">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -359,7 +361,7 @@
                                 <viewLayoutGuide key="contentLayoutGuide" id="tZQ-OB-Eg5"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="6dk-pP-Pov"/>
                             </scrollView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kct-YX-hcw" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kct-YX-hcw" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
                                 <rect key="frame" x="20" y="688" width="335" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -386,7 +388,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <viewLayoutGuide key="safeArea" id="bt2-Jv-dNj"/>
+                        <color key="backgroundColor" red="0.15686274509803921" green="0.15686274509803921" blue="0.15686274509803921" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="bt2-Jv-dNj" firstAttribute="trailing" secondItem="kct-YX-hcw" secondAttribute="trailing" constant="20" id="0MP-id-W51"/>
                             <constraint firstItem="bt2-Jv-dNj" firstAttribute="bottom" secondItem="kct-YX-hcw" secondAttribute="bottom" constant="10" id="0Zq-jJ-Ev8"/>
@@ -396,7 +399,6 @@
                             <constraint firstItem="CtO-Wj-gOH" firstAttribute="top" secondItem="bt2-Jv-dNj" secondAttribute="top" constant="10" id="dUM-Xs-xS5"/>
                             <constraint firstItem="bt2-Jv-dNj" firstAttribute="trailing" secondItem="CtO-Wj-gOH" secondAttribute="trailing" constant="10" id="l6s-BF-atQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="bt2-Jv-dNj"/>
                     </view>
                     <navigationItem key="navigationItem" title="ルールを選択" id="rRc-sJ-tvv"/>
                     <connections>
@@ -447,6 +449,7 @@
                             </constraints>
                         </view>
                     </subviews>
+                    <viewLayoutGuide key="safeArea" id="hhm-km-2f8"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstItem="fUj-rq-ggb" firstAttribute="top" secondItem="cTl-TG-zOK" secondAttribute="top" id="7vE-ID-l86"/>
@@ -455,7 +458,6 @@
                         <constraint firstItem="fUj-rq-ggb" firstAttribute="leading" secondItem="hhm-km-2f8" secondAttribute="leading" id="gJk-ne-kcW"/>
                         <constraint firstItem="hhm-km-2f8" firstAttribute="trailing" secondItem="fUj-rq-ggb" secondAttribute="trailing" id="m9t-Ju-JZG"/>
                     </constraints>
-                    <viewLayoutGuide key="safeArea" id="hhm-km-2f8"/>
                 </view>
             </objects>
             <point key="canvasLocation" x="-218.40000000000001" y="41.379310344827587"/>
@@ -473,7 +475,7 @@
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ADk-xe-dqA">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="654"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="64x-Yf-7Hv">
                                             <size key="itemSize" width="50" height="50"/>
                                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -491,7 +493,7 @@
                                             </collectionViewCell>
                                         </cells>
                                     </collectionView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-tV-8jp">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwx-tV-8jp">
                                         <rect key="frame" x="0.0" y="654" width="375" height="80"/>
                                         <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -505,14 +507,14 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hUF-1o-Fr1"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="hUF-1o-Fr1" firstAttribute="trailing" secondItem="UaW-TB-Mdu" secondAttribute="trailing" id="C9h-b0-hHf"/>
                             <constraint firstItem="hUF-1o-Fr1" firstAttribute="bottom" secondItem="UaW-TB-Mdu" secondAttribute="bottom" id="Tdw-am-BeM"/>
                             <constraint firstItem="UaW-TB-Mdu" firstAttribute="leading" secondItem="hUF-1o-Fr1" secondAttribute="leading" id="aJW-uZ-nl5"/>
                             <constraint firstItem="UaW-TB-Mdu" firstAttribute="top" secondItem="hUF-1o-Fr1" secondAttribute="top" id="aMY-wY-GIS"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="hUF-1o-Fr1"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qmg-yx-xrc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -530,4 +532,26 @@
             <point key="canvasLocation" x="420" y="-24"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Lpe-zz-9Ew">
+            <size key="intrinsicContentSize" width="128" height="31"/>
+        </designable>
+        <designable name="bd2-cK-uWk">
+            <size key="intrinsicContentSize" width="145" height="31"/>
+        </designable>
+        <designable name="jCn-fR-CHt">
+            <size key="intrinsicContentSize" width="145" height="31"/>
+        </designable>
+        <designable name="kct-YX-hcw">
+            <size key="intrinsicContentSize" width="158" height="59"/>
+        </designable>
+        <designable name="mvq-AN-EkX">
+            <size key="intrinsicContentSize" width="171" height="31"/>
+        </designable>
+    </designables>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>

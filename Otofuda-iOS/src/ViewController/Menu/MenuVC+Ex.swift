@@ -93,12 +93,26 @@ extension MenuVC {
         firebaseManager.observe(path: room.url() + "status", completion: { snapshot in
             if let status = snapshot.value as? String {
                 if status == RoomStatus.start.rawValue {
+                    print(self.room.url())
+                    print("observeStartが発火するタイミング")
                     self.firebaseManager.observeSingle(path: self.room.url(), completion: { snapshot in
-                        guard let fbRoom = snapshot.value as? Dictionary<String,Any>,
-                              let fbCardLocations = fbRoom["cardLocations"] as? [Int],
-                              let fbSelectedPlayers = fbRoom["selectedPlayers"] as? [Int]
-                            else { return }
 
+                        self.preparedPlayMusics()
+
+                        guard let fbRoom = snapshot.value as? Dictionary<String,Any> else {
+                            print("fbRoomがありませんでした")
+                            return
+                        }
+                        print("fbRoomがありました")
+                        guard let fbCardLocations = fbRoom["cardLocations"] as? [Int] else {
+                            print("fbCardLocationsがありませんでした")
+                            return
+                        }
+                        print("fbCardLocationsがありました")
+                        guard let fbSelectedPlayers = fbRoom["selectedPlayers"] as? [Int] else {
+                            print("fbSelectedPlayersがありあませんでした")
+                            return
+                        }
                         var playCount = 0
                         self.selectedMusics.shuffle()
                         for (index, selectedPlayer) in fbSelectedPlayers.enumerated() {
@@ -114,6 +128,8 @@ extension MenuVC {
 
                         self.cardLocations = fbCardLocations
 
+                        print("=========")
+                        print(fbCardLocations)
                     })
                 }
             }
@@ -126,6 +142,8 @@ extension MenuVC {
             guard let self = self else { return }
             self.playMusics = []
 
+            print("preparedMusicが発火するタイミング")
+
             if snapshot.children.allObjects.count == CARD_MAX_COUNT {
                 guard let fbPlayMusics = snapshot.value as? [Dictionary<String, Any>] else { return }
 
@@ -135,6 +153,9 @@ extension MenuVC {
                     let musicOwner = fbPlayMusic["musicOwner"] as! Int
                     let previewURL = fbPlayMusic["previewURL"] as? String
                     let storeURL = fbPlayMusic["storeURL"] as? String
+
+                    print("======================================")
+                    print(name ,artist, musicOwner, previewURL, storeURL)
 
                     var mediaItem: MPMediaItem?
                     if musicOwner == self.me.index {

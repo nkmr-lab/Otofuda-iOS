@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="75s-Y0-JzR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="75s-Y0-JzR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -14,7 +15,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ASz-xp-q65">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" red="0.24705882352941178" green="0.24705882352941178" blue="0.24705882352941178" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
@@ -35,7 +36,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqL-BF-DtT" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqL-BF-DtT" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
                                 <rect key="frame" x="50" y="620" width="314" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -67,7 +68,7 @@
                                     <segue destination="C8y-tv-MuB" kind="push" identifier="create" id="e4B-Y4-Oy3"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eiy-R5-ftd" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eiy-R5-ftd" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
                                 <rect key="frame" x="50" y="712" width="314" height="80"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -110,6 +111,7 @@
                                 </constraints>
                             </imageView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="0d6-49-v7h"/>
                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="uVk-zO-OMr" firstAttribute="top" secondItem="0d6-49-v7h" secondAttribute="top" constant="60" id="51K-CY-Z5f"/>
@@ -126,7 +128,6 @@
                             <constraint firstItem="MqL-BF-DtT" firstAttribute="centerX" secondItem="RUp-UI-MQ1" secondAttribute="centerX" id="tkU-sT-ZUo"/>
                             <constraint firstItem="0d6-49-v7h" firstAttribute="trailing" secondItem="MqL-BF-DtT" secondAttribute="trailing" constant="50" id="ucK-t2-weh"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="0d6-49-v7h"/>
                     </view>
                     <navigationItem key="navigationItem" id="pf4-T6-xqm"/>
                 </viewController>
@@ -148,7 +149,7 @@
                                     <constraint firstAttribute="width" secondItem="lBY-ag-FyV" secondAttribute="height" multiplier="1:1" id="Xx0-uB-UHc"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-LN-dK9" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8H8-LN-dK9" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
                                 <rect key="frame" x="50" y="732" width="314" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -198,6 +199,7 @@ QRコードを見せてください</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="dVy-hS-JW8"/>
                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="lBY-ag-FyV" firstAttribute="centerY" secondItem="9x0-Un-B1c" secondAttribute="centerY" constant="-20" id="3Ei-Ir-Xs9"/>
@@ -213,7 +215,6 @@ QRコードを見せてください</string>
                             <constraint firstItem="dVy-hS-JW8" firstAttribute="bottom" secondItem="8H8-LN-dK9" secondAttribute="bottom" constant="50" id="xU0-Ok-1kU"/>
                             <constraint firstItem="Fyh-kV-sdU" firstAttribute="top" secondItem="lBY-ag-FyV" secondAttribute="bottom" constant="50" id="ydi-ct-F4v"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="dVy-hS-JW8"/>
                     </view>
                     <navigationItem key="navigationItem" title="グループを作成" id="gCo-gk-Vx2"/>
                     <connections>
@@ -259,6 +260,7 @@ QRコードを見せてもらってください</string>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6H1-SW-fmF"/>
                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
                             <constraint firstItem="qNs-xX-Xpd" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="6H1-SW-fmF" secondAttribute="leading" id="GUD-jI-s6Y"/>
@@ -269,7 +271,6 @@ QRコードを見せてもらってください</string>
                             <constraint firstItem="6H1-SW-fmF" firstAttribute="trailing" secondItem="qNs-xX-Xpd" secondAttribute="trailing" id="toG-v4-Ht2"/>
                             <constraint firstItem="gdX-vR-RbD" firstAttribute="top" secondItem="6H1-SW-fmF" secondAttribute="top" constant="30" id="vJD-5d-zMQ"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6H1-SW-fmF"/>
                     </view>
                     <navigationItem key="navigationItem" title="グループに参加" id="DuC-UP-kGM"/>
                     <connections>
@@ -281,6 +282,17 @@ QRコードを見せてもらってください</string>
             <point key="canvasLocation" x="647.82608695652175" y="930.80357142857133"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="8H8-LN-dK9">
+            <size key="intrinsicContentSize" width="157" height="39"/>
+        </designable>
+        <designable name="Eiy-R5-ftd">
+            <size key="intrinsicContentSize" width="157" height="39"/>
+        </designable>
+        <designable name="MqL-BF-DtT">
+            <size key="intrinsicContentSize" width="157" height="39"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Card" width="952" height="1216"/>
         <image name="Title" width="2008" height="743"/>

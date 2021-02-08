@@ -152,6 +152,15 @@ extension PlayVC {
         countdownV.removeFromSuperview()
     }
     
+    func observeTimestamp(){
+        firebaseManager.observe(path: room.url() + "timestamp", completion: { snapshot in
+            guard let timestamp = snapshot.value as? Int else {
+                return
+            }
+            print(timestamp)
+        })
+    }
+    
     func observeRoomStatus(){
         firebaseManager.observe(path: room.url() + "status", completion: { snapshot in
             guard let status = snapshot.value as? String else {
@@ -212,14 +221,14 @@ extension PlayVC {
             }
             
             var fastestUser: Int = -1
-            var fastestTime: Double = Double.greatestFiniteMagnitude
+            var fastestTime: Int = Int.max
 
             for item in snapshot.children {
                 let snapshot = item as! DataSnapshot
                 let dict = snapshot.value as! [String: Any]
 
                 let userIndex = dict["userIndex"] as! Int
-                let time = dict["time"] as! Double
+                let time = dict["time"] as! Int
 
                 if time < fastestTime {
                     fastestUser = userIndex

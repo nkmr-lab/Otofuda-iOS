@@ -51,13 +51,13 @@ class ApiClient: ApiClientProtocol {
                     switch response.result {
                     case .success(_):
                         guard let data = response.data else {
-                            return single(.error(response.error!))
+                            return single(.failure(response.error!))
                         }
                         let json = JSON(data)
                         return single(.success(T(json)))
 
                     case .failure(let error):
-                        return single(.error(error))
+                        return single(.failure(response.error!))
                     }
                 })
             return Disposables.create {

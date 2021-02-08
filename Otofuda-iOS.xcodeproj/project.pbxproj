@@ -47,6 +47,8 @@
 		F32B91F8233298FD0031B062 /* IBDesignableSegumentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */; };
 		F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */; };
 		F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91FB23329A5C0031B062 /* IBDesignableView.swift */; };
+		F32F00DF25B80034005C9304 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F00DE25B80034005C9304 /* ApiClient.swift */; };
+		F32F00E425B80048005C9304 /* PresetUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F00E325B80048005C9304 /* PresetUseCase.swift */; };
 		F33D40F624D6F53F00AD9C41 /* ScoreMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */; };
 		F33D40F824D6F57600AD9C41 /* PlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */; };
 		F33D416524ED05E100AD9C41 /* UsingMusicMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */; };
@@ -65,8 +67,6 @@
 		F3C21BC2232F80EF00546D5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BC1232F80EF00546D5B /* User.swift */; };
 		F3C21BC4232F9C4F00546D5B /* Music.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BC3232F9C4F00546D5B /* Music.swift */; };
 		F3C8E69823615F0100864279 /* Play.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3C8E69723615F0100864279 /* Play.storyboard */; };
-		F3C8E69A2361636800864279 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6992361636800864279 /* ApiClient.swift */; };
-		F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69B23617A3F00864279 /* PresetUseCase.swift */; };
 		F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E69D23617B5C00864279 /* PresetViewModel.swift */; };
 		F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A12361E70800864279 /* ResponseEntity.swift */; };
 		F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A32361E73700864279 /* RequestEntity.swift */; };
@@ -181,6 +181,8 @@
 		F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableSegumentControl.swift; sourceTree = "<group>"; };
 		F32B91F9233299CC0031B062 /* IBDesignableTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableTableView.swift; sourceTree = "<group>"; };
 		F32B91FB23329A5C0031B062 /* IBDesignableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IBDesignableView.swift; sourceTree = "<group>"; };
+		F32F00DE25B80034005C9304 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		F32F00E325B80048005C9304 /* PresetUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetUseCase.swift; sourceTree = "<group>"; };
 		F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMode.swift; sourceTree = "<group>"; };
 		F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackMode.swift; sourceTree = "<group>"; };
 		F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingMusicMode.swift; sourceTree = "<group>"; };
@@ -199,8 +201,6 @@
 		F3C21BC1232F80EF00546D5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		F3C21BC3232F9C4F00546D5B /* Music.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Music.swift; sourceTree = "<group>"; };
 		F3C8E69723615F0100864279 /* Play.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Play.storyboard; sourceTree = "<group>"; };
-		F3C8E6992361636800864279 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
-		F3C8E69B23617A3F00864279 /* PresetUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetUseCase.swift; sourceTree = "<group>"; };
 		F3C8E69D23617B5C00864279 /* PresetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetViewModel.swift; sourceTree = "<group>"; };
 		F3C8E6A12361E70800864279 /* ResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseEntity.swift; sourceTree = "<group>"; };
 		F3C8E6A32361E73700864279 /* RequestEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestEntity.swift; sourceTree = "<group>"; };
@@ -482,7 +482,7 @@
 		F3C8E69323615C2300864279 /* UseCase */ = {
 			isa = PBXGroup;
 			children = (
-				F3C8E69B23617A3F00864279 /* PresetUseCase.swift */,
+				F32F00E325B80048005C9304 /* PresetUseCase.swift */,
 			);
 			path = UseCase;
 			sourceTree = "<group>";
@@ -506,8 +506,8 @@
 			children = (
 				F3C21BB5232F702800546D5B /* Extensions */,
 				F3C21BBE232F808300546D5B /* Models */,
+				F32F00DE25B80034005C9304 /* ApiClient.swift */,
 				589460F622867A4800319032 /* FirebaseManager.swift */,
-				F3C8E6992361636800864279 /* ApiClient.swift */,
 			);
 			path = Utility;
 			sourceTree = "<group>";
@@ -793,18 +793,18 @@
 				589460F522855D9F00319032 /* SearchGroupVC.swift in Sources */,
 				F3C21BC4232F9C4F00546D5B /* Music.swift in Sources */,
 				F3225F072330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift in Sources */,
-				F3C8E69C23617A3F00864279 /* PresetUseCase.swift in Sources */,
 				F3E25FEE233090EC00134769 /* MPMediaPlayer+Ex.swift in Sources */,
 				F3225F0C2330B01D00D9BD79 /* SearchResultCell.swift in Sources */,
 				F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */,
 				F3E25FF22330986000134769 /* MPMediaItem+Ex.swift in Sources */,
 				F3C8E6A22361E70800864279 /* ResponseEntity.swift in Sources */,
 				F3225F052330AFE300D9BD79 /* iTunesPickerVC.swift in Sources */,
-				F3C8E69A2361636800864279 /* ApiClient.swift in Sources */,
+				F32F00E425B80048005C9304 /* PresetUseCase.swift in Sources */,
 				589460D722852E9500319032 /* TopVC.swift in Sources */,
 				F32B91FC23329A5C0031B062 /* IBDesignableView.swift in Sources */,
 				F3E25FE02330853900134769 /* UICollection+Ex.swift in Sources */,
 				F30811692335C937009E7726 /* Date+Ex.swift in Sources */,
+				F32F00DF25B80034005C9304 /* ApiClient.swift in Sources */,
 				F3225EFA2330ACFD00D9BD79 /* SelectMusicTableCell.swift in Sources */,
 				F32B91B0233232730031B062 /* ResultVC+UICollectionDataSource.swift in Sources */,
 				F3E25FDD232FA00D00134769 /* MenuVC.swift in Sources */,
@@ -939,7 +939,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -996,7 +996,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = NO;
@@ -1014,7 +1014,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1.4;
-				DEVELOPMENT_TEAM = T8YPT438X6;
+				DEVELOPMENT_TEAM = S26A4W8VSZ;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
@@ -1049,7 +1050,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1.4;
-				DEVELOPMENT_TEAM = T8YPT438X6;
+				DEVELOPMENT_TEAM = S26A4W8VSZ;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

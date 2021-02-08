@@ -1,10 +1,13 @@
 import UIKit
+import Firebase
 
 extension PlayVC: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
         let nowTime = NSDate().timeIntervalSince1970
+//       １
+//        firebaseManager.post(path: "rooms/iphone", value: nowTime)
 
         // もうタップしてたら何もしない
         if isTapped {
@@ -37,7 +40,7 @@ extension PlayVC: UICollectionViewDelegate {
             self.firebaseManager.post(path: self.room.url() + "status", value: self.room.status.rawValue)
             self.tapSoundPlayer?.play()
 
-            self.firebaseManager.post(path: self.room.url() + "answearUser/\(self.me.index)", value: ["time": nowTime, "userIndex": self.me.index])
+            self.firebaseManager.post(path: self.room.url() + "answearUser/\(self.me.index)", value: ["time": Firebase.ServerValue.timestamp(), "userIndex": self.me.index])
         }
         // 不正解
         else {

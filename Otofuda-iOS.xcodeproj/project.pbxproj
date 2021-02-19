@@ -933,7 +933,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1.5;
 				DEVELOPMENT_TEAM = T8YPT438X6;
-				EXCLUDED_ARCHS = "arm64, arm64e, x86_64";
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
@@ -954,7 +954,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.5;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
@@ -969,7 +969,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1.1.5;
 				DEVELOPMENT_TEAM = T8YPT438X6;
-				EXCLUDED_ARCHS = "arm64, arm64e, x86_64";
+				EXCLUDED_ARCHS = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -980,6 +980,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.1.5;
+				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;

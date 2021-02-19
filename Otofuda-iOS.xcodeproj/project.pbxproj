@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		01B1B9FF299F1F7AFCE10DB1 /* Pods_Otofuda_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A8CDC4134202E14425297323 /* Pods_Otofuda_iOSUITests.framework */; };
 		589460D522852E9500319032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460D422852E9500319032 /* AppDelegate.swift */; };
 		589460D722852E9500319032 /* TopVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460D622852E9500319032 /* TopVC.swift */; };
 		589460DC22852E9500319032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 589460DB22852E9500319032 /* Assets.xcassets */; };
@@ -15,8 +14,6 @@
 		589460F122855AAE00319032 /* CreateGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460F022855AAE00319032 /* CreateGroupVC.swift */; };
 		589460F522855D9F00319032 /* SearchGroupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460F422855D9F00319032 /* SearchGroupVC.swift */; };
 		589460F722867A4800319032 /* FirebaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 589460F622867A4800319032 /* FirebaseManager.swift */; };
-		87B6FE4F76959AE731B4A6B8 /* Pods_Otofuda_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DA582A8B6C1AC60CA05C8891 /* Pods_Otofuda_iOSTests.framework */; };
-		ABB34FFD4B8DD80A5EAA9C01 /* Pods_Otofuda_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */; };
 		F308114D233325C6009E7726 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F308114C233325C6009E7726 /* Splash.storyboard */; };
 		F308115623335E48009E7726 /* MenuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F308115523335E48009E7726 /* MenuVC+Ex.swift */; };
 		F30811692335C937009E7726 /* Date+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30811682335C937009E7726 /* Date+Ex.swift */; };
@@ -35,6 +32,15 @@
 		F3225F092330AFF300D9BD79 /* iTunesPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */; };
 		F3225F0C2330B01D00D9BD79 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F0A2330B01D00D9BD79 /* SearchResultCell.swift */; };
 		F3225F0D2330B01D00D9BD79 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */; };
+		F323810225DEB23300892DAB /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = F323810125DEB23300892DAB /* Toast */; };
+		F32B062A25DEBDC700AA30D8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F32B062925DEBDC700AA30D8 /* FirebaseDatabase */; };
+		F32B063C25DF360700AA30D8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F32B063B25DF360700AA30D8 /* Alamofire */; };
+		F32B064B25DF365400AA30D8 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = F32B064A25DF365400AA30D8 /* AlamofireImage */; };
+		F32B066625DF378800AA30D8 /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = F32B066525DF378800AA30D8 /* ObjectMapper */; };
+		F32B066C25DF37D400AA30D8 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = F32B066B25DF37D400AA30D8 /* PromiseKit */; };
+		F32B067225DF37FB00AA30D8 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F32B067125DF37FB00AA30D8 /* SwiftyJSON */; };
+		F32B067825DF382D00AA30D8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F32B067725DF382D00AA30D8 /* RxSwift */; };
+		F32B067A25DF382D00AA30D8 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = F32B067925DF382D00AA30D8 /* RxCocoa */; };
 		F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */ = {isa = PBXBuildFile; fileRef = F32B91A823320BF80031B062 /* tap_fuda.caf */; };
 		F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91AB233231FD0031B062 /* ResultVC.swift */; };
 		F32B91AE233232660031B062 /* ResultVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32B91AD233232660031B062 /* ResultVC+UICollectionDelegate.swift */; };
@@ -72,6 +78,7 @@
 		F3C8E6A42361E73700864279 /* RequestEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6A32361E73700864279 /* RequestEntity.swift */; };
 		F3C8E6AB2361F0A400864279 /* PresetResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AA2361F0A400864279 /* PresetResponse.swift */; };
 		F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C8E6AC2362B41D00864279 /* Preset.swift */; };
+		F3D03DFC25DF7F11003C4A39 /* CardCountMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3D03DFB25DF7F11003C4A39 /* CardCountMode.swift */; };
 		F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FCF232F9E5200134769 /* PlayVC.swift */; };
 		F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */; };
 		F3E25FD4232F9F6600134769 /* PlayVC+UICollectionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */; };
@@ -120,13 +127,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		03555C36D7B3F6240EE0182C /* Pods-Otofuda-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOS.release.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		1950F3B136AEAAC0B3CE5024 /* Pods-Otofuda-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOS.debug.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		1B7465F4A0D598A5FEFCDE39 /* Pods-Otofuda-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSTests.release.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSTests/Pods-Otofuda-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		39D95D0D2EA417A05FCACEDE /* Pods-Otofuda-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS.debug.xcconfig"; sourceTree = "<group>"; };
-		404A2813DE2749B4D0EED308 /* Pods-Otofuda-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS.release.xcconfig"; sourceTree = "<group>"; };
-		4F4DB329C6599576A6CF9A87 /* Pods-Otofuda-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSUITests.release.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSUITests/Pods-Otofuda-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
-		4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5880D37B22B4928700F40959 /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		589460D122852E9500319032 /* 音札.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "音札.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		589460D422852E9500319032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -137,10 +137,6 @@
 		589460F022855AAE00319032 /* CreateGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGroupVC.swift; sourceTree = "<group>"; };
 		589460F422855D9F00319032 /* SearchGroupVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchGroupVC.swift; sourceTree = "<group>"; };
 		589460F622867A4800319032 /* FirebaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseManager.swift; sourceTree = "<group>"; };
-		8FA81005ED0399BA25805BAD /* Pods-Otofuda-iOSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSUITests.debug.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSUITests/Pods-Otofuda-iOSUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		A8CDC4134202E14425297323 /* Pods_Otofuda_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D7EFAE83DD86409EF8712C2C /* Pods-Otofuda-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Otofuda-iOSTests.debug.xcconfig"; path = "Target Support Files/Pods-Otofuda-iOSTests/Pods-Otofuda-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DA582A8B6C1AC60CA05C8891 /* Pods_Otofuda_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Otofuda_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F308114C233325C6009E7726 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		F308115223333081009E7726 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		F308115523335E48009E7726 /* MenuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+Ex.swift"; sourceTree = "<group>"; };
@@ -208,6 +204,7 @@
 		F3C8E6A62361E8F500864279 /* RxSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = RxSwift.framework; path = Carthage/Build/iOS/RxSwift.framework; sourceTree = "<group>"; };
 		F3C8E6AA2361F0A400864279 /* PresetResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetResponse.swift; sourceTree = "<group>"; };
 		F3C8E6AC2362B41D00864279 /* Preset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preset.swift; sourceTree = "<group>"; };
+		F3D03DFB25DF7F11003C4A39 /* CardCountMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardCountMode.swift; sourceTree = "<group>"; };
 		F3E25FCF232F9E5200134769 /* PlayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayVC.swift; sourceTree = "<group>"; };
 		F3E25FD1232F9F5700134769 /* PlayVC+UICollectionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDelegate.swift"; sourceTree = "<group>"; };
 		F3E25FD3232F9F6600134769 /* PlayVC+UICollectionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayVC+UICollectionDataSource.swift"; sourceTree = "<group>"; };
@@ -231,7 +228,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ABB34FFD4B8DD80A5EAA9C01 /* Pods_Otofuda_iOS.framework in Frameworks */,
+				F32B067825DF382D00AA30D8 /* RxSwift in Frameworks */,
+				F32B066625DF378800AA30D8 /* ObjectMapper in Frameworks */,
+				F32B067A25DF382D00AA30D8 /* RxCocoa in Frameworks */,
+				F32B062A25DEBDC700AA30D8 /* FirebaseDatabase in Frameworks */,
+				F32B067225DF37FB00AA30D8 /* SwiftyJSON in Frameworks */,
+				F32B063C25DF360700AA30D8 /* Alamofire in Frameworks */,
+				F32B064B25DF365400AA30D8 /* AlamofireImage in Frameworks */,
+				F323810225DEB23300892DAB /* Toast in Frameworks */,
+				F32B066C25DF37D400AA30D8 /* PromiseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,7 +244,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				87B6FE4F76959AE731B4A6B8 /* Pods_Otofuda_iOSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,7 +251,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				01B1B9FF299F1F7AFCE10DB1 /* Pods_Otofuda_iOSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -265,9 +268,6 @@
 				F3225F102330B25400D9BD79 /* PromiseKit.framework */,
 				F3225F0F2330B25400D9BD79 /* SwiftyJSON.framework */,
 				5880D37B22B4928700F40959 /* FirebaseCore.framework */,
-				4F973746A2B06067E4EA3ABB /* Pods_Otofuda_iOS.framework */,
-				DA582A8B6C1AC60CA05C8891 /* Pods_Otofuda_iOSTests.framework */,
-				A8CDC4134202E14425297323 /* Pods_Otofuda_iOSUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -298,7 +298,6 @@
 				F30811712336535D009E7726 /* Otofuda-iOSTests */,
 				F308117F2336536F009E7726 /* Otofuda-iOSUITests */,
 				589460D222852E9500319032 /* Products */,
-				DF4B4C7A60863B6BDBCE3175 /* Pods */,
 				54E6151815F6B8962458DCA0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -358,21 +357,6 @@
 				5884700522868D7400649B37 /* SearchGroup */,
 			);
 			path = Top;
-			sourceTree = "<group>";
-		};
-		DF4B4C7A60863B6BDBCE3175 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				1950F3B136AEAAC0B3CE5024 /* Pods-Otofuda-iOS.debug.xcconfig */,
-				03555C36D7B3F6240EE0182C /* Pods-Otofuda-iOS.release.xcconfig */,
-				39D95D0D2EA417A05FCACEDE /* Pods-Otofuda-iOS.debug.xcconfig */,
-				404A2813DE2749B4D0EED308 /* Pods-Otofuda-iOS.release.xcconfig */,
-				D7EFAE83DD86409EF8712C2C /* Pods-Otofuda-iOSTests.debug.xcconfig */,
-				1B7465F4A0D598A5FEFCDE39 /* Pods-Otofuda-iOSTests.release.xcconfig */,
-				8FA81005ED0399BA25805BAD /* Pods-Otofuda-iOSUITests.debug.xcconfig */,
-				4F4DB329C6599576A6CF9A87 /* Pods-Otofuda-iOSUITests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		F30811712336535D009E7726 /* Otofuda-iOSTests */ = {
@@ -448,6 +432,7 @@
 				F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */,
 				F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */,
 				F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */,
+				F3D03DFB25DF7F11003C4A39 /* CardCountMode.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -563,11 +548,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 589460E322852E9500319032 /* Build configuration list for PBXNativeTarget "Otofuda-iOS" */;
 			buildPhases = (
-				72E1837E0B9A4EA64C3F807C /* [CP] Check Pods Manifest.lock */,
 				589460CD22852E9500319032 /* Sources */,
 				589460CE22852E9500319032 /* Frameworks */,
 				589460CF22852E9500319032 /* Resources */,
-				787488BFDB152AFD921AF178 /* [CP] Embed Pods Frameworks */,
 				F3225F182330B26200D9BD79 /* CopyFiles */,
 			);
 			buildRules = (
@@ -575,6 +558,17 @@
 			dependencies = (
 			);
 			name = "Otofuda-iOS";
+			packageProductDependencies = (
+				F323810125DEB23300892DAB /* Toast */,
+				F32B062925DEBDC700AA30D8 /* FirebaseDatabase */,
+				F32B063B25DF360700AA30D8 /* Alamofire */,
+				F32B064A25DF365400AA30D8 /* AlamofireImage */,
+				F32B066525DF378800AA30D8 /* ObjectMapper */,
+				F32B066B25DF37D400AA30D8 /* PromiseKit */,
+				F32B067125DF37FB00AA30D8 /* SwiftyJSON */,
+				F32B067725DF382D00AA30D8 /* RxSwift */,
+				F32B067925DF382D00AA30D8 /* RxCocoa */,
+			);
 			productName = "Otofuda-iOS";
 			productReference = 589460D122852E9500319032 /* 音札.app */;
 			productType = "com.apple.product-type.application";
@@ -583,7 +577,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F30811772336535D009E7726 /* Build configuration list for PBXNativeTarget "Otofuda-iOSTests" */;
 			buildPhases = (
-				2B6766A51D96AA3CB5FECEFA /* [CP] Check Pods Manifest.lock */,
 				F308116C2336535C009E7726 /* Sources */,
 				F308116D2336535C009E7726 /* Frameworks */,
 				F308116E2336535C009E7726 /* Resources */,
@@ -602,7 +595,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F30811852336536F009E7726 /* Build configuration list for PBXNativeTarget "Otofuda-iOSUITests" */;
 			buildPhases = (
-				CA4278867C022823BB07E8D3 /* [CP] Check Pods Manifest.lock */,
 				F308117A2336536F009E7726 /* Sources */,
 				F308117B2336536F009E7726 /* Frameworks */,
 				F308117C2336536F009E7726 /* Resources */,
@@ -649,6 +641,16 @@
 				Base,
 			);
 			mainGroup = 589460C822852E9500319032;
+			packageReferences = (
+				F323810025DEB23300892DAB /* XCRemoteSwiftPackageReference "Toast-Swift" */,
+				F32B062825DEBDC700AA30D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				F32B063A25DF360600AA30D8 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				F32B064925DF365400AA30D8 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
+				F32B066425DF378800AA30D8 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
+				F32B066A25DF37D400AA30D8 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+				F32B067025DF37FB00AA30D8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				F32B067625DF382D00AA30D8 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 589460D222852E9500319032 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -696,92 +698,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		2B6766A51D96AA3CB5FECEFA /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Otofuda-iOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		72E1837E0B9A4EA64C3F807C /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Otofuda-iOS-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		787488BFDB152AFD921AF178 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Otofuda-iOS/Pods-Otofuda-iOS-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		CA4278867C022823BB07E8D3 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Otofuda-iOSUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		589460CD22852E9500319032 /* Sources */ = {
@@ -842,6 +758,7 @@
 				F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */,
 				F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */,
 				F3E25FE8233085DF00134769 /* FudaCollectionCell.swift in Sources */,
+				F3D03DFC25DF7F11003C4A39 /* CardCountMode.swift in Sources */,
 				F32B91BA2332434B0031B062 /* ResultVC+Ex.swift in Sources */,
 				F3E25FE42330856300134769 /* UITable+Ex.swift in Sources */,
 				F3C21BC0232F809100546D5B /* Room.swift in Sources */,
@@ -925,6 +842,7 @@
 				DEFINES_MODULE = YES;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -942,7 +860,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -988,6 +906,7 @@
 				DEFINES_MODULE = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				EXCLUDED_ARCHS = arm64;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1009,13 +928,12 @@
 		};
 		589460E422852E9500319032 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1950F3B136AEAAC0B3CE5024 /* Pods-Otofuda-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.4;
-				DEVELOPMENT_TEAM = S26A4W8VSZ;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				CURRENT_PROJECT_VERSION = 1.1.5;
+				DEVELOPMENT_TEAM = T8YPT438X6;
+				EXCLUDED_ARCHS = "arm64, arm64e, x86_64";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
@@ -1035,7 +953,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
@@ -1045,13 +964,12 @@
 		};
 		589460E522852E9500319032 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 03555C36D7B3F6240EE0182C /* Pods-Otofuda-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1.1.4;
-				DEVELOPMENT_TEAM = S26A4W8VSZ;
-				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				CURRENT_PROJECT_VERSION = 1.1.5;
+				DEVELOPMENT_TEAM = T8YPT438X6;
+				EXCLUDED_ARCHS = "arm64, arm64e, x86_64";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1061,7 +979,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.1.4;
+				MARKETING_VERSION = 1.1.5;
 				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.Otofuda";
 				PRODUCT_NAME = "音札";
 				SWIFT_VERSION = 5.0;
@@ -1071,7 +989,6 @@
 		};
 		F30811782336535D009E7726 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7EFAE83DD86409EF8712C2C /* Pods-Otofuda-iOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1082,7 +999,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "Nakamura-labProject.Otofuda-iOSTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1093,7 +1010,6 @@
 		};
 		F30811792336535D009E7726 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1B7465F4A0D598A5FEFCDE39 /* Pods-Otofuda-iOSTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
@@ -1114,7 +1030,6 @@
 		};
 		F30811862336536F009E7726 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8FA81005ED0399BA25805BAD /* Pods-Otofuda-iOSUITests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T8YPT438X6;
@@ -1124,7 +1039,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "Nakamura-labProject.Otofuda-iOSUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1135,7 +1050,6 @@
 		};
 		F30811872336536F009E7726 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4F4DB329C6599576A6CF9A87 /* Pods-Otofuda-iOSUITests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T8YPT438X6;
@@ -1193,6 +1107,121 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F323810025DEB23300892DAB /* XCRemoteSwiftPackageReference "Toast-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/scalessec/Toast-Swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
+		F32B062825DEBDC700AA30D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.6.0;
+			};
+		};
+		F32B063A25DF360600AA30D8 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.1;
+			};
+		};
+		F32B064925DF365400AA30D8 /* XCRemoteSwiftPackageReference "AlamofireImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/AlamofireImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+		F32B066425DF378800AA30D8 /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.2.0;
+			};
+		};
+		F32B066A25DF37D400AA30D8 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.13.3;
+			};
+		};
+		F32B067025DF37FB00AA30D8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+		F32B067625DF382D00AA30D8 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F323810125DEB23300892DAB /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F323810025DEB23300892DAB /* XCRemoteSwiftPackageReference "Toast-Swift" */;
+			productName = Toast;
+		};
+		F32B062925DEBDC700AA30D8 /* FirebaseDatabase */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B062825DEBDC700AA30D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseDatabase;
+		};
+		F32B063B25DF360700AA30D8 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B063A25DF360600AA30D8 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F32B064A25DF365400AA30D8 /* AlamofireImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B064925DF365400AA30D8 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
+			productName = AlamofireImage;
+		};
+		F32B066525DF378800AA30D8 /* ObjectMapper */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B066425DF378800AA30D8 /* XCRemoteSwiftPackageReference "ObjectMapper" */;
+			productName = ObjectMapper;
+		};
+		F32B066B25DF37D400AA30D8 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B066A25DF37D400AA30D8 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+		F32B067125DF37FB00AA30D8 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B067025DF37FB00AA30D8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
+		};
+		F32B067725DF382D00AA30D8 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B067625DF382D00AA30D8 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		F32B067925DF382D00AA30D8 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F32B067625DF382D00AA30D8 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 589460C922852E9500319032 /* Project object */;
 }

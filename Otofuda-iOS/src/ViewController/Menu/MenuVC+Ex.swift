@@ -43,6 +43,7 @@ extension MenuVC {
                 guard let usingMusicMode = modeDict["usingMusic"] else { return }
                 guard let scoreMode = modeDict["score"] else { return }
                 guard let playbackMode = modeDict["playback"] else { return }
+                guard let cardCountMode = modeDict["cardCount"] else { return }
 
 
                 switch usingMusicMode {
@@ -74,6 +75,26 @@ extension MenuVC {
                 case "random":
                     self.playbackSegument.selectedSegmentIndex = 1
                     self.playbackMode = .random
+                default:
+                    break
+                }
+                
+                switch cardCountMode {
+                case "2x2":
+                    self.cardCountSegument.selectedSegmentIndex = 0
+                    CARD_ROW_COUNT = 2
+                    CARD_CLM_COUNT = 2
+                    CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+                case "3x3":
+                    self.cardCountSegument.selectedSegmentIndex = 1
+                    CARD_ROW_COUNT = 3
+                    CARD_CLM_COUNT = 3
+                    CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+                case "4x4":
+                    self.cardCountSegument.selectedSegmentIndex = 2
+                    CARD_ROW_COUNT = 4
+                    CARD_CLM_COUNT = 4
+                    CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
                 default:
                     break
                 }

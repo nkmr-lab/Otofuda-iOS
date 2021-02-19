@@ -49,7 +49,8 @@ final class ResultVC: UIViewController, ResultProtocol {
         super.viewDidLoad()
 
 //        initializePlayer()
-
+        
+        
         // 戻るを不可能にする
         self.navigationItem.hidesBackButton = true
 
@@ -68,7 +69,11 @@ final class ResultVC: UIViewController, ResultProtocol {
         scoreLabel.text = "\(eachScores[me.index])点"
 
         if eachScores[me.index] == eachScores.max() {
-            winnerLabel.text = "あなたの勝利"
+            if eachScores.filter({ $0 == eachScores.max() }).count > 1 {
+                winnerLabel.text = "引き分け"
+            } else {
+                winnerLabel.text = "あなたの勝利"
+            }
         } else {
             winnerLabel.text = "あなたの敗北"
         }
@@ -76,10 +81,6 @@ final class ResultVC: UIViewController, ResultProtocol {
     }
 
     @IBAction func tapRestartBtn(_ sender: Any) {
-        firebaseManager.deleteAllValue(path: room.url() + "cardLocations")
-        firebaseManager.deleteAllValue(path: room.url() + "selectedPlayers")
-        firebaseManager.deleteAllValue(path: room.url() + "playMusics")
-        firebaseManager.deleteAllValue(path: room.url() + "currentIndex")
         firebaseManager.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
         self.navigationController?.popToViewController(
             navigationController!.viewControllers[2], animated: true

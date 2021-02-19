@@ -16,7 +16,8 @@ struct Room {
     var mode: Dictionary<String, String> = [
         "playback": PlaybackMode.intro.rawValue,
         "score": ScoreMode.normal.rawValue,
-        "usingMusic": UsingMusicMode.preset.rawValue
+        "usingMusic": UsingMusicMode.preset.rawValue,
+        "cardCount": CARD_COUNT_STRING
     ]
 
     init(name: String) {

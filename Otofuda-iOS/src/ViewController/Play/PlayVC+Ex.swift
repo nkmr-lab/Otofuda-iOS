@@ -61,17 +61,30 @@ extension PlayVC {
 
         switch usingMusicMode {
         case .preset:
-            avPlayer.pause()
+            avPlayer?.pause()
             avPlayer = nil
         case .device:
-            player.stop()
+            player?.stop()
             player = nil
         }
         
-        firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
-        firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+        if isHost {
+            firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
+            firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+            
+            firebaseManager.deleteAllValue(path: room.url() + "cardLocations")
+            firebaseManager.deleteAllValue(path: room.url() + "selectedPlayers")
+            firebaseManager.deleteAllValue(path: room.url() + "playMusics")
+            firebaseManager.deleteAllValue(path: room.url() + "currentIndex")
+        } else {
+            firebaseManager.deleteObserve(path: room.url() + "tapped")
+            firebaseManager.deleteObserve(path: room.url() + "answearUser")
+        }
+        
         NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: nil)
-
+    }
+    
+    func goResultVC(){
         let storyboard = UIStoryboard(name: "Result", bundle: nil)
         let nextVC = storyboard.instantiateInitialViewController() as! ResultVC
         nextVC.room = room
@@ -135,7 +148,7 @@ extension PlayVC {
 
             if isHost {
                 firebaseManager.post(path: room.url() + "currentIndex", value: currentIndex)
-                observeTapped()
+//                observeTapped()
             }
 
             tapErrorV.removeFromSuperview()
@@ -152,15 +165,6 @@ extension PlayVC {
         countdownV.removeFromSuperview()
     }
     
-    func observeTimestamp(){
-        firebaseManager.observe(path: room.url() + "timestamp", completion: { snapshot in
-            guard let timestamp = snapshot.value as? Int else {
-                return
-            }
-            print(timestamp)
-        })
-    }
-    
     func observeRoomStatus(){
         firebaseManager.observe(path: room.url() + "status", completion: { snapshot in
             guard let status = snapshot.value as? String else {
@@ -172,19 +176,7 @@ extension PlayVC {
                 self.displayCountdownV()
                 self.fireTimer()
             } else if status == RoomStatus.menu.rawValue {
-                if let player = self.player {
-                    self.player.stop()
-                    self.player = nil
-                }
-
-                if let avPlayer = self.avPlayer {
-                    self.avPlayer.pause()
-                    self.avPlayer = nil
-                }
-
-                self.firebaseManager.deleteAllValuesAndObserve(path: self.room.url() + "tapped")
-                self.firebaseManager.deleteAllValuesAndObserve(path: self.room.url() + "answearUser")
-
+                self.finishGame()
                 self.navigationController?.popViewController(animated: true)
             }
         })
@@ -193,22 +185,23 @@ extension PlayVC {
     func observeTapped(){
         // ここにタップがメンバー数に到達したら，ステータスにtappedにする処理を書く
         firebaseManager.observe(path: room.url() + "tapped", completion: { snapshot in
-            guard let tappedDict = snapshot.value as? [Dictionary<String, Any>] else {
+    
+            if snapshot.children.allObjects.count != self.room.member.count {
                 return
             }
             
-            if tappedDict.count == self.room.member.count {
+            
+            if self.isHost {
                 self.room.status = .next
                 self.firebaseManager.post(path: self.room.url() + "status", value: self.room.status.rawValue)
                 self.startBtn.isHidden = false
-                self.isPlaying = false
                 self.isTapped = false
+            }
 
-                // TODO: observeしてるのがホストだけなので，終了処理がホストだけしか呼ばれてない
-                // 終了判定
-                if self.currentIndex == CARD_MAX_COUNT  {
-                    self.finishGame()
-                }
+            // 終了判定
+            if self.currentIndex == CARD_MAX_COUNT  {
+                self.finishGame()
+                self.goResultVC()
             }
         })
     }
@@ -246,12 +239,30 @@ extension PlayVC {
             self.room.status = .next
             self.isPlaying = false
             self.isTapped = false
-            if self.isHost { self.startBtn.isHidden = false }
-
+            
             // 終了判定
             if self.currentIndex == CARD_MAX_COUNT  {
-                self.finishGame()
+                // 現状より早い正解者が追加で現れるかもしれないので, 終了処理を3秒待つ
+                if !self.isWaitingForFinish {
+                    self.isWaitingForFinish = true
+                    let dispatchTime = DispatchTime.now() + 3.0
+                    DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
+                        self.finishGame()
+                        self.goResultVC()
+                    }
+                }
+                
+                var activityIndicatorView = UIActivityIndicatorView()
+                activityIndicatorView.center = self.view.center
+                activityIndicatorView.style = .whiteLarge
+                activityIndicatorView.color = .gray
+                self.view.addSubview(activityIndicatorView)
+                activityIndicatorView.startAnimating()
+                
+                return
             }
+            
+            if self.isHost { self.startBtn.isHidden = false }
         })
     }
     

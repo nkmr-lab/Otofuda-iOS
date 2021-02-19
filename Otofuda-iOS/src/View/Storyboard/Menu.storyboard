@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IMK-H5-JX7">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="IMK-H5-JX7">
     <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -24,8 +23,81 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jPr-fu-pbw">
                                         <rect key="frame" x="0.0" y="0.0" width="355" height="720"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rn6-8W-E9D">
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-QE-q8k">
                                                 <rect key="frame" x="0.0" y="0.0" width="355" height="80"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgK-B4-SzT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="80"/>
+                                                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="10" id="pCF-QQ-J3U"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="札の枚数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-3U-3dp">
+                                                        <rect key="frame" x="10" y="0.0" width="120" height="80"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="120" id="HbA-9a-6vw"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFq-pr-GDU">
+                                                        <rect key="frame" x="130" y="0.0" width="20" height="80"/>
+                                                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="20" id="tq8-AU-WNJ"/>
+                                                        </constraints>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="164-KR-3Ud">
+                                                        <rect key="frame" x="150" y="0.0" width="205" height="80"/>
+                                                        <subviews>
+                                                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lpe-zz-9Ew" customClass="IBDesignableSegmentControl" customModule="音札" customModuleProvider="target">
+                                                                <rect key="frame" x="5" y="5" width="195" height="71"/>
+                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <segments>
+                                                                    <segment title="2x2"/>
+                                                                    <segment title="3x3"/>
+                                                                    <segment title="4x4"/>
+                                                                </segments>
+                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <color key="selectedSegmentTintColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <userDefinedRuntimeAttributes>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                        <real key="value" value="10"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
+                                                                        <real key="value" value="0.0"/>
+                                                                    </userDefinedRuntimeAttribute>
+                                                                </userDefinedRuntimeAttributes>
+                                                                <connections>
+                                                                    <action selector="changeCardCountSeg:" destination="IMK-H5-JX7" eventType="valueChanged" id="taC-xl-e3N"/>
+                                                                </connections>
+                                                            </segmentedControl>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="80" id="9vk-yi-GiS"/>
+                                                            <constraint firstItem="Lpe-zz-9Ew" firstAttribute="leading" secondItem="164-KR-3Ud" secondAttribute="leading" constant="5" id="Ob3-Lu-D0C"/>
+                                                            <constraint firstItem="Lpe-zz-9Ew" firstAttribute="top" secondItem="164-KR-3Ud" secondAttribute="top" constant="5" id="Rdd-iV-F7g"/>
+                                                            <constraint firstAttribute="bottom" secondItem="Lpe-zz-9Ew" secondAttribute="bottom" constant="5" id="XVa-Nu-ywo"/>
+                                                            <constraint firstAttribute="trailing" secondItem="Lpe-zz-9Ew" secondAttribute="trailing" constant="5" id="gr1-JK-ZSP"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="80" id="K5f-JG-J3b"/>
+                                                </constraints>
+                                            </stackView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBS-j6-Orv">
+                                                <rect key="frame" x="0.0" y="80" width="355" height="20"/>
+                                                <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="20" id="qfr-Im-Ao6"/>
+                                                </constraints>
+                                            </view>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rn6-8W-E9D">
+                                                <rect key="frame" x="0.0" y="100" width="355" height="80"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qhV-hk-0st">
                                                         <rect key="frame" x="0.0" y="0.0" width="10" height="80"/>
@@ -90,14 +162,14 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9tQ-8I-c9k">
-                                                <rect key="frame" x="0.0" y="80" width="355" height="20"/>
+                                                <rect key="frame" x="0.0" y="180" width="355" height="20"/>
                                                 <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="I6K-3h-fuC"/>
                                                 </constraints>
                                             </view>
                                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PEZ-YT-Su6">
-                                                <rect key="frame" x="0.0" y="100" width="355" height="300"/>
+                                                <rect key="frame" x="0.0" y="200" width="355" height="300"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -105,14 +177,14 @@
                                                 </constraints>
                                             </pickerView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCx-SP-Qg6">
-                                                <rect key="frame" x="0.0" y="400" width="355" height="20"/>
+                                                <rect key="frame" x="0.0" y="500" width="355" height="20"/>
                                                 <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="xw2-8y-XPX"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j1l-bl-RLP">
-                                                <rect key="frame" x="0.0" y="420" width="355" height="80"/>
+                                                <rect key="frame" x="0.0" y="520" width="355" height="80"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rWP-6o-FJm">
                                                         <rect key="frame" x="0.0" y="0.0" width="10" height="80"/>
@@ -177,14 +249,14 @@
                                                 </constraints>
                                             </stackView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bqU-Jd-bCV">
-                                                <rect key="frame" x="0.0" y="500" width="355" height="20"/>
+                                                <rect key="frame" x="0.0" y="600" width="355" height="20"/>
                                                 <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="20" id="3IV-7Y-LeE"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ihr-ZL-7ud">
-                                                <rect key="frame" x="0.0" y="520" width="355" height="80"/>
+                                                <rect key="frame" x="0.0" y="620" width="355" height="80"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ojc-hV-MxW">
                                                         <rect key="frame" x="0.0" y="0.0" width="10" height="80"/>
@@ -244,79 +316,6 @@
                                                 <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="okm-Uo-vte"/>
-                                                </constraints>
-                                            </stackView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lBS-j6-Orv">
-                                                <rect key="frame" x="0.0" y="600" width="355" height="20"/>
-                                                <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="20" id="qfr-Im-Ao6"/>
-                                                </constraints>
-                                            </view>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kza-QE-q8k">
-                                                <rect key="frame" x="0.0" y="620" width="355" height="80"/>
-                                                <subviews>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KgK-B4-SzT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="10" height="80"/>
-                                                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="10" id="pCF-QQ-J3U"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="札の枚数" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IFa-3U-3dp">
-                                                        <rect key="frame" x="10" y="0.0" width="120" height="80"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="120" id="HbA-9a-6vw"/>
-                                                        </constraints>
-                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                                                        <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AFq-pr-GDU">
-                                                        <rect key="frame" x="130" y="0.0" width="20" height="80"/>
-                                                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="20" id="tq8-AU-WNJ"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="164-KR-3Ud">
-                                                        <rect key="frame" x="150" y="0.0" width="205" height="80"/>
-                                                        <subviews>
-                                                            <segmentedControl opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="2" translatesAutoresizingMaskIntoConstraints="NO" id="Lpe-zz-9Ew" customClass="IBDesignableSegmentControl" customModule="音札" customModuleProvider="target">
-                                                                <rect key="frame" x="5" y="5" width="195" height="71"/>
-                                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <segments>
-                                                                    <segment title="2x2"/>
-                                                                    <segment title="3x3"/>
-                                                                    <segment title="4x4"/>
-                                                                </segments>
-                                                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                <color key="selectedSegmentTintColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                                <userDefinedRuntimeAttributes>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                                        <real key="value" value="10"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                    <userDefinedRuntimeAttribute type="number" keyPath="shadowOpacity">
-                                                                        <real key="value" value="0.0"/>
-                                                                    </userDefinedRuntimeAttribute>
-                                                                </userDefinedRuntimeAttributes>
-                                                                <connections>
-                                                                    <action selector="changeCardCountSeg:" destination="IMK-H5-JX7" eventType="valueChanged" id="taC-xl-e3N"/>
-                                                                </connections>
-                                                            </segmentedControl>
-                                                        </subviews>
-                                                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="80" id="9vk-yi-GiS"/>
-                                                            <constraint firstItem="Lpe-zz-9Ew" firstAttribute="leading" secondItem="164-KR-3Ud" secondAttribute="leading" constant="5" id="Ob3-Lu-D0C"/>
-                                                            <constraint firstItem="Lpe-zz-9Ew" firstAttribute="top" secondItem="164-KR-3Ud" secondAttribute="top" constant="5" id="Rdd-iV-F7g"/>
-                                                            <constraint firstAttribute="bottom" secondItem="Lpe-zz-9Ew" secondAttribute="bottom" constant="5" id="XVa-Nu-ywo"/>
-                                                            <constraint firstAttribute="trailing" secondItem="Lpe-zz-9Ew" secondAttribute="trailing" constant="5" id="gr1-JK-ZSP"/>
-                                                        </constraints>
-                                                    </view>
-                                                </subviews>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="80" id="K5f-JG-J3b"/>
                                                 </constraints>
                                             </stackView>
                                             <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fcE-Yf-qBr">

@@ -31,32 +31,6 @@ final class TopVC: UIViewController, TopProtocol {
         super.viewDidLoad()
 
         requestAuth()
-
-// 認証は結局使わなそうなので
-//        Auth.auth().signInAnonymously(completion: { (authResult, error) in
-//            if let e = error {
-//                print(e)
-//                print("login error")
-//                return
-//            }
-//            print(authResult?.)
-//        })
-
-//        AF.request(ITUNES_TOP_RSS_URL).responseJSON(completionHandler: { response in
-//
-//            let jsonStr = JSON(response.data).rawString()!
-//
-//            print(jsonStr)
-//            do {
-//                let iTunesTopMusicList = try? JSONDecoder().decode(
-//                    iTunesTopRSSResponse.self, from: jsonStr.data(using: .utf8)!
-//                )
-//                print(iTunesTopMusicList)
-//            }
-//            catch {
-//
-//            }
-//        })
     }
 
     override func viewWillAppear(_ animated: Bool) {

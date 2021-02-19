@@ -1,5 +1,6 @@
 import UIKit
 import MediaPlayer
+import Toast
 
 protocol PlayProtocol {
     func fireTimer()
@@ -37,6 +38,8 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
     var isTapped = false
     
     var isPlaying = false
+    
+    var isWaitingForFinish = false
 
     let speech = AVSpeechSynthesizer()
     let utterance = AVSpeechUtterance(string: "お手つき")
@@ -137,6 +140,7 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
             observeRoomStatus()
         }
 
+        observeTapped()
         observeAnswearUser()
     }
 
@@ -158,8 +162,7 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
         
         room.status = .play
         firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
-        firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
-//        firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+        firebaseManager.deleteAllValue(path: room.url() + "tapped")
         firebaseManager.deleteAllValue(path: room.url() + "answearUser")
         
         displayCountdownV()
@@ -192,25 +195,8 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
     // 戻るが押された時の処理
     func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
         if viewController is MenuVC {
-
-            if let player = player {
-                self.player.stop()
-                self.player = nil
-            }
-
-            if let avPlayer = avPlayer {
-                self.avPlayer.pause()
-                self.avPlayer = nil
-            }
-
             firebaseManager.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
-            firebaseManager.deleteAllValue(path: room.url() + "cardLocations")
-            firebaseManager.deleteAllValue(path: room.url() + "selectedPlayers")
-            firebaseManager.deleteAllValue(path: room.url() + "playMusics")
-            firebaseManager.deleteAllValue(path: room.url() + "currentIndex")
-
-            firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
-            firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+            finishGame()
         }
     }
 }

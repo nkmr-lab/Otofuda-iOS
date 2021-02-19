@@ -46,20 +46,12 @@ extension PlayVC: UICollectionViewDelegate {
         else {
             self.speech.speak(self.utterance)
             self.displayErrorV()
+            self.view.makeToast(playMusics[currentIndex-1].name + " でした")
         }
 
-        firebaseManager.observeSingle(path: room.url() + "tapped", completion: { snapshot in
-            if var tappedDict = snapshot.value as? [Dictionary<String, Any>] {
-                let dict: Dictionary<String, Any> = ["user": self.me.dict(), "music": tappedMusic.name]
-                tappedDict.append(dict)
-                self.firebaseManager.post(path: self.room.url() + "tapped", value: tappedDict)
-            } else {
-                var tappedDict: [Dictionary<String, Any>] = []
-                let dict: Dictionary<String, Any> = ["user": self.me.dict(), "music": tappedMusic.name]
-                tappedDict.append(dict)
-                self.firebaseManager.post(path: self.room.url() + "tapped", value: tappedDict)
-            }
-        })
+        let dict: Dictionary<String, Any> = ["user": self.me.dict(), "music": tappedMusic.name]
+        self.firebaseManager.post(path: self.room.url() + "tapped/\(self.me.index)", value: dict)
+        
 
     }
 }

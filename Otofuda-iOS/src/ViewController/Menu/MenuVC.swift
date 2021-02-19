@@ -90,6 +90,30 @@ final class MenuVC: UIViewController, Menurotocol {
         super.viewDidLoad()
         // 戻るを不可能にする
         self.navigationItem.hidesBackButton = true
+        
+        firebaseManager.observeSingle(path: room.url() + "mode/cardCount", completion: { snapshot in
+            if let cardCountMode = snapshot.value as? String {
+                switch cardCountMode {
+                case "2x2":
+                    self.cardCountSegument.selectedSegmentIndex = 0
+                    CARD_ROW_COUNT = 2
+                    CARD_CLM_COUNT = 2
+                    CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+                case "3x3":
+                    self.cardCountSegument.selectedSegmentIndex = 1
+                    CARD_ROW_COUNT = 3
+                    CARD_CLM_COUNT = 3
+                    CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+                case "4x4":
+                    self.cardCountSegument.selectedSegmentIndex = 2
+                    CARD_ROW_COUNT = 4
+                    CARD_CLM_COUNT = 4
+                    CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+                default:
+                    break
+                }
+            }
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -108,41 +132,20 @@ final class MenuVC: UIViewController, Menurotocol {
             observeUI()
         }
 
+        // FIXME: 表示されない
+        // 読み込み中にアニメーションを表示させる
+//        var activityIndicatorView = UIActivityIndicatorView()
+//        activityIndicatorView.center = presetPickerV.center
+//        activityIndicatorView.style = .large
+//        activityIndicatorView.color = .gray
+//        activityIndicatorView.startAnimating()
+//        presetPickerV.addSubview(activityIndicatorView)
+        
+        // プリセットリストをAPIから取得して、テーブルに表示
+        loadApiPresets()
+        
         // スタートボタンが押されるのを監視
         observeStart()
-
-        // 楽曲が準備できるのを監視
-//        preparedPlayMusics()
-
-        presetLists = []
-
-        AF.request(PRESET_LIST_API_URL, method: .get, parameters: ["count": CARD_MAX_COUNT]).response { response in
-            guard let data = response.data else { return }
-            do {
-                let presetsResponse: PresetsResponse = try JSONDecoder().decode(PresetsResponse.self, from: data)
-                print(presetsResponse)
-                for presetList in presetsResponse.list {
-                    self.presetLists.append(presetList)
-                }
-
-                // データが読み込まれる前にpickerを生成しようとしちゃうので
-                // 変だけどここでdelegateとdatasorceを指定してあげてる
-                self.presetPickerV.delegate = self
-                self.presetPickerV.dataSource = self
-                self.presetPickerV.backgroundColor = .white
-                self.presetPickerV.tintColor = .black
-
-                self.presetPickerV.reloadAllComponents()
-                
-
-
-                print(self.presets)
-            }
-            catch {
-                print(error)
-            }
-        }
-
     }
 
     deinit {
@@ -189,22 +192,37 @@ final class MenuVC: UIViewController, Menurotocol {
     }
 
     @IBAction func changeCardCountSeg(_ sender: Any) {
+        
+        presetLists = []
+        presets = []
+        presetPickerV.selectRow(0, inComponent: 1, animated: true)
+        presetPickerV.reloadAllComponents()
+        
+        var cardCount = "4x4"
+        
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
             CARD_ROW_COUNT = 2
             CARD_CLM_COUNT = 2
             CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+            cardCount = "2x2"
         case 1:
             CARD_ROW_COUNT = 3
             CARD_CLM_COUNT = 3
             CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+            cardCount = "3x3"
         case 2:
             CARD_ROW_COUNT = 4
             CARD_CLM_COUNT = 4
             CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+            cardCount = "4x4"
         default:
             break
         }
+        
+        firebaseManager.post(path: room.url() + "mode/cardCount/", value: cardCount)
+        
+        loadApiPresets()
     }
     @IBAction func tappedStartBtn(_ sender: Any) {
 
@@ -216,6 +234,15 @@ final class MenuVC: UIViewController, Menurotocol {
 
             let row1 = presetPickerV.selectedRow(inComponent: 0)
             let row2 = presetPickerV.selectedRow(inComponent: 1)
+            
+            if presetLists.count-1 < row1 {
+                return
+            }
+            
+            if presetLists[row1].presets.count < row2 {
+                return
+            }
+            
             let preset = presetLists[row1].presets[row2]
 
             print(SELECT_MUSIC_API_URL + "?id=\(preset.id)&count=\(CARD_MAX_COUNT)")
@@ -251,6 +278,36 @@ final class MenuVC: UIViewController, Menurotocol {
 
     }
     
+    func loadApiPresets(){
+        
+        presetLists = []
+        
+        AF.request(PRESET_LIST_API_URL, method: .get, parameters: ["count": CARD_MAX_COUNT]).response { response in
+            guard let data = response.data else { return }
+            do {
+                let presetsResponse: PresetsResponse = try JSONDecoder().decode(PresetsResponse.self, from: data)
+                print(presetsResponse)
+                for presetList in presetsResponse.list {
+                    self.presetLists.append(presetList)
+                }
+
+                // データが読み込まれる前にpickerを生成しようとしちゃうので
+                // 変だけどここでdelegateとdatasorceを指定してあげてる
+                self.presetPickerV.delegate = self
+                self.presetPickerV.dataSource = self
+                self.presetPickerV.backgroundColor = .white
+                self.presetPickerV.tintColor = .black
+
+                self.presetPickerV.reloadAllComponents()
+                
+                print(self.presets)
+            }
+            catch {
+                print(error)
+            }
+        }
+    }
+    
 }
 
 
@@ -265,7 +322,10 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
         case 0:
             return presetLists.count
         case 1:
-            return presetLists[presetIndex].presets.count
+            if presetLists.count > presetIndex {
+                return presetLists[presetIndex].presets.count
+            }
+            return 0
         default:
             return 0
         }
@@ -290,7 +350,6 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
         label.textAlignment = .center
         label.textColor = .black
         label.font = UIFont(name: "", size: 50)
-
 
         switch component {
         case 0:

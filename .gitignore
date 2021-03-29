@@ -161,3 +161,4 @@ Packages/
 # Bundler
 .bundle/
 bundle/
+Otofuda-iOS/resources/.GoogleService-Info.plist.icloud

@@ -65,6 +65,7 @@
 		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
 		F35F9B53237154E000BBB727 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F9B52237154E000BBB727 /* MusicList.swift */; };
 		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
+		F3B47414260098D300C32A56 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B47413260098D300C32A56 /* TopView.swift */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
 		F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB8232F711300546D5B /* UIImage+Ex.swift */; };
 		F3C21BBB232F738F00546D5B /* SearchGropuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BBA232F738F00546D5B /* SearchGropuVC+Ex.swift */; };
@@ -189,6 +190,7 @@
 		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F35F9B52237154E000BBB727 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		F3B47413260098D300C32A56 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB8232F711300546D5B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BBA232F738F00546D5B /* SearchGropuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchGropuVC+Ex.swift"; sourceTree = "<group>"; };
@@ -401,6 +403,14 @@
 			path = Result;
 			sourceTree = "<group>";
 		};
+		F3B4740A260098A700C32A56 /* SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				F3B47413260098D300C32A56 /* TopView.swift */,
+			);
+			path = SwiftUI;
+			sourceTree = "<group>";
+		};
 		F3C21BB5232F702800546D5B /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +458,7 @@
 		F3C8E69123615BC700864279 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				F3B4740A260098A700C32A56 /* SwiftUI */,
 				F3C8E69623615CFC00864279 /* Storyboard */,
 			);
 			path = View;
@@ -730,6 +741,7 @@
 				F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */,
 				F308115623335E48009E7726 /* MenuVC+Ex.swift in Sources */,
 				F3E25FD4232F9F6600134769 /* PlayVC+UICollectionDataSource.swift in Sources */,
+				F3B47414260098D300C32A56 /* TopView.swift in Sources */,
 				F32B91AE233232660031B062 /* ResultVC+UICollectionDelegate.swift in Sources */,
 				F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */,
 				F3225F042330AFE300D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift in Sources */,
@@ -1005,7 +1017,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Otofuda-iOS.app/Otofuda-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/音札.app/音札";
 			};
 			name = Debug;
 		};
@@ -1025,7 +1037,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Otofuda-iOS.app/Otofuda-iOS";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/音札.app/音札";
 			};
 			name = Release;
 		};

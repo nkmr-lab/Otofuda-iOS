@@ -90,7 +90,11 @@ final class MenuVC: UIViewController, Menurotocol {
         super.viewDidLoad()
         // 戻るを不可能にする
         self.navigationItem.hidesBackButton = true
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
         firebaseManager.observeSingle(path: room.url() + "mode/cardCount", completion: { snapshot in
             if let cardCountMode = snapshot.value as? String {
                 switch cardCountMode {
@@ -114,10 +118,6 @@ final class MenuVC: UIViewController, Menurotocol {
                 }
             }
         })
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
 
         // 後のどのユーザの楽曲を使うか判断する時に使う
         // TODO: この曲数をベースに次に進めるかどうかを判定する

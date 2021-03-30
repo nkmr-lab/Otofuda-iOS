@@ -35,6 +35,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopVC" translatesAutoresizingMaskIntoConstraints="NO" id="SMj-F1-j2m">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqL-BF-DtT" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
                                 <rect key="frame" x="50" y="620" width="314" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -96,34 +99,20 @@
                                     <segue destination="vix-G8-yFh" kind="push" identifier="search" id="Tkb-9i-wwc"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Title" translatesAutoresizingMaskIntoConstraints="NO" id="uVk-zO-OMr">
-                                <rect key="frame" x="20" y="148" width="374" height="200"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="s2J-7r-uaL"/>
-                                </constraints>
-                            </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card" translatesAutoresizingMaskIntoConstraints="NO" id="hdf-ch-F98">
-                                <rect key="frame" x="132" y="373" width="150" height="150"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="hdf-ch-F98" secondAttribute="height" multiplier="1:1" id="hIn-Bn-Psp"/>
-                                    <constraint firstAttribute="width" constant="150" id="uKg-NM-QIf"/>
-                                </constraints>
-                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="0d6-49-v7h"/>
                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="uVk-zO-OMr" firstAttribute="top" secondItem="0d6-49-v7h" secondAttribute="top" constant="60" id="51K-CY-Z5f"/>
                             <constraint firstItem="MqL-BF-DtT" firstAttribute="leading" secondItem="0d6-49-v7h" secondAttribute="leading" constant="50" id="8Pz-ZY-Uvl"/>
+                            <constraint firstAttribute="trailing" secondItem="SMj-F1-j2m" secondAttribute="trailing" id="D2u-Fy-pWB"/>
                             <constraint firstItem="Eiy-R5-ftd" firstAttribute="top" secondItem="MqL-BF-DtT" secondAttribute="bottom" constant="12" id="GhN-cU-S9t"/>
                             <constraint firstItem="Eiy-R5-ftd" firstAttribute="leading" secondItem="0d6-49-v7h" secondAttribute="leading" constant="50" id="IeO-pn-dIm"/>
-                            <constraint firstItem="hdf-ch-F98" firstAttribute="centerY" secondItem="RUp-UI-MQ1" secondAttribute="centerY" id="KP8-VN-dRB"/>
                             <constraint firstItem="0d6-49-v7h" firstAttribute="bottom" secondItem="Eiy-R5-ftd" secondAttribute="bottom" constant="70" id="VYV-At-Xqs"/>
-                            <constraint firstItem="uVk-zO-OMr" firstAttribute="leading" secondItem="0d6-49-v7h" secondAttribute="leading" constant="20" id="brc-5P-PGu"/>
+                            <constraint firstItem="SMj-F1-j2m" firstAttribute="top" secondItem="RUp-UI-MQ1" secondAttribute="top" id="VZk-8N-34u"/>
+                            <constraint firstAttribute="bottom" secondItem="SMj-F1-j2m" secondAttribute="bottom" id="WJb-sM-Ee1"/>
                             <constraint firstItem="0d6-49-v7h" firstAttribute="trailing" secondItem="Eiy-R5-ftd" secondAttribute="trailing" constant="50" id="daL-Ho-zWf"/>
+                            <constraint firstItem="SMj-F1-j2m" firstAttribute="leading" secondItem="RUp-UI-MQ1" secondAttribute="leading" id="feG-e0-2FO"/>
                             <constraint firstItem="Eiy-R5-ftd" firstAttribute="centerX" secondItem="RUp-UI-MQ1" secondAttribute="centerX" id="gee-PV-v39"/>
-                            <constraint firstItem="hdf-ch-F98" firstAttribute="centerX" secondItem="RUp-UI-MQ1" secondAttribute="centerX" id="oqp-Lb-7cf"/>
-                            <constraint firstItem="0d6-49-v7h" firstAttribute="trailing" secondItem="uVk-zO-OMr" secondAttribute="trailing" constant="20" id="ppz-Sj-3b5"/>
                             <constraint firstItem="MqL-BF-DtT" firstAttribute="centerX" secondItem="RUp-UI-MQ1" secondAttribute="centerX" id="tkU-sT-ZUo"/>
                             <constraint firstItem="0d6-49-v7h" firstAttribute="trailing" secondItem="MqL-BF-DtT" secondAttribute="trailing" constant="50" id="ucK-t2-weh"/>
                         </constraints>
@@ -293,7 +282,6 @@ QRコードを見せてもらってください</string>
         </designable>
     </designables>
     <resources>
-        <image name="Card" width="952" height="1216"/>
-        <image name="Title" width="2008" height="743"/>
+        <image name="TopVC" width="1875" height="4060"/>
     </resources>
 </document>

@@ -18,6 +18,8 @@ final class MenuVC: UIViewController, Menurotocol {
     var haveMusics: [Music] = []
 
     var isHost: Bool = false
+    
+    var isSingleMode = false
 
     var me: User!
 
@@ -94,7 +96,10 @@ final class MenuVC: UIViewController, Menurotocol {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
+        if isSingleMode {
+            
+        }
         firebaseManager.observeSingle(path: room.url() + "mode/cardCount", completion: { snapshot in
             if let cardCountMode = snapshot.value as? String {
                 switch cardCountMode {

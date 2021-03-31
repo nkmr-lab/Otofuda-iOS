@@ -54,6 +54,8 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
     var scoreMode: ScoreMode = .normal
     var playbackMode: PlaybackMode = .intro
 
+    var didPlayDate = Date()
+    var didTapDate = Date()
     
     @IBOutlet var countdownV: UIView!
     
@@ -63,7 +65,7 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
     
     @IBOutlet weak var startBtn: UIButton!
 
-    
+    var tapTimeArray: [Float] = []
 
     @IBOutlet weak var fudaCollectionV: UICollectionView! {
         didSet {

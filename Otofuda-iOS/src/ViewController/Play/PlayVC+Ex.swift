@@ -93,6 +93,7 @@ extension PlayVC {
         nextVC.isHost = isHost
         nextVC.usingMusicMode = usingMusicMode
         nextVC.scoreMode = scoreMode
+        nextVC.tapTimeArray = tapTimeArray
         self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
@@ -145,6 +146,8 @@ extension PlayVC {
             if musicOwner == me.index {
                 self.playMusic()
             }
+            
+           didPlayDate = Date()
 
             if isHost {
                 firebaseManager.post(path: room.url() + "currentIndex", value: currentIndex)
@@ -207,11 +210,15 @@ extension PlayVC {
     }
     
     func observeAnswearUser(){
-        firebaseManager.observe(path: room.url() + "answearUser", completion: { snapshot in
+        firebaseManager.observe(path: room.url() + "answearUser", completion: { [self] snapshot in
+            
+            // FIXME: ここよく調べてみたらAndroidと同じように2回呼ばれてるので、後の一回だけを使う処理に書き換える
 
             if snapshot.children.allObjects.count == 0 {
                 return
             }
+            
+            print( snapshot )
             
             var fastestUser: Int = -1
             var fastestTime: Int = Int.max
@@ -228,41 +235,49 @@ extension PlayVC {
                     fastestTime = time
                 }
             }
+            
+            // 正解してたらカウントする
+            if fastestUser == me.index {
+                didTapDate = Date()
+                let tapDuration = didTapDate.timeIntervalSince(didPlayDate)
+                print("tapDuration: \(tapDuration)")
+                tapTimeArray.append(Float(tapDuration))
+            }
 
             // タップされた札の色をanswearUserにする
-            let currentMusic = self.playMusics[self.currentIndex - 1]
+            let currentMusic = playMusics[currentIndex - 1]
             currentMusic.cardOwner = fastestUser
             currentMusic.isTapped = true
             currentMusic.isAnimating = true
-            self.fudaCollectionV.reloadData()
+            fudaCollectionV.reloadData()
 
-            self.room.status = .next
-            self.isPlaying = false
-            self.isTapped = false
+            room.status = .next
+            isPlaying = false
+            isTapped = false
             
             // 終了判定
-            if self.currentIndex == CARD_MAX_COUNT  {
+            if currentIndex == CARD_MAX_COUNT  {
                 // 現状より早い正解者が追加で現れるかもしれないので, 終了処理を3秒待つ
-                if !self.isWaitingForFinish {
-                    self.isWaitingForFinish = true
+                if !isWaitingForFinish {
+                    isWaitingForFinish = true
                     let dispatchTime = DispatchTime.now() + 3.0
                     DispatchQueue.main.asyncAfter(deadline: dispatchTime) {
-                        self.finishGame()
-                        self.goResultVC()
+                        finishGame()
+                        goResultVC()
                     }
                 }
                 
                 var activityIndicatorView = UIActivityIndicatorView()
-                activityIndicatorView.center = self.view.center
+                activityIndicatorView.center = view.center
                 activityIndicatorView.style = .whiteLarge
                 activityIndicatorView.color = .gray
-                self.view.addSubview(activityIndicatorView)
+                view.addSubview(activityIndicatorView)
                 activityIndicatorView.startAnimating()
                 
                 return
             }
             
-            if self.isHost { self.startBtn.isHidden = false }
+            if isHost { startBtn.isHidden = false }
         })
     }
     

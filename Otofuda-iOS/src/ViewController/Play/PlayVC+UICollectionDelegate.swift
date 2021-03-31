@@ -5,10 +5,6 @@ extension PlayVC: UICollectionViewDelegate {
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
 
-        let nowTime = NSDate().timeIntervalSince1970
-//       １
-//        firebaseManager.post(path: "rooms/iphone", value: nowTime)
-
         // もうタップしてたら何もしない
         if isTapped {
             print("isTappped!!!!!!!")
@@ -29,9 +25,6 @@ extension PlayVC: UICollectionViewDelegate {
         self.isTapped = true
         self.isPlaying = false
         
-        let cell = collectionView.dequeueReusableCell(with: FudaCollectionCell.self,
-                                                      for: indexPath)
-
         let tappedMusic = playMusics[cardLocations[indexPath.row]]
 
         // 正解

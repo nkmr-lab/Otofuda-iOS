@@ -29,7 +29,7 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
     var member: [User] = []
 
     var me: User!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +42,7 @@ class CreateGroupVC: UIViewController, CreateGropuProtocol {
         let roomId = createGroup()
         generateQRCode(name: roomId)
         observeMember()
+  
     }
     
     deinit {

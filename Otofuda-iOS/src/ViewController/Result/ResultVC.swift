@@ -33,6 +33,10 @@ final class ResultVC: UIViewController, ResultProtocol {
     @IBOutlet weak var winnerLabel: UILabel!
     
     @IBOutlet weak var scoreLabel: UILabel!
+    
+    @IBOutlet weak var timeLabel: UILabel!
+    
+    var tapTimeArray: [Float] = []
 
     @IBOutlet weak var playedMusicTableV: UITableView! {
         didSet {
@@ -76,6 +80,19 @@ final class ResultVC: UIViewController, ResultProtocol {
             }
         } else {
             winnerLabel.text = "あなたの敗北"
+        }
+        
+        // FIXME: 配列から平均を算出する関数作る
+        // https://www.javaer101.com/ja/article/17499252.html
+        var sumTapTime: Float = 0.0
+        var avgTapTime: Float = 0.0
+        for tapTime in tapTimeArray {
+            sumTapTime += tapTime
+        }
+        
+        if tapTimeArray.count != 0 {
+            avgTapTime = sumTapTime / Float(tapTimeArray.count)
+            timeLabel.text = "平均タップペース: \(avgTapTime) 秒"
         }
 
     }

@@ -45,7 +45,7 @@
                                     <constraint firstAttribute="height" constant="80" id="rfH-Z2-sS3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="22"/>
-                                <state key="normal" title="グループを作成">
+                                <state key="normal" title="1人でプレイ">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -67,7 +67,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="C8y-tv-MuB" kind="push" identifier="create" id="e4B-Y4-Oy3"/>
+                                    <segue destination="Q5R-h9-ce7" kind="push" identifier="single" id="kal-HN-2uP"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eiy-R5-ftd" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
@@ -77,7 +77,7 @@
                                     <constraint firstAttribute="height" constant="80" id="Qt1-ka-gTA"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
-                                <state key="normal" title="グループへ参加">
+                                <state key="normal" title="みんなでプレイ">
                                     <color key="titleColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -96,7 +96,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="vix-G8-yFh" kind="push" identifier="search" id="Tkb-9i-wwc"/>
+                                    <segue destination="vix-G8-yFh" kind="push" identifier="multi" id="Tkb-9i-wwc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -122,6 +122,16 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4NL-SW-c24" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-175.36231884057972" y="585.9375"/>
+        </scene>
+        <!--Menu-->
+        <scene sceneID="E4L-VR-h6q">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Menu" id="Q5R-h9-ce7" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="IiB-6j-a12"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lXM-8h-1Xi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-171" y="185"/>
         </scene>
         <!--グループを作成-->
         <scene sceneID="goy-Wj-6rK">
@@ -166,7 +176,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="0zx-20-CYg" kind="show" id="AFq-yl-6oO"/>
+                                    <segue destination="0zx-20-CYg" kind="show" identifier="toMenu" id="AFq-yl-6oO"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在の人数 1 人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fyh-kV-sdU">
@@ -179,7 +189,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6R-p0-PG4">
-                                <rect key="frame" x="100" y="118" width="214" height="41"/>
+                                <rect key="frame" x="100" y="74" width="214" height="41"/>
                                 <string key="text">一緒にやるプレイヤーに
 QRコードを見せてください</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -278,7 +288,7 @@ QRコードを見せてもらってください</string>
             <size key="intrinsicContentSize" width="157" height="39"/>
         </designable>
         <designable name="MqL-BF-DtT">
-            <size key="intrinsicContentSize" width="157" height="39"/>
+            <size key="intrinsicContentSize" width="123" height="39"/>
         </designable>
     </designables>
     <resources>

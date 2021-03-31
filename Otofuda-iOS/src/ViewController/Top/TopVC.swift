@@ -26,9 +26,18 @@ final class TopVC: UIViewController, TopProtocol {
 
     // MARK: - Properties
     var haveMusics: [Music] = []
+    
+    var firebaseManager = FirebaseManager()
+    
+    var me: User!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+        let myColor: UIColor = COLORS[0]
+        me = User(index: 0, name: appDelegate.uuid, color: myColor)
 
         requestAuth()
     }
@@ -37,7 +46,6 @@ final class TopVC: UIViewController, TopProtocol {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-
     func requestAuth() {
         MPMediaLibrary.requestAuthorization { status in
             if status == .authorized {
@@ -69,13 +77,29 @@ final class TopVC: UIViewController, TopProtocol {
             }
         }
     }
+    
+    func createGroup() -> Room {
+        let roomID = String.getRandomStringWithLength(length: 6)
+        let current_date = Date.getCurrentDate()
+        
+        var room = Room(name: roomID)
+        room.addMember(user: me)
+        firebaseManager.post(path: room.url(), value: room.dict() )
+        firebaseManager.post(path: room.url() + "date", value: current_date)
+        
+        return room
+    }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "create":
-            let nextVC = segue.destination as! CreateGroupVC
-            nextVC.haveMusics = haveMusics
-        case "search":
+        case "single":
+            let nextVC = segue.destination as! MenuVC
+            nextVC.isSingleMode = true
+            nextVC.room = createGroup()
+            nextVC.isHost = true
+            nextVC.haveMusics = self.haveMusics
+            nextVC.me = me
+        case "multi":
             let nextVC = segue.destination as! SearchGroupVC
             nextVC.haveMusics = haveMusics
         default:

@@ -99,6 +99,8 @@ final class TopVC: UIViewController, TopProtocol {
             nextVC.isHost = true
             nextVC.haveMusics = self.haveMusics
             nextVC.me = me
+
+            navigationController?.setNavigationBarHidden(false, animated: false)
         case "multi":
             let nextVC = segue.destination as! SearchGroupVC
             nextVC.haveMusics = haveMusics

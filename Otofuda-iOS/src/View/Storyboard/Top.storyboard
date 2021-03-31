@@ -37,6 +37,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="TopVC" translatesAutoresizingMaskIntoConstraints="NO" id="SMj-F1-j2m">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" red="0.95686274509803915" green="0.83529411764705885" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MqL-BF-DtT" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
                                 <rect key="frame" x="50" y="620" width="314" height="80"/>

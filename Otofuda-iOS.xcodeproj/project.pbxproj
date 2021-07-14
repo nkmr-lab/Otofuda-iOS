@@ -53,10 +53,10 @@
 		F33D40F824D6F57600AD9C41 /* PlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */; };
 		F33D416524ED05E100AD9C41 /* UsingMusicMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */; };
 		F35ED14424B45EAD00727207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED14324B45EAD00727207 /* Constants.swift */; };
-		F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17024B6C68200727207 /* GoogleService-Info.plist */; };
 		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
 		F35ED17524B74CD200727207 /* Bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17424B74CD200727207 /* Bell.mp3 */; };
 		F35F9B53237154E000BBB727 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F9B52237154E000BBB727 /* MusicList.swift */; };
+		F3781941269EAC2600FD7AEC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F3781940269EAC2600FD7AEC /* GoogleService-Info.plist */; };
 		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
 		F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB8232F711300546D5B /* UIImage+Ex.swift */; };
@@ -190,10 +190,10 @@
 		F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaybackMode.swift; sourceTree = "<group>"; };
 		F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsingMusicMode.swift; sourceTree = "<group>"; };
 		F35ED14324B45EAD00727207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F35ED17024B6C68200727207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F35ED17424B74CD200727207 /* Bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Bell.mp3; sourceTree = "<group>"; };
 		F35F9B52237154E000BBB727 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
+		F3781940269EAC2600FD7AEC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB8232F711300546D5B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
@@ -336,7 +336,7 @@
 				589460E022852E9500319032 /* Info.plist */,
 				F32B91A823320BF80031B062 /* tap_fuda.caf */,
 				F308115E233516A2009E7726 /* mute_animation.json */,
-				F35ED17024B6C68200727207 /* GoogleService-Info.plist */,
+				F3781940269EAC2600FD7AEC /* GoogleService-Info.plist */,
 				F35ED17424B74CD200727207 /* Bell.mp3 */,
 			);
 			path = resources;
@@ -676,7 +676,7 @@
 			files = (
 				F308115F233516A2009E7726 /* mute_animation.json in Resources */,
 				F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */,
-				F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */,
+				F3781941269EAC2600FD7AEC /* GoogleService-Info.plist in Resources */,
 				F3E25FE6233085B600134769 /* FudaCollectionCell.xib in Resources */,
 				F3E25FDB232F9FF800134769 /* Menu.storyboard in Resources */,
 				F32B91B2233233C00031B062 /* Result.storyboard in Resources */,

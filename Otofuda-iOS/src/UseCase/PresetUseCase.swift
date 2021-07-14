@@ -10,7 +10,7 @@ protocol PresetUseCaseProtocol {
 
 final class PresetUseCase: PresetUseCaseProtocol {
 
-    private let api = ApiClient()
+//    private let api = ApiClient()
 
 //    func fetch() -> Single<PresetResponse> {
 //        return api.get(path: Config.PRESET_LIST_API_URL, request: nil)

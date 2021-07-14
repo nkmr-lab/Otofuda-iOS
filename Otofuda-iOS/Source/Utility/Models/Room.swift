@@ -10,7 +10,7 @@ enum RoomStatus: String {
 }
 
 struct Room {
-    var name: String!
+    var name: String
     var member: [User] = []
     var status: RoomStatus = .menu
     var mode: Dictionary<String, String> = [

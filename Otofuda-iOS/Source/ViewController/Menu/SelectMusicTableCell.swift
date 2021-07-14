@@ -10,7 +10,7 @@ class SelectMusicTableCell: UITableViewCell {
     }
 
     func prepareLabel(music: Music) {
-        artistLabel.text = music.item.artist!
-        titleLabel.text = music.item.title!
+        artistLabel.text = music.item?.artist ?? "アーティスト名なし"
+        titleLabel.text = music.item?.title ?? "タイトル名なし"
     }
 }

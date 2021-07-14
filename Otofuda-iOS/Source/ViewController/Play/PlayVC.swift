@@ -187,8 +187,12 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
     }
 
     @IBAction func tappedBadge(_ sender: Any) {
-        if currentIndex == 0 { return }
-        let url = URL(string: playMusics[currentIndex-1].storeURL)
+
+        guard let currentMusic = playMusics[safe: currentIndex-1],
+              let storeUrl = currentMusic.storeURL
+        else { return }
+
+        let url = URL(string: storeUrl)
         if UIApplication.shared.canOpenURL(url! as URL){
             UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
         }

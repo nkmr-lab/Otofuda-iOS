@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="75s-Y0-JzR">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="75s-Y0-JzR">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -68,7 +68,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="Q5R-h9-ce7" kind="push" identifier="single" id="kal-HN-2uP"/>
+                                    <segue destination="Q5R-h9-ce7" kind="show" identifier="single" id="kyb-rh-U3n"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eiy-R5-ftd" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
@@ -97,7 +97,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="vix-G8-yFh" kind="push" identifier="multi" id="Tkb-9i-wwc"/>
+                                    <segue destination="C8y-tv-MuB" kind="show" identifier="multi" id="aUB-eA-sC3"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -132,7 +132,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lXM-8h-1Xi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-171" y="185"/>
+            <point key="canvasLocation" x="-123" y="89"/>
         </scene>
         <!--グループを作成-->
         <scene sceneID="goy-Wj-6rK">
@@ -190,7 +190,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T6R-p0-PG4">
-                                <rect key="frame" x="100" y="74" width="214" height="41"/>
+                                <rect key="frame" x="100" y="118" width="214" height="41"/>
                                 <string key="text">一緒にやるプレイヤーに
 QRコードを見せてください</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -251,7 +251,7 @@ QRコードを見せてください</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdX-vR-RbD">
-                                <rect key="frame" x="65.5" y="118" width="283.5" height="93"/>
+                                <rect key="frame" x="65.5" y="74" width="283.5" height="137"/>
                                 <string key="text">グループを作成した人に
 QRコードを見せてもらってください</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

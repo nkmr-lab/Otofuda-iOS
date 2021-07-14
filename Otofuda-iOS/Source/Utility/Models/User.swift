@@ -5,7 +5,7 @@ struct User {
 
     var index: Int
 
-    var name: String!
+    var name: String
 
     var color: UIColor
 

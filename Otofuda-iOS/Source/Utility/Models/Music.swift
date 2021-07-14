@@ -4,29 +4,29 @@ import AVFoundation
 
 class Music: NSObject {
 
-    var name: String!
+    var name: String
 
-    var artist: String!
+    var artist: String?
 
-    var item: MPMediaItem!
+    var item: MPMediaItem?
 
-    var previewURL: String!
+    var previewURL: String?
 
-    var storeURL: String!
+    var storeURL: String?
 
     var isAnimating: Bool = false
 
     var isTapped: Bool = false
 
-    var avPlayer: AVPlayer!
+    var avPlayer: AVPlayer?
 
-    var mpmusicPlayer: MPMusicPlayerController!
+    var mpmusicPlayer: MPMusicPlayerController?
 
     var type: MusicType = .mpmusic
 
-    var musicOwner: Int!
+    var musicOwner: Int?
 
-    var cardOwner: Int!
+    var cardOwner: Int?
 
     init(name: String, artist: String, item: MPMediaItem!) {
         self.name = name
@@ -41,8 +41,13 @@ class Music: NSObject {
     }
 
     func dict() -> Dictionary<String, Any> {
-        var dict = Dictionary<String, Any>()
-        dict = ["name": name ?? "なし", "artist": artist ?? "なし", "musicOwner": musicOwner ?? 0, "previewURL": previewURL, "storeURL": storeURL]
+        let dict = [
+            "name": name,
+            "artist": artist ?? "なし",
+            "musicOwner": musicOwner ?? 0,
+            "previewURL": previewURL ?? "no url",
+            "storeURL": storeURL ?? "no url"
+        ] as [String : Any]
         return dict
     }
 
@@ -60,11 +65,12 @@ class Music: NSObject {
     func play(){
         switch type {
         case .mpmusic:
+            guard let mpmusicPlayer = mpmusicPlayer else { return }
             mpmusicPlayer.play()
         case .avaudio:
+            guard let avPlayer = avPlayer else { return }
             avPlayer.play()
         }
-//        self.player.play()
     }
     
 }

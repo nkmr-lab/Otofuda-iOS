@@ -267,9 +267,9 @@ extension PlayVC {
                     }
                 }
                 
-                var activityIndicatorView = UIActivityIndicatorView()
+                let activityIndicatorView = UIActivityIndicatorView()
                 activityIndicatorView.center = view.center
-                activityIndicatorView.style = .whiteLarge
+                activityIndicatorView.style = .large
                 activityIndicatorView.color = .gray
                 view.addSubview(activityIndicatorView)
                 activityIndicatorView.startAnimating()

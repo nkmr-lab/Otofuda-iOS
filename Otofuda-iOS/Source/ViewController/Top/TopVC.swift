@@ -58,14 +58,6 @@ final class TopVC: UIViewController, TopProtocol {
     }
 
     func loadMusics() {
-
-        let songsQuery = MPMediaQuery.songs()
-
-        // 一曲もなければリターンする
-        guard let songs = songsQuery.collections else {
-            return
-        }
-
         var musics: [MPMediaItem] = []
         let albumsQuery = MPMediaQuery.albums()
         if let albums = albumsQuery.collections {

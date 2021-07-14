@@ -65,6 +65,7 @@
 		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
 		F35F9B53237154E000BBB727 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F9B52237154E000BBB727 /* MusicList.swift */; };
 		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
+		F39ADCCB269EF93100D4A52E /* Collection+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39ADCCA269EF93100D4A52E /* Collection+Ex.swift */; };
 		F3B47414260098D300C32A56 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B47413260098D300C32A56 /* TopView.swift */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
 		F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB8232F711300546D5B /* UIImage+Ex.swift */; };
@@ -190,6 +191,7 @@
 		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F35F9B52237154E000BBB727 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
+		F39ADCCA269EF93100D4A52E /* Collection+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ex.swift"; sourceTree = "<group>"; };
 		F3B47413260098D300C32A56 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BB8232F711300546D5B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
@@ -428,6 +430,7 @@
 				F3E25FF12330986000134769 /* MPMediaItem+Ex.swift */,
 				F3E25FF32330997F00134769 /* MPMediaItemCollection+Ex.swift */,
 				F30811682335C937009E7726 /* Date+Ex.swift */,
+				F39ADCCA269EF93100D4A52E /* Collection+Ex.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				589460CE22852E9500319032 /* Frameworks */,
 				589460CF22852E9500319032 /* Resources */,
 				F3225F182330B26200D9BD79 /* CopyFiles */,
+				F39ADCC9269EF51C00D4A52E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -627,7 +631,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1020;
-				LastUpgradeCheck = 1200;
+				LastUpgradeCheck = 1250;
 				ORGANIZATIONNAME = "nkmr-lab";
 				TargetAttributes = {
 					589460D022852E9500319032 = {
@@ -710,6 +714,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		F39ADCC9269EF51C00D4A52E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which mint >/dev/null; then\n  mint run swiftlint swiftlint autocorrect --format\n  mint run swiftlint swiftlint\nelse\n  echo \"warning: Mint not installed, download from https://github.com/yonaskolb/Mint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		589460CD22852E9500319032 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -767,6 +791,7 @@
 				589460F122855AAE00319032 /* CreateGroupVC.swift in Sources */,
 				F3E25FF0233096C500134769 /* MenuVC+MPMediaPickerDelegate.swift in Sources */,
 				F3C8E6AB2361F0A400864279 /* PresetResponse.swift in Sources */,
+				F39ADCCB269EF93100D4A52E /* Collection+Ex.swift in Sources */,
 				F32B91AC233231FD0031B062 /* ResultVC.swift in Sources */,
 				F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */,
 				F3E25FE8233085DF00134769 /* FudaCollectionCell.swift in Sources */,
@@ -872,7 +897,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = NO;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

@@ -25,7 +25,7 @@ extension iTunesPickerVC: UICollectionViewDataSource {
         cell.artistLabel.text = result.artist
         cell.albumLabel.text = result.album
         if let url = URL(string: result.thumbnail) {
-            cell.artworkUIV.af_setImage(withURL: url)
+            cell.artworkUIV.af.setImage(withURL: url)
         }
 
         return cell

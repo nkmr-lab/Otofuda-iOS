@@ -66,8 +66,8 @@ final class ResultVC: UIViewController, ResultProtocol {
         // TODO: scoreModeがビンゴモードだった時の採点処理
         var eachScores = [Int](repeating: 0, count: room.member.count)
         for music in playMusics {
-            if music.cardOwner != nil {
-                eachScores[music.cardOwner] += 1
+            if let cardOwner = music.cardOwner {
+                eachScores[cardOwner] += 1
             }
         }
         scoreLabel.text = "\(eachScores[me.index])点"

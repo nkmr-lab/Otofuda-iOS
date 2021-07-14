@@ -168,16 +168,13 @@ extension MenuVC {
             if snapshot.children.allObjects.count == CARD_MAX_COUNT {
                 guard let fbPlayMusics = snapshot.value as? [Dictionary<String, Any>] else { return }
 
-                for (index, fbPlayMusic) in fbPlayMusics.enumerated() {
+                for fbPlayMusic in fbPlayMusics {
                     let name = fbPlayMusic["name"] as! String
                     let artist = fbPlayMusic["artist"] as! String
                     let musicOwner = fbPlayMusic["musicOwner"] as! Int
                     let previewURL = fbPlayMusic["previewURL"] as? String
                     let storeURL = fbPlayMusic["storeURL"] as? String
-
-                    print("======================================")
-                    print(name ,artist, musicOwner, previewURL, storeURL)
-
+                    
                     var mediaItem: MPMediaItem?
                     if musicOwner == self.me.index {
                         mediaItem = MPMediaItem.getMediaItem(title: name, artist: artist)

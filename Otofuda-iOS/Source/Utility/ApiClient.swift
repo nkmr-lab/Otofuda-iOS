@@ -57,6 +57,7 @@ class ApiClient: ApiClientProtocol {
                         return single(.success(T(json)))
 
                     case .failure(let error):
+                        print( error )
                         return single(.failure(response.error!))
                     }
                 })

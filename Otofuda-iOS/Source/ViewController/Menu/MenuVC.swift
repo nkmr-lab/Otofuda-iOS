@@ -358,9 +358,13 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
 
         switch component {
         case 0:
-            label.text = presetLists[row].typeName
+            guard let presetList = presetLists[safe: row] else { return label }
+            label.text = presetList.typeName
         case 1:
-            label.text = presetLists[presetIndex].presets[row].name
+            guard let presetList = presetLists[safe: presetIndex],
+                  let presets = presetList.presets[safe: row]
+            else { return label }
+            label.text = presets.name
         default:
             break
         }

@@ -26,9 +26,5 @@ struct MusicList: Codable {
             case releaseDate = "release_date"
         }
     }
-
-    
-
-
 }
 

@@ -960,7 +960,7 @@
 					"$(PROJECT_DIR)/Pods",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Otofuda-iOS/resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Otofuda-iOS/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -986,7 +986,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/Otofuda-iOS/resources/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Otofuda-iOS/Resource/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

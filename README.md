@@ -1,4 +1,5 @@
 # Otofuda-iOS
+音楽とかるたを組み合わせた新感覚カードゲームのレポジトリです。
 
 <div align="center">
   <img src="https://user-images.githubusercontent.com/29607841/125574192-3da5ef3a-43e1-472e-b60e-2e9f07cb1e66.png" width="30%" height="auto">

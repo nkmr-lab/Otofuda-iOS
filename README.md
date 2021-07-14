@@ -32,6 +32,7 @@ carthage update --platform iOS
 - `features/xxxx(機能名)` 機能ごとでブランチを分ける
 
 ## Libraries
+SwiftPM
 - Alamofire/Alamofire
 - Alamofire/AlamofireImage
 - SwiftyJSON/SwiftyJSON

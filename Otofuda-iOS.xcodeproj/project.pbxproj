@@ -317,13 +317,13 @@
 		589460D322852E9500319032 /* Otofuda-iOS */ = {
 			isa = PBXGroup;
 			children = (
-				589460E622852F6400319032 /* resources */,
-				589460E722852FEE00319032 /* src */,
+				589460E622852F6400319032 /* Resource */,
+				589460E722852FEE00319032 /* Source */,
 			);
 			path = "Otofuda-iOS";
 			sourceTree = "<group>";
 		};
-		589460E622852F6400319032 /* resources */ = {
+		589460E622852F6400319032 /* Resource */ = {
 			isa = PBXGroup;
 			children = (
 				F308115223333081009E7726 /* Bridging-Header.h */,
@@ -332,10 +332,10 @@
 				F32B91A823320BF80031B062 /* tap_fuda.caf */,
 				F35ED17024B6C68200727207 /* GoogleService-Info.plist */,
 			);
-			path = resources;
+			path = Resource;
 			sourceTree = "<group>";
 		};
-		589460E722852FEE00319032 /* src */ = {
+		589460E722852FEE00319032 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				589460D422852E9500319032 /* AppDelegate.swift */,
@@ -348,7 +348,7 @@
 				F3C8E69423615C3800864279 /* Entity */,
 				F3C8E69523615C4300864279 /* Utility */,
 			);
-			path = src;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		589460EC2285449100319032 /* Top */ = {

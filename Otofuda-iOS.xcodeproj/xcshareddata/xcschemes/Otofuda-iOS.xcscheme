@@ -48,6 +48,16 @@
                ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F32D0F5826C944BF00ECC56B"
+               BuildableName = "ViewModelTests.xctest"
+               BlueprintName = "ViewModelTests"
+               ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

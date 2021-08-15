@@ -9,6 +9,6 @@
 import Foundation
 
 enum UsingMusicMode: String {
-    case preset = "preset"
-    case device = "device"
+    case preset
+    case device
 }

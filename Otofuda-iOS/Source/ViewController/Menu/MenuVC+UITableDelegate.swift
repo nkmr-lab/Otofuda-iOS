@@ -1,5 +1,3 @@
 import UIKit
 
-extension MenuVC: UITableViewDelegate {
-
-}
+extension MenuVC: UITableViewDelegate {}

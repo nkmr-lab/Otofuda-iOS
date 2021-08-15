@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ueE-8e-v7A">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--グループに参加-->
+        <scene sceneID="C59-ka-RM2">
+            <objects>
+                <viewController storyboardIdentifier="SearchGroupView" id="ueE-8e-v7A" customClass="SearchGroupVC" customModule="音札" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LuN-cf-kL2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" restorationIdentifier="cameraID" translatesAutoresizingMaskIntoConstraints="NO" id="2sL-n7-F8i">
+                                <rect key="frame" x="0.0" y="241" width="414" height="414"/>
+                                <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="2sL-n7-F8i" secondAttribute="height" multiplier="1:1" id="6Ze-ZK-wIM"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5tX-eC-s31">
+                                <rect key="frame" x="65.5" y="74" width="283.5" height="137"/>
+                                <string key="text">グループを作成した人に
+QRコードを見せてもらってください</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="dt6-MV-ZYw"/>
+                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="5tX-eC-s31" firstAttribute="centerX" secondItem="LuN-cf-kL2" secondAttribute="centerX" id="14A-ym-pYs"/>
+                            <constraint firstItem="5tX-eC-s31" firstAttribute="top" secondItem="dt6-MV-ZYw" secondAttribute="top" constant="30" id="H1N-zg-JEh"/>
+                            <constraint firstItem="2sL-n7-F8i" firstAttribute="centerY" secondItem="LuN-cf-kL2" secondAttribute="centerY" id="HtE-EZ-SIt"/>
+                            <constraint firstItem="dt6-MV-ZYw" firstAttribute="trailing" secondItem="2sL-n7-F8i" secondAttribute="trailing" id="KHm-Ax-hpz"/>
+                            <constraint firstItem="2sL-n7-F8i" firstAttribute="centerX" secondItem="LuN-cf-kL2" secondAttribute="centerX" id="KiQ-dO-Ozx"/>
+                            <constraint firstItem="2sL-n7-F8i" firstAttribute="top" secondItem="5tX-eC-s31" secondAttribute="bottom" constant="30" id="uei-lW-FfV"/>
+                            <constraint firstItem="2sL-n7-F8i" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="dt6-MV-ZYw" secondAttribute="leading" id="zB6-hC-jkU"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="グループに参加" id="YCn-ga-qv4"/>
+                    <connections>
+                        <outlet property="cameraV" destination="2sL-n7-F8i" id="Vwk-wZ-J02"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rcg-IZ-SlB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="647.82608695652175" y="930.80357142857133"/>
+        </scene>
+    </scenes>
+</document>

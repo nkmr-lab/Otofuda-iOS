@@ -1,0 +1,5 @@
+strings:
+  inputs: Otofuda-iOS/Resource/Strings/Localizable.strings
+  outputs:
+    - templateName: structured-swift4
+      output: swiftgen-ex/Generated/strings.swift

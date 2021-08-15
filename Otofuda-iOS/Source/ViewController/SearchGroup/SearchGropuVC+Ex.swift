@@ -1,11 +1,9 @@
+import AVFoundation
 import Foundation
 import UIKit
-import AVFoundation
 
 extension SearchGroupVC: SearchGroupProtocol {
-
     func readQRCode() {
-
         // QRコードをマークするビュー
         qrV = UIView()
         qrV.layer.borderWidth = 4
@@ -32,11 +30,11 @@ extension SearchGroupVC: SearchGroupProtocol {
         let box = CGRect(
             x: cameraV.bounds.minX,
             y: cameraV.bounds.minY,
-            width:  UIScreen.main.bounds.size.width,
-            height:  UIScreen.main.bounds.size.width
+            width: UIScreen.main.bounds.size.width,
+            height: UIScreen.main.bounds.size.width
         )
         videoLayer?.frame = box
-        videoLayer?.videoGravity = .resizeAspectFill //短い方に合わせてアスペクト比を調整してくれる
+        videoLayer?.videoGravity = .resizeAspectFill // 短い方に合わせてアスペクト比を調整してくれる
         cameraV.layer.addSublayer(videoLayer!)
 
         // セッションの開始
@@ -45,19 +43,19 @@ extension SearchGroupVC: SearchGroupProtocol {
             self.captureSession.startRunning()
         }
     }
-    
+
     func enterRoom(room: Room) {
         if !isMatching {
             let current_date = Date.getCurrentDate()
-            
+
             firebaseManager.post(path: room.url() + "date", value: current_date)
-            
+
             let uuid = UIDevice.current.identifierForVendor!.uuidString
-            
-            firebaseManager.observeSingle(path: room.url() + "member", completion: { [weak self] (snapshot) in
+
+            firebaseManager.observeSingle(path: room.url() + "member", completion: { [weak self] snapshot in
                 guard let self = self else { return }
 
-                var isExist: Bool = false
+                var isExist = false
                 if let member = snapshot.value as? [String] {
                     for user in member {
                         if user == uuid {
@@ -65,18 +63,18 @@ extension SearchGroupVC: SearchGroupProtocol {
                         }
                     }
                 }
-                
+
                 if isExist {
                     self.goNextVC(room: room)
                     self.isMatching = true
                 } else {
                     if var member = snapshot.value as? [String] {
-                        self.me = User(index: member.count, name: self.appDelegate.uuid, color: COLORS[ member.count])
-                        member.append( self.appDelegate.uuid )
+                        self.me = User(index: member.count, name: self.appDelegate.uuid, color: ColorList(index: member.count).uiColor)
+                        member.append(self.appDelegate.uuid)
 
                         var users: [User] = []
                         for (index, user) in member.enumerated() {
-                            users.append( User(index: index, name: user, color: COLORS[index]) )
+                            users.append(User(index: index, name: user, color: ColorList(index: index).uiColor))
                         }
                         let updatedRoom = Room(name: room.name, member: users)
 
@@ -87,7 +85,6 @@ extension SearchGroupVC: SearchGroupProtocol {
                     }
                 }
             })
-            
         }
     }
 
@@ -103,38 +100,37 @@ extension SearchGroupVC: SearchGroupProtocol {
         let nextVC = storyboard.instantiateInitialViewController() as! MenuVC
         nextVC.modalTransitionStyle = .crossDissolve
         nextVC.room = room // TODO: メンバーを更新したRoomにする
-        nextVC.haveMusics = self.haveMusics
+        nextVC.haveMusics = haveMusics
         nextVC.isHost = false
         nextVC.me = me
         navigationController?.pushViewController(nextVC, animated: true)
 
         firebaseManager.deleteObserve(path: RoomURL.base.rawValue)
     }
-    
-    func observeRooms(){
+
+    func observeRooms() {
         firebaseManager.observe(path: RoomURL.base.rawValue, completion: { [weak self] snapshot in
             guard let self = self else { return }
 
-            if let dbRooms = snapshot.value as? Dictionary<String, Any> {
+            if let dbRooms = snapshot.value as? [String: Any] {
                 self.rooms = []
-                
+
                 for dbRoom in dbRooms.keys {
-                    
-                    guard let roomDict = dbRooms[dbRoom] as? Dictionary<String, Any>,
+                    guard let roomDict = dbRooms[dbRoom] as? [String: Any],
                           let roomName = roomDict["name"] as? String,
-                          let member = roomDict["member"] as? [String] else {
-                            continue
+                          let member = roomDict["member"] as? [String]
+                    else {
+                        continue
                     }
 
                     var users: [User] = []
                     for (index, user) in member.enumerated() {
-                        users.append( User(index: index, name: user, color: COLORS[index]) )
+                        users.append(User(index: index, name: user, color: ColorList(index: index).uiColor))
                     }
-                    
+
                     self.rooms.append(Room(name: roomName, member: users))
                 }
             }
         })
     }
-
 }

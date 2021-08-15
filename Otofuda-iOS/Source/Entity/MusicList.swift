@@ -1,4 +1,3 @@
-
 import Foundation
 
 struct MusicList: Codable {
@@ -22,9 +21,8 @@ struct MusicList: Codable {
             case previewURL = "preview_url"
             case storeURL = "store_url"
             case artworkURL = "artwork_url"
-            case genere = "genere"
+            case genere
             case releaseDate = "release_date"
         }
     }
 }
-

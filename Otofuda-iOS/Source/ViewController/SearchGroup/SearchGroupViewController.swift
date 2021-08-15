@@ -6,13 +6,12 @@
 //  Copyright © 2019 nkmr-lab. All rights reserved.
 //
 
-import UIKit
 import AVFoundation
+import UIKit
 
 class SearchGroupVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
-
     var qrView: UIView!
-    @IBOutlet weak var cameraView: UIView!
+    @IBOutlet var cameraView: UIView!
     var items: [String] = []
     let captureSession = AVCaptureSession()
     var videoLayer: AVCaptureVideoPreviewLayer?
@@ -54,7 +53,7 @@ class SearchGroupVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         videoLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         let box = CGRect(x: cameraView.bounds.minX, y: cameraView.bounds.minY, width: UIScreen.main.bounds.size.width, height: UIScreen.main.bounds.size.width)
         videoLayer?.frame = box
-        videoLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill //短い方に合わせてアスペクト比を調整してくれる
+        videoLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill // 短い方に合わせてアスペクト比を調整してくれる
         cameraView.layer.addSublayer(videoLayer!)
 
         // セッションの開始
@@ -63,7 +62,7 @@ class SearchGroupVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         }
     }
 
-    func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
+    func metadataOutput(_: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from _: AVCaptureConnection) {
         // 複数のメタデータを検出できる
 
         for metadata in metadataObjects as! [AVMetadataMachineReadableCodeObject] {
@@ -71,7 +70,7 @@ class SearchGroupVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             if metadata.type == AVMetadataObject.ObjectType.qr {
                 // 検出位置を取得
                 let barCode = videoLayer?.transformedMetadataObject(for: metadata) as! AVMetadataMachineReadableCodeObject
-                let box = CGRect(x: barCode.bounds.minX, y: barCode.bounds.minY + 150, width: (barCode.bounds.maxX - barCode.bounds.minX), height: barCode.bounds.maxY - barCode.bounds.minY)
+                let box = CGRect(x: barCode.bounds.minX, y: barCode.bounds.minY + 150, width: barCode.bounds.maxX - barCode.bounds.minX, height: barCode.bounds.maxY - barCode.bounds.minY)
                 qrView!.frame = box
 
                 if metadata.stringValue != nil {
@@ -81,7 +80,5 @@ class SearchGroupVC: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                 }
             }
         }
-
     }
-
 }

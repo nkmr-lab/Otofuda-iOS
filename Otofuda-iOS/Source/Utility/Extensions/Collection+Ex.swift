@@ -8,16 +8,16 @@
 
 import Foundation
 
-extension Collection {
-    public subscript (safe index: Index) -> Iterator.Element? {
-        return indices.contains(index) ? self[index] : nil
+public extension Collection {
+    subscript(safe index: Index) -> Iterator.Element? {
+        indices.contains(index) ? self[index] : nil
     }
 
-    public subscript (safe openBounds: Range<Index>) -> SubSequence {
-        return openBounds.clamped(to: self.startIndex..<self.endIndex) == openBounds ? self[openBounds] : self.suffix(0)
+    subscript(safe openBounds: Range<Index>) -> SubSequence {
+        openBounds.clamped(to: startIndex ..< endIndex) == openBounds ? self[openBounds] : suffix(0)
     }
 
-    public subscript (safe closeBounds: ClosedRange<Index>) -> SubSequence {
-        return closeBounds.clamped(to: self.startIndex...self.endIndex) == closeBounds ? self[closeBounds] : self.suffix(0)
+    subscript(safe closeBounds: ClosedRange<Index>) -> SubSequence {
+        closeBounds.clamped(to: startIndex ... endIndex) == closeBounds ? self[closeBounds] : suffix(0)
     }
 }

@@ -1,6 +1,6 @@
-import UIKit
 import MediaPlayer
 import Toast
+import UIKit
 
 protocol PlayProtocol {
     func fireTimer()
@@ -15,12 +15,11 @@ protocol PlayProtocol {
 }
 
 final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtocol {
-    
-    let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-    
+    weak var appDelegate: AppDelegate? = UIApplication.shared.delegate as! AppDelegate
+
     var room: Room!
-    
-    var isHost: Bool = false
+
+    var isHost = false
 
     var me: User!
 
@@ -34,16 +33,16 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
     var tapSoundPlayer: AVAudioPlayer?
 
     var firebaseManager = FirebaseManager()
-    
+
     var isTapped = false
-    
+
     var isPlaying = false
-    
+
     var isWaitingForFinish = false
 
     let speech = AVSpeechSynthesizer()
     let utterance = AVSpeechUtterance(string: "お手つき")
-    
+
     var countdownTimer: Timer!
     var count = 0
 
@@ -56,18 +55,18 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
 
     var didPlayDate = Date()
     var didTapDate = Date()
-    
+
     @IBOutlet var countdownV: UIView!
-    
+
     @IBOutlet var tapErrorV: UIView!
-    
-    @IBOutlet weak var countdownLabel: UILabel!
-    
-    @IBOutlet weak var startBtn: UIButton!
+
+    @IBOutlet var countdownLabel: UILabel!
+
+    @IBOutlet var startBtn: UIButton!
 
     var tapTimeArray: [Float] = []
 
-    @IBOutlet weak var fudaCollectionV: UICollectionView! {
+    @IBOutlet var fudaCollectionV: UICollectionView! {
         didSet {
             fudaCollectionV.delegate = self
             fudaCollectionV.dataSource = self
@@ -82,37 +81,35 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
         }
     }
 
-    @IBOutlet weak var myColorV: UIView! {
+    @IBOutlet var myColorV: UIView! {
         didSet {
             myColorV.backgroundColor = me.color
         }
     }
 
-    @IBOutlet weak var badgeV: UIView! {
+    @IBOutlet var badgeV: UIView! {
         didSet {
             switch usingMusicMode {
             case .preset:
                 badgeV.isHidden = false
+
             case .device:
                 badgeV.isHidden = true
             }
         }
     }
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // ホスト以外は戻るを不可能にする
         if !isHost {
-            self.navigationItem.hidesBackButton = true
+            navigationItem.hidesBackButton = true
         } else {
-            self.navigationItem.hidesBackButton = false
+            navigationItem.hidesBackButton = false
         }
 
         navigationController?.delegate = self
-
 
         fudaCollectionV.reloadData()
 
@@ -125,9 +122,8 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
             print("error:", error)
         }
 
-
         NotificationCenter.default.addObserver(self, selector: #selector(playerItemDidReachEnd(_:)), name: .AVPlayerItemDidPlayToEndTime, object: nil)
-        
+
         print(audioSession.category.rawValue)
 
         initializeUI()
@@ -136,8 +132,8 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
         initializeTapSoundPlayer()
         if isHost { startBtn.isHidden = false }
         navigationItem.title = "1曲目"
-        self.fudaCollectionV.reloadData()
-        
+        fudaCollectionV.reloadData()
+
         if !isHost {
             observeRoomStatus()
         }
@@ -151,34 +147,34 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
         player = nil
     }
 
-    @IBAction func tapStartBtn(_ sender: Any) {
+    @IBAction func tapStartBtn(_: Any) {
         if player.playbackState == .playing {
             player.stop()
         }
-        
-        if  currentIndex > CARD_MAX_COUNT {
+
+        if currentIndex > CARD_MAX_COUNT {
             return
         }
 
-        if isHost { self.startBtn.isHidden = true }
-        
+        if isHost { startBtn.isHidden = true }
+
         room.status = .play
         firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
         firebaseManager.deleteAllValue(path: room.url() + "tapped")
         firebaseManager.deleteAllValue(path: room.url() + "answearUser")
-        
+
         displayCountdownV()
         fireTimer()
 
         // TODO: できればく非同期で3秒たったら〜ってやりたいので保留
-//        playMusic()
-//        setupStartBtn(isEnabled: false)
-//        playingMusic = selectedMusics[currentIndex]
-//        navigationItem.title = String(currentIndex) + "曲目"
-//        currentIndex += 1
+        //        playMusic()
+        //        setupStartBtn(isEnabled: false)
+        //        playingMusic = selectedMusics[currentIndex]
+        //        navigationItem.title = String(currentIndex) + "曲目"
+        //        currentIndex += 1
     }
 
-    @objc private func playerItemDidReachEnd(_ notification: Notification) {
+    @objc private func playerItemDidReachEnd(_: Notification) {
         // 動画を最初に巻き戻す
         guard let currentItem = avPlayer.currentItem else { return }
         currentItem.seek(to: CMTime.zero, completionHandler: nil)
@@ -186,20 +182,19 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
         print("おわったよ！！！！")
     }
 
-    @IBAction func tappedBadge(_ sender: Any) {
-
-        guard let currentMusic = playMusics[safe: currentIndex-1],
+    @IBAction func tappedBadge(_: Any) {
+        guard let currentMusic = playMusics[safe: currentIndex - 1],
               let storeUrl = currentMusic.storeURL
         else { return }
 
         let url = URL(string: storeUrl)
-        if UIApplication.shared.canOpenURL(url! as URL){
+        if UIApplication.shared.canOpenURL(url! as URL) {
             UIApplication.shared.open(url! as URL, options: [:], completionHandler: nil)
         }
     }
 
     // 戻るが押された時の処理
-    func navigationController(_ navigationController: UINavigationController, willShow viewController: UIViewController, animated: Bool) {
+    func navigationController(_: UINavigationController, willShow viewController: UIViewController, animated _: Bool) {
         if viewController is MenuVC {
             firebaseManager.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
             finishGame()

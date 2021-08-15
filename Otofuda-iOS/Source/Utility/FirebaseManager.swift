@@ -6,8 +6,8 @@
 //  Copyright © 2019 nshhhin. All rights reserved.
 //
 
-import Foundation
 import Firebase
+import Foundation
 
 enum RoomURL: String {
     case base = "rooms/"
@@ -16,10 +16,10 @@ enum RoomURL: String {
 }
 
 enum ModeURL: String {
-    case intro = "intro"
-    case random = "random"
-    case normal = "normal"
-    case bingo = "bingo"
+    case intro
+    case random
+    case normal
+    case bingo
 }
 
 protocol FirebaseManagerProtocol: AnyObject {
@@ -27,8 +27,8 @@ protocol FirebaseManagerProtocol: AnyObject {
     func deleteAllValue(path: String)
     func deleteObserve(path: String)
     func deleteAllValuesAndObserve(path: String)
-    func observe(path: String, completion: @escaping(DataSnapshot) -> Void)
-    func observeSingle(path: String, completion: @escaping(DataSnapshot) -> Void)
+    func observe(path: String, completion: @escaping (DataSnapshot) -> Void)
+    func observeSingle(path: String, completion: @escaping (DataSnapshot) -> Void)
 }
 
 final class FirebaseManager: FirebaseManagerProtocol {
@@ -37,7 +37,6 @@ final class FirebaseManager: FirebaseManagerProtocol {
 }
 
 extension FirebaseManager {
-
     func post(path: String, value: Any) {
         dbRef.child(path).setValue(value)
     }

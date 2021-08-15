@@ -6,9 +6,9 @@
 //  Copyright © 2019 nkmr-lab. All rights reserved.
 //
 
-import SwiftyJSON
 import Alamofire
 import RxSwift
+import SwiftyJSON
 
 protocol ApiClientProtocol {
     var baseUrl: String { get }
@@ -20,7 +20,6 @@ protocol ApiClientProtocol {
 }
 
 class ApiClient: ApiClientProtocol {
-
     var baseUrl: String
 
     required init(_ baseUrl: String = BASE_API_URL) {
@@ -28,8 +27,8 @@ class ApiClient: ApiClientProtocol {
     }
 
     func get<T: ResponseEntity>(path: String?,
-                                request: RequestEntity?) -> Single<T> {
-
+                                request: RequestEntity?) -> Single<T>
+    {
         var requestUrl = baseUrl
         if let path = path {
             requestUrl = baseUrl + path
@@ -41,23 +40,23 @@ class ApiClient: ApiClientProtocol {
         }
 
         return Single<T>.create { single in
-//            let manager = SessionManager.default
+            //            let manager = SessionManager.default
             let request = AF.request(requestUrl,
-                                          method: .get,
-                                          parameters: params,
-                                          encoding: URLEncoding.default,
-                                          headers: nil)
+                                     method: .get,
+                                     parameters: params,
+                                     encoding: URLEncoding.default,
+                                     headers: nil)
                 .responseJSON(completionHandler: { response in
                     switch response.result {
-                    case .success(_):
+                    case .success:
                         guard let data = response.data else {
                             return single(.failure(response.error!))
                         }
                         let json = JSON(data)
                         return single(.success(T(json)))
 
-                    case .failure(let error):
-                        print( error )
+                    case let .failure(error):
+                        print(error)
                         return single(.failure(response.error!))
                     }
                 })

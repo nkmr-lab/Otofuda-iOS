@@ -1,5 +1,5 @@
-import UIKit
 import AVFoundation
+import UIKit
 
 protocol SearchGroupProtocol {
     func readQRCode()
@@ -8,15 +8,14 @@ protocol SearchGroupProtocol {
 }
 
 class SearchGroupVC: UIViewController {
-
     // MARK: - IBOutlets
-    
-    @IBOutlet weak var cameraV: UIView!
+
+    @IBOutlet var cameraV: UIView!
 
     // MARK: - Properties
-    
+
     var qrV: UIView!
-    
+
     var haveMusics: [Music] = []
 
     var items: [String] = []
@@ -27,10 +26,12 @@ class SearchGroupVC: UIViewController {
 
     var firebaseManager = FirebaseManager()
 
+    // swiftlint:disable:next force_cast
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
+    // swiftlint:disable:previous force_cast
 
     var isMatching = false
-    
+
     var rooms: [Room] = []
 
     var me: User!
@@ -43,9 +44,9 @@ class SearchGroupVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(false, animated: false)
-        readQRCode() 
+        readQRCode()
     }
-    
+
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         firebaseManager.deleteObserve(path: RoomURL.base.rawValue)

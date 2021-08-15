@@ -1,50 +1,46 @@
-import UIKit
 import Firebase
+import UIKit
 
 extension PlayVC: UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-
+    func collectionView(_: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // もうタップしてたら何もしない
         if isTapped {
             print("isTappped!!!!!!!")
             return
         }
-        
+
         // まだ再生中じゃなければ何もしない
         if !isPlaying {
             print("isPlaying!!!!!!")
             return
         }
-        
+
         guard let playingMusic = playingMusic else {
             print("isNotPlayingMusic!!!!!")
             return
         }
 
-        self.isTapped = true
-        self.isPlaying = false
-        
+        isTapped = true
+        isPlaying = false
+
         let tappedMusic = playMusics[cardLocations[indexPath.row]]
 
         // 正解
         if tappedMusic.name == playingMusic.name {
-            self.room.status = .next
-            self.firebaseManager.post(path: self.room.url() + "status", value: self.room.status.rawValue)
-            self.tapSoundPlayer?.play()
+            room.status = .next
+            firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
+            tapSoundPlayer?.play()
 
-            self.firebaseManager.post(path: self.room.url() + "answearUser/\(self.me.index)", value: ["time": Firebase.ServerValue.timestamp(), "userIndex": self.me.index])
+            firebaseManager.post(path: room.url() + "answearUser/\(me.index)", value: ["time": Firebase.ServerValue.timestamp(), "userIndex": me.index])
         }
         // 不正解
         else {
-            self.speech.speak(self.utterance)
-            self.displayErrorV()
-            self.view.makeToast(playMusics[currentIndex-1].name + " でした")
+            speech.speak(utterance)
+            displayErrorV()
+            view.makeToast(playMusics[currentIndex - 1].name + " でした")
         }
 
-        let dict: Dictionary<String, Any> = ["user": self.me.dict(), "music": tappedMusic.name]
-        self.firebaseManager.post(path: self.room.url() + "tapped/\(self.me.index)", value: dict)
-        
-
+        let dict: [String: Any] = ["user": me.dict(), "music": tappedMusic.name]
+        firebaseManager.post(path: room.url() + "tapped/\(me.index)", value: dict)
     }
 }

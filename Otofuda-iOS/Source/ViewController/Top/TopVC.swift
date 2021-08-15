@@ -1,104 +1,72 @@
+import Combine
 import UIKit
-import MediaPlayer
-import Alamofire
-import SwiftyJSON
 
-protocol TopProtocol {
-    func requestAuth()
-    func loadMusics()
-}
+final class TopVC: UIViewController, StoryboardLoadable {
+    @IBOutlet private var singlePlayButton: UIButton!
+    @IBOutlet private var multiPlayButton: UIButton!
 
-struct iTunesTopRSSResponse: Codable {
-    var feed: iTunesTopRSSFeed
-}
+    private let viewModel: TopVM
+    let environment: Environment
+    private var handler: ((Output) -> Void)?
 
-struct iTunesTopRSSFeed: Codable {
-    var results: [iTunesTopMusic]
-}
+    private var cancellables: [AnyCancellable] = []
 
-struct iTunesTopMusic: Codable {
-    var artistName: String
-    var name: String
-}
+    init?(coder: NSCoder, input _: Input, environment: Environment) {
+        self.environment = environment
+        viewModel = .init(environment: environment)
+        super.init(coder: coder)
+    }
 
-
-final class TopVC: UIViewController, TopProtocol {
-
-    // MARK: - Properties
-    var haveMusics: [Music] = []
-    
-    var firebaseManager = FirebaseManager()
-    
-    var me: User!
-    
+    @available(*, unavailable)
+    required init?(coder _: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
-        let myColor: UIColor = COLORS[0]
-        me = User(index: 0, name: appDelegate.uuid, color: myColor)
-
-        requestAuth()
+        bind(to: viewModel)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    func requestAuth() {
-        MPMediaLibrary.requestAuthorization { status in
-            if status == .authorized {
-                self.loadMusics()
-            } else {
-                // denyされているときの処理を書く
-                self.loadMusics()
-            }
-        }
+
+    @IBAction private func tappedSinglePlayButton(_: Any) {
+        handler?(.singlePlayButtonTapped)
     }
 
-    func loadMusics() {
-        var musics: [MPMediaItem] = []
-        let albumsQuery = MPMediaQuery.albums()
-        if let albums = albumsQuery.collections {
-            for album in albums {
-                for song in album.items {
-                    musics.append(song)
-                    haveMusics.append(Music(name: song.title ?? "不明", artist: song.artist ?? "不明",  item: song))
-                }
-            }
-        }
-    }
-    
-    func createGroup() -> Room {
-        let roomID = String.getRandomStringWithLength(length: 6)
-        let current_date = Date.getCurrentDate()
-        
-        var room = Room(name: roomID)
-        room.addMember(user: me)
-        firebaseManager.post(path: room.url(), value: room.dict() )
-        firebaseManager.post(path: room.url() + "date", value: current_date)
-        
-        return room
+    @IBAction private func tappedMultiPlayButton(_: Any) {
+        handler?(.multiPlayButtonTapped)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "single":
-            let nextVC = segue.destination as! MenuVC
-            nextVC.isSingleMode = true
-            nextVC.room = createGroup()
-            nextVC.isHost = true
-            nextVC.haveMusics = self.haveMusics
-            nextVC.me = me
+    private func bind(to viewModel: TopVM) {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
 
-            navigationController?.setNavigationBarHidden(false, animated: false)
-        case "multi":
-            let nextVC = segue.destination as! SearchGroupVC
-            nextVC.haveMusics = haveMusics
-        default:
-            break
-        }
+        bindOutput(viewModel.transform(input: createInput()))
     }
 
+    private func bindOutput(_: TopVM.Output) {}
+
+    private func createInput() -> TopVM.Input {
+        .init()
+    }
+}
+
+extension TopVC: Injectable {
+    struct Input {}
+
+    func input(_: Input) {}
+}
+
+extension TopVC: Interactable {
+    enum Output {
+        case singlePlayButtonTapped
+        case multiPlayButtonTapped
+    }
+
+    func output(_ handler: ((Output) -> Void)?) {
+        self.handler = handler
+    }
 }

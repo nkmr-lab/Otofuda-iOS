@@ -14,8 +14,8 @@ struct PresetList: Codable {
     var presets: [Preset]
 
     private enum CodingKeys: String, CodingKey {
-        case id = "id"
+        case id
         case typeName = "type_name"
-        case presets = "presets"
+        case presets
     }
 }

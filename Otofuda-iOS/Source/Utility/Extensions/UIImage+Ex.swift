@@ -10,5 +10,4 @@ extension CIImage {
         let qrImage = qr.outputImage!.transformed(by: sizeTransform)
         return qrImage
     }
-
 }

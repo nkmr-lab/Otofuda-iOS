@@ -4,7 +4,7 @@
 //
 //  Created by 新納真次郎 on 2020/07/07.
 //  Copyright © 2020 nkmr-lab. All rights reserved.
-// 
+//
 
 import Foundation
 import UIKit
@@ -14,8 +14,6 @@ var CARD_ROW_COUNT = 4
 var CARD_COUNT_STRING = "4x4"
 var CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
 let CARD_LAYOUT_MARGIN: CGFloat = 5.0
-
-let COLORS: [UIColor] = [.red, .blue, .green, .purple, .brown, .yellow, .orange]
 
 // API関係
 let BASE_API_URL = "https://uniotto.org/api/"

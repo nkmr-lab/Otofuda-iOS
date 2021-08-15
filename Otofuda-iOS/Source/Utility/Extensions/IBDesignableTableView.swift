@@ -5,7 +5,6 @@ import UIKit
 @IBDesignable
 
 class IBDesignableTableView: UITableView {
-
     // 今回はボタンの枠線の色，太さ，ボタンの角を丸める設定をいじってみる
     // 以下の変数宣言でこれらがデフォルトの値になる
     @IBInspectable var borderColor = UIColor.clear
@@ -17,13 +16,13 @@ class IBDesignableTableView: UITableView {
     @IBInspectable var maskToBounds: Bool = true
 
     // Attributes Inspectorで設定した値を反映
-    override func draw(_ rect: CGRect) {
-        self.layer.borderColor = borderColor.cgColor
-        self.layer.borderWidth = borderWidth
-        self.layer.cornerRadius = cornerRadius
-        self.layer.shadowOffset = shadowOffset
-        self.layer.shadowColor = shadowColor.cgColor
-        self.layer.shadowOpacity = Float(shadowOpacity)
-        self.layer.masksToBounds = maskToBounds
+    override func draw(_: CGRect) {
+        layer.borderColor = borderColor.cgColor
+        layer.borderWidth = borderWidth
+        layer.cornerRadius = cornerRadius
+        layer.shadowOffset = shadowOffset
+        layer.shadowColor = shadowColor.cgColor
+        layer.shadowOpacity = Float(shadowOpacity)
+        layer.masksToBounds = maskToBounds
     }
 }

@@ -1,6 +1,6 @@
-import UIKit
-import MediaPlayer
 import AVFoundation
+import MediaPlayer
+import UIKit
 
 protocol ResultProtocol {
     func playMusic(music: Music)
@@ -8,7 +8,6 @@ protocol ResultProtocol {
 }
 
 final class ResultVC: UIViewController, ResultProtocol {
-
     var room: Room!
 
     // 再生順
@@ -20,7 +19,7 @@ final class ResultVC: UIViewController, ResultProtocol {
 
     var me: User!
 
-    var isHost: Bool = false
+    var isHost = false
 
     var firebaseManager = FirebaseManager()
 
@@ -30,15 +29,15 @@ final class ResultVC: UIViewController, ResultProtocol {
 
     let tableCellHeight: CGFloat = 120.0
 
-    @IBOutlet weak var winnerLabel: UILabel!
-    
-    @IBOutlet weak var scoreLabel: UILabel!
-    
-    @IBOutlet weak var timeLabel: UILabel!
-    
+    @IBOutlet var winnerLabel: UILabel!
+
+    @IBOutlet var scoreLabel: UILabel!
+
+    @IBOutlet var timeLabel: UILabel!
+
     var tapTimeArray: [Float] = []
 
-    @IBOutlet weak var playedMusicTableV: UITableView! {
+    @IBOutlet var playedMusicTableV: UITableView! {
         didSet {
             playedMusicTableV.delegate = self
             playedMusicTableV.dataSource = self
@@ -47,22 +46,21 @@ final class ResultVC: UIViewController, ResultProtocol {
         }
     }
 
-    @IBOutlet weak var restartBtn: UIButton!
+    @IBOutlet var restartBtn: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-//        initializePlayer()
-        
-        
+        //        initializePlayer()
+
         // 戻るを不可能にする
-        self.navigationItem.hidesBackButton = true
+        navigationItem.hidesBackButton = true
 
         if !isHost {
             restartBtn.isHidden = true
             observeRoomStatus()
         }
-        
+
         // TODO: scoreModeがビンゴモードだった時の採点処理
         var eachScores = [Int](repeating: 0, count: room.member.count)
         for music in playMusics {
@@ -81,7 +79,7 @@ final class ResultVC: UIViewController, ResultProtocol {
         } else {
             winnerLabel.text = "あなたの敗北"
         }
-        
+
         // FIXME: 配列から平均を算出する関数作る
         // https://www.javaer101.com/ja/article/17499252.html
         var sumTapTime: Float = 0.0
@@ -89,17 +87,16 @@ final class ResultVC: UIViewController, ResultProtocol {
         for tapTime in tapTimeArray {
             sumTapTime += tapTime
         }
-        
+
         if tapTimeArray.count != 0 {
             avgTapTime = sumTapTime / Float(tapTimeArray.count)
             timeLabel.text = "平均タップペース: \(avgTapTime) 秒"
         }
-
     }
 
-    @IBAction func tapRestartBtn(_ sender: Any) {
+    @IBAction func tapRestartBtn(_: Any) {
         firebaseManager.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
-        self.navigationController?.popToViewController(
+        navigationController?.popToViewController(
             navigationController!.viewControllers[2], animated: true
         )
     }

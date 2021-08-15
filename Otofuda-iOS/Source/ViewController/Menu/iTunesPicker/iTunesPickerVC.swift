@@ -1,16 +1,15 @@
-import UIKit
 import AVFoundation
 import PromiseKit
+import UIKit
 
 class iTunesPickerVC: UIViewController {
-
-    @IBOutlet weak var searchBar: UISearchBar!
-    @IBOutlet weak var segumentView: UISegmentedControl!
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var segumentView: UISegmentedControl!
     var selectedAttribute: String = "artistTerm"
 
     var player: AVPlayer!
 
-    @IBOutlet weak var collectionView: UICollectionView! {
+    @IBOutlet var collectionView: UICollectionView! {
         didSet {
             collectionView.delegate = self
             collectionView.dataSource = self
@@ -18,6 +17,7 @@ class iTunesPickerVC: UIViewController {
             collectionView.backgroundColor = UIColor.clear
         }
     }
+
     var results: Results!
 
     override func viewDidLoad() {
@@ -27,5 +27,4 @@ class iTunesPickerVC: UIViewController {
         collectionView.delegate = self
         collectionView.dataSource = self
     }
-
 }

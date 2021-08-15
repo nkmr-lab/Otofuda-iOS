@@ -1,11 +1,10 @@
-import UIKit
 import MediaPlayer
+import UIKit
 
 extension MenuVC {
-
-    func setting(){
+    func setting() {
         // カードを並べる値をシャッフルする(左上から0,1,2...）
-        self.cardLocations = [Int](0..<CARD_MAX_COUNT)
+        cardLocations = [Int](0 ..< CARD_MAX_COUNT)
         cardLocations.shuffle()
 
         // 誰の曲を使うかを楽曲所持数に応じて決める
@@ -18,7 +17,7 @@ extension MenuVC {
 
         while selectedPlayers.count < CARD_MAX_COUNT {
             // TODO: 所持数が0の人ばっかだと処理時間が長くなってしまうので要改善
-            let selectedPlayer = Int.random(in: 0..<musicCounts.count)
+            let selectedPlayer = Int.random(in: 0 ..< musicCounts.count)
             // 残りの楽曲所持数が1曲以上あったら
             if musicCounts[selectedPlayer] > 0 {
                 // 一曲減らす
@@ -36,15 +35,14 @@ extension MenuVC {
 
         firebaseManager.deleteObserve(path: room.url() + "musicCounts")
     }
- 
+
     func observeUI() {
         firebaseManager.observe(path: room.url() + "mode", completion: { snapshot in
-            if let modeDict = snapshot.value as? Dictionary<String, String> {
+            if let modeDict = snapshot.value as? [String: String] {
                 guard let usingMusicMode = modeDict["usingMusic"] else { return }
                 guard let scoreMode = modeDict["score"] else { return }
                 guard let playbackMode = modeDict["playback"] else { return }
                 guard let cardCountMode = modeDict["cardCount"] else { return }
-
 
                 switch usingMusicMode {
                 case "preset":
@@ -53,6 +51,7 @@ extension MenuVC {
                 case "device":
                     self.usingMusicSegment.selectedSegmentIndex = 1
                     self.presetPickerV.isHidden = true
+
                 default:
                     break
                 }
@@ -64,6 +63,7 @@ extension MenuVC {
                 case "bingo":
                     self.scoreSegument.selectedSegmentIndex = 1
                     self.scoreMode = .bingo
+
                 default:
                     break
                 }
@@ -75,10 +75,11 @@ extension MenuVC {
                 case "random":
                     self.playbackSegument.selectedSegmentIndex = 1
                     self.playbackMode = .random
+
                 default:
                     break
                 }
-                
+
                 switch cardCountMode {
                 case "2x2":
                     self.cardCountSegument.selectedSegmentIndex = 0
@@ -95,6 +96,7 @@ extension MenuVC {
                     CARD_ROW_COUNT = 4
                     CARD_CLM_COUNT = 4
                     CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+
                 default:
                     break
                 }
@@ -117,10 +119,9 @@ extension MenuVC {
                     print(self.room.url())
                     print("observeStartが発火するタイミング")
                     self.firebaseManager.observeSingle(path: self.room.url(), completion: { snapshot in
-
                         self.preparedPlayMusics()
 
-                        guard let fbRoom = snapshot.value as? Dictionary<String,Any> else {
+                        guard let fbRoom = snapshot.value as? [String: Any] else {
                             print("fbRoomがありませんでした")
                             return
                         }
@@ -155,7 +156,6 @@ extension MenuVC {
                 }
             }
         })
-        
     }
 
     func preparedPlayMusics() {
@@ -166,7 +166,7 @@ extension MenuVC {
             print("preparedMusicが発火するタイミング")
 
             if snapshot.children.allObjects.count == CARD_MAX_COUNT {
-                guard let fbPlayMusics = snapshot.value as? [Dictionary<String, Any>] else { return }
+                guard let fbPlayMusics = snapshot.value as? [[String: Any]] else { return }
 
                 for fbPlayMusic in fbPlayMusics {
                     let name = fbPlayMusic["name"] as! String
@@ -174,7 +174,7 @@ extension MenuVC {
                     let musicOwner = fbPlayMusic["musicOwner"] as! Int
                     let previewURL = fbPlayMusic["previewURL"] as? String
                     let storeURL = fbPlayMusic["storeURL"] as? String
-                    
+
                     var mediaItem: MPMediaItem?
                     if musicOwner == self.me.index {
                         mediaItem = MPMediaItem.getMediaItem(title: name, artist: artist)
@@ -212,19 +212,18 @@ extension MenuVC {
         if !isHost {
             firebaseManager.deleteObserve(path: room.url() + "rule")
         }
-        
-        self.navigationController?.pushViewController(nextVC, animated: true)
+
+        navigationController?.pushViewController(nextVC, animated: true)
     }
-    
-    func displayBlockV(){
-        blockV.frame = self.view.frame
+
+    func displayBlockV() {
+        blockV.frame = view.frame
         blockV.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(blockV)
-        
-        blockV.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
-        blockV.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
-        blockV.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
-        blockV.heightAnchor.constraint(equalTo: self.view.heightAnchor).isActive = true
+        view.addSubview(blockV)
+
+        blockV.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+        blockV.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        blockV.widthAnchor.constraint(equalTo: view.widthAnchor).isActive = true
+        blockV.heightAnchor.constraint(equalTo: view.heightAnchor).isActive = true
     }
-    
 }

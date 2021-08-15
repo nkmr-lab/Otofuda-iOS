@@ -1,11 +1,10 @@
 import UIKit
 
 extension PlayVC: UICollectionViewDelegateFlowLayout {
-
-    func collectionView(_ collectionView: UICollectionView,
-                        layout collectionViewLayout: UICollectionViewLayout,
-                        sizeForItemAt indexPath: IndexPath) -> CGSize {
-
+    func collectionView(_: UICollectionView,
+                        layout _: UICollectionViewLayout,
+                        sizeForItemAt _: IndexPath) -> CGSize
+    {
         let m = CARD_LAYOUT_MARGIN
         let surplusWidth = fudaCollectionV.bounds.width - m * CGFloat(CARD_CLM_COUNT + 1)
         let surplusHeight = fudaCollectionV.bounds.height - m * CGFloat(CARD_ROW_COUNT + 1)

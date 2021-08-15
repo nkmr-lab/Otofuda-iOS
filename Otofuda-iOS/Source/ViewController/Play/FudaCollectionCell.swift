@@ -1,11 +1,10 @@
-import UIKit
 import AVFoundation
+import UIKit
 
 final class FudaCollectionCell: UICollectionViewCell {
+    @IBOutlet var titleLabel: UILabel!
 
-    @IBOutlet weak var titleLabel: UILabel!
-
-    @IBOutlet weak var backgroundV: UIView!
+    @IBOutlet var backgroundV: UIView!
 
     var isAnimating = false
 
@@ -14,6 +13,6 @@ final class FudaCollectionCell: UICollectionViewCell {
         rotationAnimation.toValue = CGFloat(Double.pi / 180) * 360
         rotationAnimation.duration = 0.3
         rotationAnimation.repeatCount = 5
-        self.layer.add(rotationAnimation, forKey: "rotationAnimation")
+        layer.add(rotationAnimation, forKey: "rotationAnimation")
     }
 }

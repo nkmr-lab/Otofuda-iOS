@@ -1,9 +1,8 @@
 import UIKit
 
 class SelectMusicTableCell: UITableViewCell {
-
-    @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet var artistLabel: UILabel!
+    @IBOutlet var titleLabel: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()

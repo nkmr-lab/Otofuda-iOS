@@ -1,5 +1,3 @@
-
-
 import SwiftyJSON
 
 struct PresetResponse: ResponseEntity {
@@ -11,12 +9,12 @@ struct PresetResponse: ResponseEntity {
 
         let jsonData = json["data"].arrayValue
 
-        self.presets = jsonData.compactMap({ data in
-            let id    = data["id"].intValue
+        presets = jsonData.compactMap { data in
+            let id = data["id"].intValue
             let name = data["name"].stringValue
             let count = data["count"].intValue
 
             return Preset(id: id, name: name, count: count)
-        })
+        }
     }
 }

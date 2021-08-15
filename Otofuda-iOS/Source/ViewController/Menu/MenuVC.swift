@@ -1,14 +1,13 @@
-import UIKit
-import PromiseKit
 import Alamofire
 import AVFoundation
+import PromiseKit
+import UIKit
 
 protocol Menurotocol {
     func tappedPickBtn(_ sender: Any)
 }
 
 final class MenuVC: UIViewController, Menurotocol {
-
     let viewModel = PresetViewModel()
 
     var firebaseManager = FirebaseManager()
@@ -17,49 +16,48 @@ final class MenuVC: UIViewController, Menurotocol {
 
     var haveMusics: [Music] = []
 
-    var isHost: Bool = false
-    
+    var isHost = false
+
     var isSingleMode = false
 
     var me: User!
 
-    @IBOutlet weak var blockV: UIView!
+    @IBOutlet var blockV: UIView!
 
     var musicCounts: [Int] = []
-    
+
     // モード
     var usingMusicMode: UsingMusicMode = .preset
     var scoreMode: ScoreMode = .normal
     var playbackMode: PlaybackMode = .intro
 
     // Segument
-    @IBOutlet weak var usingMusicSegment: UISegmentedControl! {
+    @IBOutlet var usingMusicSegment: UISegmentedControl! {
         didSet {
             usingMusicSegment.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         }
     }
 
-    @IBOutlet weak var scoreSegument: UISegmentedControl! {
+    @IBOutlet var scoreSegument: UISegmentedControl! {
         didSet {
             scoreSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         }
     }
 
-    @IBOutlet weak var playbackSegument: UISegmentedControl! {
+    @IBOutlet var playbackSegument: UISegmentedControl! {
         didSet {
             playbackSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         }
     }
 
-    @IBOutlet weak var cardCountSegument: UISegmentedControl! {
+    @IBOutlet var cardCountSegument: UISegmentedControl! {
         didSet {
             cardCountSegument.setTitleTextAttributes([NSAttributedString.Key.foregroundColor: UIColor.darkGray], for: .normal)
         }
-
     }
 
     var selectedMusics: [Music] = []
-    
+
     var playMusics: [Music] = []
 
     var cardLocations: [Int] = []
@@ -70,7 +68,7 @@ final class MenuVC: UIViewController, Menurotocol {
 
     var presetIndex = 0
 
-    @IBOutlet weak var selectMusicTableV: UITableView! {
+    @IBOutlet var selectMusicTableV: UITableView! {
         didSet {
             selectMusicTableV.delegate = self
             selectMusicTableV.dataSource = self
@@ -79,27 +77,25 @@ final class MenuVC: UIViewController, Menurotocol {
         }
     }
 
-    @IBOutlet weak var presetPickerV: UIPickerView! {
+    @IBOutlet var presetPickerV: UIPickerView! {
         didSet {
-//            presetPickerV.delegate = self
-//            presetPickerV.dataSource = self
-//            presetPickerV.backgroundColor = .white
-//            presetPickerV.tintColor = .black
+            //            presetPickerV.delegate = self
+            //            presetPickerV.dataSource = self
+            //            presetPickerV.backgroundColor = .white
+            //            presetPickerV.tintColor = .black
         }
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // 戻るを不可能にする
-        self.navigationItem.hidesBackButton = true
+        navigationItem.hidesBackButton = true
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if isSingleMode {
-            
-        }
+
+        if isSingleMode {}
         firebaseManager.observeSingle(path: room.url() + "mode/cardCount", completion: { snapshot in
             if let cardCountMode = snapshot.value as? String {
                 switch cardCountMode {
@@ -118,6 +114,7 @@ final class MenuVC: UIViewController, Menurotocol {
                     CARD_ROW_COUNT = 4
                     CARD_CLM_COUNT = 4
                     CARD_MAX_COUNT = CARD_CLM_COUNT * CARD_ROW_COUNT
+
                 default:
                     break
                 }
@@ -131,24 +128,23 @@ final class MenuVC: UIViewController, Menurotocol {
 
         if isHost {
             observeMusicCounts()
-        }
-        else {
+        } else {
             displayBlockV()
             observeUI()
         }
 
         // FIXME: 表示されない
         // 読み込み中にアニメーションを表示させる
-//        var activityIndicatorView = UIActivityIndicatorView()
-//        activityIndicatorView.center = presetPickerV.center
-//        activityIndicatorView.style = .large
-//        activityIndicatorView.color = .gray
-//        activityIndicatorView.startAnimating()
-//        presetPickerV.addSubview(activityIndicatorView)
-        
+        //        var activityIndicatorView = UIActivityIndicatorView()
+        //        activityIndicatorView.center = presetPickerV.center
+        //        activityIndicatorView.style = .large
+        //        activityIndicatorView.color = .gray
+        //        activityIndicatorView.startAnimating()
+        //        presetPickerV.addSubview(activityIndicatorView)
+
         // プリセットリストをAPIから取得して、テーブルに表示
         loadApiPresets()
-        
+
         // スタートボタンが押されるのを監視
         observeStart()
     }
@@ -163,9 +159,11 @@ final class MenuVC: UIViewController, Menurotocol {
         case 0:
             presetPickerV.isHidden = false
             usingMusicMode = .preset
+
         case 1:
             presetPickerV.isHidden = true
             usingMusicMode = .device
+
         default:
             break
         }
@@ -176,8 +174,10 @@ final class MenuVC: UIViewController, Menurotocol {
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
             scoreMode = .normal
+
         case 1:
             scoreMode = .bingo
+
         default:
             break
         }
@@ -188,8 +188,10 @@ final class MenuVC: UIViewController, Menurotocol {
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
             playbackMode = .intro
+
         case 1:
             playbackMode = .random
+
         default:
             break
         }
@@ -197,14 +199,13 @@ final class MenuVC: UIViewController, Menurotocol {
     }
 
     @IBAction func changeCardCountSeg(_ sender: Any) {
-        
         presetLists = []
         presets = []
         presetPickerV.selectRow(0, inComponent: 1, animated: true)
         presetPickerV.reloadAllComponents()
-        
+
         var cardCount = "4x4"
-        
+
         switch (sender as AnyObject).selectedSegmentIndex {
         case 0:
             CARD_ROW_COUNT = 2
@@ -224,13 +225,13 @@ final class MenuVC: UIViewController, Menurotocol {
         default:
             break
         }
-        
+
         firebaseManager.post(path: room.url() + "mode/cardCount/", value: cardCount)
-        
+
         loadApiPresets()
     }
-    @IBAction func tappedStartBtn(_ sender: Any) {
 
+    @IBAction func tappedStartBtn(_: Any) {
         print(usingMusicSegment.selectedSegmentIndex)
 
         switch usingMusicMode {
@@ -239,15 +240,15 @@ final class MenuVC: UIViewController, Menurotocol {
 
             let row1 = presetPickerV.selectedRow(inComponent: 0)
             let row2 = presetPickerV.selectedRow(inComponent: 1)
-            
-            if presetLists.count-1 < row1 {
+
+            if presetLists.count - 1 < row1 {
                 return
             }
-            
+
             if presetLists[row1].presets.count < row2 {
                 return
             }
-            
+
             let preset = presetLists[row1].presets[row2]
 
             print(SELECT_MUSIC_API_URL + "?id=\(preset.id)&count=\(CARD_MAX_COUNT)")
@@ -266,10 +267,10 @@ final class MenuVC: UIViewController, Menurotocol {
                     }
                     self.setting()
                 } catch {
-                   print(error)
+                    print(error)
                 }
-
             }
+
         case .device:
             selectedMusics = haveMusics
             // そもそも持ち曲が16曲以上なければ何もしない
@@ -280,13 +281,11 @@ final class MenuVC: UIViewController, Menurotocol {
 
             setting()
         }
-
     }
-    
-    func loadApiPresets(){
-        
+
+    func loadApiPresets() {
         presetLists = []
-        
+
         AF.request(PRESET_LIST_API_URL, method: .get, parameters: ["count": CARD_MAX_COUNT]).response { response in
             guard let data = response.data else { return }
             do {
@@ -304,52 +303,50 @@ final class MenuVC: UIViewController, Menurotocol {
                 self.presetPickerV.tintColor = .black
 
                 self.presetPickerV.reloadAllComponents()
-                
+
                 print(self.presets)
-            }
-            catch {
+            } catch {
                 print(error)
             }
         }
     }
-    
 }
 
-
 extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 2
-
+    func numberOfComponents(in _: UIPickerView) -> Int {
+        2
     }
 
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         switch component {
         case 0:
             return presetLists.count
+
         case 1:
             if presetLists.count > presetIndex {
                 return presetLists[presetIndex].presets.count
             }
             return 0
+
         default:
             return 0
         }
-
     }
 
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         switch component {
         case 0:
             return presetLists[row].typeName
+
         case 1:
             return presetLists[presetIndex].presets[row].name
+
         default:
             return nil
         }
     }
 
-    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
-
+    func pickerView(_: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing _: UIView?) -> UIView {
         // 表示するラベルを生成する
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.size.width, height: 50))
         label.textAlignment = .center
@@ -360,15 +357,16 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
         case 0:
             guard let presetList = presetLists[safe: row] else { return label }
             label.text = presetList.typeName
+
         case 1:
             guard let presetList = presetLists[safe: presetIndex],
                   let presets = presetList.presets[safe: row]
             else { return label }
             label.text = presets.name
+
         default:
             break
         }
-
 
         return label
     }
@@ -379,5 +377,4 @@ extension MenuVC: UIPickerViewDelegate, UIPickerViewDataSource {
             pickerView.reloadComponent(1)
         }
     }
-    
 }

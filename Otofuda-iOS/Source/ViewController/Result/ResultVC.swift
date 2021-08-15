@@ -21,8 +21,6 @@ final class ResultVC: UIViewController, ResultProtocol {
 
     var isHost = false
 
-    var firebaseManager = FirebaseManager()
-
     var usingMusicMode: UsingMusicMode = .preset
 
     var scoreMode: ScoreMode = .normal
@@ -95,7 +93,7 @@ final class ResultVC: UIViewController, ResultProtocol {
     }
 
     @IBAction func tapRestartBtn(_: Any) {
-        firebaseManager.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
+        FirebaseManager.shared.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
         navigationController?.popToViewController(
             navigationController!.viewControllers[2], animated: true
         )

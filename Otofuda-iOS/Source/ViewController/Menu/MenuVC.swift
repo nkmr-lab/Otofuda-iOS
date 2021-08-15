@@ -10,8 +10,6 @@ protocol Menurotocol {
 final class MenuVC: UIViewController, Menurotocol {
     let viewModel = PresetViewModel()
 
-    var firebaseManager = FirebaseManager()
-
     var room: Room!
 
     var haveMusics: [Music] = []
@@ -96,7 +94,7 @@ final class MenuVC: UIViewController, Menurotocol {
         super.viewWillAppear(animated)
 
         if isSingleMode {}
-        firebaseManager.observeSingle(path: room.url() + "mode/cardCount", completion: { snapshot in
+        FirebaseManager.shared.observeSingle(path: room.url() + "mode/cardCount", completion: { snapshot in
             if let cardCountMode = snapshot.value as? String {
                 switch cardCountMode {
                 case "2x2":
@@ -124,7 +122,7 @@ final class MenuVC: UIViewController, Menurotocol {
         // 後のどのユーザの楽曲を使うか判断する時に使う
         // TODO: この曲数をベースに次に進めるかどうかを判定する
         // TODO: 縛り曲の時そのアーティストの曲数もここにいれて, あるかどうかを判定する
-        firebaseManager.post(path: room.url() + "musicCounts/\(me.index)", value: haveMusics.count)
+        FirebaseManager.shared.post(path: room.url() + "musicCounts/\(me.index)", value: haveMusics.count)
 
         if isHost {
             observeMusicCounts()
@@ -150,8 +148,8 @@ final class MenuVC: UIViewController, Menurotocol {
     }
 
     deinit {
-        firebaseManager.deleteObserve(path: room.url() + "playMusics")
-        firebaseManager.deleteObserve(path: room.url() + "status")
+        FirebaseManager.shared.deleteObserve(path: room.url() + "playMusics")
+        FirebaseManager.shared.deleteObserve(path: room.url() + "status")
     }
 
     @IBAction func changedUsingMusicSeg(_ sender: Any) {
@@ -167,7 +165,7 @@ final class MenuVC: UIViewController, Menurotocol {
         default:
             break
         }
-        firebaseManager.post(path: room.url() + "mode/usingMusic/", value: usingMusicMode.rawValue)
+        FirebaseManager.shared.post(path: room.url() + "mode/usingMusic/", value: usingMusicMode.rawValue)
     }
 
     @IBAction func changedScoreSeg(_ sender: Any) {
@@ -181,7 +179,7 @@ final class MenuVC: UIViewController, Menurotocol {
         default:
             break
         }
-        firebaseManager.post(path: room.url() + "mode/score/", value: scoreMode.rawValue)
+        FirebaseManager.shared.post(path: room.url() + "mode/score/", value: scoreMode.rawValue)
     }
 
     @IBAction func changePlaybackSeg(_ sender: Any) {
@@ -195,7 +193,7 @@ final class MenuVC: UIViewController, Menurotocol {
         default:
             break
         }
-        firebaseManager.post(path: room.url() + "mode/playback/", value: playbackMode.rawValue)
+        FirebaseManager.shared.post(path: room.url() + "mode/playback/", value: playbackMode.rawValue)
     }
 
     @IBAction func changeCardCountSeg(_ sender: Any) {
@@ -226,7 +224,7 @@ final class MenuVC: UIViewController, Menurotocol {
             break
         }
 
-        firebaseManager.post(path: room.url() + "mode/cardCount/", value: cardCount)
+        FirebaseManager.shared.post(path: room.url() + "mode/cardCount/", value: cardCount)
 
         loadApiPresets()
     }

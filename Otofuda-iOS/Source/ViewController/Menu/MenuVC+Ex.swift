@@ -27,17 +27,17 @@ extension MenuVC {
             }
         }
 
-        firebaseManager.post(path: room.url() + "cardLocations", value: cardLocations)
-        firebaseManager.post(path: room.url() + "selectedPlayers", value: selectedPlayers)
+        FirebaseManager.shared.post(path: room.url() + "cardLocations", value: cardLocations)
+        FirebaseManager.shared.post(path: room.url() + "selectedPlayers", value: selectedPlayers)
 
         room.status = .start
-        firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
+        FirebaseManager.shared.post(path: room.url() + "status", value: room.status.rawValue)
 
-        firebaseManager.deleteObserve(path: room.url() + "musicCounts")
+        FirebaseManager.shared.deleteObserve(path: room.url() + "musicCounts")
     }
 
     func observeUI() {
-        firebaseManager.observe(path: room.url() + "mode", completion: { snapshot in
+        FirebaseManager.shared.observe(path: room.url() + "mode", completion: { snapshot in
             if let modeDict = snapshot.value as? [String: String] {
                 guard let usingMusicMode = modeDict["usingMusic"] else { return }
                 guard let scoreMode = modeDict["score"] else { return }
@@ -105,7 +105,7 @@ extension MenuVC {
     }
 
     func observeMusicCounts() {
-        firebaseManager.observeSingle(path: room.url() + "musicCounts", completion: { snapshot in
+        FirebaseManager.shared.observeSingle(path: room.url() + "musicCounts", completion: { snapshot in
             if let musicCounts = snapshot.value as? [Int] {
                 self.musicCounts = musicCounts
             }
@@ -113,12 +113,13 @@ extension MenuVC {
     }
 
     func observeStart() {
-        firebaseManager.observe(path: room.url() + "status", completion: { snapshot in
+        FirebaseManager.shared.observe(path: room.url() + "status", completion: { snapshot in
             if let status = snapshot.value as? String {
                 if status == RoomStatus.start.rawValue {
                     print(self.room.url())
                     print("observeStartが発火するタイミング")
-                    self.firebaseManager.observeSingle(path: self.room.url(), completion: { snapshot in
+
+                    FirebaseManager.shared.observeSingle(path: self.room.url(), completion: { snapshot in
                         self.preparedPlayMusics()
 
                         guard let fbRoom = snapshot.value as? [String: Any] else {
@@ -141,12 +142,12 @@ extension MenuVC {
                             if selectedPlayer == self.me.index {
                                 let music = self.selectedMusics[playCount]
                                 music.musicOwner = self.me.index
-                                self.firebaseManager.post(path: self.room.url() + "playMusics/\(index)", value: music.dict())
+                                FirebaseManager.shared.post(path: self.room.url() + "playMusics/\(index)", value: music.dict())
                                 playCount = playCount + 1
                             }
                         }
 
-                        self.firebaseManager.deleteObserve(path: self.room.url() + "status")
+                        FirebaseManager.shared.deleteObserve(path: self.room.url() + "status")
 
                         self.cardLocations = fbCardLocations
 
@@ -159,7 +160,7 @@ extension MenuVC {
     }
 
     func preparedPlayMusics() {
-        firebaseManager.observe(path: room.url() + "playMusics", completion: { [weak self] snapshot in
+        FirebaseManager.shared.observe(path: room.url() + "playMusics", completion: { [weak self] snapshot in
             guard let self = self else { return }
             self.playMusics = []
 
@@ -188,7 +189,7 @@ extension MenuVC {
                     self.playMusics.append(music)
                 }
 
-                self.firebaseManager.deleteObserve(path: self.room.url() + "playMusics")
+                FirebaseManager.shared.deleteObserve(path: self.room.url() + "playMusics")
 
                 self.goNextVC() // FIXME: 2度目の時ここが5回呼ばれてる
             }
@@ -210,7 +211,7 @@ extension MenuVC {
         nextVC.me = me
 
         if !isHost {
-            firebaseManager.deleteObserve(path: room.url() + "rule")
+            FirebaseManager.shared.deleteObserve(path: room.url() + "rule")
         }
 
         navigationController?.pushViewController(nextVC, animated: true)

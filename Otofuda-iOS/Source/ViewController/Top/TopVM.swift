@@ -2,7 +2,6 @@
 import MediaPlayer
 
 final class TopVM: ViewModel {
-    private var firebaseManager = FirebaseManager()
     private var userMusics: [Music] = []
     private let useCase: AppUseCase
 

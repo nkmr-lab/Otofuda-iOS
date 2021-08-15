@@ -24,8 +24,6 @@ class SearchGroupVC: UIViewController {
 
     var videoLayer: AVCaptureVideoPreviewLayer?
 
-    var firebaseManager = FirebaseManager()
-
     // swiftlint:disable:next force_cast
     let appDelegate: AppDelegate = UIApplication.shared.delegate as! AppDelegate
     // swiftlint:disable:previous force_cast
@@ -49,6 +47,6 @@ class SearchGroupVC: UIViewController {
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        firebaseManager.deleteObserve(path: RoomURL.base.rawValue)
+        FirebaseManager.shared.deleteObserve(path: RoomURL.base.rawValue)
     }
 }

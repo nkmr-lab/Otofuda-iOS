@@ -69,16 +69,16 @@ extension PlayVC {
         }
 
         if isHost {
-            firebaseManager.deleteAllValuesAndObserve(path: room.url() + "tapped")
-            firebaseManager.deleteAllValuesAndObserve(path: room.url() + "answearUser")
+            FirebaseManager.shared.deleteAllValuesAndObserve(path: room.url() + "tapped")
+            FirebaseManager.shared.deleteAllValuesAndObserve(path: room.url() + "answearUser")
 
-            firebaseManager.deleteAllValue(path: room.url() + "cardLocations")
-            firebaseManager.deleteAllValue(path: room.url() + "selectedPlayers")
-            firebaseManager.deleteAllValue(path: room.url() + "playMusics")
-            firebaseManager.deleteAllValue(path: room.url() + "currentIndex")
+            FirebaseManager.shared.deleteAllValue(path: room.url() + "cardLocations")
+            FirebaseManager.shared.deleteAllValue(path: room.url() + "selectedPlayers")
+            FirebaseManager.shared.deleteAllValue(path: room.url() + "playMusics")
+            FirebaseManager.shared.deleteAllValue(path: room.url() + "currentIndex")
         } else {
-            firebaseManager.deleteObserve(path: room.url() + "tapped")
-            firebaseManager.deleteObserve(path: room.url() + "answearUser")
+            FirebaseManager.shared.deleteObserve(path: room.url() + "tapped")
+            FirebaseManager.shared.deleteObserve(path: room.url() + "answearUser")
         }
 
         NotificationCenter.default.removeObserver(self, name: .AVPlayerItemDidPlayToEndTime, object: nil)
@@ -149,7 +149,7 @@ extension PlayVC {
             didPlayDate = Date()
 
             if isHost {
-                firebaseManager.post(path: room.url() + "currentIndex", value: currentIndex)
+                FirebaseManager.shared.post(path: room.url() + "currentIndex", value: currentIndex)
                 //                observeTapped()
             }
 
@@ -168,7 +168,7 @@ extension PlayVC {
     }
 
     func observeRoomStatus() {
-        firebaseManager.observe(path: room.url() + "status", completion: { snapshot in
+        FirebaseManager.shared.observe(path: room.url() + "status", completion: { snapshot in
             guard let status = snapshot.value as? String else {
                 return
             }
@@ -186,14 +186,14 @@ extension PlayVC {
 
     func observeTapped() {
         // ここにタップがメンバー数に到達したら，ステータスにtappedにする処理を書く
-        firebaseManager.observe(path: room.url() + "tapped", completion: { snapshot in
+        FirebaseManager.shared.observe(path: room.url() + "tapped", completion: { snapshot in
             if snapshot.children.allObjects.count != self.room.member.count {
                 return
             }
 
             if self.isHost {
                 self.room.status = .next
-                self.firebaseManager.post(path: self.room.url() + "status", value: self.room.status.rawValue)
+                FirebaseManager.shared.post(path: self.room.url() + "status", value: self.room.status.rawValue)
                 self.startBtn.isHidden = false
                 self.isTapped = false
             }
@@ -207,7 +207,7 @@ extension PlayVC {
     }
 
     func observeAnswearUser() {
-        firebaseManager.observe(path: room.url() + "answearUser", completion: { [self] snapshot in
+        FirebaseManager.shared.observe(path: room.url() + "answearUser", completion: { [self] snapshot in
             // FIXME: ここよく調べてみたらAndroidと同じように2回呼ばれてるので、後の一回だけを使う処理に書き換える
 
             if snapshot.children.allObjects.count == 0 {

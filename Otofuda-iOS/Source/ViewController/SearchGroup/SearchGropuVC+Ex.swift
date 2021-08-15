@@ -48,11 +48,11 @@ extension SearchGroupVC: SearchGroupProtocol {
         if !isMatching {
             let current_date = Date.getCurrentDate()
 
-            firebaseManager.post(path: room.url() + "date", value: current_date)
+            FirebaseManager.shared.post(path: room.url() + "date", value: current_date)
 
             let uuid = UIDevice.current.identifierForVendor!.uuidString
 
-            firebaseManager.observeSingle(path: room.url() + "member", completion: { [weak self] snapshot in
+            FirebaseManager.shared.observeSingle(path: room.url() + "member", completion: { [weak self] snapshot in
                 guard let self = self else { return }
 
                 var isExist = false
@@ -78,7 +78,7 @@ extension SearchGroupVC: SearchGroupProtocol {
                         }
                         let updatedRoom = Room(name: room.name, member: users)
 
-                        self.firebaseManager.post(path: room.url() + "member", value: member)
+                        FirebaseManager.shared.post(path: room.url() + "member", value: member)
                         self.goNextVC(room: updatedRoom) // FIXME: 🐛たまに重複してnavigationに追加されることがある(8/3時点）
                         self.isMatching = true
                         return
@@ -105,11 +105,11 @@ extension SearchGroupVC: SearchGroupProtocol {
         nextVC.me = me
         navigationController?.pushViewController(nextVC, animated: true)
 
-        firebaseManager.deleteObserve(path: RoomURL.base.rawValue)
+        FirebaseManager.shared.deleteObserve(path: RoomURL.base.rawValue)
     }
 
     func observeRooms() {
-        firebaseManager.observe(path: RoomURL.base.rawValue, completion: { [weak self] snapshot in
+        FirebaseManager.shared.observe(path: RoomURL.base.rawValue, completion: { [weak self] snapshot in
             guard let self = self else { return }
 
             if let dbRooms = snapshot.value as? [String: Any] {

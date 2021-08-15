@@ -28,10 +28,10 @@ extension PlayVC: UICollectionViewDelegate {
         // 正解
         if tappedMusic.name == playingMusic.name {
             room.status = .next
-            firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
+            FirebaseManager.shared.post(path: room.url() + "status", value: room.status.rawValue)
             tapSoundPlayer?.play()
 
-            firebaseManager.post(path: room.url() + "answearUser/\(me.index)", value: ["time": Firebase.ServerValue.timestamp(), "userIndex": me.index])
+            FirebaseManager.shared.post(path: room.url() + "answearUser/\(me.index)", value: ["time": Firebase.ServerValue.timestamp(), "userIndex": me.index])
         }
         // 不正解
         else {
@@ -41,6 +41,6 @@ extension PlayVC: UICollectionViewDelegate {
         }
 
         let dict: [String: Any] = ["user": me.dict(), "music": tappedMusic.name]
-        firebaseManager.post(path: room.url() + "tapped/\(me.index)", value: dict)
+        FirebaseManager.shared.post(path: room.url() + "tapped/\(me.index)", value: dict)
     }
 }

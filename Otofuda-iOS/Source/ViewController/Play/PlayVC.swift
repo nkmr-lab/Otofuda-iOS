@@ -32,8 +32,6 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
     var avPlayer: AVPlayer!
     var tapSoundPlayer: AVAudioPlayer?
 
-    var firebaseManager = FirebaseManager()
-
     var isTapped = false
 
     var isPlaying = false
@@ -159,9 +157,9 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
         if isHost { startBtn.isHidden = true }
 
         room.status = .play
-        firebaseManager.post(path: room.url() + "status", value: room.status.rawValue)
-        firebaseManager.deleteAllValue(path: room.url() + "tapped")
-        firebaseManager.deleteAllValue(path: room.url() + "answearUser")
+        FirebaseManager.shared.post(path: room.url() + "status", value: room.status.rawValue)
+        FirebaseManager.shared.deleteAllValue(path: room.url() + "tapped")
+        FirebaseManager.shared.deleteAllValue(path: room.url() + "answearUser")
 
         displayCountdownV()
         fireTimer()
@@ -196,7 +194,7 @@ final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtoc
     // 戻るが押された時の処理
     func navigationController(_: UINavigationController, willShow viewController: UIViewController, animated _: Bool) {
         if viewController is MenuVC {
-            firebaseManager.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
+            FirebaseManager.shared.post(path: room.url() + "status", value: RoomStatus.menu.rawValue)
             finishGame()
         }
     }

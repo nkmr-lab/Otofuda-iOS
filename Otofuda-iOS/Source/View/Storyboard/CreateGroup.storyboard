@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Irm-HY-puU">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="ipad12_9rounded" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -10,20 +10,20 @@
         <!--グループを作成-->
         <scene sceneID="fLK-6O-1dH">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="diW-9t-LqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="CreateGroupView" id="Irm-HY-puU" customClass="CreateGroupVC" customModule="音札" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="yJA-QK-IOH">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SCX-uQ-7ng">
-                                <rect key="frame" x="30" y="251" width="354" height="354"/>
+                                <rect key="frame" x="335" y="486" width="354" height="354"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="354" id="3fC-oK-9yi"/>
                                     <constraint firstAttribute="width" secondItem="SCX-uQ-7ng" secondAttribute="height" multiplier="1:1" id="UQH-PS-jmO"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R9h-g5-CCx" customClass="IBDesignableButton" customModule="音札" customModuleProvider="target">
-                                <rect key="frame" x="50" y="732" width="314" height="80"/>
+                                <rect key="frame" x="50" y="1216" width="924" height="80"/>
                                 <color key="backgroundColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="Ikp-5M-yBO"/>
@@ -51,20 +51,41 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="maskToBounds" value="YES"/>
                                 </userDefinedRuntimeAttributes>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在の人数 1 人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83y-9N-h7O">
-                                <rect key="frame" x="147" y="655" width="120.5" height="57"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="PgG-Ah-lto">
+                                <rect key="frame" x="20" y="1158" width="984" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="現在の人数" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="83y-9N-h7O">
+                                        <rect key="frame" x="0.0" y="0.0" width="470" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dxy-5u-COY">
+                                        <rect key="frame" x="477" y="0.0" width="30" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="cDX-H2-kC5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="人" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ynl-fJ-YJj">
+                                        <rect key="frame" x="514" y="0.0" width="470" height="30"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="57" id="230-58-OzD"/>
+                                    <constraint firstItem="dxy-5u-COY" firstAttribute="centerX" secondItem="PgG-Ah-lto" secondAttribute="centerX" id="LSq-aS-DBB"/>
+                                    <constraint firstAttribute="height" constant="30" id="nl8-GS-hv1"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dr1-WU-6Qt">
-                                <rect key="frame" x="100" y="74" width="214" height="41"/>
-                                <string key="text">一緒にやるプレイヤーに
+                                <rect key="frame" x="406.5" y="30" width="211.5" height="46.5"/>
+                                <string key="text">一緒に遊ぶプレイヤーに
 QRコードを見せてください</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -72,17 +93,19 @@ QRコードを見せてください</string>
                         <viewLayoutGuide key="safeArea" id="wfs-Cf-Qpc"/>
                         <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <constraints>
-                            <constraint firstItem="83y-9N-h7O" firstAttribute="centerX" secondItem="yJA-QK-IOH" secondAttribute="centerX" id="58V-4i-jiT"/>
-                            <constraint firstItem="83y-9N-h7O" firstAttribute="top" secondItem="SCX-uQ-7ng" secondAttribute="bottom" constant="50" id="Cfk-5R-JCe"/>
+                            <constraint firstItem="PgG-Ah-lto" firstAttribute="top" relation="greaterThanOrEqual" secondItem="SCX-uQ-7ng" secondAttribute="bottom" constant="28" id="5q9-jy-C1c"/>
+                            <constraint firstItem="PgG-Ah-lto" firstAttribute="leading" secondItem="wfs-Cf-Qpc" secondAttribute="leading" constant="20" id="DzE-n3-fdP"/>
                             <constraint firstItem="SCX-uQ-7ng" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="wfs-Cf-Qpc" secondAttribute="leading" constant="30" id="Ifh-jT-eB3"/>
                             <constraint firstItem="Dr1-WU-6Qt" firstAttribute="top" secondItem="wfs-Cf-Qpc" secondAttribute="top" constant="30" id="Xhd-XZ-uFp"/>
                             <constraint firstItem="SCX-uQ-7ng" firstAttribute="centerX" secondItem="yJA-QK-IOH" secondAttribute="centerX" id="cnO-0i-N4I"/>
                             <constraint firstItem="R9h-g5-CCx" firstAttribute="leading" secondItem="wfs-Cf-Qpc" secondAttribute="leading" constant="50" id="frR-qr-oQj"/>
                             <constraint firstItem="wfs-Cf-Qpc" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="SCX-uQ-7ng" secondAttribute="trailing" constant="30" id="hrp-3m-MU8"/>
                             <constraint firstItem="SCX-uQ-7ng" firstAttribute="centerY" secondItem="yJA-QK-IOH" secondAttribute="centerY" constant="-20" id="jZd-4W-1ez"/>
-                            <constraint firstItem="R9h-g5-CCx" firstAttribute="top" secondItem="83y-9N-h7O" secondAttribute="bottom" constant="20" id="k6D-Ax-l6v"/>
+                            <constraint firstItem="wfs-Cf-Qpc" firstAttribute="trailing" secondItem="PgG-Ah-lto" secondAttribute="trailing" constant="20" id="jvB-Th-mix"/>
+                            <constraint firstItem="R9h-g5-CCx" firstAttribute="top" secondItem="PgG-Ah-lto" secondAttribute="bottom" constant="28" id="kDn-1E-BKt"/>
                             <constraint firstItem="Dr1-WU-6Qt" firstAttribute="centerX" secondItem="yJA-QK-IOH" secondAttribute="centerX" id="kjz-hF-R8g"/>
                             <constraint firstItem="wfs-Cf-Qpc" firstAttribute="bottom" secondItem="R9h-g5-CCx" secondAttribute="bottom" constant="50" id="sd9-V8-Guz"/>
+                            <constraint firstItem="PgG-Ah-lto" firstAttribute="centerX" secondItem="yJA-QK-IOH" secondAttribute="centerX" id="uwH-OE-p5z"/>
                             <constraint firstItem="wfs-Cf-Qpc" firstAttribute="trailing" secondItem="R9h-g5-CCx" secondAttribute="trailing" constant="50" id="zaZ-CS-PdE"/>
                         </constraints>
                     </view>
@@ -92,6 +115,7 @@ QRコードを見せてください</string>
                         <outlet property="qrView" destination="SCX-uQ-7ng" id="Hth-hX-SWE"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="diW-9t-LqI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="647.82608695652175" y="255.80357142857142"/>
         </scene>

@@ -3,8 +3,8 @@ import FirebaseDatabase
 import UIKit
 
 final class CreateGroupVC: UIViewController {
-    // MARK: - IBOutlets
 
+    // MARK: - IBOutlets
     @IBOutlet private var qrView: UIImageView!
 
     @IBOutlet private var memberCountLabel: UILabel! {
@@ -14,9 +14,6 @@ final class CreateGroupVC: UIViewController {
     }
 
     // MARK: - Properties
-
-    private var firebaseManager = FirebaseManager()
-
     private var haveMusics: [Music] = []
 
     private var room: Room!
@@ -60,7 +57,7 @@ final class CreateGroupVC: UIViewController {
     }
 
     deinit {
-        firebaseManager.deleteAllValue(path: room.url())
+        FirebaseManager.shared.deleteAllValue(path: room.url())
         removeObserveMember()
     }
 
@@ -84,13 +81,13 @@ final class CreateGroupVC: UIViewController {
         let current_date = Date.getCurrentDate()
         room = Room(name: roomID)
         room.addMember(user: me)
-        firebaseManager.post(path: room.url(), value: room.dict())
-        firebaseManager.post(path: room.url() + "date", value: current_date)
+        FirebaseManager.shared.post(path: room.url(), value: room.dict())
+        FirebaseManager.shared.post(path: room.url() + "date", value: current_date)
         return room
     }
 
     private func observeMember() {
-        firebaseManager.observe(path: room.url() + "member", completion: { [weak self] snapshot in
+        FirebaseManager.shared.observe(path: room.url() + "member", completion: { [weak self] snapshot in
             // deinitを呼びたいので強参照させないようにしている
             guard let self = self else { return }
 
@@ -111,7 +108,7 @@ final class CreateGroupVC: UIViewController {
     }
 
     private func removeObserveMember() {
-        firebaseManager.deleteObserve(path: room.url() + "member")
+        FirebaseManager.shared.deleteObserve(path: room.url() + "member")
     }
 }
 

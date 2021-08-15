@@ -34,6 +34,9 @@ protocol FirebaseManagerProtocol: AnyObject {
 final class FirebaseManager: FirebaseManagerProtocol {
     static let shared = FirebaseManager()
     let dbRef = Database.database().reference()
+
+    // インスタンス化禁止
+    private init() {}
 }
 
 extension FirebaseManager {

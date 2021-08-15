@@ -104,14 +104,6 @@
             <point key="canvasLocation" x="-1322" y="826"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Eiy-R5-ftd">
-            <size key="intrinsicContentSize" width="157" height="39"/>
-        </designable>
-        <designable name="MqL-BF-DtT">
-            <size key="intrinsicContentSize" width="123" height="39"/>
-        </designable>
-    </designables>
     <resources>
         <image name="TopVC" width="1875" height="4060"/>
     </resources>

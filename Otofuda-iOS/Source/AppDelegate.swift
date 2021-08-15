@@ -6,9 +6,20 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let uuid: String = UIDevice.current.identifierForVendor!.uuidString
+    var presenceRef: DatabaseReference? = nil
+
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
+
+        self.presenceRef = Database.database().reference(withPath: "disconnectmessage");
+        self.presenceRef?.onDisconnectSetValue("I disconnected!")
+
+        presenceRef?.onDisconnectRemoveValue { error, reference in
+          if let error = error {
+            EmojiLogger.error("Could not establish onDisconnect event: \(error)")
+          }
+        }
 
         let audioSession = AVAudioSession.sharedInstance()
         do {

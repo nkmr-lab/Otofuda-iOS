@@ -53,8 +53,9 @@ final class CreateGroupVC: UIViewController {
         let myColor: UIColor = ColorList(index: 0).uiColor
         me = User(index: 0, name: appDelegate.uuid, color: myColor)
 
-        let roomId = createGroup()
-        generateQRCode(name: roomId)
+        let room = createRoom()
+        qrView.image = room.qrImage
+
         observeMember()
     }
 
@@ -78,19 +79,14 @@ final class CreateGroupVC: UIViewController {
         removeObserveMember()
     }
 
-    private func createGroup() -> String {
+    private func createRoom() -> Room {
         let roomID = String.getRandomStringWithLength(length: 6)
         let current_date = Date.getCurrentDate()
         room = Room(name: roomID)
         room.addMember(user: me)
         firebaseManager.post(path: room.url(), value: room.dict())
         firebaseManager.post(path: room.url() + "date", value: current_date)
-        return roomID
-    }
-
-    private func generateQRCode(name: String) {
-        let qrImage = CIImage.generateQRImage(url: "https://uniotto.org/api/searchRoom.php?roomID=\(name)")
-        qrView.image = UIImage(ciImage: qrImage)
+        return room
     }
 
     private func observeMember() {

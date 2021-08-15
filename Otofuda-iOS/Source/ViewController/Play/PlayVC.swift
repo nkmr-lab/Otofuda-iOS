@@ -15,7 +15,7 @@ protocol PlayProtocol {
 }
 
 final class PlayVC: UIViewController, UINavigationControllerDelegate, PlayProtocol {
-    weak var appDelegate: AppDelegate? = UIApplication.shared.delegate as! AppDelegate
+    weak var appDelegate: AppDelegate? = UIApplication.shared.delegate as? AppDelegate
 
     var room: Room!
 

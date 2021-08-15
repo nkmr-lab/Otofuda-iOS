@@ -45,23 +45,6 @@ extension TopVM {
         }
         return musics
     }
-
-    public func createGroup() -> Room? {
-        var room = Room(name: UUID().uuidString)
-        let nowDate = Date.getCurrentDate()
-
-        guard let userId = useCase.userId else {
-            EmojiLogger.error("userId could not found!!")
-            return nil
-        }
-        let me = User(index: 0, name: userId, color: ColorList(index: 0).uiColor)
-        room.addMember(user: me)
-
-        firebaseManager.post(path: room.url(), value: room.dict())
-        firebaseManager.post(path: room.url() + "date", value: nowDate)
-
-        return room
-    }
 }
 
 extension TopVM {

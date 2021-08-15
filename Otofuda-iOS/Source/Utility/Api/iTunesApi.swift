@@ -20,7 +20,7 @@ final class iTunesApi {
                  country: String = "jp",
                  lang: String = "ja_jp",
                  media: String = "music",
-                 entity: String = "song") -> Promise<Results> {
+                 entity: String = "song") -> Promise<iTunesApiResponse> {
 
 
         guard let encodedKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
@@ -60,7 +60,7 @@ final class iTunesApi {
                     guard let data = data else {
                         return seal.reject(ApiError.responseError)
                     }
-                    guard let results = try? JSONDecoder().decode(Results.self, from: data) else {
+                    guard let results = try? JSONDecoder().decode(iTunesApiResponse.self, from: data) else {
                         return seal.reject(ApiError.mapFailed)
                     }
                     seal.fulfill(results)
@@ -74,12 +74,15 @@ final class iTunesApi {
 }
 
 
-// TODO: Resultは絶対被るので名前を変える
-struct Results: Codable {
-    let results: [Result]?
+struct iTunesApiResponse: Codable {
+    let topRankMusics: [TopRankMusic]?
+
+    enum CodingKeys: String, CodingKey {
+        case topRankMusics = "results"
+    }
 }
 
-struct Result: Codable {
+struct TopRankMusic: Codable {
     let album: String?
     let title: String?
     let artist: String?

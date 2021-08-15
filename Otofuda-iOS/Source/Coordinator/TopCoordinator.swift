@@ -16,6 +16,7 @@ final class TopCoordinator: Coordinator {
 
     func start() {
         guard let viewController = viewController else { return }
+        viewController.output(output)
         navigation.pushViewController(viewController, animated: true)
     }
 

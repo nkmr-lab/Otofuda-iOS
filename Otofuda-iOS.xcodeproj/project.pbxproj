@@ -32,10 +32,7 @@
 		F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */; };
 		F3225EFA2330ACFD00D9BD79 /* SelectMusicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EF92330ACFD00D9BD79 /* SelectMusicTableCell.swift */; };
 		F3225EFD2330AFCA00D9BD79 /* iTunesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EFB2330AFCA00D9BD79 /* iTunesApi.swift */; };
-		F3225F042330AFE300D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */; };
 		F3225F052330AFE300D9BD79 /* iTunesPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F012330AFE300D9BD79 /* iTunesPickerVC.swift */; };
-		F3225F062330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */; };
-		F3225F072330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F032330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift */; };
 		F3225F092330AFF300D9BD79 /* iTunesPicker.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */; };
 		F3225F0C2330B01D00D9BD79 /* SearchResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F0A2330B01D00D9BD79 /* SearchResultCell.swift */; };
 		F3225F0D2330B01D00D9BD79 /* SearchResultCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */; };
@@ -43,7 +40,6 @@
 		F32B062A25DEBDC700AA30D8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = F32B062925DEBDC700AA30D8 /* FirebaseDatabase */; };
 		F32B063C25DF360700AA30D8 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = F32B063B25DF360700AA30D8 /* Alamofire */; };
 		F32B064B25DF365400AA30D8 /* AlamofireImage in Frameworks */ = {isa = PBXBuildFile; productRef = F32B064A25DF365400AA30D8 /* AlamofireImage */; };
-		F32B066625DF378800AA30D8 /* ObjectMapper in Frameworks */ = {isa = PBXBuildFile; productRef = F32B066525DF378800AA30D8 /* ObjectMapper */; };
 		F32B066C25DF37D400AA30D8 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = F32B066B25DF37D400AA30D8 /* PromiseKit */; };
 		F32B067225DF37FB00AA30D8 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = F32B067125DF37FB00AA30D8 /* SwiftyJSON */; };
 		F32B067825DF382D00AA30D8 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F32B067725DF382D00AA30D8 /* RxSwift */; };
@@ -70,10 +66,8 @@
 		F32D0F3926C6E01B00ECC56B /* CreateGroup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32D0F3826C6E01B00ECC56B /* CreateGroup.storyboard */; };
 		F32D0F3B26C6E0D200ECC56B /* SearchGroup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F32D0F3A26C6E0D200ECC56B /* SearchGroup.storyboard */; };
 		F32D0F3D26C9412E00ECC56B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = F32D0F3C26C9412E00ECC56B /* Localizable.strings */; };
-		F32D0FA826C9453400ECC56B /* ViewModel.h in Headers */ = {isa = PBXBuildFile; fileRef = F32D0F9826C9453400ECC56B /* ViewModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F32D0FAB26C9453400ECC56B /* ViewModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F32D0F9626C9453400ECC56B /* ViewModel.framework */; };
-		F32D0FAC26C9453400ECC56B /* ViewModel.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F32D0F9626C9453400ECC56B /* ViewModel.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F32D0FB526C947BD00ECC56B /* SwiftFormat in Frameworks */ = {isa = PBXBuildFile; productRef = F32D0FB426C947BD00ECC56B /* SwiftFormat */; };
+		F32D0FBA26C96E3000ECC56B /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32D0FB926C96E3000ECC56B /* Urls.swift */; };
+		F32D0FC026C97D6100ECC56B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F32D0FBF26C97D6100ECC56B /* GoogleService-Info.plist */; };
 		F32F00DF25B80034005C9304 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F00DE25B80034005C9304 /* ApiClient.swift */; };
 		F32F00E425B80048005C9304 /* PresetUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = F32F00E325B80048005C9304 /* PresetUseCase.swift */; };
 		F33D40F624D6F53F00AD9C41 /* ScoreMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */; };
@@ -82,14 +76,13 @@
 		F358F77A24F619E200E72263 /* PresetsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358F77924F619E200E72263 /* PresetsResponse.swift */; };
 		F358F77C250545FF00E72263 /* PresetList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F358F77B250545FF00E72263 /* PresetList.swift */; };
 		F35ED14424B45EAD00727207 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED14324B45EAD00727207 /* Constants.swift */; };
-		F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F35ED17024B6C68200727207 /* GoogleService-Info.plist */; };
 		F35ED17324B744E400727207 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35ED17224B744E400727207 /* SceneDelegate.swift */; };
 		F35F9B53237154E000BBB727 /* MusicList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F35F9B52237154E000BBB727 /* MusicList.swift */; };
 		F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */; };
 		F39ADCCB269EF93100D4A52E /* Collection+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F39ADCCA269EF93100D4A52E /* Collection+Ex.swift */; };
 		F3B47414260098D300C32A56 /* TopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3B47413260098D300C32A56 /* TopView.swift */; };
 		F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB6232F703C00546D5B /* String+Ex.swift */; };
-		F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB8232F711300546D5B /* UIImage+Ex.swift */; };
+		F3C21BB9232F711300546D5B /* CIImage+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BB8232F711300546D5B /* CIImage+Ex.swift */; };
 		F3C21BBB232F738F00546D5B /* SearchGropuVC+Ex.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BBA232F738F00546D5B /* SearchGropuVC+Ex.swift */; };
 		F3C21BBD232F73E400546D5B /* SearchGroupVC+AVCaptureDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BBC232F73E400546D5B /* SearchGroupVC+AVCaptureDelegate.swift */; };
 		F3C21BC0232F809100546D5B /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3C21BBF232F809100546D5B /* Room.swift */; };
@@ -135,13 +128,6 @@
 			remoteGlobalIDString = 589460D022852E9500319032;
 			remoteInfo = "Otofuda-iOS";
 		};
-		F32D0FA926C9453400ECC56B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 589460C922852E9500319032 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = F32D0F9526C9453400ECC56B;
-			remoteInfo = ViewModel;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -160,7 +146,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				F32D0FAC26C9453400ECC56B /* ViewModel.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -200,10 +185,7 @@
 		F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectMusicTableCell.xib; sourceTree = "<group>"; };
 		F3225EF92330ACFD00D9BD79 /* SelectMusicTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMusicTableCell.swift; sourceTree = "<group>"; };
 		F3225EFB2330AFCA00D9BD79 /* iTunesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesApi.swift; sourceTree = "<group>"; };
-		F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		F3225F012330AFE300D9BD79 /* iTunesPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesPickerVC.swift; sourceTree = "<group>"; };
-		F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iTunesPickerVC+Datasource.swift"; sourceTree = "<group>"; };
-		F3225F032330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iTunesPicker+UISearchBarDelegate.swift"; sourceTree = "<group>"; };
 		F3225F082330AFF200D9BD79 /* iTunesPicker.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = iTunesPicker.storyboard; sourceTree = "<group>"; };
 		F3225F0A2330B01D00D9BD79 /* SearchResultCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchResultCell.swift; sourceTree = "<group>"; };
 		F3225F0B2330B01D00D9BD79 /* SearchResultCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SearchResultCell.xib; sourceTree = "<group>"; };
@@ -234,9 +216,8 @@
 		F32D0F3826C6E01B00ECC56B /* CreateGroup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateGroup.storyboard; sourceTree = "<group>"; };
 		F32D0F3A26C6E0D200ECC56B /* SearchGroup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SearchGroup.storyboard; sourceTree = "<group>"; };
 		F32D0F3C26C9412E00ECC56B /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		F32D0F9626C9453400ECC56B /* ViewModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ViewModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F32D0F9826C9453400ECC56B /* ViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewModel.h; sourceTree = "<group>"; };
-		F32D0F9926C9453400ECC56B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F32D0FB926C96E3000ECC56B /* Urls.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		F32D0FBF26C97D6100ECC56B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F32F00DE25B80034005C9304 /* ApiClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		F32F00E325B80048005C9304 /* PresetUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresetUseCase.swift; sourceTree = "<group>"; };
 		F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreMode.swift; sourceTree = "<group>"; };
@@ -245,14 +226,13 @@
 		F358F77924F619E200E72263 /* PresetsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetsResponse.swift; sourceTree = "<group>"; };
 		F358F77B250545FF00E72263 /* PresetList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresetList.swift; sourceTree = "<group>"; };
 		F35ED14324B45EAD00727207 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		F35ED17024B6C68200727207 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		F35ED17224B744E400727207 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		F35F9B52237154E000BBB727 /* MusicList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MusicList.swift; sourceTree = "<group>"; };
 		F38D22462356B7FB0084BC26 /* UIColor+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Ex.swift"; sourceTree = "<group>"; };
 		F39ADCCA269EF93100D4A52E /* Collection+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Ex.swift"; sourceTree = "<group>"; };
 		F3B47413260098D300C32A56 /* TopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopView.swift; sourceTree = "<group>"; };
 		F3C21BB6232F703C00546D5B /* String+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Ex.swift"; sourceTree = "<group>"; };
-		F3C21BB8232F711300546D5B /* UIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ex.swift"; sourceTree = "<group>"; };
+		F3C21BB8232F711300546D5B /* CIImage+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CIImage+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BBA232F738F00546D5B /* SearchGropuVC+Ex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchGropuVC+Ex.swift"; sourceTree = "<group>"; };
 		F3C21BBC232F73E400546D5B /* SearchGroupVC+AVCaptureDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchGroupVC+AVCaptureDelegate.swift"; sourceTree = "<group>"; };
 		F3C21BBF232F809100546D5B /* Room.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
@@ -291,15 +271,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32B067825DF382D00AA30D8 /* RxSwift in Frameworks */,
-				F32B066625DF378800AA30D8 /* ObjectMapper in Frameworks */,
 				F32B067A25DF382D00AA30D8 /* RxCocoa in Frameworks */,
-				F32D0FAB26C9453400ECC56B /* ViewModel.framework in Frameworks */,
 				F32B062A25DEBDC700AA30D8 /* FirebaseDatabase in Frameworks */,
 				F32B067225DF37FB00AA30D8 /* SwiftyJSON in Frameworks */,
 				F32B063C25DF360700AA30D8 /* Alamofire in Frameworks */,
 				F32B064B25DF365400AA30D8 /* AlamofireImage in Frameworks */,
 				F323810225DEB23300892DAB /* Toast in Frameworks */,
-				F32D0FB526C947BD00ECC56B /* SwiftFormat in Frameworks */,
 				F32B066C25DF37D400AA30D8 /* PromiseKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -312,13 +289,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F308117B2336536F009E7726 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F32D0F9326C9453400ECC56B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -367,7 +337,6 @@
 				589460D322852E9500319032 /* Otofuda-iOS */,
 				F30811712336535D009E7726 /* Otofuda-iOSTests */,
 				F308117F2336536F009E7726 /* Otofuda-iOSUITests */,
-				F32D0F9726C9453400ECC56B /* ViewModel */,
 				589460D222852E9500319032 /* Products */,
 				54E6151815F6B8962458DCA0 /* Frameworks */,
 			);
@@ -379,7 +348,6 @@
 				589460D122852E9500319032 /* 音札.app */,
 				F30811702336535C009E7726 /* Otofuda-iOSTests.xctest */,
 				F308117E2336536F009E7726 /* Otofuda-iOSUITests.xctest */,
-				F32D0F9626C9453400ECC56B /* ViewModel.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -399,9 +367,10 @@
 				F32D0F4026C9419800ECC56B /* Sounds */,
 				F32D0F3F26C9419200ECC56B /* Images */,
 				F32D0F3E26C9417B00ECC56B /* Strings */,
+				F32D0FB926C96E3000ECC56B /* Urls.swift */,
 				589460DB22852E9500319032 /* Assets.xcassets */,
+				F32D0FBF26C97D6100ECC56B /* GoogleService-Info.plist */,
 				589460E022852E9500319032 /* Info.plist */,
-				F35ED17024B6C68200727207 /* GoogleService-Info.plist */,
 			);
 			path = Resource;
 			sourceTree = "<group>";
@@ -478,9 +447,6 @@
 			isa = PBXGroup;
 			children = (
 				F3225F012330AFE300D9BD79 /* iTunesPickerVC.swift */,
-				F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */,
-				F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */,
-				F3225F032330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift */,
 				F3225F0A2330B01D00D9BD79 /* SearchResultCell.swift */,
 			);
 			path = iTunesPicker;
@@ -531,15 +497,6 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
-		F32D0F9726C9453400ECC56B /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				F32D0F9826C9453400ECC56B /* ViewModel.h */,
-				F32D0F9926C9453400ECC56B /* Info.plist */,
-			);
-			path = ViewModel;
-			sourceTree = "<group>";
-		};
 		F32D0FB626C957E300ECC56B /* Api */ = {
 			isa = PBXGroup;
 			children = (
@@ -561,7 +518,7 @@
 			isa = PBXGroup;
 			children = (
 				F3C21BB6232F703C00546D5B /* String+Ex.swift */,
-				F3C21BB8232F711300546D5B /* UIImage+Ex.swift */,
+				F3C21BB8232F711300546D5B /* CIImage+Ex.swift */,
 				F32B91FB23329A5C0031B062 /* IBDesignableView.swift */,
 				F32B91BB23328B150031B062 /* IBDesignableButton.swift */,
 				F32B91F7233298FD0031B062 /* IBDesignableSegumentControl.swift */,
@@ -707,17 +664,6 @@
 		};
 /* End PBXGroup section */
 
-/* Begin PBXHeadersBuildPhase section */
-		F32D0F9126C9453400ECC56B /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F32D0FA826C9453400ECC56B /* ViewModel.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
 /* Begin PBXNativeTarget section */
 		589460D022852E9500319032 /* Otofuda-iOS */ = {
 			isa = PBXNativeTarget;
@@ -733,7 +679,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				F32D0FAA26C9453400ECC56B /* PBXTargetDependency */,
 			);
 			name = "Otofuda-iOS";
 			packageProductDependencies = (
@@ -741,12 +686,10 @@
 				F32B062925DEBDC700AA30D8 /* FirebaseDatabase */,
 				F32B063B25DF360700AA30D8 /* Alamofire */,
 				F32B064A25DF365400AA30D8 /* AlamofireImage */,
-				F32B066525DF378800AA30D8 /* ObjectMapper */,
 				F32B066B25DF37D400AA30D8 /* PromiseKit */,
 				F32B067125DF37FB00AA30D8 /* SwiftyJSON */,
 				F32B067725DF382D00AA30D8 /* RxSwift */,
 				F32B067925DF382D00AA30D8 /* RxCocoa */,
-				F32D0FB426C947BD00ECC56B /* SwiftFormat */,
 			);
 			productName = "Otofuda-iOS";
 			productReference = 589460D122852E9500319032 /* 音札.app */;
@@ -788,24 +731,6 @@
 			productReference = F308117E2336536F009E7726 /* Otofuda-iOSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		F32D0F9526C9453400ECC56B /* ViewModel */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = F32D0FAD26C9453400ECC56B /* Build configuration list for PBXNativeTarget "ViewModel" */;
-			buildPhases = (
-				F32D0F9126C9453400ECC56B /* Headers */,
-				F32D0F9226C9453400ECC56B /* Sources */,
-				F32D0F9326C9453400ECC56B /* Frameworks */,
-				F32D0F9426C9453400ECC56B /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = ViewModel;
-			productName = ViewModel;
-			productReference = F32D0F9626C9453400ECC56B /* ViewModel.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -827,9 +752,6 @@
 						CreatedOnToolsVersion = 10.2.1;
 						TestTargetID = 589460D022852E9500319032;
 					};
-					F32D0F9526C9453400ECC56B = {
-						CreatedOnToolsVersion = 12.5;
-					};
 				};
 			};
 			buildConfigurationList = 589460CC22852E9500319032 /* Build configuration list for PBXProject "Otofuda-iOS" */;
@@ -847,11 +769,9 @@
 				F32B062825DEBDC700AA30D8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				F32B063A25DF360600AA30D8 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				F32B064925DF365400AA30D8 /* XCRemoteSwiftPackageReference "AlamofireImage" */,
-				F32B066425DF378800AA30D8 /* XCRemoteSwiftPackageReference "ObjectMapper" */,
 				F32B066A25DF37D400AA30D8 /* XCRemoteSwiftPackageReference "PromiseKit" */,
 				F32B067025DF37FB00AA30D8 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				F32B067625DF382D00AA30D8 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				F32D0FB326C947BD00ECC56B /* XCRemoteSwiftPackageReference "swift-format" */,
 			);
 			productRefGroup = 589460D222852E9500319032 /* Products */;
 			projectDirPath = "";
@@ -860,7 +780,6 @@
 				589460D022852E9500319032 /* Otofuda-iOS */,
 				F308116F2336535C009E7726 /* Otofuda-iOSTests */,
 				F308117D2336536F009E7726 /* Otofuda-iOSUITests */,
-				F32D0F9526C9453400ECC56B /* ViewModel */,
 			);
 		};
 /* End PBXProject section */
@@ -871,7 +790,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F32B91A923320BF80031B062 /* tap_fuda.caf in Resources */,
-				F35ED17124B6C68200727207 /* GoogleService-Info.plist in Resources */,
 				F3E25FE6233085B600134769 /* FudaCollectionCell.xib in Resources */,
 				F3E25FDB232F9FF800134769 /* Menu.storyboard in Resources */,
 				F32B91B2233233C00031B062 /* Result.storyboard in Resources */,
@@ -880,6 +798,7 @@
 				F3225F0D2330B01D00D9BD79 /* SearchResultCell.xib in Resources */,
 				F32B91B4233235190031B062 /* ResultTableCell.xib in Resources */,
 				589460DC22852E9500319032 /* Assets.xcassets in Resources */,
+				F32D0FC026C97D6100ECC56B /* GoogleService-Info.plist in Resources */,
 				589460EB2285367300319032 /* Top.storyboard in Resources */,
 				F3C8E69823615F0100864279 /* Play.storyboard in Resources */,
 				F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */,
@@ -897,13 +816,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		F308117C2336536F009E7726 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F32D0F9426C9453400ECC56B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -928,7 +840,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if which mint >/dev/null; then\n  # mint run swiftlint swiftlint autocorrect --format\n  # mint run swiftlint swiftlint\n  mint run swiftformat --swiftversion 5.3 .\n  break\nelse\n  echo \"warning: Mint not installed, download from https://github.com/yonaskolb/Mint\"\nfi\n";
+			shellScript = "if which mint >/dev/null; then\n  # mint run swiftlint swiftlint autocorrect --format\n  # mint run swiftlint swiftlint\n  # mint run swiftformat --swiftversion 5.3 .\n  break\nelse\n  echo \"warning: Mint not installed, download from https://github.com/yonaskolb/Mint\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -941,7 +853,6 @@
 				F3E25FD2232F9F5700134769 /* PlayVC+UICollectionDelegate.swift in Sources */,
 				589460F522855D9F00319032 /* SearchGroupVC.swift in Sources */,
 				F3C21BC4232F9C4F00546D5B /* Music.swift in Sources */,
-				F3225F072330AFE300D9BD79 /* iTunesPicker+UISearchBarDelegate.swift in Sources */,
 				F3E25FEE233090EC00134769 /* MPMediaPlayer+Ex.swift in Sources */,
 				F3225F0C2330B01D00D9BD79 /* SearchResultCell.swift in Sources */,
 				F3C8E6AD2362B41D00864279 /* Preset.swift in Sources */,
@@ -960,7 +871,6 @@
 				F32B91B0233232730031B062 /* ResultVC+UICollectionDataSource.swift in Sources */,
 				F3E25FDD232FA00D00134769 /* MenuVC.swift in Sources */,
 				F315AB1826C581AB00BF87C5 /* AppUseCase.swift in Sources */,
-				F3225F062330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift in Sources */,
 				F3225EF42330AAFF00D9BD79 /* MenuVC+UITableDelegate.swift in Sources */,
 				F3E25FEC2330891600134769 /* PlayVC+Ex.swift in Sources */,
 				F3C21BB7232F703C00546D5B /* String+Ex.swift in Sources */,
@@ -972,7 +882,6 @@
 				F315AB0C26C565D300BF87C5 /* TopVM.swift in Sources */,
 				F3E25FD0232F9E5200134769 /* PlayVC.swift in Sources */,
 				F32D0F3326C6CE5600ECC56B /* Interactable.swift in Sources */,
-				F3225F042330AFE300D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift in Sources */,
 				F32B91FA233299CC0031B062 /* IBDesignableTableView.swift in Sources */,
 				F3C21BBD232F73E400546D5B /* SearchGroupVC+AVCaptureDelegate.swift in Sources */,
 				F3C8E69E23617B5C00864279 /* PresetViewModel.swift in Sources */,
@@ -987,7 +896,7 @@
 				F33D40F824D6F57600AD9C41 /* PlaybackMode.swift in Sources */,
 				F3225EFD2330AFCA00D9BD79 /* iTunesApi.swift in Sources */,
 				F32D0F2A26C6C54D00ECC56B /* Coordinator.swift in Sources */,
-				F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */,
+				F3C21BB9232F711300546D5B /* CIImage+Ex.swift in Sources */,
 				F3C21BBB232F738F00546D5B /* SearchGropuVC+Ex.swift in Sources */,
 				F32D0F3126C6CA0A00ECC56B /* StoryboardLoadable.swift in Sources */,
 				F315AB0A26C5606A00BF87C5 /* AppleMusicTopRssResponse.swift in Sources */,
@@ -1015,6 +924,7 @@
 				F3225EF62330AB2800D9BD79 /* MenuVC+UITableDataSource.swift in Sources */,
 				F32D0F2C26C6C59D00ECC56B /* AppCoordinator.swift in Sources */,
 				F32B91BC23328B150031B062 /* IBDesignableButton.swift in Sources */,
+				F32D0FBA26C96E3000ECC56B /* Urls.swift in Sources */,
 				F38D22472356B7FB0084BC26 /* UIColor+Ex.swift in Sources */,
 				F358F77C250545FF00E72263 /* PresetList.swift in Sources */,
 			);
@@ -1036,13 +946,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		F32D0F9226C9453400ECC56B /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -1055,11 +958,6 @@
 			isa = PBXTargetDependency;
 			target = 589460D022852E9500319032 /* Otofuda-iOS */;
 			targetProxy = F30811832336536F009E7726 /* PBXContainerItemProxy */;
-		};
-		F32D0FAA26C9453400ECC56B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = F32D0F9526C9453400ECC56B /* ViewModel */;
-			targetProxy = F32D0FA926C9453400ECC56B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1121,7 +1019,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1311,62 +1209,6 @@
 			};
 			name = Release;
 		};
-		F32D0FAE26C9453400ECC56B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = T8YPT438X6;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ViewModel/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.ViewModel";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		F32D0FAF26C9453400ECC56B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DEVELOPMENT_TEAM = T8YPT438X6;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = ViewModel/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "lab-snakamura.org.ViewModel";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1406,15 +1248,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F32D0FAD26C9453400ECC56B /* Build configuration list for PBXNativeTarget "ViewModel" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				F32D0FAE26C9453400ECC56B /* Debug */,
-				F32D0FAF26C9453400ECC56B /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1450,14 +1283,6 @@
 				minimumVersion = 4.1.0;
 			};
 		};
-		F32B066425DF378800AA30D8 /* XCRemoteSwiftPackageReference "ObjectMapper" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/tristanhimmelman/ObjectMapper.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 4.2.0;
-			};
-		};
 		F32B066A25DF37D400AA30D8 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/mxcl/PromiseKit";
@@ -1480,14 +1305,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 6.1.0;
-			};
-		};
-		F32D0FB326C947BD00ECC56B /* XCRemoteSwiftPackageReference "swift-format" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-format";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.50400.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -1513,11 +1330,6 @@
 			package = F32B064925DF365400AA30D8 /* XCRemoteSwiftPackageReference "AlamofireImage" */;
 			productName = AlamofireImage;
 		};
-		F32B066525DF378800AA30D8 /* ObjectMapper */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F32B066425DF378800AA30D8 /* XCRemoteSwiftPackageReference "ObjectMapper" */;
-			productName = ObjectMapper;
-		};
 		F32B066B25DF37D400AA30D8 /* PromiseKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F32B066A25DF37D400AA30D8 /* XCRemoteSwiftPackageReference "PromiseKit" */;
@@ -1537,11 +1349,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F32B067625DF382D00AA30D8 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
-		};
-		F32D0FB426C947BD00ECC56B /* SwiftFormat */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F32D0FB326C947BD00ECC56B /* XCRemoteSwiftPackageReference "swift-format" */;
-			productName = SwiftFormat;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

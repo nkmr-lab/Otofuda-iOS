@@ -20,6 +20,17 @@ struct Room {
         "cardCount": CARD_COUNT_STRING,
     ]
 
+    /// 探す画面のQRコードで表示するもの
+    var qrUrl: String {
+        return Urls.searchRoom.rawValue + "?roomID=\(name)"
+    }
+
+    /// QRコードのUIImage
+    var qrImage: UIImage? {
+        guard let qrImage = CIImage.generateQRImage(url: qrUrl) else { return nil }
+        return UIImage(ciImage: qrImage)
+    }
+
     init(name: String) {
         self.name = name
         member = []

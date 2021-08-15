@@ -2,9 +2,12 @@ import Combine
 import UIKit
 
 final class TopVC: UIViewController, StoryboardLoadable {
+
+    // MARK: - IBOutlet
     @IBOutlet private var singlePlayButton: UIButton!
     @IBOutlet private var multiPlayButton: UIButton!
 
+    // MARK: - Properties
     private let viewModel: TopVM
     let environment: Environment
     private var handler: ((Output) -> Void)?

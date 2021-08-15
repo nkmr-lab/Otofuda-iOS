@@ -2,8 +2,9 @@ import Alamofire
 import Foundation
 import PromiseKit
 
-final class iTunesApiModel {
-    static let shared = iTunesApiModel()
+// TODO: ApiClientを使ってあげる
+final class iTunesApi {
+    static let shared = iTunesApi()
     private let baseUrl = "http://itunes.apple.com/search"
 
     enum ApiError: Error {

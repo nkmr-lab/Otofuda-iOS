@@ -31,7 +31,7 @@
 		F3225EF62330AB2800D9BD79 /* MenuVC+UITableDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EF52330AB2800D9BD79 /* MenuVC+UITableDataSource.swift */; };
 		F3225EF82330AC4100D9BD79 /* SelectMusicTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */; };
 		F3225EFA2330ACFD00D9BD79 /* SelectMusicTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EF92330ACFD00D9BD79 /* SelectMusicTableCell.swift */; };
-		F3225EFD2330AFCA00D9BD79 /* iTunesAPIModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */; };
+		F3225EFD2330AFCA00D9BD79 /* iTunesApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225EFB2330AFCA00D9BD79 /* iTunesApi.swift */; };
 		F3225F042330AFE300D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */; };
 		F3225F052330AFE300D9BD79 /* iTunesPickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F012330AFE300D9BD79 /* iTunesPickerVC.swift */; };
 		F3225F062330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */; };
@@ -199,7 +199,7 @@
 		F3225EF52330AB2800D9BD79 /* MenuVC+UITableDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MenuVC+UITableDataSource.swift"; sourceTree = "<group>"; };
 		F3225EF72330AC4100D9BD79 /* SelectMusicTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectMusicTableCell.xib; sourceTree = "<group>"; };
 		F3225EF92330ACFD00D9BD79 /* SelectMusicTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMusicTableCell.swift; sourceTree = "<group>"; };
-		F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesAPIModel.swift; sourceTree = "<group>"; };
+		F3225EFB2330AFCA00D9BD79 /* iTunesApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesApi.swift; sourceTree = "<group>"; };
 		F3225F002330AFE200D9BD79 /* iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iTunesPickerVC+UICollectionViewDelegateFlowLayout.swift"; sourceTree = "<group>"; };
 		F3225F012330AFE300D9BD79 /* iTunesPickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesPickerVC.swift; sourceTree = "<group>"; };
 		F3225F022330AFE300D9BD79 /* iTunesPickerVC+Datasource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iTunesPickerVC+Datasource.swift"; sourceTree = "<group>"; };
@@ -540,6 +540,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		F32D0FB626C957E300ECC56B /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				F32F00DE25B80034005C9304 /* ApiClient.swift */,
+				F3225EFB2330AFCA00D9BD79 /* iTunesApi.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
 		F3B4740A260098A700C32A56 /* SwiftUI */ = {
 			isa = PBXGroup;
 			children = (
@@ -576,7 +585,6 @@
 				F3C21BBF232F809100546D5B /* Room.swift */,
 				F3C21BC1232F80EF00546D5B /* User.swift */,
 				F3C21BC3232F9C4F00546D5B /* Music.swift */,
-				F3225EFB2330AFCA00D9BD79 /* iTunesAPIModel.swift */,
 				F33D416424ED05E100AD9C41 /* UsingMusicMode.swift */,
 				F33D40F524D6F53F00AD9C41 /* ScoreMode.swift */,
 				F33D40F724D6F57600AD9C41 /* PlaybackMode.swift */,
@@ -643,9 +651,9 @@
 		F3C8E69523615C4300864279 /* Utility */ = {
 			isa = PBXGroup;
 			children = (
+				F32D0FB626C957E300ECC56B /* Api */,
 				F3C21BB5232F702800546D5B /* Extensions */,
 				F3C21BBE232F808300546D5B /* Models */,
-				F32F00DE25B80034005C9304 /* ApiClient.swift */,
 				589460F622867A4800319032 /* FirebaseManager.swift */,
 			);
 			path = Utility;
@@ -977,7 +985,7 @@
 				589460F722867A4800319032 /* FirebaseManager.swift in Sources */,
 				F33D40F624D6F53F00AD9C41 /* ScoreMode.swift in Sources */,
 				F33D40F824D6F57600AD9C41 /* PlaybackMode.swift in Sources */,
-				F3225EFD2330AFCA00D9BD79 /* iTunesAPIModel.swift in Sources */,
+				F3225EFD2330AFCA00D9BD79 /* iTunesApi.swift in Sources */,
 				F32D0F2A26C6C54D00ECC56B /* Coordinator.swift in Sources */,
 				F3C21BB9232F711300546D5B /* UIImage+Ex.swift in Sources */,
 				F3C21BBB232F738F00546D5B /* SearchGropuVC+Ex.swift in Sources */,

@@ -6,20 +6,28 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let uuid: String = UIDevice.current.identifierForVendor!.uuidString
-    var presenceRef: DatabaseReference? = nil
-
+    var connectedRef: DatabaseReference? = nil
+    var isOnline: Bool = false
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 
-        self.presenceRef = Database.database().reference(withPath: "disconnectmessage");
-        self.presenceRef?.onDisconnectSetValue("I disconnected!")
+        // 接続状態の変化を監視する
+        self.connectedRef = Database.database().reference(withPath: ".info/connected")
+        connectedRef?.observe(.value, with: { [weak self] snapshot in
+            guard let isConnected = snapshot.value as? Bool else { return }
+            if isConnected {
+                // TODO: 接続復活した時の処理
 
-        presenceRef?.onDisconnectRemoveValue { error, reference in
-          if let error = error {
-            EmojiLogger.error("Could not establish onDisconnect event: \(error)")
-          }
-        }
+                EmojiLogger.info("Connected to Firebase Realtime Database!")
+                self?.isOnline = isConnected
+            } else {
+                // TODO: 接続切れたた時の処理
+                // アラート出したりする
+
+                EmojiLogger.info("Disconnected to Firebase Realtime Database!")
+            }
+        })
 
         let audioSession = AVAudioSession.sharedInstance()
         do {

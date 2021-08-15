@@ -1,69 +1,87 @@
 import Alamofire
 import Foundation
-import ObjectMapper
 import PromiseKit
 
-final class iTunesAPIModel {
-    static let shared = iTunesAPIModel()
+final class iTunesApiModel {
+    static let shared = iTunesApiModel()
+    private let baseUrl = "http://itunes.apple.com/search"
 
-    func request(keyword: String, attribute: String) -> Promise<String> {
-        let encKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
+    enum ApiError: Error {
+        case mapFailed
+        case loadFileFailed
+        case encodeFailed
+        case urlError
+        case responseError
+    }
 
-        let url = "http://itunes.apple.com/search?term=\(encKeyword)&country=jp&lang=ja_jp&media=music&entity=song&attribute=\(attribute)&limit=30"
+    func request(keyword: String,
+                 attribute: String,
+                 country: String = "jp",
+                 lang: String = "ja_jp",
+                 media: String = "music",
+                 entity: String = "song") -> Promise<Results> {
+
+
+        guard let encodedKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
+            return Promise { seal in seal.reject(ApiError.encodeFailed) }
+        }
+
+        let params: [String: Any] = [
+            "term": encodedKeyword,
+            "country": country,
+            "lang": lang,
+            "media": media,
+            "entity": entity,
+            "attribute": attribute,
+            "limit": 30
+        ]
+
+        let optionalUrl = URL(string: baseUrl)
+        guard let url = optionalUrl else {
+            return Promise { seal in seal.reject(ApiError.urlError) }
+        }
+
+        let optionalComponents = URLComponents(url: url, resolvingAgainstBaseURL: true)
+        guard var components = optionalComponents else {
+            return Promise { seal in seal.reject(ApiError.urlError) }
+        }
+
+        let queryItems = params.map { key, value -> URLQueryItem in
+            return URLQueryItem(name: key, value: String(describing: value))
+        }
+        components.queryItems = queryItems
+
 
         return Promise { seal in
-            AF.request(url).responseString { response in
+            AF.request(components).response { response in
                 switch response.result {
                 case let .success(data):
-                    seal.fulfill(data)
+                    guard let data = data else {
+                        return seal.reject(ApiError.responseError)
+                    }
+                    guard let results = try? JSONDecoder().decode(Results.self, from: data) else {
+                        return seal.reject(ApiError.mapFailed)
+                    }
+                    seal.fulfill(results)
 
                 case .failure:
-                    seal.reject(InternalError.loadFileFailed)
+                    seal.reject(ApiError.loadFileFailed)
                 }
             }
         }
     }
-
-    func mapping(jsonStr: String) -> Promise<Results> {
-        Promise { seal in
-            print(jsonStr)
-            guard let results = Mapper<Results>().map(JSONString: jsonStr) else {
-                return seal.reject(InternalError.mapFailed)
-            }
-            seal.fulfill(results)
-        }
-    }
 }
 
-enum InternalError: Error {
-    case mapFailed
-    case loadFileFailed
+
+// TODO: Resultは絶対被るので名前を変える
+struct Results: Codable {
+    let results: [Result]?
 }
 
-struct Results: Mappable {
-    var results: [Result]?
-
-    init?(map _: Map) {}
-
-    mutating func mapping(map: Map) {
-        results <- map["results"]
-    }
-}
-
-struct Result: Mappable {
-    var album = ""
-    var title = ""
-    var artist = ""
-    var thumbnail = ""
-    var previewURL = ""
-
-    init?(map _: Map) {}
-
-    mutating func mapping(map: Map) {
-        album <- map["collectionName"]
-        title <- map["trackName"]
-        artist <- map["artistName"]
-        thumbnail <- map["artworkUrl100"]
-        previewURL <- map["previewUrl"]
-    }
+struct Result: Codable {
+    let album: String?
+    let title: String?
+    let artist: String?
+    let thumbnail: String?
+    let previewURL: String?
 }

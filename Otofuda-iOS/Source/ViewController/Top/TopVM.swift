@@ -1,15 +1,20 @@
 
+import Combine
 import MediaPlayer
 
 final class TopVM: ViewModel {
     private var userMusics: [Music] = []
     private let useCase: AppUseCase
+    private var cancellables: [AnyCancellable] = []
 
     init(environment: Environment) {
         useCase = AppUseCase(userRepository: environment.userRepository)
     }
 
     func transform(input _: Input) -> Output {
+        cancellables.forEach { $0.cancel() }
+        cancellables.removeAll()
+
         requestMediaLibraryAuth(completion: { [weak self] in
             guard let self = self else { return }
             self.userMusics = self.loadMusics()

@@ -23,7 +23,7 @@ final class TopCoordinator: Coordinator {
     private func output(_ output: TopVC.Output) {
         switch output {
         case .singlePlayButtonTapped:
-            let nextCoordinator = CreateGroupCoordinator(navigator: navigation, environment: environment)
+            let nextCoordinator = CreateRoomCoordinator(navigator: navigation, environment: environment)
             nextCoordinator.start()
         case .multiPlayButtonTapped:
             break

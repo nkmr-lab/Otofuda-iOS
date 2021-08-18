@@ -2,16 +2,11 @@ import Combine
 import UIKit
 
 final class TopVC: UIViewController, StoryboardLoadable {
-
-    // MARK: - IBOutlet
-    @IBOutlet private var singlePlayButton: UIButton!
-    @IBOutlet private var multiPlayButton: UIButton!
-
+    
     // MARK: - Properties
-    private let viewModel: TopVM
     let environment: Environment
-    private var handler: ((Output) -> Void)?
-
+    private(set) var viewModel: TopVM
+    private(set) var handler: ((Output) -> Void)?
     private var cancellables: [AnyCancellable] = []
 
     init?(coder: NSCoder, input _: Input, environment: Environment) {
@@ -20,7 +15,6 @@ final class TopVC: UIViewController, StoryboardLoadable {
         super.init(coder: coder)
     }
 
-    @available(*, unavailable)
     required init?(coder _: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -42,18 +36,19 @@ final class TopVC: UIViewController, StoryboardLoadable {
     @IBAction private func tappedMultiPlayButton(_: Any) {
         handler?(.multiPlayButtonTapped)
     }
+}
 
-    private func bind(to viewModel: TopVM) {
+extension TopVC: Bindable {
+    func bind(to viewModel: TopVM) {
         cancellables.forEach { $0.cancel() }
         cancellables.removeAll()
 
-        bindOutput(viewModel.transform(input: createInput()))
+        let input = TopVM.Input()
+        bindOutput(viewModel.transform(input: input))
     }
 
-    private func bindOutput(_: TopVM.Output) {}
+    func bindOutput(_: TopVM.Output) {
 
-    private func createInput() -> TopVM.Input {
-        .init()
     }
 }
 

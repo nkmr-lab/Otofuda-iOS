@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9l5-BP-ojP">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--SplashVC-->
+        <scene sceneID="fQB-cv-afU">
+            <objects>
+                <viewController id="9l5-BP-ojP" customClass="SplashVC" customModule="音札" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eoQ-id-zid">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Card" translatesAutoresizingMaskIntoConstraints="NO" id="fkI-xp-gaO">
+                                <rect key="frame" x="107" y="-160" width="200" height="1216"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="yP0-jF-PeP"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mi8-en-Vx5"/>
+                        <color key="backgroundColor" red="0.95686274509803915" green="0.83529411764705885" blue="0.3411764705882353" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="fkI-xp-gaO" firstAttribute="centerX" secondItem="eoQ-id-zid" secondAttribute="centerX" id="7QA-NU-f5a"/>
+                            <constraint firstItem="fkI-xp-gaO" firstAttribute="centerY" secondItem="eoQ-id-zid" secondAttribute="centerY" id="fQq-RN-dNl"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VRl-LJ-dZG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="23" y="106"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Card" width="952" height="1216"/>
+    </resources>
+</document>

@@ -1,9 +1,7 @@
 
-import Combine
 import Foundation
-import OtofudaEntity
 
-public final class AppUseCase {
+public final class UserUseCase {
     private let userRepository: UsersRepository
 
     public init(userRepository: UsersRepository) {
@@ -12,9 +10,5 @@ public final class AppUseCase {
 
     public var userId: String? {
         userRepository.userId
-    }
-
-    public func fetchAllUsers() -> AnyPublisher<[UserEntity], Error> {
-        userRepository.fetchAll().eraseToAnyPublisher()
     }
 }

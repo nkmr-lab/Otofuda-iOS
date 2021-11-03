@@ -20,9 +20,8 @@ final class iTunesApi {
                  country: String = "jp",
                  lang: String = "ja_jp",
                  media: String = "music",
-                 entity: String = "song") -> Promise<iTunesApiResponse> {
-
-
+                 entity: String = "song") -> Promise<iTunesApiResponse>
+    {
         guard let encodedKeyword = keyword.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) else {
             return Promise { seal in seal.reject(ApiError.encodeFailed) }
         }
@@ -34,7 +33,7 @@ final class iTunesApi {
             "media": media,
             "entity": entity,
             "attribute": attribute,
-            "limit": 30
+            "limit": 30,
         ]
 
         let optionalUrl = URL(string: baseUrl)
@@ -48,10 +47,9 @@ final class iTunesApi {
         }
 
         let queryItems = params.map { key, value -> URLQueryItem in
-            return URLQueryItem(name: key, value: String(describing: value))
+            URLQueryItem(name: key, value: String(describing: value))
         }
         components.queryItems = queryItems
-
 
         return Promise { seal in
             AF.request(components).response { response in
@@ -72,7 +70,6 @@ final class iTunesApi {
         }
     }
 }
-
 
 struct iTunesApiResponse: Codable {
     let topRankMusics: [TopRankMusic]?

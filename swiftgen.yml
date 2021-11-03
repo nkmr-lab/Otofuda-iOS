@@ -1,31 +1,24 @@
 strings:
   paths: Otofuda-iOS
-  inputs: Otofuda-iOS/Resource/Strings/Localizable.strings
+  inputs: Otofuda-iOS/Resource/Strings/ja.lproj/Localizable.strings
   outputs:
     - templateName: structured-swift4
       output: Otofuda-iOS/Resource/Strings/StringsGen.swift
       params:
         publicAccess: true
 xcassets:
-  - inputs:
-    - Otofuda-iOS/Resource/Images/Images.xcassets
-    outputs:
-      templateName: swift4
-      output: Otofuda-iOS/Resource/Images/ImagesGen.swift
+  inputs:
+    - Otofuda-iOS/Resource/Assets/Images.xcassets
+    - Otofuda-iOS/Resource/Assets/Colors.xcassets
+  outputs:
+    - templateName: swift5
+      output: Otofuda-iOS/Resource/Assets/AssetsGen.swift
       params:
-        publicAccess: true
-xcassets:
-  - inputs:
-    - Otofuda-iOS/Resource/Colors/Colors.xcassets
-    outputs:
-      templateName: swift4
-      output: Otofuda-iOS/Resource/Colors/ColorsGen.swift
-      params:
-        publicAccess: true
+        publicAccess: true   
 fonts:
   inputs: Otofuda-iOS/Resource/Fonts
   outputs:
-    templateName: swift4
+    templateName: swift5
     output: Otofuda-iOS/Resource/Fonts/FontsGen.swift
     params:
       publicAccess: true

@@ -162,3 +162,7 @@ Packages/
 .bundle/
 bundle/
 Otofuda-iOS/resources/.GoogleService-Info.plist.icloud
+
+# SwiftFormat
+BuildTools/.build
+BuildTools/.swiftps

@@ -6,14 +6,14 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let uuid: String = UIDevice.current.identifierForVendor!.uuidString
-    var connectedRef: DatabaseReference? = nil
+    var connectedRef: DatabaseReference?
     var isOnline: Bool = false
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
 
         // 接続状態の変化を監視する
-        self.connectedRef = Database.database().reference(withPath: ".info/connected")
+        connectedRef = Database.database().reference(withPath: ".info/connected")
         connectedRef?.observe(.value, with: { [weak self] snapshot in
             guard let isConnected = snapshot.value as? Bool else { return }
             if isConnected {

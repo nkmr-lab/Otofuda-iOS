@@ -6,29 +6,11 @@ import UIKit
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     let uuid: String = UIDevice.current.identifierForVendor!.uuidString
-    var connectedRef: DatabaseReference?
-    var isOnline: Bool = false
+
+    var useCase = AppDelegateUseCase()
 
     func application(_: UIApplication, didFinishLaunchingWithOptions _: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         FirebaseApp.configure()
-
-        // 接続状態の変化を監視する
-        connectedRef = Database.database().reference(withPath: ".info/connected")
-        connectedRef?.observe(.value, with: { [weak self] snapshot in
-            guard let isConnected = snapshot.value as? Bool else { return }
-            if isConnected {
-                // TODO: 接続復活した時の処理
-
-                EmojiLogger.info("Connected to Firebase Realtime Database!")
-                self?.isOnline = isConnected
-            } else {
-                // TODO: 接続切れたた時の処理
-                // アラート出したりする
-
-                EmojiLogger.info("Disconnected to Firebase Realtime Database!")
-            }
-        })
-
         let audioSession = AVAudioSession.sharedInstance()
         do {
             try audioSession.setCategory(.ambient)

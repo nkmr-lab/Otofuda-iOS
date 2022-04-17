@@ -1,7 +1,10 @@
 # Otofuda-iOS
+音楽とかるたを組み合わせた新感覚カードゲームアプリのリポジトリです。
 
 <div align="center">
-  <img src="https://i.gyazo.com/780ef47d72899d0609cc755c21435b2b.png" width="30%" height="auto">
+  <img src="https://user-images.githubusercontent.com/29607841/125574192-3da5ef3a-43e1-472e-b60e-2e9f07cb1e66.png" width="30%" height="auto">
+  <img src="https://user-images.githubusercontent.com/29607841/125574256-74e4caf9-05da-4066-82b8-ad32ae508996.png" width="30%" height="auto">
+  <img src="https://user-images.githubusercontent.com/29607841/125574291-6a5f5bf8-adb0-4fe7-8048-8d5d00f2289a.png" width="30%" height="auto">
 </div>
 
 ## Getting Started
@@ -20,21 +23,21 @@ carthage update --platform iOS
 
 [Firebase/Settings](https://console.firebase.google.com/project/otofuda-a41cc/settings/general/ios:nkmr-lab.Otofuda-iOS)
 
+### Requirements
+- Deployment target iOS 13
+- Swift 5
+
 ## Branchs
-- `master` リリースするタイミングでマージする
-- `develop` 各機能が完成したらマージする
+- `master` featuresブランチの機能が完成したらこっちにマージする。必ず動く状態であること。
 - `features/xxxx(機能名)` 機能ごとでブランチを分ける
 
-## Installing
-
-### Carthage
+## Libraries
+SwiftPM
 - Alamofire/Alamofire
 - Alamofire/AlamofireImage
 - SwiftyJSON/SwiftyJSON
 - mxcl/PromiseKit
 - Hearst-DD/ObjectMapper
-
-### Pods
 - Firebase
 - Firebase/Database
 
@@ -56,11 +59,6 @@ carthage update --platform iOS
 |非推奨追加（Deprecation）|	💩|
 |削除（Removal）|	🗑️|
 |WIP(Work In Progress)|	🚧|
-
-## Rest API
-- GET https://uniotto.org/api/get_otofuda_list.php?id={id}
-- GET https://uniotto.org/api/get_rand16_itunes.php?id={id}
-- GET https://uniotto.org/api/get_all_otofuda_list.php
 
 ## Architecture
 - MVVM

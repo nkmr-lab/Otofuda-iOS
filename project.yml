@@ -1,0 +1,177 @@
+name: Otofuda-iOS
+configs:
+  Debug: debug
+  Release: release
+options:
+  bundleIdPrefix: lab-snakamura.org
+  deploymentTarget:
+    iOS: 14.1
+  developmentLanguage: ja
+  xcodeVersion: "11.3.1"
+  # carthageExecutablePath: mint run Carthage/Carthage carthage
+settings:
+  base:
+    SWIFT_VERSION: 5.0
+    PRODUCT_NAME: $TARGET_NAME
+    MARKETING_VERSION: 1.0.0
+    CURRENT_PROJECT_VERSION: 1
+  configs:
+    debug:
+      DEBUG_INFORMATION_FORMAT: "dwarf-with-dsym"
+packages:
+  Toast:
+    url: https://github.com/scalessec/Toast-Swift
+    version: 5.0.1
+  Firebase:
+    url: https://github.com/firebase/firebase-ios-sdk.git
+    version: 7.6.0
+  Alamofire:
+    url: https://github.com/Alamofire/Alamofire.git
+    version: 5.4.1
+  AlamofireImage:
+    url: https://github.com/Alamofire/AlamofireImage.git
+    version: 4.1.0
+  PromiseKit:
+    url: https://github.com/mxcl/PromiseKit
+    version: 6.13.3
+  SwiftyJSON:
+    url: https://github.com/SwiftyJSON/SwiftyJSON.git
+    version: 5.0.0
+  RxSwift:
+    url: https://github.com/ReactiveX/RxSwift.git
+    version: 6.1.0
+  CombineCocoa:
+    url: https://github.com/CombineCommunity/CombineCocoa
+    version: 0.3.0
+  CombineFirebase:
+    url: https://github.com/rever-ai/CombineFirebase
+    version: 0.3.0
+
+targets:
+  Otofuda-iOS:
+    type: application
+    platform: iOS
+    sources:
+      - Otofuda-iOS
+    settings:
+      base:
+        INFOPLIST_FILE: Otofuda-iOS/Resource/Info.plist
+        DEVELOPMENT_LANGUAGE: jp
+        OTHER_LDFLAGS: $(inherited) $(OTHER_LDFLAGS) -ObjC
+      configs:
+        debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+          OTHER_SWIFT_FLAGS: $(inherited) -Xfrontend -warn-long-expression-type-checking=500 -Xfrontend -warn-long-function-bodies=500
+          DEVELOPMENT_TEAM: T8YPT438X6
+        release:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: RELEASE
+          DEVELOPMENT_TEAM: T8YPT438X6
+    dependencies:
+      - package: Toast
+      - package: Firebase
+      - package: CombineFirebase
+      - package: Alamofire
+      - package: AlamofireImage
+      - package: PromiseKit
+      - package: SwiftyJSON
+      - package: RxSwift
+      - package: CombineCocoa
+      - target: OtofudaResource
+      - target: OtofudaEntity
+      - target: OtofudaExtension
+
+    # preBuildScripts:
+    #   - path: ./Scripts/XcodeGen/rswift.sh
+    #     name: Generate Resources with R.swift
+    #     inputFiles:
+    #       - $TEMP_DIR/rswift-lastrun
+    #     outputFiles:
+    #       - $SRCROOT/$TARGET_NAME/Generated/R.generated.swift
+    #   - path: ./Scripts/XcodeGen/mockolo.sh
+    #     name: Generate Mocks with Mockolo
+    #     outputFiles:
+    #       - $SRCROOT/$TARGET_NAME/Generated/MockResults.swift
+    # postCompileScripts:
+    #   - path: ./Scripts/XcodeGen/swiftlint.sh
+    #     name: Run SwiftLint
+    #   - path: ./Scripts/XcodeGen/spellchecker.sh
+    #     name: Run SpellChecker
+
+  Otofuda-iOSTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - Otofuda-iOSTests
+    settings:
+      base:
+        INFOPLIST_FILE: Otofuda-iOSTests/Info.plist
+    dependencies:
+      - target: Otofuda-iOS
+
+  Otofuda-iOSUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - Otofuda-iOSUITests
+    settings:
+      base:
+        INFOPLIST_FILE: Otofuda-iOSUITests/Info.plist
+    dependencies:
+      - target: Otofuda-iOS
+  
+  OtofudaResource:
+    type: framework
+    platform: iOS
+    sources:
+      - OtofudaResource
+    settings:
+      base:
+        INFOPLIST_FILE: OtofudaResource/Info.plist
+
+  OtofudaEntity:
+    type: framework
+    platform: iOS
+    sources:
+      -  OtofudaEntity
+    settings:
+      base:
+        INFOPLIST_FILE: OtofudaEntity/Info.plist
+    dependencies:
+      - package: SwiftyJSON
+
+  OtofudaExtension:
+    type: framework
+    platform: iOS
+    sources:
+      -  OtofudaExtension
+    settings:
+      base:
+        INFOPLIST_FILE: OtofudaExtension/Info.plist
+    dependencies:
+      - target: OtofudaEntity
+
+schemes:
+  Otofuda-iOS:
+    build:
+      targets:
+        Otofuda-iOS: all
+    run:
+      config: Debug
+    test:
+      config: Debug
+      gatherCoverageData: true
+      coverageTargets:
+        - Otofuda-iOS
+      targets:
+        - name: Otofuda-iOSTests
+          parallelizable: true
+          randomExecutionOrder: true
+        - name: Otofuda-iOSUITests
+          parallelizable: true
+          randomExecutionOrder: true
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release

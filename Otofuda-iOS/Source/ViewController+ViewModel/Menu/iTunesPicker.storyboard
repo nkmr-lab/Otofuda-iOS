@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--iTunes PickerVC-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="iTunesPickerVC" customModule="音札" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qYg-7c-mvg">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="KmE-7U-u9P"/>
+                                </constraints>
+                                <color key="barTintColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="T9P-MR-2J7"/>
+                                </connections>
+                            </searchBar>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eBI-Rf-YBK">
+                                <rect key="frame" x="0.0" y="96" width="375" height="571"/>
+                                <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="azv-aB-HWn">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZE8-oD-Rcl">
+                                <rect key="frame" x="0.0" y="56" width="375" height="40"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EUq-FU-kcB" customClass="IBDesignableSegmentControl" customModule="音札" customModuleProvider="target">
+                                        <rect key="frame" x="50" y="4.5" width="275" height="32"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <segments>
+                                            <segment title="アーティスト名"/>
+                                            <segment title="曲名"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="4"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="segmentChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="37o-lq-8Hy"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstItem="EUq-FU-kcB" firstAttribute="centerY" secondItem="ZE8-oD-Rcl" secondAttribute="centerY" id="F7G-PD-BpC"/>
+                                    <constraint firstAttribute="height" constant="40" id="NvC-zW-SdP"/>
+                                    <constraint firstItem="EUq-FU-kcB" firstAttribute="centerX" secondItem="ZE8-oD-Rcl" secondAttribute="centerX" id="RHY-DT-eMk"/>
+                                    <constraint firstItem="EUq-FU-kcB" firstAttribute="leading" secondItem="ZE8-oD-Rcl" secondAttribute="leading" constant="50" id="RZC-MM-lPu"/>
+                                    <constraint firstAttribute="trailing" secondItem="EUq-FU-kcB" secondAttribute="trailing" constant="50" id="dtX-fX-6ch"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.15686270590000001" green="0.15686273570000001" blue="0.15686270590000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="qYg-7c-mvg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CuU-ud-Q6J"/>
+                            <constraint firstItem="eBI-Rf-YBK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="K8N-Ca-9Wg"/>
+                            <constraint firstItem="qYg-7c-mvg" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Xfd-UI-ESE"/>
+                            <constraint firstItem="ZE8-oD-Rcl" firstAttribute="top" secondItem="qYg-7c-mvg" secondAttribute="bottom" id="acw-U4-M4F"/>
+                            <constraint firstItem="ZE8-oD-Rcl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="e5K-IH-460"/>
+                            <constraint firstItem="eBI-Rf-YBK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="gKc-jQ-7tw"/>
+                            <constraint firstItem="eBI-Rf-YBK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="jQK-Ts-l5M"/>
+                            <constraint firstItem="ZE8-oD-Rcl" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="vdc-0Q-oUi"/>
+                            <constraint firstItem="eBI-Rf-YBK" firstAttribute="top" secondItem="ZE8-oD-Rcl" secondAttribute="bottom" id="yBz-Zv-Mgj"/>
+                            <constraint firstItem="qYg-7c-mvg" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="yzl-v2-7Ep"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="eBI-Rf-YBK" id="QgF-Jg-49l"/>
+                        <outlet property="searchBar" destination="qYg-7c-mvg" id="ZOC-CQ-ecC"/>
+                        <outlet property="segumentView" destination="EUq-FU-kcB" id="3RB-PB-QJ9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="117.59999999999999" y="118.29085457271366"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="EUq-FU-kcB">
+            <size key="intrinsicContentSize" width="223" height="31"/>
+        </designable>
+    </designables>
+</document>

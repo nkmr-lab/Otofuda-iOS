@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1230"
+   LastUpgradeVersion = "1131"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      runPostActionsOnFailure = "NO">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,8 +15,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "589460D022852E9500319032"
-               BuildableName = "&#x97f3;&#x672d;.app"
+               BlueprintIdentifier = "443DB2608CA7EFD56BD68C71"
+               BuildableName = "Otofuda-iOS.app"
                BlueprintName = "Otofuda-iOS"
                ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
             </BuildableReference>
@@ -26,29 +27,55 @@
       buildConfiguration = "Debug"
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
+      codeCoverageEnabled = "YES"
+      onlyGenerateCoverageForSpecifiedTargets = "YES"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F308116F2336535C009E7726"
+               BlueprintIdentifier = "44970022EA2C14B9F51720F7"
                BuildableName = "Otofuda-iOSTests.xctest"
                BlueprintName = "Otofuda-iOSTests"
                ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
-            skipped = "NO">
+            skipped = "NO"
+            parallelizable = "YES"
+            testExecutionOrdering = "random">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F308117D2336536F009E7726"
+               BlueprintIdentifier = "56E052E33F6A5291FBD7001F"
                BuildableName = "Otofuda-iOSUITests.xctest"
                BlueprintName = "Otofuda-iOSUITests"
                ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "443DB2608CA7EFD56BD68C71"
+            BuildableName = "Otofuda-iOS.app"
+            BlueprintName = "Otofuda-iOS"
+            ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
+      <CommandLineArguments>
+      </CommandLineArguments>
+      <CodeCoverageTargets>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "443DB2608CA7EFD56BD68C71"
+            BuildableName = "Otofuda-iOS.app"
+            BlueprintName = "Otofuda-iOS"
+            ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
+         </BuildableReference>
+      </CodeCoverageTargets>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
@@ -64,12 +91,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "589460D022852E9500319032"
-            BuildableName = "&#x97f3;&#x672d;.app"
+            BlueprintIdentifier = "443DB2608CA7EFD56BD68C71"
+            BuildableName = "Otofuda-iOS.app"
             BlueprintName = "Otofuda-iOS"
             ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -81,12 +110,14 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "589460D022852E9500319032"
-            BuildableName = "&#x97f3;&#x672d;.app"
+            BlueprintIdentifier = "443DB2608CA7EFD56BD68C71"
+            BuildableName = "Otofuda-iOS.app"
             BlueprintName = "Otofuda-iOS"
             ReferencedContainer = "container:Otofuda-iOS.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <CommandLineArguments>
+      </CommandLineArguments>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
